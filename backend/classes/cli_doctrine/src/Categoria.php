@@ -1,7 +1,7 @@
 <?php
-//id, nombre
-
-namespace tienda\data;
+/*
+id, nombre
+*/
 
 /**
  * @Entity @Table(name="categoria")
@@ -15,13 +15,13 @@ class Categoria {
     private $id;
     
     /**
-     * @Column(type="string", length=50, unique=true, nullable=false)
+     * @Column(type="string", nullable=false, length=50)
      */
     private $nombre;
     
     /** 
-     * @OneToMany(targetEntity="Zapato", mappedBy="categoria") 
+     * @OneToMany(targetEntity="CategoriaArticulo", mappedBy="categoria") 
     */
-    private $zapatos;
+    private $articulos;
     
 }

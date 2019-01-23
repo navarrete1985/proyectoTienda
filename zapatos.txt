@@ -9,7 +9,7 @@ indicando el número deseado. Una vez que se hayan añadido todos los pares de
 zapatos deseados se debe poder concluir el proceso de compra. Para tramitar la
 compra deberemos darnos de alta o iniciar la sesión. Para finalizar la compra
 introduciremos nuestro número de tarjeta, su fecha de validez y el cvv.
-
+79879877987
 Para facilitar la búsqueda de zapatos, deberemos ofrecer una serie de filtros y
 de condiciones de búsqueda, que permitan crear un listado paginado a medida de
 las condiciones especificadas.

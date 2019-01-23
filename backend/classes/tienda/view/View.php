@@ -11,6 +11,8 @@ class View {
 
     function __construct(Model $model) {
         $this->model = $model;
+        $this->getModel()->set('twigFolder', 'twigtemplates/admintemplate');
+        $this->getModel()->set('twigFile', '_index.twig');
     }
     
     function getModel() {
@@ -18,7 +20,9 @@ class View {
     }
 
     function render($accion) {
-        $datos = $this->getModel()->getViewData();
-        return Util::varDump($datos);
+        $data = $this->getModel()->getViewData();
+        $loader = new \Twig_Loader_Filesystem($data['twigFolder']);
+        $twig = new \Twig_Environment($loader);
+        return $twig->render($data['twigFile'], $data);
     }
 }
