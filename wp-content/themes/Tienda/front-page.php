@@ -90,8 +90,8 @@
 			<div class="container">
 				<div class="inner-header">
 					<a class="inner-brand" href="index.html">
-						<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" />
-						<img class="brand-light" src="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" />
+						<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" />
+						<img class="brand-light" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" />
 					</a>
 				</div>
 				<div class="header-nav-toogle">
@@ -101,7 +101,10 @@
 						<span></span>
 					</a>
 				</div>
-
+<?php
+				get_template_part('templates/nav','front');
+?>				
+<!--
 				<div class="inner-navigation">
 					<ul id="menu-additional-menu" class="">
 						<li id="menu-item-315" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-315">
@@ -115,12 +118,13 @@
 						</li>
 					</ul>
 				</div>
+-->				
 			</div>
 		</header>
 <!-- Header end-->
 
 		<div class="wrapper">
-			<section class="module-header full-height parallax bg-light bg-light-30" data-background="<?php echo bloginfo('template_directory') .'/wp-content/uploads/2017/05/module-21.jpg'?>"><div class="container"><div class="row"><div class="col-sm-12"><h1 class="h3 font-alt">James Vortex</h1><h1 class="h4 font-alt">Professional Photographer</h1></div></div></div>
+			<section class="module-header full-height parallax bg-light bg-light-30" data-background="<?php echo bloginfo('template_directory') .'/img/uploads/2017/05/module-21.jpg'?>"><div class="container"><div class="row"><div class="col-sm-12"><h1 class="h3 font-alt">James Vortex</h1><h1 class="h4 font-alt">Professional Photographer</h1></div></div></div>
 			</section>
 <!-- Portfolio-->
 			<section class="module portfolio-section">
@@ -165,7 +169,7 @@
 	<!-- Portfolio single page-->
 					<div id="post-91" class="category_14 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
 						<div class="portfolio-wrapper">
-							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/img-1-308x640.jpg';?>"></div>
+							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-1-308x640.jpg';?>"></div>
 							<div class="portfolio-overlay"></div>
 							<div class="portfolio-caption font-alt">
 								<h6 class="portfolio-title">The Deep Surface</h6>
@@ -178,7 +182,7 @@
 	<!-- Portfolio single page-->
 					<div id="post-90" class="category_15 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
 						<div class="portfolio-wrapper">
-							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/img-2.jpg';?>"></div>
+							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-2.jpg';?>"></div>
 							<div class="portfolio-overlay"></div>
 							<div class="portfolio-caption font-alt">
 								<h6 class="portfolio-title">Fresh Fruits Company</h6>
@@ -191,7 +195,7 @@
 	<!-- Portfolio single page-->
 					<div id="post-89" class="category_15 default portfolio-item post-89 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
 						<div class="portfolio-wrapper">
-							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/img-3.jpg';?>"></div>
+							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-3.jpg';?>"></div>
 							<div class="portfolio-overlay"></div>
 							<div class="portfolio-caption font-alt">
 								<h6 class="portfolio-title">Micheal Debuis</h6>
@@ -204,7 +208,7 @@
 	<!-- Portfolio single page-->
 					<div id="post-88" class="category_15 default portfolio-item post-88 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
 						<div class="portfolio-wrapper">
-							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/img-4.jpg';?>"></div>
+							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-4.jpg';?>"></div>
 							<div class="portfolio-overlay"></div>
 							<div class="portfolio-caption font-alt">
 								<h6 class="portfolio-title">Greedy Emperor</h6>
@@ -217,7 +221,7 @@
 	<!-- Portfolio single page-->
 					<div id="post-87" class="category_15 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
 						<div class="portfolio-wrapper">
-							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/img-5.jpg';?>"></div>
+							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-5.jpg';?>"></div>
 							<div class="portfolio-overlay"></div>
 							<div class="portfolio-caption font-alt">
 								<h6 class="portfolio-title">Bluetooth Speaker</h6>
@@ -230,7 +234,7 @@
 	<!-- Portfolio single page-->
 					<div id="post-86" class="category_14 category_16 category_17 large portfolio-item post-86 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding fw-portfolio-category-photo fw-portfolio-category-web">
 						<div class="portfolio-wrapper">
-							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/img-6-640x640.jpg';?>"></div>
+							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-6-640x640.jpg';?>"></div>
 							<div class="portfolio-overlay"></div>
 							<div class="portfolio-caption font-alt">
 								<h6 class="portfolio-title">Drawing Inspiration</h6>
@@ -243,7 +247,7 @@
 	<!-- Portfolio single page-->
 					<div id="post-85" class="category_15 category_16 category_17 wide portfolio-item post-85 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design fw-portfolio-category-photo fw-portfolio-category-web">
 						<div class="portfolio-wrapper">
-							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/wp-content/uploads/2017/05/img-7-640x308.jpg';?>"></div>
+							<div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-7-640x308.jpg';?>"></div>
 							<div class="portfolio-overlay"></div>
 							<div class="portfolio-caption font-alt">
 								<h6 class="portfolio-title">Uncomplicated Beauty</h6>
