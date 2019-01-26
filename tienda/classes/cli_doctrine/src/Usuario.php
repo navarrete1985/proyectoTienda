@@ -1,43 +1,68 @@
-<?php
-//id, fecha, usuario, tarjeta, fechavalidez, cvv
-
-namespace izv\data;
+ <?php
+//id, nombre, correo, apellidos, alias, direccion, activo, rol, fechaalta, clave (pedidos)
 
 /**
- * @Entity @Table(name="pedido")
+ * @Entity @Table(name="usuario")
  */
-class Pedido {
+class Usuario {
 
     /**
      * @Id
      * @Column(type="integer") @GeneratedValue
      */
     private $id;
-
-    /**
-     * @Column(type="datetime", nullable=false)
-     */
-    private $fecha;
     
     /**
-     * @ManyToOne(targetEntity="Usuario", inversedBy="pedidos")
-     * @JoinColumn(name="idusuario", referencedColumnName="id", nullable=false)
-    */
-    private $usuario;
+     * @Column(type="string", length=30, nullable=false)
+     */
+    private $nombre;
     
     /**
-     * @Column(type="string", length=16, nullable=false)
+     * @Column(type="string", length=60, nullable=false, unique=true)
      */
-    private $tarjeta;
+    private $correo;
     
     /**
-     * @Column(type="string", length=5, nullable=false)
+     * @Column(type="string", length=60, nullable=false)
      */
-    private $fechavalidez;
+    private $apellidos;
     
     /**
-     * @Column(type="string", length=3, nullable=false)
+     * @Column(type="string", length=30, nullable=true, unique=true)
      */
-    private $cvv;
+    private $alias;
+    
+    /**
+     * @Column(type="string", length=255, nullable=false)
+     */
+    private $direccion;
+    
+    /**
+     * @Column(type="boolean", nullable=false, precision=1, options={"default" : 0})
+     */
+    private $activo = 0;
+    
+    /**
+     * @Column(type="boolean", nullable=false, precision=1, options={"default" : 0})
+     */
+    private $rol = 0;
+    
+    /**
+     * @Column(type="date", nullable=false)
+     */
+    private $fechaalta;
+    
+    /**
+     * @Column(type="string", length=255, nullable=false)
+     */
+    private $clave;
+    
+    
+    
+    /*-------------------------------------RELACIONES--------------------------*/
+    /** 
+     * @OneToMany(targetEntity="Pedido", mappedBy="usuario") 
+     */
+    private $pedidos;
     
 }

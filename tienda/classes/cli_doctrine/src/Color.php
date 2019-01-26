@@ -1,6 +1,6 @@
 <?php
 /*
-id, imgsrc, nombre
+id, imgsrc, nombre, articulos
 */
 
 /**
@@ -20,7 +20,7 @@ class CategoriaArticulo {
     private $imgsrc;
     
     /**
-     * @Column(type="string", legth=30)
+     * @Column(type="string", legth=50)
      */
     private $nombre;
     
@@ -28,5 +28,10 @@ class CategoriaArticulo {
      * @OneToMany(targetEntity="ColorArticulo", mappedBy="color")
      */
     private $articulos;
+    
+    /**
+     * @OneToMany(targetEntity="Detalle", mappedBy="color")
+     */
+    private $detalles;
     
 }

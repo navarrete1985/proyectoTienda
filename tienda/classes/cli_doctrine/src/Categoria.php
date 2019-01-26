@@ -1,6 +1,6 @@
 <?php
 /*
-id, nombre
+id, nombre, articulos
 */
 
 /**
