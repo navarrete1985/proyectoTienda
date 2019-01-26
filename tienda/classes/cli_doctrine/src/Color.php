@@ -6,7 +6,7 @@ id, imgsrc, nombre, articulos
 /**
  * @Entity @Table(name="color")
  **/
-class CategoriaArticulo {
+class Color {
 
     /**
      * @Id
