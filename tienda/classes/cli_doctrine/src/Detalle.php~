@@ -4,7 +4,7 @@
 
 /**
  * @Entity @Table(name="detalle",
- *  uniqueConstraints={@UniqueConstraint(name="detart", columns={"idpedido", "idarticulo", idcolor})})
+ *  uniqueConstraints={@UniqueConstraint(name="detart", columns={"idpedido", "idarticulo", "idcolor"})})
  */
 class Detalle {
 
@@ -38,7 +38,7 @@ class Detalle {
     
     /**
      * @ManyToOne(targetEntity="Articulo", inversedBy="detalles")
-     * @JoinColumn(name="idzapato", referencedColumnName="id", nullable=false)
+     * @JoinColumn(name="idarticulo", referencedColumnName="id", nullable=false)
     */
     private $articulo;
     

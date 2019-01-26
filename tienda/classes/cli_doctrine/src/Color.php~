@@ -15,12 +15,12 @@ class Color {
     private $id;
 
     /**
-     * @Column(type="string", legth=255, nullable=false)
+     * @Column(type="string", length=255, nullable=false)
      */
     private $imgsrc;
     
     /**
-     * @Column(type="string", legth=50)
+     * @Column(type="string", length=50)
      */
     private $nombre;
     

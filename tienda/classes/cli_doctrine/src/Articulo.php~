@@ -23,7 +23,7 @@ class Articulo {
     private $marca;
     
     /**
-     * @Column(type="string", legth=100, nullable=true)
+     * @Column(type="string", length=100, nullable=true)
      */
     private $modelo;
     
@@ -95,12 +95,12 @@ class Articulo {
     private $temporada;
     
     /**
-     * @Column(type="string", nullable=true, legth=50)
+     * @Column(type="string", nullable=true, length=50)
      */
     private $formatacon;
     
     /**
-     * @Column(type="string", nullable=true, legth=50)
+     * @Column(type="string", nullable=true, length=50)
      */
     private $puntera;
     
@@ -121,7 +121,7 @@ class Articulo {
     private $profundo;
     
     /**
-     * @Column(type="string", nullable=true, legth=50)
+     * @Column(type="string", nullable=true, length=50)
      */
     private $coleccion;
     

@@ -1,7 +1,7 @@
 <?php
-//id, nombre
-
-namespace izv\data;
+/*
+id, nombre, articulos
+*/
 
 /**
  * @Entity @Table(name="destinatario")
@@ -15,13 +15,13 @@ class Destinatario {
     private $id;
     
     /**
-     * @Column(type="string", length=50, unique=true, nullable=false)
+     * @Column(type="string", nullable=false, length=50)
      */
     private $nombre;
     
-    /** 
-     * @OneToMany(targetEntity="Zapato", mappedBy="destinatario") 
-    */
-    private $zapatos;
-    
+    /**
+     * @OneToMany(targetEntity="DestinatarioArticulo", mappedBy="destinatario")
+     */
+    private $articulos;
+
 }
