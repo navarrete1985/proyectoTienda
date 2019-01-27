@@ -63,6 +63,10 @@ add_action('wp_enqueue_scripts','my_theme_scripts');
 
 add_action('wp_enqueue_scripts','scriptAbout');
 
+// Soporte para la imágen destacada
+
+add_theme_support('post-thumbnails');
+
 
 
 

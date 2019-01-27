@@ -46,15 +46,15 @@
 <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f275-p269-o1" />
 <input type="hidden" name="_wpnonce" value="a9c8616586" />
 </div>
-<p><span class="wpcf7-form-control-wrap user-name"><input type="text" name="user-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name*" /></span><br />
-<span class="wpcf7-form-control-wrap email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="E-mail*" /></span><br />
-<span class="wpcf7-form-control-wrap message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message*"></textarea></span><br />
-<input type="submit" value="Submit" class="wpcf7-form-control wpcf7-submit btn-block" /></p>
+<p><span class="wpcf7-form-control-wrap user-name"><input type="text" name="user-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Nombre*" /></span><br />
+<span class="wpcf7-form-control-wrap email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Correo*" /></span><br />
+<span class="wpcf7-form-control-wrap message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Mensaje*"></textarea></span><br />
+<input type="submit" value="enviar" class="wpcf7-form-control wpcf7-submit btn-block" /></p>
 <div class="wpcf7-response-output wpcf7-display-none"></div></form></div><div class="fw-divider-space" style="margin-top: 40px;"></div></div>
 <div class="col-sm-4">
-	<div class="icon-box icon-box-left icon-exist"><div class="icon-box-icon" style="height: 28px;"><span class="icon icon-basic-paperplane"></span></div><div class="icon-box-title"><h5 class="font-alt">Say Hello</h5></div><div class="icon-box-content"><p>Email: info@domain.com<br />
-Phone: +1 234 567 89 10</p></div></div><div class="fw-divider-space" style="margin-top: 80px;"></div><div class="icon-box icon-box-left icon-exist"><div class="icon-box-icon" style="height: 28px;"><span class="icon icon-basic-map"></span></div><div class="icon-box-title"><h5 class="font-alt">Where to Meet</h5></div><div class="icon-box-content"><p>Vortex Company<br />
-23 Greate Street, Los Angeles, 12345 LS</p><p class="font-alt"><a target="_self" href="#map">Find us on map →</a></p></div></div></div>
+	<div class="icon-box icon-box-left icon-exist"><div class="icon-box-icon" style="height: 28px;"><span class="icon icon-basic-paperplane"></span></div><div class="icon-box-title"><h5 class="font-alt">Say Hello</h5></div><div class="icon-box-content"><p>Correo: info@domain.com<br />
+Teléfono: 958 89 38 50</p></div></div><div class="fw-divider-space" style="margin-top: 80px;"></div><div class="icon-box icon-box-left icon-exist"><div class="icon-box-icon" style="height: 28px;"><span class="icon icon-basic-map"></span></div><div class="icon-box-title"><h5 class="font-alt">Where to Meet</h5></div><div class="icon-box-content"><p>Vortex Company<br />
+23 Greate Street, Los Angeles, 12345 LS</p><p class="font-alt"><a target="_self" href="#map">Encuentranos en el mapa →</a></p></div></div></div>
 </div>
 
 </div>

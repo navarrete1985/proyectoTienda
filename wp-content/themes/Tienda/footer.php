@@ -1,3 +1,8 @@
+	
+				<!--¡¡¡No olvidar!!!-->
+	<!--Fotos de instagran -->
+	<!--Fin fotos de instagram-->
+	
 			<footer class="footer">
 				<div class="container">
 					<div class="row">

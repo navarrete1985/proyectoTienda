@@ -1,64 +1,83 @@
 <?php
     get_header();
 ?>
-		<!-- Preloader-->
-		<div class="page-loader">
-			<div class="loader">Loading...</div>
+		
+<!-- Preloader-->
+<div class="page-loader">
+	<div class="loader">Loading...</div>
+</div>
+<!-- Preloader end-->
+<!-- Menu-->
+<!-- Header-->
+<header class="header">
+	<div class="container">
+		<div class="inner-header">
+			<a class="inner-brand" href="../index.html">
+			<img class="brand-dark" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" /><img class="brand-light" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" /></a>
 		</div>
-		<!-- Preloader end-->
-
-		<!-- Menu-->
-
-		<!-- Header-->
-		<header class="header">
-			<div class="container">
-				<div class="inner-header">
-					<a class="inner-brand" href="../index.html">
-						<img class="brand-dark" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" /><img class="brand-light" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" />					</a>
-				</div>
-				<div class="header-nav-toogle">
-					<a class="show-menu-btn" href="#">
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
-				</div>
+		
+		<div class="header-nav-toogle">
+			<a class="show-menu-btn" href="#">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+		</div>
 
 	<?php
 		get_template_part('templates/nav','front');
+		the_post();
+        $post_id = $post->ID;
 	?>
-		<!-- Header end-->
+<!-- Header end-->
 
-		<div class="wrapper">
-<section class="module-header default-height parallax bg-dark bg-dark-30" data-background="../img/uploads/2017/05/blog-3.jpg"><div class="container"><div class="row"><div class="col-sm-12"><h1 class="h3 font-alt">The App of The Future</h1><ul class="post-meta font-alt"><li><span>May 11, 2017</span></li><li><a href="../category/design/index.html" rel="category tag">Design</a>, <a href="../category/sport/index.html" rel="category tag">Sport</a></li><li><a href="#comments">3 Comments</a></li></ul></div></div></div></section>
+<div class="wrapper">
+	<section class="module-header default-height parallax bg-dark bg-dark-30" data-background="../img/uploads/2017/05/blog-3.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="h3 font-alt">The App of The Future</h1>
+					<ul class="post-meta font-alt">
+						<li>
+							<span>May 11, 2017</span>
+						</li>
+						
+						<li><a href="../category/design/index.html" rel="category tag">Design</a> , <a href="../category/sport/index.html" rel="category tag">Sport</a></li>
+						<li><a href="#comments">3 Comments</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
 <!-- Single post-->
 <section class="module">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8">
-
-									<!-- Post-->
+					<!-- Post-->
 					<article id="post-15" class="post-15 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-sport tag-corporate tag-lifestyle tag-music tag-news tag-travel">
-												<div class="post-content">
+						<div class="post-content">
 							<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi.</p>
-<h4>Explore different options</h4>
-<p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar jean shorts fixie consequat flexitarian four loko.</p>
-<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
-<h4>Trends in UX Design</h4>
-<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi.</p>
-<ol>
-<li>Digital Strategy</li>
-<li>Software Development</li>
-<li>Interaction Design</li>
-</ol>
-<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
-<h4>The Exploration</h4>
-<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
-<p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar jean shorts fixie consequat flexitarian four loko.</p>
-													</div>
+							<h4>Explore different options</h4>
+							<p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar jean shorts fixie consequat flexitarian four loko.</p>
+							<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
+							<h4>Trends in UX Design</h4>
+							<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi.</p>
+							<ol>
+							<li>Digital Strategy</li>
+							<li>Software Development</li>
+							<li>Interaction Design</li>
+							</ol>
+							<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
+							<h4>The Exploration</h4>
+							<p>Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Seitan High Life reprehenderit consectetur cupidatat kogi about me. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
+							<p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar jean shorts fixie consequat flexitarian four loko.</p>
+						</div> <!--Fin de post-content-->
+						
 						<div class="post-footer">
 							<div class="post-tags">
-								 <a href="../tag/corporate/index.html" rel="tag">Corporate</a> <a href="../tag/lifestyle/index.html" rel="tag">Lifestyle</a> <a href="../tag/music/index.html" rel="tag">Music</a> <a href="../tag/news/index.html" rel="tag">News</a> <a href="../tag/travel/index.html" rel="tag">Travel</a> 							</div>
+								<a href="../tag/corporate/index.html" rel="tag">Corporate</a> <a href="../tag/lifestyle/index.html" rel="tag">Lifestyle</a> <a href="../tag/music/index.html" rel="tag">Music</a> <a href="../tag/news/index.html" rel="tag">News</a> <a href="../tag/travel/index.html" rel="tag">Travel</a> 							</div>
 						</div>
 					</article>
 					<!-- Post end-->

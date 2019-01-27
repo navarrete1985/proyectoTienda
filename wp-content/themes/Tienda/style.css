@@ -53,3 +53,17 @@
 @import url('assets/wp-content/plugins/unyson/framework/static/libs/typcn/css/typcnbb98.css?ver=2.6.16');
 @import url('assets/wp-content/plugins/unyson/framework/static/libs/unycon/unyconbb98.css?ver=2.6.16');
 @import url('assets/wp-content/themes/vortex/assets/css/linea-iconsbb98.css?ver=2.6.16');
+
+
+/* ----------------------   ESPECÍFICOS DE Post ----------------------------------------------------------- */
+@import url('assets/css/stylePost.css');
+
+/*            NUESTROS ESTILOS            */
+
+.leerMas{
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 40%;
+}
+

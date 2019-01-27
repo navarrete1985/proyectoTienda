@@ -61,7 +61,9 @@
 	<div class="counter font-alt"><div class="counter-number"><div class="counter-timer" data-from="0" data-to="340">0</div></div><div class="counter-title">Total Downloads</div></div></div>
 </div>
 
-</div></section><section class="module"><div class="container"><div class="row"><div class="col-sm-12"><div class="module-title"><h2 class="font-alt">Services</h2></div></div></div></div><div class="container"><div class="row">
+</div></section>
+
+<section class="module"><div class="container"><div class="row"><div class="col-sm-12"><div class="module-title"><h2 class="font-alt">Services</h2></div></div></div></div><div class="container"><div class="row">
 	<div class="col-sm-4">
 	<div class="fw-divider-space" style="margin-top: 40px;"></div><div class="icon-box text-center icon-exist"><div class="icon-box-icon" style="height: 42px;"><span class="icon icon-basic-pencil-ruler"></span></div><div class="icon-box-title"><h5 class="font-alt">Designs &amp; Interfaces</h5></div><div class="icon-box-content"><p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.</p></div></div></div>
 <div class="col-sm-4">
@@ -84,7 +86,9 @@
 	<div class="fw-divider-space" style="margin-top: 40px;"></div><div class="icon-box text-center icon-exist"><div class="icon-box-icon" style="height: 42px;"><span class="icon icon-basic-life-buoy"></span></div><div class="icon-box-title"><h5 class="font-alt">Dedicated Support</h5></div><div class="icon-box-content"><p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.</p></div></div></div>
 </div>
 
-</div></section><section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/module-3.jpg';?>"><div class="container"><div class="row">
+</div></section>
+
+<section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/module-3.jpg';?>"><div class="container"><div class="row">
 	<div class="col-sm-3">
 	</div>
 <div class="col-sm-6">

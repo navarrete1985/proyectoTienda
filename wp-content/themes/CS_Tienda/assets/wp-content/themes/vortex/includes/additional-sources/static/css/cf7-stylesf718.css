@@ -1,0 +1,92 @@
+div.wpcf7 form.wpcf7-form p {
+	margin-bottom: 0px;
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap {
+	display: block;
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-radio span.wpcf7-list-item,
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-checkbox span.wpcf7-list-item {
+	display: block;
+	margin-bottom: 10px;
+	margin-left: 0;
+	min-height: 20px;
+	padding-left: 0;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-radio span.wpcf7-list-item label,
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-checkbox span.wpcf7-list-item label {
+	padding-left: 0;
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-radio span.wpcf7-list-item input[type=radio],
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-checkbox span.wpcf7-list-item input[type=checkbox] {
+	margin-left: 0;
+	margin-top: 6px;
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-radio span.wpcf7-list-item input[type=radio] + span.wpcf7-list-item-label,
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-checkbox span.wpcf7-list-item input[type=checkbox] + span.wpcf7-list-item-label {
+	padding-left: 20px;
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-radio span.wpcf7-list-item span.wpcf7-list-item-label + input[type=radio],
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-checkbox span.wpcf7-list-item span.wpcf7-list-item-label + input[type=checkbox] {
+	margin-left: 9px;
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-radio span.wpcf7-list-item span.wpcf7-list-item-label::before,
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-checkbox span.wpcf7-list-item span.wpcf7-list-item-label::before,
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-radio span.wpcf7-list-item span.wpcf7-list-item-label::after,
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-checkbox span.wpcf7-list-item span.wpcf7-list-item-label::after {
+	content: "";
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-quiz-label {
+	display: block;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+div.wpcf7 form.wpcf7-form span[class*=acceptance] input[type=checkbox] {
+	position: static;
+	margin-left: 0px;
+}
+
+div.wpcf7 form.wpcf7-form span[class*=quiz] label {
+	margin-bottom: 0px
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap .wpcf7-not-valid {
+	border-color: #a94442;
+}
+
+div.wpcf7 form.wpcf7-form span.wpcf7-form-control-wrap span.wpcf7-not-valid-tip {
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	color: #a94442;
+}
+
+div.wpcf7 form.wpcf7-form div.wpcf7-validation-errors,
+div.wpcf7 form.wpcf7-form div.wpcf7-mail-sent-ok {
+	padding: 15px;
+	margin: 20px 0 20px 0;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+div.wpcf7 form.wpcf7-form div.wpcf7-validation-errors {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+div.wpcf7 form.wpcf7-form div.wpcf7-mail-sent-ok {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
