@@ -34,6 +34,12 @@ class LoginController extends Controller {
     }
     
     function activate(){
+        // $this->checkIsLogged();
+        $code = Reader::read('code');
+        $id = Reader::read('id');
+        $mailDecode = \Firebase\JWT\JWT::decode($code, App::JWT_KEY, array('HS256'));
+        $resutlt = $this->getModel()->activateUser($id, $mailDecode);
+        $this->sendRedirect('login/main?op=activate&result=' . $result);
         
     }
     
@@ -45,6 +51,8 @@ class LoginController extends Controller {
         
         if($this->getSesion()->isLogged() && $usuario->getRol()==true && $usuario->getActivo() == true ) {
             $user->setClave(Util::encriptar($usuario->getClave()));
+            $user->setActivo($user->getActivo()=='on'?1:0);
+            $user->setRol($user->getRol()=='on'?1:0);
             $result = $this->getModel()->createUser($user);
             header('Location: ' . App::BASE . 'index?op=login&r=session');      
        }

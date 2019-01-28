@@ -15,9 +15,6 @@ use tienda\tools\Bootstrap;
 
 class UserModel extends Model {
     
-    private $gestor;
-    private $bootstrap;
-    
     function __construct() {
         parent::__construct();
         
@@ -44,7 +41,11 @@ class UserModel extends Model {
     }
     
     function getAllUsers() {
-        
+      $bootstrap = new Bootstrap();
+      $gestor = $bootstrap->getEntityManager();
+      $usuario = new Usuario();
+      $usuario = $gestor->getRepository('\tienda\data\Usuario')->findAll();
+      return $usuario;   
     }
     
     function login($correo = '') {
@@ -68,6 +69,25 @@ class UserModel extends Model {
     
     function isEmailChanged($usuario) {
         
+    }
+    
+    function activateUser($id, $code) {
+        $result = 0;
+        $bootstrap = new Bootstrap();
+        $gestor = $bootstrap->getEntityManager();
+        $usuario = $gestor->getRepository('tienda\data\Usuario')->findOneBy(array('correo' => $code, 'id' => $id));
+        if ($usuario !== null) {
+            // echo Util::vaDump($usuario);
+            // exit();
+            $usuario->setActivo(1);
+            $gestor->persist($usuario);
+            $gestor->flush();
+            // $result = 1;
+            return 1;
+        }
+        // echo $result;
+        // exit();
+        return 0;
     }
     
 }

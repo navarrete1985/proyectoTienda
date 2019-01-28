@@ -1,0 +1,86 @@
+{% extends '_base.twig' %}
+{% block tablas %}
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<h3 class="page-title">Tables</h3>
+					<div class="row">
+						<div class="col-md-12">
+							<!-- BASIC TABLE -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Basic Table</h3>
+								</div>
+								<div class="panel-body">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Nombre</th>
+												<th>Correo</th>
+												<th>Apellidos</th>
+												<th>Alias</th>
+												<th>Direccion</th>
+												<th>Activo</th>
+												<th>Rol</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for item in data%}
+							                    <tr>
+							                      <td>
+							                        {{item.nombre}}
+							                      </td>
+							                      <td>
+							                        {{item.alias}}
+							                      </td>
+							                      <td>
+							                        {{item.correo}}
+							                      </td>
+							                        <td>
+							                          {% if item.activo == 1%}
+							                            <i class='fa fa-check-square-o text-success'></i>
+							                          {% else %}
+							                            <i class='fa fa-minus text-secondary'></i>
+							                          {% endif %}
+							                        </td>
+							                        <td>
+							                          {% if item.rol == 1%}
+							                            <i class='fa fa-check-square-o text-success'></i>
+							                          {% else %}
+							                            <i class='fa fa-minus text-secondary'></i>
+							                          {% endif %}
+							                        </td>
+							                        <td>
+							                          <a href='edit/main?id={{item.id}}'>
+							                            <button type='button' class='btn btn-inverse-info btn-rounded btn-sm'>
+							                              <i class='mdi mdi-file-document'></i>
+							                              Editar
+							                            </button>
+							                          </a>
+							                        </td>
+							                        <td>
+							                          <a href='index/dodelete?id={{item.id}}' class='borrar'>
+							                            <button type='button' class='btn btn-inverse-danger btn-rounded btn-sm'>
+							                              <i class='mdi mdi-alert-outline'></i>
+							                              Eliminar
+							                            </button>
+							                          </a>
+							                        </td>
+							                    </tr>
+							                  {% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- END BASIC TABLE -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+	
+{% endblock %}

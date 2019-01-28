@@ -30,4 +30,14 @@ class MainController extends Controller {
        }
     }
     
+    
+    function listadousuarios(){
+        if($this->getSesion()->isLogged()) {
+            $this->getModel()->set('twigFile', '_listadousuarios.twig');
+            
+            $this->getModel()->set('data', $this->getModel()->getAllUsers());
+            $usuario = $this->getSesion()->getLogin()->get();
+        }
+    }
+    
 }
