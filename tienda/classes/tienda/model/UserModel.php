@@ -6,26 +6,30 @@ use tienda\data\Usuario;
 use tienda\tools\Util;
 use tienda\tools\Bootstrap;
 
-// $bs = new Bootstrap();
-// $gestor = $bs->getEntityManager();
-
-// $destinatario = new \izv\data\Destinatario();
-// $destinatario->setNombre('niño');
-// $gestor->persist($destinatario);
-
 class UserModel extends Model {
+    
+    private $bootstrap,
+             $gestor;
     
     function __construct() {
         parent::__construct();
-        
+        $this->bootstrap = new Bootstrap();
+        $this->gestor = $this->bootstrap->getEntityManager();
     }
     
     function createUser(Usuario $usuario) {
-        $bootstrap = new Bootstrap();
-        $gestor = $bootstrap->getEntityManager();
-        $r = $gestor->persist($usuario);
-        $gestor->flush();
-        return $r;
+        $result = 1;
+        try {
+            $r = $this->gestor->persist($usuario);
+            $this->gestor->flush();
+            return $r;    
+        }catch(\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e){
+            $result = -1;
+        }    
+        catch(\Exception $e){
+            $result = 0;
+        }
+        return $result;
     }
     
     function updateUser(Usuario $usuario) {
@@ -41,28 +45,15 @@ class UserModel extends Model {
     }
     
     function getAllUsers() {
-      $bootstrap = new Bootstrap();
-      $gestor = $bootstrap->getEntityManager();
       $usuario = new Usuario();
-      $usuario = $gestor->getRepository('\tienda\data\Usuario')->findAll();
+      $usuario = $this->gestor->getRepository('\tienda\data\Usuario')->findAll();
       return $usuario;   
     }
     
     function login($correo = '') {
-        $bootstrap = new Bootstrap();
-        $gestor = $bootstrap->getEntityManager();
         $usuario = new Usuario();
         $usuario->setCorreo($correo);
-        // $usuario = $this->gestor->find('usuario',1)
-        // $query = $gestor->createQuery('SELECT * FROM \tienda\data\Usuario  WHERE correo = '.$correo);
-        // $users = $query->getResult();
-        // echo Util::varDump($users);
-        
-        
-        
-        $usuario = $gestor->getRepository('\tienda\data\Usuario')->findOneBy(array('correo' => $correo));
-
-        // return $usuarios[0];
+        $usuario = $this->gestor->getRepository('\tienda\data\Usuario')->findOneBy(array('correo' => $correo));
         return $usuario;
         
     }
@@ -71,22 +62,15 @@ class UserModel extends Model {
         
     }
     
-    function activateUser($id, $code) {
+    function activateUser($id, $correo) {
         $result = 0;
-        $bootstrap = new Bootstrap();
-        $gestor = $bootstrap->getEntityManager();
-        $usuario = $gestor->getRepository('tienda\data\Usuario')->findOneBy(array('correo' => $code, 'id' => $id));
+        $usuario = $this->gestor->getRepository('tienda\data\Usuario')->findOneBy(array('correo' => $correo, 'id' => $id));
         if ($usuario !== null) {
-            // echo Util::vaDump($usuario);
-            // exit();
             $usuario->setActivo(1);
-            $gestor->persist($usuario);
-            $gestor->flush();
-            // $result = 1;
+            $this->gestor->persist($usuario);
+            $this->gestor->flush();
             return 1;
         }
-        // echo $result;
-        // exit();
         return 0;
     }
     

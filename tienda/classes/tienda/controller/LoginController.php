@@ -24,23 +24,22 @@ class LoginController extends Controller {
     }
     
     function dosignup()  {
-        // $usuario = Reader::read('')
-        // $this->checkIsLogged();
         $usuario = Reader::readObject('tienda\data\Usuario');
         $usuario->setClave(Util::encriptar($usuario->getClave()));
         $result = $this->getModel()->createUser($usuario);
         Mail::sendActivation($usuario);
-        header('Location: ' . App::BASE . 'login/main?op=signup?r=' . $result);
+        $this->sendRedirect(($result == 1) ? 'login/main' : 'login/signup' . '?op=signup?r=' . $result);
     }
     
     function activate(){
-        // $this->checkIsLogged();
+        if ($this->sesion->isLogged()) {
+            $this->sendRedirect();
+        }
         $code = Reader::read('code');
         $id = Reader::read('id');
         $mailDecode = \Firebase\JWT\JWT::decode($code, App::JWT_KEY, array('HS256'));
-        $resutlt = $this->getModel()->activateUser($id, $mailDecode);
+        $result = $this->getModel()->activateUser($id, $mailDecode);
         $this->sendRedirect('login/main?op=activate&result=' . $result);
-        
     }
     
     function registeradmin(){
@@ -54,36 +53,29 @@ class LoginController extends Controller {
             $user->setActivo($user->getActivo()=='on'?1:0);
             $user->setRol($user->getRol()=='on'?1:0);
             $result = $this->getModel()->createUser($user);
-            header('Location: ' . App::BASE . 'index?op=login&r=session');      
+            $this->sendRedirect('index?op=login&r=session');
        }
     }
     
     function dologin() {
-        //1º control de sesión
         if($this->sesion->isLogged()) {
-            //5º producir resultado -> redirección
             header('Location: ' . App::BASE . 'index?op=login&r=session');
             exit();
         }
-
-        //2º lectura de datos
-        $usuario = Reader::readObject('tienda\data\Usuario');
-        //4º usar el modelo
-        $user = $this->getModel()->login($usuario->getCorreo());
-        // echo Util::varDump($user);
         
+        $usuario = Reader::readObject('tienda\data\Usuario');
+        $user = $this->getModel()->login($usuario->getCorreo());
         $resultado = Util::verificarClave($usuario->getClave(),$user->getClave());
+        
         if($usuario !== null && $usuario->getActivo()==0 && $resultado) {
             $user->setclave('');
             $this->getSesion()->login($user);
             $r = 1;
-        } else {
+        }else {
             $r = 0;
         }
         
-        //5º producir resultado -> redirección
-        header('Location: ' . App::BASE . 'index?op=login&r=' . $r);
-        exit();
+        $this->sendRedirect('index/main?op=login&resultado=' . $r);
     }
     
     function dologout() {

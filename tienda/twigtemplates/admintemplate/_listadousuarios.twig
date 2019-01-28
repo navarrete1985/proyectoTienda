@@ -5,14 +5,11 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Tables</h3>
+					<h3 class="page-title">USUARIOS</h3>
 					<div class="row">
 						<div class="col-md-12">
 							<!-- BASIC TABLE -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Basic Table</h3>
-								</div>
+							<div class="panel tabla">
 								<div class="panel-body">
 									<table class="table">
 										<thead>
@@ -24,6 +21,8 @@
 												<th>Direccion</th>
 												<th>Activo</th>
 												<th>Rol</th>
+												<th>Editar</th>
+												<th>Borrar</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -33,10 +32,16 @@
 							                        {{item.nombre}}
 							                      </td>
 							                      <td>
+							                        {{item.correo}}
+							                      </td>
+							                      <td>
+							                        {{item.apellidos}}
+							                      </td>
+							                      <td>
 							                        {{item.alias}}
 							                      </td>
 							                      <td>
-							                        {{item.correo}}
+							                        {{item.direccion}}
 							                      </td>
 							                        <td>
 							                          {% if item.activo == 1%}
