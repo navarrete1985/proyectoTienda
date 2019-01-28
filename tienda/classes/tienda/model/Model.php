@@ -2,8 +2,6 @@
 
 namespace tienda\model;
 
-// use tienda\database\Database;
-
 class Model {
 
     protected $db;
@@ -13,20 +11,12 @@ class Model {
         // $this->db = new Database();
     }
     
-    // function __destruct() {
-    //     $this->db->close();
-    // }
-    
     function get($name) {
         if(isset($this->datosVista[$name])) {
             return $this->datosVista[$name];
         }
         return null;
     }
-
-    // function getDatabase() {
-    //     return $this->db;
-    // }
 
     function getViewData() {
         return $this->datosVista;

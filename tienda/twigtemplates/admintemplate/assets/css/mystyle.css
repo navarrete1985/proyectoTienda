@@ -1,0 +1,17 @@
+.auth-box {
+    height: auto;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    position: relative;
+}
+
+.auth-box .left {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.auth-box .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

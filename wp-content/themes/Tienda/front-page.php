@@ -47,6 +47,7 @@
 		</header>
 <!-- Header end-->
 
+
 		<div class="wrapper">
 			<section class="module-header full-height parallax bg-light bg-light-30" data-background="<?php echo bloginfo('template_directory') .'/img/uploads/2017/05/module-21.jpg'?>">
 				<div class="container">
@@ -417,7 +418,7 @@
 						</h2>
 						<ul class="post-meta font-alt">
 							<li>
-								<span><?php the_date(); ?></span>
+								<span><?php echo get_the_date('d M y'); ?></span>
 							</li>
 						</ul>
 					</div>
@@ -438,9 +439,9 @@
 	</div> <!--Fin container-->
 	
 	<!--Comentaios u opiniones de los clientes-->
-
+</section>
 <div class="wrapper">
-<section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/assets/img/logos/art_logo.jpg';?>">
+<section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/module-3.jpg';?>">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3"></div>
@@ -498,7 +499,7 @@
 	
 	<!--Fotos de instagran (realmente va con el footer)-->
 	<!--Fin fotos de instagram-->
-</section>
+
 
 <!-- Fin Sección últimos post -->
 
