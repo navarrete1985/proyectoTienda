@@ -36,9 +36,9 @@
 			        $postImg;
 			?>
 				<li class="clearfix">
-					<div class="wi">
+					<div class="wi imgResponsive" style="background-image: url(<?php echo $postImg; ?>)">
 						<a href="../mini-california-sushi-cones/index.html">
-							<img width="150" height="150" src="<?php echo $postImg ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 150px) 100vw, 150px" />
+							<img width="100%" height="100%" src="<?php echo bloginfo('template_directory') . '/assets/img/dimensionadores/150x150.png';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 100%) 100%, 100%"/>
 						</a>
 					</div>
 					<div class="wb">

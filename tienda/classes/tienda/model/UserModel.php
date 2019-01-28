@@ -20,12 +20,15 @@ class UserModel extends Model {
     
     function __construct() {
         parent::__construct();
-        $bootstrap = new Bootstrap();
-        $gestor = $gestor->getEntityManager();
+        
     }
     
     function createUser(Usuario $usuario) {
-        
+        $bootstrap = new Bootstrap();
+        $gestor = $bootstrap->getEntityManager();
+        $r = $gestor->persist($usuario);
+        $gestor->flush();
+        return $r;
     }
     
     function updateUser(Usuario $usuario) {
@@ -45,9 +48,22 @@ class UserModel extends Model {
     }
     
     function login($correo = '') {
+        $bootstrap = new Bootstrap();
+        $gestor = $bootstrap->getEntityManager();
         $usuario = new Usuario();
-        $usuario = $this->gestor->find($correo);
-        echo $
+        $usuario->setCorreo($correo);
+        // $usuario = $this->gestor->find('usuario',1)
+        // $query = $gestor->createQuery('SELECT * FROM \tienda\data\Usuario  WHERE correo = '.$correo);
+        // $users = $query->getResult();
+        // echo Util::varDump($users);
+        
+        
+        
+        $usuario = $gestor->getRepository('\tienda\data\Usuario')->findOneBy(array('correo' => $correo));
+
+        // return $usuarios[0];
+        return $usuario;
+        
     }
     
     function isEmailChanged($usuario) {

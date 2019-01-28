@@ -5,6 +5,7 @@ namespace tienda\tools;
 use Doctrine\ORM\Tools\Setup,
     Doctrine\ORM\EntityManager,
     Doctrine\ORM\Configuration;
+    
 
 class Bootstrap {
     private $entityManager;

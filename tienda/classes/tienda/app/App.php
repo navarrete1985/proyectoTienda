@@ -4,23 +4,21 @@ namespace tienda\app;
 
 class App {
     
-    const HOST = 'localhost',
-            USER = 'simple',
-            PASSWORD = 'simple',
-            DATABASE = 'simple',
+    const DATABASE = 'mvc',
+          HOST = 'localhost',    
+          PASSWORD = 'mvc',
+          USER = 'mvc',
+          APPLICATION_NAME = 'CorreoWeb',
+          CLIENT_ID = '123796518941-ptgju1jq1a68ll00ek7harhmn8jps1ee.apps.googleusercontent.com',
+          CLIENT_SECRET = 'eACBhPjTM7Vvjg_m3eXodfJO',
+          EMAIL_ORIGIN = 'nacho.pena1985@gmail.com',
+          EMAIL_ALIAS = 'Proyecto usuarios MVC',
+          EMAIL_TOKEN_FILE = 'https://proyecto-tienda-navarrete.c9users.io/tienda/classes/tienda/email/token.conf',
+          
+          JWT_KEY = 'Proyecto_App_Usuarios',
+          USER_SESSION_KEY = 'App_users',
+          
+          SESSION_NAME = 'APP_MVC_SESSION',
             
-            EMAIL_ALIAS = "Curso DWES IZV",
-            EMAIL_APPLICATION_NAME = 'CorreoWeb2',
-            EMAIL_CLIENT_ID = '848266974673-n9gork5r94kprbk4p5jfululaj0hfq4a.apps.googleusercontent.com',
-            EMAIL_CLIENT_SECRET='eizWxpt5Bvo5Z45KWaiXbBOl',
-            EMAIL_ORIGIN = 'franciscojavierrivasbascon@gmail.com',
-           
-            JWT_KEY = 'Curso_DWES_IZV',
-            
-            EMAIL_TOKEN_FILE = 'https://proj1-ciscowow.c9users.io/proyecto/gmail/token.conf',
-            SESSION_NAME = 'DWES_SESSION',
-            
-            BASE= 'https://proyecto-tienda-navarrete.c9users.io/tienda/';
-            
-         
+          BASE= 'https://proyecto-tienda-navarrete.c9users.io/tienda/';
 }

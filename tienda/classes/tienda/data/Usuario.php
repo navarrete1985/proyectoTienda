@@ -1,10 +1,15 @@
 <?php
 namespace tienda\data;
+
+const ADMIN = 1,
+      NORMAL = 0;
+
+
 /**
  * @Entity @Table(name="usuario")
  */
 class Usuario {
-
+    
     use \tienda\common\Common;
 
     /**
@@ -72,6 +77,7 @@ class Usuario {
     public function __construct()
     {
         $this->pedidos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fechaalta = new \DateTime();
     }
 
     /**

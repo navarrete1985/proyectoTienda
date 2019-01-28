@@ -9,3 +9,9 @@
     margin: 0 auto;
     width: 40%;
 }
+
+.imgResponsive{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+}

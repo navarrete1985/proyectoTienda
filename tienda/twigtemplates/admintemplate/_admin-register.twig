@@ -1,0 +1,60 @@
+{% extends '_base.twig' %}
+{% block adminregister %}
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<form class="form-auth-small text-left" action="login/registeradmin">
+					    <div class="form-group">
+							<label for="signup-nombre" class="control-label">Nombre</label>
+							<input type="text" class="form-control" id="signup-nombre" placeholder="Introduzca su nombre" name='nombre'>
+						</div>
+						<div class="form-group">
+							<label for="signup-apellidos" class="control-label">Apellidos</label>
+							<input type="text" class="form-control" id="signup-apellidos" placeholder="Introduzca sus apellidos" name='apellidos'>
+						</div>
+						<div class="form-group">
+							<label for="signup-alias" class="control-label">Alias</label>
+							<input type="text" class="form-control" id="signup-alias" placeholder="Introduzca su alias" name='alias'>
+						</div>
+						<div class="form-group">
+							<label for="signup-direccion" class="control-label">Direccion</label>
+							<input type="text" class="form-control" id="signup-direccion" placeholder="Introduzca su dirección" name='direccion'>
+						</div>
+						<div class="form-group">
+							<label for="signup-email" class="control-label">Email</label>
+							<input type="email" class="form-control" id="signup-email" placeholder="Email" name='correo'>
+						</div>
+						<div class="form-group">
+							<label for="signup-password" class="control-label">Password</label>
+							<input type="password" class="form-control" id="signup-password" placeholder="Contraseña" name='clave'>
+						</div>
+						<div class="form-group">
+							<label for="signup-password2" class="control-label">Password</label>
+							<input type="password" class="form-control" id="signup-password2" placeholder="Repita Contraseña" name='clave2'>
+						</div>
+						<div class="form-check">
+				              <label class='form-check-label'>
+				                <input type="checkbox" class="form-check-input" id="activo" name='activo' >
+				                Activo
+				              </label>
+				            </div>
+				            <div class="form-group ">
+				              <label class='form-check-label'>
+				                <input type="checkbox" class="form-check-input" id="rol" name='rol'  }}>
+				                Admin
+				              </label>
+				            </div>
+						<button type="submit" class="btn btn-primary btn-lg btn-block">Nuevo usuario</button>
+						<div class="bottom">
+							<span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+	
+{% endblock %}

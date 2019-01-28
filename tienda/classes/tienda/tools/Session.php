@@ -44,7 +44,7 @@ class Session {
         return $this->get(self::USER);
     }
     
-    function login(\izv\data\Usuario $user) {
+    function login(\tienda\data\Usuario $user) {
         session_regenerate_id(true);
         return $this->set(self::USER, $user);
     }

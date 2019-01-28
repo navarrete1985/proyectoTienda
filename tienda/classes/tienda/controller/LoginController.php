@@ -15,14 +15,39 @@ class LoginController extends Controller {
     function main() {
         $this->getModel()->set('login', true);
         $this->getModel()->set('twigFile', '_login.twig');
+        
     }
     
     function signup() {
         $this->getModel()->set('twigFile', '_signup.twig');
+        
     }
     
     function dosignup()  {
+        // $usuario = Reader::read('')
+        // $this->checkIsLogged();
+        $usuario = Reader::readObject('tienda\data\Usuario');
+        $usuario->setClave(Util::encriptar($usuario->getClave()));
+        $result = $this->getModel()->createUser($usuario);
+        Mail::sendActivation($usuario);
+        header('Location: ' . App::BASE . 'login/main?op=signup?r=' . $result);
+    }
     
+    function activate(){
+        
+    }
+    
+    function registeradmin(){
+        $usuario = $this->getSesion()->getLogin();
+       
+        $user = Reader::readObject('tienda\data\Usuario');
+        $user->setClave(Util::encriptar($usuario->getClave()));
+        
+        if($this->getSesion()->isLogged() && $usuario->getRol()==true && $usuario->getActivo() == true ) {
+            $user->setClave(Util::encriptar($usuario->getClave()));
+            $result = $this->getModel()->createUser($user);
+            header('Location: ' . App::BASE . 'index?op=login&r=session');      
+       }
     }
     
     function dologin() {
@@ -36,10 +61,13 @@ class LoginController extends Controller {
         //2º lectura de datos
         $usuario = Reader::readObject('tienda\data\Usuario');
         //4º usar el modelo
-        $r = $this->getModel()->login($usuario->getCorreo());
-
-        if($r !== false && $r->getActivo()==1) {
-            $this->getSession()->login($r);
+        $user = $this->getModel()->login($usuario->getCorreo());
+        // echo Util::varDump($user);
+        
+        $resultado = Util::verificarClave($usuario->getClave(),$user->getClave());
+        if($usuario !== null && $usuario->getActivo()==0 && $resultado) {
+            $user->setclave('');
+            $this->getSesion()->login($user);
             $r = 1;
         } else {
             $r = 0;
@@ -52,9 +80,15 @@ class LoginController extends Controller {
     
     function dologout() {
         //haces logout y te envia a index
-        $this->getSession()->logout();
-        header('Location: ' . App::BASE . 'index');
+        $this->getSesion()->logout();
+        header('Location: ' . App::BASE . 'login');
         exit();
+    }
+    
+    function checkIsLogued() {
+        if ($this->sesion->isLogged()) {
+            $this->sendRedirect();
+        }
     }
     
 }
