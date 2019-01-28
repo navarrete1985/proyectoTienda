@@ -16,10 +16,12 @@ use tienda\tools\Bootstrap;
 class UserModel extends Model {
     
     private $gestor;
+    private $bootstrap;
     
     function __construct() {
         parent::__construct();
-        $gestor = new Bootstrap();
+        $bootstrap = new Bootstrap();
+        $gestor = $gestor->getEntityManager();
     }
     
     function createUser(Usuario $usuario) {
@@ -43,7 +45,9 @@ class UserModel extends Model {
     }
     
     function login($correo = '') {
-        
+        $usuario = new Usuario();
+        $usuario = $this->gestor->find($correo);
+        echo $
     }
     
     function isEmailChanged($usuario) {

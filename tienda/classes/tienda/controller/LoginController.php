@@ -22,12 +22,12 @@ class LoginController extends Controller {
     }
     
     function dosignup()  {
-        
+    
     }
     
     function dologin() {
         //1º control de sesión
-        if($this->getSession()->isLogged()) {
+        if($this->sesion->isLogged()) {
             //5º producir resultado -> redirección
             header('Location: ' . App::BASE . 'index?op=login&r=session');
             exit();
@@ -35,10 +35,8 @@ class LoginController extends Controller {
 
         //2º lectura de datos
         $usuario = Reader::readObject('tienda\data\Usuario');
-        echo Util::varDump($usuario);
-        exit();
         //4º usar el modelo
-        $r = $this->getModel()->login();
+        $r = $this->getModel()->login($usuario->getCorreo());
 
         if($r !== false && $r->getActivo()==1) {
             $this->getSession()->login($r);

@@ -12,6 +12,13 @@
 		</form>
 	</aside>
 	
+	<aside id="twitter-feed-2" class="widget twitter-feed-widget">
+		<!-- Sección para las redes sociales de la tienda (Borrar si no las ponemos)  -->
+		<div class="widget-title font-alt">Widgets</div>
+		<div class="twitter-feed" data-twitter="345170787868762112" data-number="2">
+		</div>
+	</aside>
+	
 	<!-- Hay que implementar el post destacado, ese es el loop general, tan solo para hacernos una idea y que no se nos olvide -->
 	<aside id="recent-posts-custom-2" class="widget widget_recent_entries_custom">
 		<div class="widget-title font-alt">Post destacado</div>
@@ -114,20 +121,18 @@
 	</aside>
 	
 	<aside id="twitter-feed-2" class="widget twitter-feed-widget">
-		<div class="widget-title font-alt">Twitter Feed</div>
-		<div class="twitter-feed" data-twitter="345170787868762112" data-number="2"></div>
+		<!-- Sección para las redes sociales de la tienda (Borrar si no las ponemos)  -->
+		<div class="widget-title font-alt">Descubre nuestro lado más social</div>
+		<div class="twitter-feed" data-twitter="345170787868762112" data-number="2">
+		</div>
 	</aside>
 	
 	<aside id="tag_cloud-2" class="widget widget_tag_cloud">
 		<div class="widget-title font-alt">Etiquetas</div>
 		<div class="tagcloud">
-			<a href='../tag/business/index.html' class='tag-link-7 tag-link-position-1' title='4 topics' style='font-size: 7px;'>Business</a>
-			<a href='../tag/corporate/index.html' class='tag-link-8 tag-link-position-2' title='4 topics' style='font-size: 7px;'>Corporate</a>
-			<a href='../tag/lifestyle/index.html' class='tag-link-9 tag-link-position-3' title='12 topics' style='font-size: 7px;'>Lifestyle</a>
-			<a href='../tag/music/index.html' class='tag-link-10 tag-link-position-4' title='12 topics' style='font-size: 7px;'>Music</a>
-			<a href='../tag/news/index.html' class='tag-link-11 tag-link-position-5' title='12 topics' style='font-size: 7px;'>News</a>
-			<a href='../tag/responsive/index.html' class='tag-link-12 tag-link-position-6' title='4 topics' style='font-size: 7px;'>Responsive</a>
-			<a href='../tag/travel/index.html' class='tag-link-13 tag-link-position-7' title='12 topics' style='font-size: 7px;'>Travel</a>
+			<?php 
+				the_tags( ' ', ' ', ' ');
+			?>
 		</div>
 	</aside>
 </div> 

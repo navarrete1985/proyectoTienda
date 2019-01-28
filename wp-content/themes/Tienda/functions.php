@@ -67,6 +67,25 @@ add_action('wp_enqueue_scripts','scriptAbout');
 
 add_theme_support('post-thumbnails');
 
+//Función para los tags
+
+function get_tag_id($tag) {
+    global $wpdb;
+    $link_id = $wpdb->get_var($wpdb->prepare("SELECT term_id FROM $wpdb->terms WHERE name =  %s", $tag));
+    return $link_id;
+}
+
+// Creación del área para los widgets
+
+function crea_area_widgets() {
+    $sidebarArgs = array(
+        'name' => 'Sidebar Widget',
+        'id' => 'sidebar',
+        'description' => 'Sidebar Widgets Area',
+        'before_widget' => '<div class="widget %2$s">',  //%2$s -> Hace que se mantenga la clase de widgets
+        'after_widget' => '</div>'
+    );
+}
 
 
 

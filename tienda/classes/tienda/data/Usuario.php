@@ -1,8 +1,5 @@
- <?php
-//id, nombre, correo, apellidos, alias, direccion, activo, rol, fechaalta, clave (pedidos)
-
+<?php
 namespace tienda\data;
-
 /**
  * @Entity @Table(name="usuario")
  */
