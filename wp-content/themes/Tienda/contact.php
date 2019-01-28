@@ -19,13 +19,6 @@
 					<a class="inner-brand" href="../index.html">
 						<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" /><img class="brand-light" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" />					</a>
 				</div>
-				<div class="header-nav-toogle">
-					<a class="show-menu-btn" href="#">
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
-				</div>
 <?php
 		get_template_part('templates/nav','front');
 ?>	

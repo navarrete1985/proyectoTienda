@@ -56,14 +56,7 @@
 
 
 /* ----------------------   ESPECÍFICOS DE Post ----------------------------------------------------------- */
-@import url('assets/css/stylePost.css');
+@import url('assets/css/style.css');
 
-/*            NUESTROS ESTILOS            */
 
-.leerMas{
-    background-color: white;
-    border: 1px solid black;
-    margin: 0 auto;
-    width: 40%;
-}
 

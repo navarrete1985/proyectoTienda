@@ -7,21 +7,13 @@
 	<div class="loader">Loading...</div>
 </div>
 <!-- Preloader end-->
-<!-- Menu-->
+
 <!-- Header-->
 <header class="header">
 	<div class="container">
 		<div class="inner-header">
 			<a class="inner-brand" href="../index.html">
 			<img class="brand-dark" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" /><img class="brand-light" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" /></a>
-		</div>
-		
-		<div class="header-nav-toogle">
-			<a class="show-menu-btn" href="#">
-				<span></span>
-				<span></span>
-				<span></span>
-			</a>
 		</div>
 
 	<?php
@@ -163,118 +155,114 @@
 			</div>
 
 			<!-- Sidebar-->
-			<div class="col-sm-4">
+			<?php get_sidebar() ?>
+	<!--		<div class="col-sm-4">
 				<div class="sidebar">
-						<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://vortex-wp.2the.me/">
-	<input type="search"
-		   class="search-field form-control"
-		   placeholder="Search..."
-		   value=""
-		   name="s" />
-	<button class="search-button" type="submit">
-		<span class="fa fa-search"></span>
-	</button>
-</form>
-</aside><aside id="categories-3" class="widget widget_categories"><div class="widget-title font-alt">Categories</div>		<ul>
-	<li class="cat-item cat-item-3"><a href="../category/branding/index.html" title="We know what we’re good at, and we stick to it">Branding</a>
-</li>
-	<li class="cat-item cat-item-4"><a href="../category/design/index.html" title="We know what we’re good at, and we stick to it">Design</a>
-</li>
-	<li class="cat-item cat-item-5"><a href="../category/printing/index.html" title="We know what we’re good at, and we stick to it">Printing</a>
-</li>
-	<li class="cat-item cat-item-6"><a href="../category/sport/index.html" title="We know what we’re good at, and we stick to it">Sport</a>
-</li>
-		</ul>
-</aside>
-			<aside id="recent-posts-custom-2" class="widget widget_recent_entries_custom">			<div class="widget-title font-alt">Recent Posts</div>			<ul>
-				
-					<li class="clearfix">
-
-													<div class="wi">
-								<a href="../mini-california-sushi-cones/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/blog-1-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-1-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-1-640x640.jpg 640w" sizes="(max-width: 150px) 100vw, 150px" /></a>
-							</div>
-							<div class="wb">
-						
-						<h6 class="font-alt">
-							<a href="../mini-california-sushi-cones/index.html">Mini California Sushi Cones</a>
-						</h6>
-													<span class="post-date">May 11, 2017</span>
-						
-													</div>
-						
-					</li>
-
-				
-					<li class="clearfix">
-
-													<div class="wi">
-								<a href="../minimalist-chandelier/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/blog-2-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2-768x768.jpg 768w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2-640x640.jpg 640w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2.jpg 825w" sizes="(max-width: 150px) 100vw, 150px" /></a>
-							</div>
-							<div class="wb">
-						
-						<h6 class="font-alt">
-							<a href="../minimalist-chandelier/index.html">Minimalist Chandelier</a>
-						</h6>
-													<span class="post-date">May 11, 2017</span>
-						
-													</div>
-						
-					</li>
-
-				
-					<li class="clearfix">
-
-													<div class="wi">
-								<a href="../cakes-inspiration/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/blog-3-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-3-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-3-640x640.jpg 640w" sizes="(max-width: 150px) 100vw, 150px" /></a>
-							</div>
-							<div class="wb">
-						
-						<h6 class="font-alt">
-							<a href="../cakes-inspiration/index.html">Cake&#8217;s Inspiration</a>
-						</h6>
-													<span class="post-date">May 11, 2017</span>
-						
-													</div>
-						
-					</li>
-
-							</ul>
-
-			</aside>
-				<aside id="recent-projects-2" class="widget widget_recent_works">				<div class="widget-title font-alt">Recent Projects</div>				<ul>
+					<aside id="search-2" class="widget widget_search">
+						<form role="search" method="get" class="search-form" action="http://vortex-wp.2the.me/">
+							<input type="search"
+								   class="search-field form-control"
+								   placeholder="Search..."
+								   value=""
+								   name="s" />
+							<button class="search-button" type="submit">
+								<span class="fa fa-search"></span>
+							</button>
+						</form>
+					</aside>
 					
-						<li><a href="../project/the-deep-surface/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-1-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /></a></li>
-
+					<aside id="categories-3" class="widget widget_categories">
+						<div class="widget-title font-alt">Categories</div>
+						<ul>
+							<li class="cat-item cat-item-3"><a href="../category/branding/index.html" title="We know what we’re good at, and we stick to it">Branding</a>
+							</li>
+							<li class="cat-item cat-item-4"><a href="../category/design/index.html" title="We know what we’re good at, and we stick to it">Design</a>
+							</li>
+							<li class="cat-item cat-item-5"><a href="../category/printing/index.html" title="We know what we’re good at, and we stick to it">Printing</a>
+							</li>
+							<li class="cat-item cat-item-6"><a href="../category/sport/index.html" title="We know what we’re good at, and we stick to it">Sport</a>
+							</li>
+						</ul>
+					</aside>
 					
-						<li><a href="../project/fresh-fruits-company/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-2-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-2-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-2-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-2.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-
+					<aside id="recent-posts-custom-2" class="widget widget_recent_entries_custom">
+						<div class="widget-title font-alt">Recent Posts</div>
+						<ul>
+							<li class="clearfix">
+								<div class="wi">
+									<a href="../mini-california-sushi-cones/index.html">
+										<img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/blog-1-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-1-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-1-640x640.jpg 640w" sizes="(max-width: 150px) 100vw, 150px" />
+									</a>
+								</div>
+								<div class="wb">
+									<h6 class="font-alt">
+										<a href="../mini-california-sushi-cones/index.html">Mini California Sushi Cones</a>
+									</h6>
+									<span class="post-date">May 11, 2017</span>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="wi">
+									<a href="../minimalist-chandelier/index.html">
+										<img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/blog-2-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2-768x768.jpg 768w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2-640x640.jpg 640w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-2.jpg 825w" sizes="(max-width: 150px) 100vw, 150px" />
+									</a>
+								</div>
+								<div class="wb">
+									<h6 class="font-alt">
+										<a href="../minimalist-chandelier/index.html">Minimalist Chandelier</a>
+									</h6>
+									<span class="post-date">May 11, 2017</span>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="wi">
+									<a href="../cakes-inspiration/index.html">
+										<img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/blog-3-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-3-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/blog-3-640x640.jpg 640w" sizes="(max-width: 150px) 100vw, 150px" />
+									</a>
+								</div>
+								<div class="wb">
+									<h6 class="font-alt">
+										<a href="../cakes-inspiration/index.html">Cake&#8217;s Inspiration</a>
+									</h6>
+									<span class="post-date">May 11, 2017</span>
+								</div>
+							</li>
+						</ul>
+					</aside>
 					
-						<li><a href="../project/micheal-debuis/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-3-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-3-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-3-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-3.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-
+					<aside id="recent-projects-2" class="widget widget_recent_works">				
+						<div class="widget-title font-alt">Recent Projects</div>
+						<ul>
+							<li><a href="../project/the-deep-surface/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-1-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /></a></li>
+							<li><a href="../project/fresh-fruits-company/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-2-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-2-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-2-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-2.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
+							<li><a href="../project/micheal-debuis/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-3-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-3-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-3-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-3.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
+							<li><a href="../project/greedy-emperor/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-4-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-4-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-4-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-4.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
+							<li><a href="../project/bluetooth-speaker/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-5-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-5-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-5-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-5.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
+							<li><a href="../project/drawing-inspiration/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-6-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6-768x768.jpg 768w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6-640x640.jpg 640w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6.jpg 830w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
+						</ul>
+					</aside>
 					
-						<li><a href="../project/greedy-emperor/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-4-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-4-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-4-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-4.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-
+					<aside id="twitter-feed-2" class="widget twitter-feed-widget">
+						<div class="widget-title font-alt">Twitter Feed</div>
+						<div class="twitter-feed" data-twitter="345170787868762112" data-number="2"></div>
+					</aside>
 					
-						<li><a href="../project/bluetooth-speaker/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-5-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-5-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-5-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-5.jpg 400w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-
-					
-						<li><a href="../project/drawing-inspiration/index.html"><img width="150" height="150" src="<?php echo blogingo('template_directory') . '/img/uploads/2017/05/img-6-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6-150x150.jpg 150w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6-300x300.jpg 300w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6-768x768.jpg 768w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6-640x640.jpg 640w, http://vortex-wp.2the.me/wp-content/uploads/2017/05/img-6.jpg 830w" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-
-									</ul>
-
-				</aside><aside id="twitter-feed-2" class="widget twitter-feed-widget"><div class="widget-title font-alt">Twitter Feed</div>
-		<div class="twitter-feed" data-twitter="345170787868762112" data-number="2"></div>
-
-		</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><div class="widget-title font-alt">Tags</div><div class="tagcloud"><a href='../tag/business/index.html' class='tag-link-7 tag-link-position-1' title='4 topics' style='font-size: 7px;'>Business</a>
-<a href='../tag/corporate/index.html' class='tag-link-8 tag-link-position-2' title='4 topics' style='font-size: 7px;'>Corporate</a>
-<a href='../tag/lifestyle/index.html' class='tag-link-9 tag-link-position-3' title='12 topics' style='font-size: 7px;'>Lifestyle</a>
-<a href='../tag/music/index.html' class='tag-link-10 tag-link-position-4' title='12 topics' style='font-size: 7px;'>Music</a>
-<a href='../tag/news/index.html' class='tag-link-11 tag-link-position-5' title='12 topics' style='font-size: 7px;'>News</a>
-<a href='../tag/responsive/index.html' class='tag-link-12 tag-link-position-6' title='4 topics' style='font-size: 7px;'>Responsive</a>
-<a href='../tag/travel/index.html' class='tag-link-13 tag-link-position-7' title='12 topics' style='font-size: 7px;'>Travel</a></div>
-</aside>				</div>
-			</div>
+					<aside id="tag_cloud-2" class="widget widget_tag_cloud">
+						<div class="widget-title font-alt">Tags</div>
+						<div class="tagcloud">
+							<a href='../tag/business/index.html' class='tag-link-7 tag-link-position-1' title='4 topics' style='font-size: 7px;'>Business</a>
+							<a href='../tag/corporate/index.html' class='tag-link-8 tag-link-position-2' title='4 topics' style='font-size: 7px;'>Corporate</a>
+							<a href='../tag/lifestyle/index.html' class='tag-link-9 tag-link-position-3' title='12 topics' style='font-size: 7px;'>Lifestyle</a>
+							<a href='../tag/music/index.html' class='tag-link-10 tag-link-position-4' title='12 topics' style='font-size: 7px;'>Music</a>
+							<a href='../tag/news/index.html' class='tag-link-11 tag-link-position-5' title='12 topics' style='font-size: 7px;'>News</a>
+							<a href='../tag/responsive/index.html' class='tag-link-12 tag-link-position-6' title='4 topics' style='font-size: 7px;'>Responsive</a>
+							<a href='../tag/travel/index.html' class='tag-link-13 tag-link-position-7' title='12 topics' style='font-size: 7px;'>Travel</a>
+						</div>
+					</aside>
+				</div>
+			</div>  -->
 			<!-- Sidebar end-->
+			
 		</div>
 	</div>
 </section>
