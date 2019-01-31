@@ -1,0 +1,338 @@
+/* Configure indents of comments. */
+.comment + .comment-respond {
+	padding: 25px 0 0;
+	margin: 25px 0 0;
+}
+
+
+
+/* Configure indents of pagination. */
+.comments-area ul.pagination.font-alt {
+	margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+	ul.pagination.font-alt {
+		margin-bottom: 60px;
+	}
+}
+
+
+
+/* Configure indents and size of navigation elements. */
+.navigation {
+	margin-bottom: 0px;
+}
+@media (max-width: 991px) {
+	.sub-menu {
+		max-height: none;
+	}
+}
+
+
+
+/* Configure colors of post meta in header. */
+.module-header .post-meta,
+.module-header .post-meta a {
+	color: inherit;
+}
+.module-header .post-meta {
+	opacity: 1;
+}
+.module-header.bg-dark .post-meta {
+	opacity: .7;
+}
+.module-header .post-meta a:hover,
+.module-header .post-meta a:focus {
+	color: #111;
+}
+.module-header.bg-dark .post-meta a:hover,
+.module-header.bg-dark .post-meta a:focus {
+	color: #ddd;
+}
+
+
+
+/* Configure position of containers in modules. */
+section.module .container,
+section.module-sm .container,
+section.module-header .container {
+	position: relative;
+	z-index: 2;
+}
+
+
+
+/* Setting indents in page header. */
+section.module-header h1,
+section.module-header ul,
+section.module-header p {
+	margin-top: 0px;
+	margin-bottom: 30px;
+}
+section.module-header.full-height h1,
+section.module-header.full-height ul,
+section.module-header.full-height p,
+section.module-slides h1,
+section.module-slides p {
+	margin-top: 0px;
+	margin-bottom: 50px;
+}
+section.module-header.full-height {
+	padding: 0;
+	min-height: 100vh;
+	height: 100vh;
+}
+@media (max-height: 568px) {
+	section.module-header.full-height h1,
+	section.module-header.full-height ul,
+	section.module-header.full-height p,
+	section.module-slides h1,
+	section.module-slides p {
+		margin-top: 0px;
+		margin-bottom: 30px;
+	}
+	section.module-header {
+		padding: 0;
+		min-height: 100vh;
+		height: 100vh;
+	}
+	section.module-header .container {
+		position: relative;
+		display: table;
+		height: 100%;
+		z-index: 2;
+	}
+	section.module-header .container > .row {
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+		height: 100%;
+	}
+}
+section.module-header .post-meta > li {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+section.module-header h1.h3.font-alt,
+section.module-slides h1.h3.font-alt,
+section.module-header h1.h4.font-alt,
+section.module-slides h1.h4.font-alt {
+	line-height: 1.6;
+}
+
+
+
+/* Display the slide even if it is a single. */
+section.module-slides .single-slide {
+	opacity: 1 !important;
+}
+
+
+
+/* Configure indents of portfolio section. */
+section.module-header + section.module.portfolio-section,
+section.module-slides + section.module.portfolio-section{
+	padding-top: 140px;
+}
+@media (min-width: 768px) {
+	section.module.portfolio-section {
+		padding-top: 170px;
+	}
+}
+
+
+
+/* Configure overlay when hover team member item. */
+.team-item:hover .team-preview img {
+	opacity: 1;
+}
+.team-item .team-preview:before {
+	background: rgba(255, 255, 255, .5);
+}
+.bg-dark .team-item .team-preview:before {
+	background: rgba(34, 34, 34, .5);
+}
+.bg-dark .team-item .team-preview {
+	border-color: rgba(238, 238, 238, .25);
+}
+.team-item .team-preview:before {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	content: "";
+	left: 0;
+	top: 0;
+	opacity: 0;
+	-webkit-transition: all .3s cubic-bezier(.3, .1, .58, 1);
+			transition: all .3s cubic-bezier(.3, .1, .58, 1);
+}
+.team-item:hover .team-preview:before {
+	opacity: 1;
+	-webkit-transition: all .3s cubic-bezier(.3, .1, .58, 1);
+			transition: all .3s cubic-bezier(.3, .1, .58, 1);
+}
+
+
+
+/* Configure colors of team member social. */
+.team-content-social ul > li > a:hover,
+.bg-dark .team-content-social ul > li > a:hover {
+	color: #111;
+}
+
+
+
+/* Configure position and hover effects of clients items. */
+.clients-grid {
+	border: 0;
+	border-left: 1px solid #eee;
+	padding-bottom: 1px;
+}
+.bg-dark .clients-grid {
+	border-color: #bbb;
+}
+.bg-dark.bg-dark-60 .clients-grid {
+	border-color: #ccc;
+}
+.clients-grid .client-item img {
+	max-height: 75px;
+}
+.clients-grid .client-item,
+.clients-grid .client-item:last-child {
+	min-height: 176px;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	margin-bottom: -1px;
+	padding: 50px 9px;
+	width: auto;
+	min-width: 16.66666667%;
+	background: rgba(255, 255, 255, .5);
+}
+.bg-dark .clients-grid .client-item,
+.bg-dark .clients-grid .client-item:last-child {
+	border-color: #bbb;
+}
+.bg-dark.bg-dark-60 .clients-grid .client-item,
+.bg-dark.bg-dark-60 .clients-grid .client-item:last-child {
+	border-color: #ccc;
+}
+.clients-grid .client-item:hover,
+.clients-grid .client-item:last-child:hover {
+	background-color: rgba(0, 0, 0, .05);
+}
+.bg-dark .clients-grid .client-item:hover,
+.bg-dark .clients-grid .client-item:last-child:hover {
+	background-color: rgba(255, 255, 255, .6);
+}
+@media (max-width: 767px) {
+	.clients-grid .client-item,
+	.clients-grid .client-item:last-child {
+		width: 100%;
+	}
+}
+
+
+
+/* Configure indents of pricing tables. */
+.pricing-wrapper {
+	margin: 0 0 30px;
+	padding: 0;
+}
+.pricing-header {
+	padding: 20px;
+}
+.pricing-footer {
+	padding: 0 0 20px;
+}
+.pricing-features {
+	font-size: 12px;
+	padding: 0 10px;
+}
+.pricing-popular .pricing-header {
+	padding: 40px 20px;
+}
+.pricing-wrapper.pricing-popular {
+	margin-top: -20px;
+}
+@media (max-width: 767px) {
+	.pricing-wrapper.pricing-popular {
+		margin-top: 0;
+	}
+}
+
+
+
+/* Configure indents of icon boxes. */
+.icon-box.text-left .icon-box-icon,
+.icon-box.text-left .icon-box-title {
+	text-align: left;
+}
+.icon-box.text-center .icon-box-icon,
+.icon-box.text-center .icon-box-title {
+	text-align: center;
+}
+.icon-box.text-right .icon-box-icon,
+.icon-box.text-right .icon-box-title {
+	text-align: right;
+}
+.icon-box {
+	position: static;
+	padding: 0;
+}
+.icon-box.icon-box-left.icon-exist {
+	position: relative;
+	padding-left: 55px;
+}
+
+
+
+/* Configure colors of icon boxes. */
+.bg-dark .icon-box-icon,
+.bg-dark .icon-box-left .icon-box-icon {
+	color: #fff;
+}
+
+
+
+/* Configure indents of footer items. */
+footer .row {
+	margin-bottom: 50px;
+}
+footer .row:last-child {
+	margin-bottom: 0px;
+}
+
+
+
+/* Configure width of post items in the entries widget. */
+.widget_recent_entries_custom ul li {
+	width: 100%;
+}
+
+
+
+/* Configure indents of comments area in the single post and page. */
+.comments-area,
+.comments-area .comment-list {
+	padding: 0;
+}
+@media (max-width: 767px) {
+	.comments-area {
+		padding: 0 0 60px;
+	}
+}
+section.page-comments-area .comments-area :last-child {
+	margin-bottom: 0 !important;
+}
+section.page-comments-area .comments-area {
+	padding-bottom: 0 !important;
+}
+
+
+
+/* Complement the Unyson iframe style to correctly display the jarallax video. */
+div[id*=jarallax-container] iframe[id*=VideoWorker] {
+	max-width: none;
+}

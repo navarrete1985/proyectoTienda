@@ -78,7 +78,7 @@
 				<div class="fw-divider-space" style="margin-top: 40px;"></div>
 				<div class="icon-box text-center icon-exist">
 					<div class="icon-box-icon" style="height: 42px;">
-						<span class="icon icon-basic-chronometer"></span>
+						<span class="icon icon-basic-clockwise"></span>
 					</div>
 					<div class="icon-box-title">
 						<h5 class="font-alt">Envío en 24H</h5>
@@ -93,7 +93,7 @@
 				<div class="fw-divider-space" style="margin-top: 40px;"></div>
 				<div class="icon-box text-center icon-exist">
 					<div class="icon-box-icon" style="height: 42px;">
-						<span class="icon icon-basic-gear"></span>
+						<span class="icon icon-basic-star"></span>
 					</div>
 					<div class="icon-box-title">
 						<h5 class="font-alt">Devolución Gratuíta</h5>
@@ -109,7 +109,7 @@
 				<div class="fw-divider-space" style="margin-top: 40px;"></div>
 				<div class="icon-box text-center icon-exist">
 					<div class="icon-box-icon" style="height: 42px;">
-						<span class="icon icon-basic-laptop"></span>
+						<span class="icon icon-basic-lock"></span>
 					</div>
 					<div class="icon-box-title">
 						<h5 class="font-alt">Pago seguro</h5>
@@ -124,7 +124,7 @@
 				<div class="fw-divider-space" style="margin-top: 40px;"></div>
 				<div class="icon-box text-center icon-exist">
 					<div class="icon-box-icon" style="height: 42px;">
-						<span class="icon icon-basic-bolt"></span>
+						<span class="icon icon-basic-calendar"></span>
 					</div>
 					<div class="icon-box-title">
 						<h5 class="font-alt">15 Días de devolución</h5>
@@ -414,7 +414,7 @@
 
 					<div class="post-header">
 						<h2 class="post-title font-alt">
-							<a href="single.html"><?php the_title(); ?></a>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</h2>
 						<ul class="post-meta font-alt">
 							<li>

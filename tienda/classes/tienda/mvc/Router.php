@@ -11,6 +11,7 @@ class Router {
         $this->rutas = array(
             'index'     => new Route('UserModel', 'MainView' , 'MainController'),
             'login'     => new Route('UserModel', 'MainView', 'LoginController'),
+            'admin'     => new Route('UserModel', 'MainView' , 'AdminController'),
         );
     }
 

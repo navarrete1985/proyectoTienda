@@ -15,7 +15,6 @@ class LoginController extends Controller {
     function main() {
         $this->getModel()->set('login', true);
         $this->getModel()->set('twigFile', '_login.twig');
-        
     }
     
     function signup() {

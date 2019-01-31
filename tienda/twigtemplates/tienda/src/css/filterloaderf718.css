@@ -1,0 +1,42 @@
+div#loading-image.filter-loader {
+	background: #ddd;
+	position: absolute;
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	left: 50%;
+	top: 50%;
+	margin: -20px 0 0 -20px;
+	text-indent: -9999em;
+	border-radius: 100%;
+	-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+	-webkit-animation: ball-scale 1s 0s ease-in-out infinite;
+			animation: ball-scale 1s 0s ease-in-out infinite;
+}
+
+@-webkit-keyframes ball-scale {
+	0% {
+		-webkit-transform: scale(0);
+				transform: scale(0);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+				transform: scale(1);
+	}
+}
+
+@keyframes ball-scale {
+	0% {
+		-webkit-transform: scale(0);
+				transform: scale(0);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+				transform: scale(1);
+	}
+}
