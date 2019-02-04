@@ -1,11 +1,5 @@
 <!-- Posts-->
 <?php 
-    $args = array(
-    	'posts_per_page' => 8 //Mostrará 3 post por página
-    ); 
-    $custom_query = new WP_Query($args);
-    if ( $custom_query->have_posts() ): while ($custom_query->have_posts()): $custom_query->the_post(); 
-    
     // ¿Tenemos imagen destacada
     if(has_post_thumbnail() ) {
         $postImg = get_the_post_thumbnail_url();
@@ -26,15 +20,12 @@
 						</ul>
 					</div>
 					<div class="post-content">
-						<p class="justificado"><?php the_excerpt(); ?></p>
+						<?php the_excerpt(); ?>
 					</div>
 					<div class="post-more">
 						<a class="font-alt" href="<?php the_permalink(); ?>">Leer más &rarr;</a>
 					</div>
 				</article>
 			</div>
-<?php
-	endwhile; endif;
-	wp_reset_query();
-?>			
+		
 <!-- Posts end-->

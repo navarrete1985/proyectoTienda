@@ -61,7 +61,7 @@ add_action('wp_enqueue_scripts','my_theme_scripts');
         wp_enqueue_script('shortcode5');          
     }
 
-add_action('wp_enqueue_scripts','scriptAbout');
+    add_action('wp_enqueue_scripts','scriptAbout');
 
 // Soporte para la imágen destacada
 
@@ -88,7 +88,15 @@ function crea_area_widgets() {
 }
 
 
-
+/* -------------------   soporte consola  ------------------------------------*/
+    function enviar_consola($data) {
+        if (is_array($data)) {
+            $output = "<script> console.log ('Array pasado:". implode(', ', $data). "'); </script>"; 
+        }else {
+            $output = "<script> console.log ('Elemento pasado:". $data. "'); </script>"; 
+        }    
+        echo $output;
+    }   
 
 
 

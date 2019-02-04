@@ -422,7 +422,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="post-content justificado">
+					<div class="post-content justificado ">
 						<p><?php the_excerpt(); ?></p>
 					</div>
 					<div class="post-more">

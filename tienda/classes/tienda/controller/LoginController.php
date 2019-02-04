@@ -52,13 +52,13 @@ class LoginController extends Controller {
             $user->setActivo($user->getActivo()=='on'?1:0);
             $user->setRol($user->getRol()=='on'?1:0);
             $result = $this->getModel()->createUser($user);
-            $this->sendRedirect('index?op=login&r=session');
+            $this->sendRedirect('admin?op=login&r=session');
        }
     }
     
     function dologin() {
         if($this->sesion->isLogged()) {
-            header('Location: ' . App::BASE . 'index?op=login&r=session');
+            header('Location: ' . App::BASE . 'admin?op=login&r=session');
             exit();
         }
         
@@ -74,7 +74,7 @@ class LoginController extends Controller {
             $r = 0;
         }
         
-        $this->sendRedirect('index/main?op=login&resultado=' . $r);
+        $this->sendRedirect('admin/main?op=login&resultado=' . $r);
     }
     
     function dologout() {

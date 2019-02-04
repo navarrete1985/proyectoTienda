@@ -5,11 +5,11 @@ namespace tienda\view;
 use tienda\model\Model;
 use tienda\tools\Util;
 
-class MainView extends View {
+class AdminView extends View {
     
     function __construct(Model $model) {
         parent::__construct($model);
-        $this->getModel()->set('twigFolder', 'twigtemplates/tienda');
+        $this->getModel()->set('twigFolder', 'twigtemplates/admintemplate');
         $this->getModel()->set('twigFile', '_index.twig');
     }
 
