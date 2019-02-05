@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Vortex &#8211; Responsive Portfolio</title>
-	<meta name='robots' content='noindex,follow' />
-	<link rel='dns-prefetch' href='http://maps.googleapis.com/' />
-	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
 
-<!--
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex &#8211; Responsive Portfolio</title>
+    <meta name='robots' content='noindex,follow' />
+    <link rel='dns-prefetch' href='http://maps.googleapis.com/' />
+    <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+
+    <!--
 	<link rel='dns-prefetch' href='http://s.w.org/' />
 	<link rel="alternate" type="application/rss+xml" title="Vortex &raquo; Feed" href="feed/index.html" />
 	<link rel="alternate" type="application/rss+xml" title="Vortex &raquo; Comments Feed" href="comments/feed/index.html" />
@@ -48,16 +48,16 @@
 
 	<script type='text/javascript' src='wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
 	<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
--->			
+-->
 
-	<link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3Aregular%7CDosis%3Aregular%7CLibre+Baskerville%3Aitalic&amp;subset=vietnamese%2Cgreek%2Clatin-ext%2Cgreek-ext%2Ccyrillic-ext%2Ccyrillic%2Clatin&amp;ver=4.7.12' type='text/css' media='all' />
-    <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">   
-    
+    <link rel='stylesheet' id='google-fonts-css' href='https://fonts.googleapis.com/css?family=Open+Sans%3Aregular%7CDosis%3Aregular%7CLibre+Baskerville%3Aitalic&amp;subset=vietnamese%2Cgreek%2Clatin-ext%2Cgreek-ext%2Ccyrillic-ext%2Ccyrillic%2Clatin&amp;ver=4.7.12' type='text/css' media='all' />
+    <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
 
 </head>
-	<body class="home page-template page-template-includes page-template-extra-templates page-template-portfolio page-template-default page-template-includesextra-templatesportfoliodefault-php page page-id-115">
 
-<?php 
+<body class="home page-template page-template-includes page-template-extra-templates page-template-portfolio page-template-default page-template-includesextra-templatesportfoliodefault-php page page-id-115">
+
+    <?php 
 	wp_enqueue_script(jquery);              
     wp_head();                             
 ?>

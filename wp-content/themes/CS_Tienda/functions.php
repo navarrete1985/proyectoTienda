@@ -44,22 +44,22 @@ add_action('wp_enqueue_scripts','my_theme_scripts');
 
 /* -------------------   SCRIPT DE about.php Y contact.php  ------------------------------------*/
 
-    function scriptAbout() {
-        wp_register_script('shortcode1', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/js/coref718.js?ver=4.7.12', array('jquery'), null, true);
-        wp_enqueue_script('shortcode1'); 
+function scriptAbout() {
+    wp_register_script('shortcode1', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/js/coref718.js?ver=4.7.12', array('jquery'), null, true);
+    wp_enqueue_script('shortcode1'); 
 
-        wp_register_script('shortcode2', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/js/transitionf718.js?ver=4.7.12', array('jquery'), null, true);
-        wp_enqueue_script('shortcode2'); 
-        
-        wp_register_script('shortcode3', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/js/backgroundf718.js?ver=4.7.12', array('jquery'), null, true);
-        wp_enqueue_script('shortcode3');   
-        
-        wp_register_script('shortcode4', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/js/background.initf718.js?ver=4.7.12', array('jquery'), null, true);
-        wp_enqueue_script('shortcode4'); 
-        
-        wp_register_script('shortcode5', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/testimonials/static/js/jquery.carouFredSel-6.2.1-packedf718.js?ver=4.7.12', array('jquery'), null, true);
-        wp_enqueue_script('shortcode5');          
-    }
+    wp_register_script('shortcode2', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/js/transitionf718.js?ver=4.7.12', array('jquery'), null, true);
+    wp_enqueue_script('shortcode2'); 
+    
+    wp_register_script('shortcode3', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/js/backgroundf718.js?ver=4.7.12', array('jquery'), null, true);
+    wp_enqueue_script('shortcode3');   
+    
+    wp_register_script('shortcode4', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/js/background.initf718.js?ver=4.7.12', array('jquery'), null, true);
+    wp_enqueue_script('shortcode4'); 
+    
+    wp_register_script('shortcode5', get_template_directory_uri() . '/assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/testimonials/static/js/jquery.carouFredSel-6.2.1-packedf718.js?ver=4.7.12', array('jquery'), null, true);
+    wp_enqueue_script('shortcode5');          
+}
 
 add_action('wp_enqueue_scripts','scriptAbout');
 
