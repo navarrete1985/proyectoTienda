@@ -2,17 +2,17 @@
 
 namespace tienda\model;
 
-use tienda\tools\BoostrapSingleton;
+use tienda\tools\Bootstrap;
 
 class Model {
     
     protected $datosVista = array();
     
-    private $bootstrap,
-             $gestor;
+    protected $bootstrap,
+              $gestor;
     
     function __construct() {
-        $this->bootstrap = BoostrapSingleton::getInstance();
+        $this->bootstrap = Bootstrap::getInstance();
         $this->gestor = $this->bootstrap->getEntityManager();
     }
 

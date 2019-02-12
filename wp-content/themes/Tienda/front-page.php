@@ -226,7 +226,7 @@
                     <!-- Portfolio single page-->
                     <div id="post-91" class="category_14 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-1-308x640.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer5.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">The Deep Surface</h6>
@@ -235,12 +235,13 @@
                         </div>
                         <a class="portfolio-link" href="project/the-deep-surface/index.html"></a>
                     </div>
+                    
                     <!-- Portfolio single end-->
 
                     <!-- Portfolio single page-->
                     <div id="post-90" class="category_15 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-2.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer1.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Fresh Fruits Company</h6>
@@ -254,7 +255,7 @@
                     <!-- Portfolio single page-->
                     <div id="post-89" class="category_15 default portfolio-item post-89 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-3.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer2.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Micheal Debuis</h6>
@@ -268,7 +269,7 @@
                     <!-- Portfolio single page-->
                     <div id="post-88" class="category_15 default portfolio-item post-88 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-4.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer3.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Greedy Emperor</h6>
@@ -282,7 +283,7 @@
                     <!-- Portfolio single page-->
                     <div id="post-87" class="category_15 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-5.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer4.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Bluetooth Speaker</h6>
@@ -296,7 +297,7 @@
                     <!-- Portfolio single page-->
                     <div id="post-86" class="category_14 category_16 category_17 large portfolio-item post-86 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding fw-portfolio-category-photo fw-portfolio-category-web">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-6-640x640.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/complementos1.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Drawing Inspiration</h6>
@@ -306,11 +307,11 @@
                         <a class="portfolio-link" href="project/drawing-inspiration/index.html"></a>
                     </div>
                     <!-- Portfolio single end-->
-
+                    
                     <!-- Portfolio single page-->
-                    <div id="post-85" class="category_15 category_16 category_17 wide portfolio-item post-85 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design fw-portfolio-category-photo fw-portfolio-category-web">
+                    <div id="post-85" class="category_15 wide portfolio-item post-85 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design fw-portfolio-category-photo fw-portfolio-category-web">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-7-640x308.jpg';?>"></div>
+                            <div class="portfolio-img-wrap imgResponsive" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/hombre1.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Uncomplicated Beauty</h6>
@@ -320,6 +321,7 @@
                         <a class="portfolio-link" href="project/uncomplicated-beauty/index.html"></a>
                     </div>
                     <!-- Portfolio single end-->
+                
                 </div>
                 <!--Fin de row portfolio-->
                 <!-- Portfolio end-->

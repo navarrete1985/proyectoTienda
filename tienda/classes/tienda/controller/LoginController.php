@@ -64,17 +64,17 @@ class LoginController extends Controller {
         
         $usuario = Reader::readObject('tienda\data\Usuario');
         $user = $this->getModel()->login($usuario->getCorreo());
-        $resultado = Util::verificarClave($usuario->getClave(),$user->getClave());
         
-        if($usuario !== null && $usuario->getActivo()==0 && $resultado) {
-            $user->setclave('');
-            $this->getSesion()->login($user);
-            $r = 1;
-        }else {
-            $r = 0;
+        if ($user !== null) {
+            $resultado = Util::verificarClave($usuario->getClave(), $user->getClave());
+            
+            if($usuario !== null && $usuario->getActivo()==0 && $resultado) {
+                $user->setclave('');
+                $this->getSesion()->login($user);
+                $this->sendRedirect('admin/main?op=login&resultado=1');
+            }
         }
-        
-        $this->sendRedirect('admin/main?op=login&resultado=' . $r);
+        $this->sendRedirect('login/main?op=login&resultado=0');
     }
     
     function dologout() {

@@ -11,11 +11,7 @@ class UserModel extends Model {
     use \tienda\common\CrudUsuario;
     
     function login($correo = '') {
-        $usuario = new Usuario();
-        $usuario->setCorreo($correo);
-        $usuario = $this->gestor->getRepository('\tienda\data\Usuario')->findOneBy(array('correo' => $correo));
-        return $usuario;
-        
+        return $this->getUser(['correo' => $correo]);
     }
     
     function isEmailChanged($usuario) {
@@ -24,7 +20,7 @@ class UserModel extends Model {
     
     function activateUser($id, $correo) {
         $result = 0;
-        $usuario = $this->gestor->getRepository('tienda\data\Usuario')->findOneBy(array('correo' => $correo, 'id' => $id));
+        $usuario = $this->getUser(['correo' => $correo, 'id' => $id]);
         if ($usuario !== null) {
             $usuario->setActivo(1);
             $this->gestor->persist($usuario);

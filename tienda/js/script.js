@@ -4,8 +4,13 @@
 
     var aliasok = true;
     var emailok = false;
-    var usuario = null;
-
+    var usuario = null
+    var data = '';
+    var cosa= $( "p" ).click(function() {
+        data=cosa.attr(atributo)
+    });
+    console.log(data);
+    console.log(cosa)
     var genericAjax = function (url, data, type, callBack) {
         $.ajax({
             url: url,
@@ -27,9 +32,31 @@
     }
 
 
-    var getCiudades = function (pagina) {
-        genericAjax('ajax/listaciudades', {'pagina': pagina}, 'get', function(json) {
-            pintar(objeto);
+    var getListado = function () {
+            
+            switch(data) {
+                
+            case 'data-listar-usuario':
+                
+                genericAjax('ajax/listarUsuario', {'pagina': pagina}, 'get', function(json) {
+                pintar(objeto);
+                
+                break;
+                
+            case 'data-listar-usuarios':
+                
+                genericAjax('ajax/listar', {'pagina': pagina}, 'get', function(json) {
+                pintar(objeto);
+                
+                break;
+                
+            case 'data-listar-zapatos':
+                
+                genericAjax('ajax/listar', {'pagina': pagina}, 'get', function(json) {
+                pintar(objeto);
+                
+                 break;    
+            }
         });
     }
 
@@ -42,7 +69,6 @@
         return resutl;
     };
 
-
     var getBody = function (objeto) {
         let result = '<tr>';
         $.each(objeto, (key, value) => {
@@ -50,7 +76,6 @@
         });
         result += '</tr>';
         return resutl;
-    
     };
 
     var pintar = function (objeto) {
@@ -59,12 +84,12 @@
         $.each(objeto, function(key, value) {
             listaitems += getBody(value);
         });
+        
         $('.table_thead').empty();
         $('.table_thead').append(header);
         $('.table_body').empty();
         $('.table_body').append(header);
     }
-    
     
     $(document).ajaxStart(function () {
         console.log('pre shadow');
@@ -76,7 +101,15 @@
         $('#loading').hide();
     });
 
-
-    
+    // $('.onClickLista').on('click', function(){
+        
+    //     var parametros = {
+    //         usuarios        :  $(e.currentTarget).attr('data-listar-usuario'),
+    //         complementos    :  $(e.currentTarget).attr('data-listar-complementos'),
+    //         zapatos         :  $(e.currentTarget).attr('data-listar-zapatos'),
+    //         accion          :  'listar'
+    //     }    
+    //     genericAjax(url, parametros, "POST");
+    // })
 
 })();

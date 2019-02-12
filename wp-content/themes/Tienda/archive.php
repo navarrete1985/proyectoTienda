@@ -1,6 +1,6 @@
 <?php
     get_header();
-    the_post();
+
 ?>
 
     <!-- Header-->
@@ -34,18 +34,18 @@
 
 						          if ( is_category() ) {
 						              // visualizamos la descripción de la categoría
-						              $title_archives = 'Category Archives for:  '. '<span class="searchwords2">' . single_cat_title( '', false ) . ' </span>' ;
+						              $title_archives = 'Category Archives para:  '. '<span class="searchwords2">' . single_cat_title( '', false ) . ' </span>' ;
 
 						          } elseif ( is_tag() ) {
 						              // visualizamos la descripción del tag
-						              $title_archives = 'Tag Archives for:  ' .'<span class="searchwords2">' . single_tag_title( '', false ) . '</span>' ;
+						              $title_archives = 'Tag Archives para:  ' .'<span class="searchwords2">' . single_tag_title( '', false ) . '</span>' ;
 
 						          } elseif ( is_author() ) {
 						              /* accedemos al primer posts, de esta forma podemos acceder
 						               * al autor con el que estamos tratando, si es el caso
 						              */
 						              the_post();
-						              $title_archives = 'Author Archives for: ' . '<span class="vcard"><a class="url fn n searchwords" href="' 
+						              $title_archives = 'Author Archives para: ' . '<span class="vcard"><a class="url fn n searchwords" href="' 
 						              . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) 
 						              . '" rel="me">' . get_the_author() . '</a> </span>';
 						              /* Como hemos llamado a the_post() antes, necesitamos
@@ -71,7 +71,7 @@
             <section id="portada" class="module-header default-height parallax bg-light bg-light-60 bg-film bloqueflex" data-background="<?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <h1><?php echo $title_archives;?></h1>
+                        <h1 class="post-title font-alt"><?php echo $title_archives;?></h1>
                     </div>
                 </div>
             </section>
@@ -82,14 +82,14 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="header2">
-                                <h2><?php echo $results;?>&nbsp;ENCONTRADOS </h2>
+                                <h2 class="post-title font-alt h2_archive"><?php echo $results;?>&nbsp;<?= $results > 1 ? 'ENCONTRADOS' : 'ENCONTRADO' ?></h2>
                             </div>
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Fecha</th>
-                                        <th scope="col">Autor</th>
-                                        <th scope="col">Título</th>
+                                        <th scope="col" class="font-alt">Fecha</th>
+                                        <th scope="col" class="font-alt">Autor</th>
+                                        <th scope="col" class="font-alt">Título</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -113,7 +113,7 @@
         ?>
                                 <?php    
         } else {
-                echo 'No post founds ...';
+                echo 'No hay resultados';
             };
             //    wp_reset_postdata(); 
         ?>

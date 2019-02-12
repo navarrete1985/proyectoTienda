@@ -1,13 +1,12 @@
 <?php 
 
 namespace tienda\common;
+use tienda\data\Usuario;
 
 trait CrudUsuario {
     
     function getAllUsers() {
-      $usuario = new Usuario();
-      $usuario = $this->gestor->getRepository('\tienda\data\Usuario')->findAll();
-      return $usuario;   
+        return $this->gestor->getRepository('\tienda\data\Usuario')->findAll();
     }
     
     function createUser(Usuario $usuario) {
@@ -26,14 +25,23 @@ trait CrudUsuario {
     }
     
     function updateUser(Usuario $usuario) {
-        
+        $this->gestor->persist($usuario);
+        $this->gestor->flush();
+        return $usuario;
     }
     
     function deleteUser($id) {
-        
+        $usuario = $this->getUser($id);
+        $this->gestor->remove($usuario);
+        $this->gestor->flush();
+        return $usuario;
     }
     
-    function getUser($id) {
+    function getUser(array $data = ['id' => '']) {
+        return $this->gestor->getRepository('\tienda\data\Usuario')->findOneBy($data);
+    }
+    
+    function getUsers($filtro) {
         
     }
     
