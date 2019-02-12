@@ -3,19 +3,10 @@
     padding: 50px 0 !important;
 }
 
-blockquote {
-    border: none;
+#portada {
+    height: 55vh !important;
+    padding: auto 0 !important;
 }
-    blockquote > p {
-        color: #6E6E6E !important;
-    }
-    
-.excerptDest > p {
-    columns: 2;
-    column-gap: 2vw;
-    font-size: 1.125em;
-    font-family: 'Open Sans';     
-}    
 
 /***********************  Pagination  ****************************************/
     .nav-links {
@@ -77,3 +68,32 @@ blockquote {
             background-color: #A4A4A4;
             color: white;
         }
+        
+
+/************************* Plantilla Content.php ******************************/
+    .post-content > p {
+        text-align: justify;
+    }
+    
+    .excerptDest > p {
+        columns: 2;
+        column-gap: 2vw;
+        font-size: 1.125em;
+        font-family: 'Open Sans';     
+    }    
+    
+    
+/******************** Plantilla Content-Quote.php *****************************/
+    .wp-block-quote p {
+        font-size: 1.8em;
+        color: black;
+    }
+    
+    .wp-block-quote a {
+        font-size: 1.8em;
+        font-weight: bold;
+        font-style: italic;
+    } 
+        blockquote {
+            border: none !important;
+        } 

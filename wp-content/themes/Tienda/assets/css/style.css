@@ -52,8 +52,3 @@
         display: flex !important;
         flex-flow: column;
     }
-
-/*--------------------- Plantilla Content.php --------------------------------*/
-    .post-content > p {
-        text-align: justify;
-    }

@@ -2,15 +2,20 @@
 
 namespace tienda\model;
 
+use tienda\tools\BoostrapSingleton;
+
 class Model {
-
-    protected $db;
-    protected $datosVista = array();
-
-    function __construct() {
-        // $this->db = new Database();
-    }
     
+    protected $datosVista = array();
+    
+    private $bootstrap,
+             $gestor;
+    
+    function __construct() {
+        $this->bootstrap = BoostrapSingleton::getInstance();
+        $this->gestor = $this->bootstrap->getEntityManager();
+    }
+
     function get($name) {
         if(isset($this->datosVista[$name])) {
             return $this->datosVista[$name];
@@ -27,3 +32,4 @@ class Model {
         return $this;
     }
 }
+ 

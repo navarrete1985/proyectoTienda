@@ -8,47 +8,7 @@ use tienda\tools\Bootstrap;
 
 class UserModel extends Model {
     
-    private $bootstrap,
-             $gestor;
-    
-    function __construct() {
-        parent::__construct();
-        $this->bootstrap = new Bootstrap();
-        $this->gestor = $this->bootstrap->getEntityManager();
-    }
-    
-    function createUser(Usuario $usuario) {
-        $result = 1;
-        try {
-            $r = $this->gestor->persist($usuario);
-            $this->gestor->flush();
-            return $r;    
-        }catch(\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e){
-            $result = -1;
-        }    
-        catch(\Exception $e){
-            $result = 0;
-        }
-        return $result;
-    }
-    
-    function updateUser(Usuario $usuario) {
-        
-    }
-    
-    function deleteUser($id) {
-        
-    }
-    
-    function getUser($id) {
-        
-    }
-    
-    function getAllUsers() {
-      $usuario = new Usuario();
-      $usuario = $this->gestor->getRepository('\tienda\data\Usuario')->findAll();
-      return $usuario;   
-    }
+    use \tienda\common\CrudUsuario;
     
     function login($correo = '') {
         $usuario = new Usuario();

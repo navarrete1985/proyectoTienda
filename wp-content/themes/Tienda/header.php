@@ -56,9 +56,11 @@
     
 
 </head>
-	<body class="home page-template page-template-includes page-template-extra-templates page-template-portfolio page-template-default page-template-includesextra-templatesportfoliodefault-php page page-id-115">
+
 
 <?php 
 	wp_enqueue_script(jquery);              
     wp_head();                             
 ?>
+
+<body class="home page-template page-template-includes page-template-extra-templates page-template-portfolio page-template-default page-template-includesextra-templatesportfoliodefault-php page page-id-115">

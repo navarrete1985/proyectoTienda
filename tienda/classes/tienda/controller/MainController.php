@@ -12,7 +12,7 @@ class MainController extends Controller {
     
     function main() {
         // $this->checkIsLogged();
-        $this->getModel()->set('twigFile', 'product.twig');
+        $this->getModel()->set('twigFile', 'blog3-col.twig');
         // $usuario = $this->getSesion()->getLogin()->get();
     }
 }

@@ -66,7 +66,10 @@ class Articulo {
      */
     private $cierre;
     
-    
+    /**
+     * @Column(type="blob", nullable=true)
+     */
+    private $img;
     
     /*
                 -OTRA POSIBILIDAD PARA NO CONTEMPLAR EL STOCK COMO ENTIDAD-
@@ -176,6 +179,16 @@ class Articulo {
         $this->destinatarios = new \Doctrine\Common\Collections\ArrayCollection();
         $this->stocks = new \Doctrine\Common\Collections\ArrayCollection();
         $this->detalles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getImg() {
+        return $this->img;
+    }
+    
+    public function setImg($img) {
+        $this->img = $img;
+        
+        return $this;
     }
 
     /**

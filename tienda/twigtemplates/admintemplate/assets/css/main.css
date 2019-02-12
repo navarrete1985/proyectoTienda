@@ -58,6 +58,10 @@ footer {
 /********************
  * LAYOUT
  ********************/
+ .icon_img_zapato_tacon{
+   width:18px !important;
+   margin-right:15px !important;
+ }
 #wrapper .sidebar {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
