@@ -96,11 +96,11 @@
 						<li><a href="panels.twig" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
 						<li><a href="notifications.twig" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Usuarios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages" data-toggle="collapse" class="collapsed"><img class="icon_img_zapato_tacon" src="{{twigFolder}}/assets/img/icons/users.png"><span>Usuarios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="admin/adduser" class="">Añadir Usuario</a></li>
-									<li><a href="admin/listado-usuarios" class="onClickLista data-listar-usuario ">Listado Usuarios</a></li>
+									<li><a href="#" class="onClickLista" data-pagina='1' data-lista='usuario'>Listado Usuarios</a></li>
 									<li><a href="page-login.html" class="">Login</a></li>
 									<li><a href="page-login.html" class="">Login</a></li>
 									<li><a href="page-login.html" class="">Login</a></li>
@@ -120,7 +120,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Complementos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages3" data-toggle="collapse" class="collapsed"><img class="icon_img_zapato_tacon" src="{{twigFolder}}/assets/img/icons/woman-bag.png"> <span>Complementos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages3" class="collapse ">
 								<ul class="nav">
 									<li><a href="admin/addproduct" class="">Añadir complemento</a></li>
@@ -159,6 +159,7 @@
 	<script src="{{twigFolder}}/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 	<script src="{{twigFolder}}/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="{{twigFolder}}/assets/scripts/klorofil-common.js"></script>
+	<script src="{{twigFolder}}/assets/script.js" deferd></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	{#<script>#}
 	{#$(function() {#}

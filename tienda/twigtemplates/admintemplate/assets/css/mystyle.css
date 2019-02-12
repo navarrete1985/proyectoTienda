@@ -19,3 +19,7 @@
 .panel.tabla {
     overflow-x: auto !important;
 }
+
+.padding-panel {
+    padding: 40px 32px !important;
+}

@@ -31,5 +31,11 @@ class Model {
         $this->datosVista[$name] = $value;
         return $this;
     }
+    
+    function add(array $array) {
+        foreach($array as $indice => $valor) {
+            $this->set($indice, $valor);
+        }
+    }
 }
  

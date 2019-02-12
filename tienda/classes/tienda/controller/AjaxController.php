@@ -15,29 +15,34 @@ class AjaxController extends Controller {
     }
     
     function listarUsuario() {
-        $ordenes = [
-            'id' => '',
-            'nombre' => '',
-            'correo' => '',
-            'apellidos' => '',
-            'alias' => '',
-            'direccion' => '',
-            'activo' => '',
-            'rol' => '',
-            'fechaalta' => '',
-            'clave' => ''
-        ];
-        $pagina = Reader::read('pagina');
-        if($pagina === null || !is_numeric($pagina)) {
-            $pagina = 1;
-        }
-        $orden = Reader::read('orden');
-        if(!isset($ordenes[$orden])) {
-            $orden = 'nombre';
-        }
+        // $ordenes = [
+        //     'id' => '',
+        //     'nombre' => '',
+        //     'correo' => '',
+        //     'apellidos' => '',
+        //     'alias' => '',
+        //     'direccion' => '',
+        //     'activo' => '',
+        //     'rol' => '',
+        //     'fechaalta' => '',
+        //     'clave' => ''
+        // ];
+        // $pagina = Reader::read('pagina');
+        // if($pagina === null || !is_numeric($pagina)) {
+        //     $pagina = 1;
+        // }
+        // $orden = Reader::read('orden');
+        // if(!isset($ordenes[$orden])) {
+        //     $orden = 'nombre';
+        // }
         $r = $this->getModel()->getDoctrineUsuarios($pagina, $orden);
         $this->getModel()->add($r);
     }
     
+    
+    
+    
+
+
     
 }

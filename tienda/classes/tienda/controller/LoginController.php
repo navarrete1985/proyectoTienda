@@ -13,6 +13,9 @@ use tienda\tools\Mail;
 class LoginController extends Controller {
     
     function main() {
+        if ($this->sesion->isLogged()) {
+            $this->sendRedirect('admin/main');
+        }
         $this->getModel()->set('login', true);
         $this->getModel()->set('twigFile', '_login.twig');
     }
@@ -68,7 +71,7 @@ class LoginController extends Controller {
         if ($user !== null) {
             $resultado = Util::verificarClave($usuario->getClave(), $user->getClave());
             
-            if($usuario !== null && $usuario->getActivo()==0 && $resultado) {
+            if($usuario !== null && $user->getActivo() && $resultado) {
                 $user->setclave('');
                 $this->getSesion()->login($user);
                 $this->sendRedirect('admin/main?op=login&resultado=1');

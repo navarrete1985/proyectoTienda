@@ -12,7 +12,7 @@ class Router {
             'index'     => new Route('UserModel', 'MainView' , 'MainController'),
             'login'     => new Route('UserModel', 'AdminView', 'LoginController'),
             'admin'     => new Route('UserModel', 'AdminView' , 'AdminController'),
-            'ajax'      => new Route('CommonModel', 'AjaxView', 'AjaxController')
+            'ajax'      => new Route('AjaxModel', 'AjaxView', 'AjaxController')
         );
     }
 
