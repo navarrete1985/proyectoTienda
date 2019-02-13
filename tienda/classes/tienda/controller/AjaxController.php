@@ -34,9 +34,15 @@ class AjaxController extends Controller {
         // $orden = Reader::read('orden');
         // if(!isset($ordenes[$orden])) {
         //     $orden = 'nombre';
-        // }
-        $r = $this->getModel()->getDoctrineUsuarios($pagina, $orden);
-        $this->getModel()->add($r);
+        // }                                        //$pagina, $orden
+        $r = $this->getModel()->getDoctrineUsuarios();
+        $resultado = [];
+        foreach($r['usuario'] as $usuario) {
+            
+            $resultado[] = $usuario->getUnset(array('id','clave','fechaalta','pedidos',));
+        }
+        
+        $this->getModel()->add($resultado);
     }
     
     

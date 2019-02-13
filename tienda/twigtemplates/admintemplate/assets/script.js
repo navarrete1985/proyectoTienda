@@ -42,8 +42,9 @@
             case 'usuario':
                 
                 genericAjax('ajax/listarUsuario', {'pagina': pagina}, 'get', function(json) {
-                    pintar(objeto.usuario);
-                    procesarPaginas(json.paginas);
+                    console.log(json);
+                    pintar(json);
+
                 });
         
                 break;
@@ -66,11 +67,16 @@
 
     var getHeader = function (objeto) {
         let result = '<tr>';
-        $.each(objeto, (key, value) => {
-          result += '<td>' + objeto.key + '<td>'; 
-        });
+        console.log(objeto);
+        // $.each(objeto, (key, value) => {
+            var value = objeto[0];
+            $.each(value, (key2,value2) =>{
+                 result += '<td>' + key2 + '<td>'; 
+            });
+         
+        // });
         result += '</tr>';
-        return resutl;
+        return result;
     };
 
     var getBody = function (objeto) {
@@ -79,16 +85,17 @@
           result += '<td>' + value + '<td>'; 
         });
         result += '</tr>';
-        return resutl;
+        return result;
     };
 
     var pintar = function (objeto) {
         var listaitems = '';
         var header = getHeader(objeto);
-        $.each(objeto, function(key, value) {
+        $.each(objeto, (key, value)  =>{
             listaitems += getBody(value);
         });
-        var tabla = '<table class="table"></table>'
+        console.log(listaitems)
+        var tabla = '<table class="table"><thead class="table_thead"></thead><tbody class="table_body"></tbody></table>'
         $('.main').empty();
         $('.main').append(tabla);
         $('.table_thead').empty();

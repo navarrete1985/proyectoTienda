@@ -2,7 +2,7 @@
 
 namespace tienda\common;
 
-trait CrudCategotia {
+trait CrudCategoria {
     
     function getCategotias($filtro) {
         

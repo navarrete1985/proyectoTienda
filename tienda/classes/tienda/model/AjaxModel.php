@@ -15,8 +15,8 @@ class AjaxModel extends Model {
     use \tienda\common\CrudCategoria;
     use \tienda\common\CrudColor;
     use \tienda\common\CrudPedido;
-    
-    function getDoctrineUsuarios($pagina = 1, $orden = 'name', $limit = 10) {
+    // $pagina = 1, $orden = 'name', $limit = 10
+    function getDoctrineUsuarios() {
         // $gestor = $this->getDatabase();
         // $dql = 'select c from tienda\data\Usuario c where c.nombre < :nombre 
         // order by c.'. $orden .', c.nombre, c.correo, c.apellidos, c.alias,c.direccion,c.activo,c.rol,c.fechaalta ,c.id';
@@ -31,7 +31,7 @@ class AjaxModel extends Model {
         // foreach($paginator as $user) {
         //     $ciudades[] = $user->get();
         // }
-        return ['usuarios' => $this->getAll('Usuario')];
+        return ['usuario' => $this->getAll('Usuario')];
         
     }
 }
