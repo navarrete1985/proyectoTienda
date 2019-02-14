@@ -27,12 +27,19 @@ class AdminController extends Controller {
         $this->getModel()->set('twigFile', '_admin-register.twig');
         $usuario = $this->getSesion()->getLogin()->get();
     }
-    function addproduct(){
+    
+    function addzapatos(){
         $this->checkIsLogged();
-        $this->getModel()->set('twigFile', '_admin-registerproduct.twig');
+        $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
+        $this->getModel()->set('zapato', true);
         $usuario = $this->getSesion()->getLogin()->get();
     }
     
+    function addcomplementos(){
+        $this->checkIsLogged();
+        $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
+        $usuario = $this->getSesion()->getLogin()->get();
+    }
     
     function listadousuarios(){
         $this->checkIsLogged();    

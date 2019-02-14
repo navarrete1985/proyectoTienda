@@ -1,0 +1,245 @@
+{% extends '_base.twig' %}
+{% block adminregister %}
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<div class='row'>
+						<div class='col-md-6'>
+							{#-------CARTA DATOS PERSONALES--------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Datos Genéricos</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class='panel-body'>
+									<div class="form-group">
+										<label for="signup-referencia" class="control-label title">Referencia</label>
+										<input type="text" class="form-control" id="signup-referencia" placeholder="Introduzca referencia" name='referencia'>
+									</div>
+									<div class="form-group">
+										<label for="signup-marca" class="control-label title">Marca</label>
+										<input type="text" class="form-control" id="signup-marca" placeholder="Introduzca una marca" name='marca'>
+									</div>
+									<div class="form-group">
+										<label for="signup-modelo" class="control-label title">Modelo</label>
+										<input type="text" class="form-control" id="signup-modelo" placeholder="Introduzca modelo" name='modelo'>
+									</div>
+									<div class="form-group">
+										<label for="signup-precio" class="control-label title">Precio</label>
+										<input type="number" class="form-control" id="signup-precio" placeholder="Introduzca el precio del articulo" name='precio'>
+									</div>
+									<div class="form-group">
+										<label for="signup-paisfabricacion" class="control-label title">País fabricación</label>
+										<input type="text" class="form-control" id="signup-paisfabricacion" placeholder="Introduzca país fabricación" name='paisfabricacion'>
+									</div>
+								</div>
+							</div>
+							{#--------------FIN CARTA DATOS PERSONALES------------------#}
+							{#---------------------DATOS TÉCNICOS-----------------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Datos Técnicos</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class='panel-body'>
+									<div class="form-group">
+										<label for="signup-material" class="control-label title">Material</label>
+										<input type="text" class="form-control" id="signup-material" placeholder="Introduzca material" name='material'>
+									</div>
+									<div class="form-group">
+										<label for="signup-peso" class="control-label title">Peso</label>
+										<input type="number" class="form-control" id="signup-peso" placeholder="Peso" name='peso'>
+									</div>
+									<div class="form-group">
+										<label for="signup-estampado" class="control-label title">Estampado</label>
+										<input type="text" class="form-control" id="signup-estampado" placeholder="Estampado" name='estampado'>
+									</div>
+									{% if zapato %}
+										<div class="form-group">
+											<label for="signup-puntera" class="control-label title">Puntera</label>
+											<input type="text" class="form-control" id="signup-puntera" placeholder="Introduzca puntera" name='puntera'>
+										</div>
+										<div class="form-group">
+											<label for="signup-cierre" class="control-label title">Cierre</label>
+											<input type="text" class="form-control" id="signup-cierre" placeholder="Cierre" name='cierre'>
+										</div>
+										<div class="form-group">
+											<label for="signup-tipo" class="control-label title">Tipo</label>
+											<input type="number" class="form-control" id="signup-tipo" placeholder="Introduzca tipo" name='tipo'>
+										</div>
+										<div class="form-group">
+											<label for="signup-altura" class="control-label title">Altura</label>
+											<input type="number" class="form-control" id="signup-altura" placeholder="Introduzca altura" name='altura'>
+										</div>
+										<div class="form-group">
+											<label for="signup-temporada" class="control-label title">Temporada</label>
+											<input type="text" class="form-control" id="signup-temporada" placeholder="Introduzca temporada" name='temporada'>
+										</div>
+										
+										<div class="form-group">
+											<label for="signup-ftacon" class="control-label title">Forma Tacon</label>
+											<input type="text" class="form-control" id="signup-ftacon" placeholder="Forma tacon" name='ftacon'>
+										</div>
+									{% else %}
+										<div class="form-group">
+											<label for="signup-alto" class="control-label title">Alto</label>
+											<input type="number" class="form-control" id="signup-alto" placeholder="Introduzca alto" name='alto'>
+										</div>
+										<div class="form-group">
+											<label for="signup-ancho" class="control-label title">Ancho</label>
+											<input type="number" class="form-control" id="signup-ancho" placeholder="Introduzca ancho" name='ancho'>
+										</div>
+										<div class="form-group">
+											<label for="signup-profundo" class="control-label title">Profundo</label>
+											<input type="number" class="form-control" id="signup-profundo" placeholder="Introduzca profundo" name='profundo'>
+										</div>
+										<div class="form-group">
+											<label for="signup-coleccion" class="control-label title">Coleccion</label>
+											<input type="text" class="form-control" id="signup-coleccion" placeholder="Introduzca coleccion" name='coleccion'>
+										</div>
+										<div class="form-group">
+											<label for="signup-nbolsillos" class="control-label title">Numero de bolsillos</label>
+											<input type="number" class="form-control" id="signup-nbolsillos" placeholder="Numero de bolsillos" name='nbolsillos'>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+							{#----------------FIN CARTA DATOS TÉCNICOS------------------#}
+							
+							{#<div class="panel todo-list">#}
+							{#	<div class="panel-heading">#}
+							{#		<h3 class="panel-title">Datos Personales</h3>#}
+							{#		<div class="right">#}
+							{#			<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>#}
+							{#			<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
+							{#		</div>#}
+							{#	</div>#}
+							{#	<div class='panel-body'>#}
+							{#	</div>#}
+							{#</div>#}
+						</div>
+						<div class='col-md-6'>
+							{#---------------------CARTA IMAGEN DESTACADA----------------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Imagen Destacada</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class='panel-body'>
+									<input class='thumbnail hidden'>
+									<div class='container-flex-row justify-content-center'>
+										<div class='rectangle'>
+											<div class='image container-flex-column justify-content-center align-items-center'>
+												<a href='#' class='img-link'><i class="far fa-images"></i></a>
+											</div>
+										</div>
+									</div>
+									<p>
+										<a href='#' class='link-add-item'>Añadiri magen destacada del producto</a><br>
+										<span class="date">Imagen de previsualización del producto (sólamente puede haber una imagen destacada)</span>
+									</p>
+								</div>
+							</div>
+							{#----------------FIN DE CARTA IMAGEN DESTACADA------------------#}
+							{#---------------------------CARTA GALERÍA--------------------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Galería</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class='panel-body'>
+									<p>
+										<a href='#' class='link-add-item'>Añadiri magen</a><br>
+										<span class="date">Añade la galería de imagenes a mostrar del producto</span>
+									</p>
+									<div class='gallery'>
+										
+									</div>
+								</div>
+							</div>
+							{#-----------------------FIN CARTA GALERÍA------------------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Detalle</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class='panel-body'>
+									<div class="form-group">
+										<label for="signup-detalle" class="control-label title">Detalle</label>
+										<textarea type="" class="form-control" id="signup-detalle" placeholder="Descripcion" name='detalle' rows='8'></textarea>
+										<span class="date">Añade la descripción del producto que se verá al mostrar este</span>
+									</div>
+									
+									<div class="form-group">
+										<label for="signup-otrascaracteristicas" class="control-label title">Otras carecteristicas</label>
+										<textarea type="text" class="form-control" id="signup-otrascaracteristicas" placeholder="Introduzca otras caracteristicas" name='otrascaracteristicas' rows='8'></textarea>
+										<span class="date">Añade las características especiales del producto</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='col-md-12'>
+							{#-------CARTA CONTROL DE STOCK--------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Stock</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class='panel-body'>
+									<p>
+										<span class="title">Control de Inventario</span>
+										<span class="short-description">Añade el número de artículos de cada tipo que tiene disponible para la venta</span>
+										<span class="date"><a href='#'>Añadir nuevo artículo</a></span>
+									</p>
+									<hr>
+									<div class='wrapper-stock'>
+										<div class='row'>
+											<div class='col-md-3 col-sm-6 img-item-stock'>
+												<img></img>
+											</div>
+											<div class='col-md-3 img-item-stock'>
+												<img></img>
+											</div>
+											<div class='col-md-3 img-item-stock'>
+												<img></img>
+											</div>
+											<div class='col-md-3 img-item-stock'>
+												<img></img>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+{% endblock %}
+
+						{#<button type="button" class="btn btn-primary btn-lg btn-block">Nuevo articulo</button>#}
+						

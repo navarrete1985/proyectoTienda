@@ -23,9 +23,13 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="{{twigFolder}}/assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="{{twigFolder}}/assets/img/favicon.png">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+	{#-------------LOADER--------------#}
+	
 	<!-- WRAPPER -->
 	<div id="wrapper">
 		<!-- NAVBAR -->
@@ -111,7 +115,7 @@
 							<a href="#subPages2" data-toggle="collapse" class="collapsed"><img class="icon_img_zapato_tacon" src="{{twigFolder}}/assets/img/icons/high-heel.svg"><span>Zapatos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
 								<ul class="nav">
-									<li><a href="admin/addproduct" class="">Añadir zapato</a></li>
+									<li><a href="admin/addzapatos" class="">Añadir zapato</a></li>
 									<li><a href="admin/listado-zapatos" class="onClickLista data-listar-complementos ">Listado zapatos</a></li>
 									<li><a href="page-login.html" class="">Login</a></li>
 									<li><a href="page-login.html" class="">Login</a></li>
@@ -123,7 +127,7 @@
 							<a href="#subPages3" data-toggle="collapse" class="collapsed"><img class="icon_img_zapato_tacon" src="{{twigFolder}}/assets/img/icons/woman-bag.png"> <span>Complementos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages3" class="collapse ">
 								<ul class="nav">
-									<li><a href="admin/addproduct" class="">Añadir complemento</a></li>
+									<li><a href="admin/addcomplementos" class="">Añadir complemento</a></li>
 									<li><a href="admin/listado-complementos" class="onClickLista data-listar-complementos ">Listado complementos</a></li>
 									<li><a href="page-login.html" class="">Login</a></li>
 									<li><a href="page-login.html" class="">Login</a></li>
@@ -160,124 +164,6 @@
 	<script src="{{twigFolder}}/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="{{twigFolder}}/assets/scripts/klorofil-common.js"></script>
 	<script src="{{twigFolder}}/assets/script.js" deferd></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	{#<script>#}
-	{#$(function() {#}
-	{#	var data, options;#}
-
-	{#	data = {#}
-	{#		labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],#}
-	{#		series: [#}
-	{#			[23, 29, 24, 40, 25, 24, 35],#}
-	{#			[14, 25, 18, 34, 29, 38, 44],#}
-	{#		]#}
-	{#	};#}
-
-	{#	options = {#}
-	{#		height: 300,#}
-	{#		showArea: true,#}
-	{#		showLine: false,#}
-	{#		showPoint: false,#}
-	{#		fullWidth: true,#}
-	{#		axisX: {#}
-	{#			showGrid: false#}
-	{#		},#}
-	{#		lineSmooth: false,#}
-	{#	};#}
-
-	{#	new Chartist.Line('#headline-chart', data, options);#}
-
-
-
-	{#	data = {#}
-	{#		labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],#}
-	{#		series: [{#}
-	{#			name: 'series-real',#}
-	{#			data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],#}
-	{#		}, {#}
-	{#			name: 'series-projection',#}
-	{#			data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],#}
-	{#		}]#}
-	{#	};#}
-
-	{#	options = {#}
-	{#		fullWidth: true,#}
-	{#		lineSmooth: false,#}
-	{#		height: "270px",#}
-	{#		low: 0,#}
-	{#		high: 'auto',#}
-	{#		series: {#}
-	{#			'series-projection': {#}
-	{#				showArea: true,#}
-	{#				showPoint: false,#}
-	{#				showLine: false#}
-	{#			},#}
-	{#		},#}
-	{#		axisX: {#}
-	{#			showGrid: false,#}
-
-	{#		},#}
-	{#		axisY: {#}
-	{#			showGrid: false,#}
-	{#			onlyInteger: true,#}
-	{#			offset: 0,#}
-	{#		},#}
-	{#		chartPadding: {#}
-	{#			left: 20,#}
-	{#			right: 20#}
-	{#		}#}
-	{#	};#}
-
-	{#	new Chartist.Line('#visits-trends-chart', data, options);#}
-
-
-
-	{#	data = {#}
-	{#		labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],#}
-	{#		series: [#}
-	{#			[6384, 6342, 5437, 2764, 3958, 5068, 7654]#}
-	{#		]#}
-	{#	};#}
-
-	{#	options = {#}
-	{#		height: 300,#}
-	{#		axisX: {#}
-	{#			showGrid: false#}
-	{#		},#}
-	{#	};#}
-
-	{#	new Chartist.Bar('#visits-chart', data, options);#}
-
-
-
-	{#	var sysLoad = $('#system-load').easyPieChart({#}
-	{#		size: 130,#}
-	{#		barColor: function(percent) {#}
-	{#			return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";#}
-	{#		},#}
-	{#		trackColor: 'rgba(245, 245, 245, 0.8)',#}
-	{#		scaleColor: false,#}
-	{#		lineWidth: 5,#}
-	{#		lineCap: "square",#}
-	{#		animate: 800#}
-	{#	});#}
-
-		{#var updateInterval = 3000; #}
-
-	{#	setInterval(function() {#}
-	{#		var randomVal;#}
-	{#		randomVal = getRandomInt(0, 100);#}
-
-	{#		sysLoad.data('easyPieChart').update(randomVal);#}
-	{#		sysLoad.find('.percent').text(randomVal);#}
-	{#	}, updateInterval);#}
-
-	{#	function getRandomInt(min, max) {#}
-	{#		return Math.floor(Math.random() * (max - min + 1)) + min;#}
-	{#	}#}
-
-	{#});#}
-	{#</script>#}
 </body>
 
 </html>

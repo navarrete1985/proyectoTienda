@@ -1,19 +1,28 @@
 (function () {
 
     /* global $ */
-
     var aliasok = true;
     var emailok = false;
     var usuario = null
-    var data = "";    
+    var data = "";
+    
     $('.onClickLista').on('click', function(event){
         event.preventDefault();
         data = $(event.currentTarget).attr('data-lista');
         pagina = $(event.currentTarget).attr('data-pagina');
         getListado(data,pagina);
-    })
-    console.log(data);
-    console.log()
+    });
+    
+    $(document).ajaxStart(function () {
+        console.log('pre shadow');
+        $('#loading').show();
+    });
+
+    $(document).ajaxStop(function () {
+        console.log('post shadow');
+        $('#loading').hide();
+    });
+    
     var genericAjax = function (url, data, type, callBack) {
         $.ajax({
             url: url,
@@ -34,35 +43,26 @@
         });
     }
 
-
-    var getListado = function (data,pagina) {
-            
-            switch(data) {
-                
+    var getListado = function (data,pagina) {      
+        switch(data) {
             case 'usuario':
-                
                 genericAjax('ajax/listarUsuario', {'pagina': pagina}, 'get', function(json) {
                     console.log(json);
                     pintar(json);
-
                 });
-        
                 break;
             case 'complementos':
-                
                 genericAjax('ajax/listaciudades', {'pagina': pagina}, 'get', function(json) {
                     procesarCiudades(json.ciudades);
                     procesarPaginas(json.paginas);
                 });
                 break;
-                
             case 'zapatos':
-                
                 genericAjax('ajax/listar', {'pagina': pagina}, 'get', function(json) {
                     pintar(objeto);
                 });
-                 break;    
-            }
+                break;
+        }
     }
 
     var getHeader = function (objeto) {
@@ -70,14 +70,14 @@
         console.log(objeto);
         // $.each(objeto, (key, value) => {
             var value = objeto[0];
-            $.each(value, (key2,value2) =>{
+            $.each(value, (key2,value2) => {
                  result += '<td>' + key2 + '<td>'; 
             });
          
         // });
         result += '</tr>';
         return result;
-    };
+    }
 
     var getBody = function (objeto) {
         let result = '<tr>';
@@ -86,7 +86,7 @@
         });
         result += '</tr>';
         return result;
-    };
+    }
 
     var pintar = function (objeto) {
         var listaitems = '';
@@ -104,29 +104,7 @@
         $('.table_body').append(header);
     }
     
-    $(document).ajaxStart(function () {
-        console.log('pre shadow');
-        $('#loading').show();
-    });
-
-    $(document).ajaxStop(function () {
-        console.log('post shadow');
-        $('#loading').hide();
-    });
-
-    // $('.onClickLista').on('click', function(){
-        
-    //     var parametros = {
-    //         usuarios        :  $(e.currentTarget).attr('data-listar-usuario'),
-    //         complementos    :  $(e.currentTarget).attr('data-listar-complementos'),
-    //         zapatos         :  $(e.currentTarget).attr('data-listar-zapatos'),
-    //         accion          :  'listar'
-    //     }    
-    //     genericAjax(url, parametros, "POST");
-    // })
-    
-    
-        var procesarPaginas = function (paginas) {
+    var procesarPaginas = function (paginas) {
         var stringFirst = '<a href = "#" class = "btn btn-primary">' + paginas.primero + '</a>';
         var stringPrev  = '<a href = "#" class = "btn btn-primary">' + paginas.anterior + '</a>';
         var stringRange = '';
@@ -151,5 +129,15 @@
             e.preventDefault();
         });
     }
-
+    
+    // $('.onClickLista').on('click', function(){
+        
+    //     var parametros = {
+    //         usuarios        :  $(e.currentTarget).attr('data-listar-usuario'),
+    //         complementos    :  $(e.currentTarget).attr('data-listar-complementos'),
+    //         zapatos         :  $(e.currentTarget).attr('data-listar-zapatos'),
+    //         accion          :  'listar'
+    //     }    
+    //     genericAjax(url, parametros, "POST");
+    // })
 })();
