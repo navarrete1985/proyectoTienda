@@ -34,6 +34,7 @@ abstract class Controller {
             $this->sesion->logout();
             $this->sendRedirect('login/main');
         }
+        return true;
     }
     
     function getAlerts($usuario = null) {
@@ -61,6 +62,6 @@ abstract class Controller {
     }
     
     protected function __isAdmin() {
-        return $this->sesion->getLogin()->getAdministrador() == 1;
+        return $this->sesion->getLogin()->getRol() == 1;
     }
 }

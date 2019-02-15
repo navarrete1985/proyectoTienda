@@ -174,17 +174,6 @@
     
     }
     
-    
-    // $('.onClickLista').on('click', function(){
-        
-    //     var parametros = {
-    //         usuarios        :  $(e.currentTarget).attr('data-listar-usuario'),
-    //         complementos    :  $(e.currentTarget).attr('data-listar-complementos'),
-    //         zapatos         :  $(e.currentTarget).attr('data-listar-zapatos'),
-    //         accion          :  'listar'
-    //     }    
-    //     genericAjax(url, parametros, "POST");
-    // })
 })();
 
 (function() {

@@ -13,11 +13,11 @@ use tienda\tools\Mail;
 class AjaxController extends Controller {
     
     function main() {
-        // $this->checkIsAdmin();
+        $this->checkIsAdmin();
     }
     
     function listarUsuario() {
-        // $this->checkIsAdmin();
+        $this->checkIsAdmin();
         $ordenes = [
             'id' => '',
             'nombre' => '',
@@ -47,7 +47,7 @@ class AjaxController extends Controller {
     }
     
     function isavailable() {
-        // $this->checkIsAdmin();
+        $this->checkIsAdmin();
         $class = ucfirst(strtolower(Reader::read('class')));
         $key = Reader::read('key');
         $value = Reader::read('value');
@@ -56,7 +56,7 @@ class AjaxController extends Controller {
     }
     
     function adddata() {
-        // $this->checkIsAdmin();
+        $this->checkIsAdmin();
         $class = Reader::read('class');
         $obj = Reader::readObject(App::OBJECT[$class]);
         switch ($class) {

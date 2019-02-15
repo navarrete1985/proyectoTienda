@@ -5,7 +5,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<div class='row'>
+					<div class='row' id='form-container' data-class='producto'>
 						<div class='col-md-6'>
 							{#-------CARTA DATOS PERSONALES--------------#}
 							<div class="panel todo-list">
@@ -19,7 +19,7 @@
 								<div class='panel-body'>
 									<div class="form-group">
 										<label for="signup-referencia" class="control-label title">Referencia</label>
-										<input type="text" class="form-control" id="signup-referencia" placeholder="Introduzca referencia" name='referencia'>
+										<input type="text" class="form-control" id="signup-referencia" ajax-callBack placeholder="Introduzca referencia" name='referencia'>
 									</div>
 									<div class="form-group">
 										<label for="signup-marca" class="control-label title">Marca</label>
@@ -194,7 +194,7 @@
 								<div class='panel-body'>
 									<div class='row'>
 										<div class='col-md-6'>
-											<a href="#" class="btn btn-primary">Guardar Cambios</a>	
+											<a href="#" class="btn btn-primary submit">Guardar Cambios</a>	
 										</div>
 									</div>
 									<p>
@@ -214,7 +214,7 @@
 									</div>
 								</div>
 								<div class='panel-body'>
-									<input class='thumbnail hidden'>
+									<input type='file' class='thumbnail hidden'>
 									<div class='container-flex-row justify-content-center'>
 										<div class='rectangle'>
 											<div class='image container-flex-column justify-content-center align-items-center'>
@@ -223,7 +223,7 @@
 										</div>
 									</div>
 									<p>
-										<a href='#' class='link-add-item'>Añadiri magen destacada del producto</a><br>
+										<a href='#' class='link-add-item'>Añadir magen destacada del producto</a><br>
 										<span class="date">Imagen de previsualización del producto (sólamente puede haber una imagen destacada)</span>
 									</p>
 								</div>
