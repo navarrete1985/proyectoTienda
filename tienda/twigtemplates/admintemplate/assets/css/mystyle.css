@@ -197,3 +197,17 @@ td{
       padding-left: 40px !important;
 
 }
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    background-color: #588da7;
+}
+#pintarPaginas{
+    display: flex;
+    justify-content:center;
+}
+#pintarPaginas a{
+    margin:10px;
+}

@@ -6,7 +6,7 @@ class Pagination {
 
     private $page, $rpp, $total;
     
-    function __construct($total, $page = 1, $rpp = 5) {
+    function __construct($total, $page = 1, $rpp = 1) {
         $this->total = $total;
         $this->page = $page;
         $this->rpp = $rpp;

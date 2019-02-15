@@ -20,7 +20,7 @@ class AjaxModel extends Model {
     use \tienda\common\CrudColor;
     use \tienda\common\CrudPedido;
 
-    function getDoctrineUsuarios($pagina = 1, $orden = 'nombre', $limit = 5) {
+    function getDoctrineUsuarios($pagina = 1, $orden = 'nombre', $limit = 3) {
         
         $dql = 'select c from tienda\data\Usuario c where c.nombre < :nombre 
         order by c.'. $orden .', c.nombre, c.correo, c.apellidos, c.alias,c.direccion,c.activo,c.rol';
@@ -33,7 +33,7 @@ class AjaxModel extends Model {
         // return $paginator;
         $usuarios = array();
         foreach($paginator as $user) {
-            $usuarios[] = $user->getUnset(array('id','clave','fechaalta','pedidos',));
+            $usuarios[] = $user->getUnset(array('clave','fechaalta','pedidos',));
         }
         return ['usuarios' => $usuarios, 'paginas' => $pagination->values()];
         

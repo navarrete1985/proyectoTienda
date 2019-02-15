@@ -43,10 +43,10 @@
         });
     }
 
-    var getListado = function (data,pagina,orden) {      
+    var getListado = function (data, pagina, orden) {      
         switch(data) {
             case 'usuario':
-                genericAjax('ajax/listarUsuario', {'pagina': pagina}, 'get', function(json) {
+                genericAjax('ajax/listarUsuario', {'pagina': pagina ,'orden' : orden}, 'get', function(json) {
                     console.log(json.usuarios);
                     pintar(json.usuarios);
                     procesarPaginas(json.paginas);
@@ -73,7 +73,10 @@
         // $.each(objeto, (key, value) => {
             var value = objeto[0];
             $.each(value, (key2,value2) => {
-                 result += '<th><a href="#" data-orden='+key2+'>' + key2 + '</a></th>'; 
+                if(key2 != "id"){
+                  result += '<th><a href="#" data-orden='+key2+'>' + key2 + '</a></th>';  
+                }
+                  
             });
          
         // });
@@ -90,13 +93,13 @@
                 result += '<td><i class="fa fa-check-circle verde"></i></td>'; 
             }else if(value == false){
                 result += '<td><i class="fa fa-times-circle rojo"></td>'; 
-            }else{
-                result += '<td>' + value + '</td>';  
+            }else if(key != "id"){
+               result += '<td>' + value + '</td>';   
             }
           
         });
-        result += '<td><button type="button" class="btn btn-dark editar-usuario">Editar</button></td>'; 
-        result += '<td><button type="button" class="btn btn-dark borrar-usuario">Borrar</button></td>'; 
+        result += '<td><a href="admin/edituser?id='+objeto.id+'" class="btn btn-dark editar-usuario">Editar</a></td>'; 
+        result += '<td><a href="#" id="borrar-user" data-id="'+objeto.id+'"> class="btn btn-dark editar-usuario">Borrar</a></td>'; 
         
         result += '</tr>';
         return result;
@@ -151,6 +154,16 @@
         history.pushState(null, "", 'admin/'+data);
         getListado(data,pagina,dataorden);
     })
+    
+    $('#borrar-user').on('click', function(event){
+        event.preventDefault();
+        dataid = $(event.currentTarget).attr('data-id');
+        history.pushState(null, "", 'admin/borrar'+dataid);
+        
+    })
+    
+    
+    
     }
     
     
@@ -167,5 +180,7 @@
 })();
 
 (function() {
+    
+    
     
 })();

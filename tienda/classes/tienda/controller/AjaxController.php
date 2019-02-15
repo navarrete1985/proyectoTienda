@@ -16,6 +16,7 @@ class AjaxController extends Controller {
     
     function listarUsuario() {
         $ordenes = [
+            'id' => '',
             'nombre' => '',
             'correo' => '',
             'apellidos' => '',
@@ -29,14 +30,13 @@ class AjaxController extends Controller {
             $pagina = 1;
         }
         $orden = Reader::read('orden');
-        echo 'hola soy la orde:'. $orden;
+        // echo 'hola soy la orde:'. $orden.'ultimo';
         if(!isset($ordenes[$orden])) {
             $orden = 'nombre';
         }                                        //$pagina, $orden
         $r = $this->getModel()->getDoctrineUsuarios($pagina,$orden);
         $this->getModel()->add($r);
     }
-    
     
     
     

@@ -48,4 +48,20 @@ class AdminController extends Controller {
         $usuario = $this->getSesion()->getLogin()->get();
     }
     
+    
+    
+    function edituser(){
+        $this->checkIsLogged();  
+        $id = Reader::read('id');
+        
+
+            $this->getModel()->set('twigFile', '_admin-register.twig');
+            $user = $this->getModel()->get('Usuario',['id' => $id]);
+            
+            $this->getModel()->set('user', $user);
+            
+
+    }
+    
+    
 }

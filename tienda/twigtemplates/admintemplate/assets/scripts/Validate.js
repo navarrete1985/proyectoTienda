@@ -1,0 +1,131 @@
+class Validacion {
+    /**
+     * 
+     * @param {String} formId Identificador del formulario a tratar
+     */
+    constructor(container, action) {
+        this._form = document.getElementById(container);
+        this._success = null;
+        this._error = null;
+        this._blurCallback = null;
+        this.__checkBlur();
+    }
+
+    /**
+     * @param {callback} callback para que se llama al realizar la validación satisfactoriamente
+     */
+    addSuccessListener(success) {
+        this._success = success;
+    }
+
+    addErrorListener(error) {
+        this._error = error;
+    }
+    
+    addBlurCallback(blurCallback) {
+        this._blurCallback = blurCallback;
+    }
+
+    start() {
+        this._elementos = this._form.querySelectorAll('input');
+        let errors = 0;
+        Array.from(this._elementos).forEach(field => {
+            switch (field.type) {
+                case 'password':
+                errors += this.validarInput(field, field.type, "4", "16");
+                break;
+                case 'text':
+                errors += this.validarInput(field, field.type, "5", "30");
+                break;
+                case 'email':
+                errors += this.validarInput(field, field.type);
+                break;
+            }
+        });
+        
+        if(errors === 0 && this._success !== null) {
+            this._success();
+        }else if (this._error !== null) {
+            this._error(errors);
+        }
+    }
+
+    validarInput(field, type, minDefault = "", maxDefault = "") {
+        let result = 1;
+        let errorMessage = "El campo no puede estar vacío";
+        if (field !== undefined && field !== null) {
+            let minLength = this.__getAtributeValue(field, 'min-legth', minDefault);
+            let maxLength = this.__getAtributeValue(field, 'max-length', maxDefault);
+            let noEmpty = this.__getAtributeValue(field, 'no-empty', undefined);
+            let regex = new RegExp("^(?!\s*$).+");
+            switch(type) {
+                case 'password':
+                    regex = new RegExp("^([a-zA-Z0-9\\s]{" + minLength + "," + maxLength + "})$");
+                    errorMessage = `El campo debe tener entre ${minLength} y ${maxLength} caracteres alfanuméricos`;
+                break;
+                case 'text':
+                    if (noEmpty === undefined) {
+                        regex = new RegExp("^([a-zA-Z0-9\\s]{" + minLength + "," + maxLength + "})$");
+                        errorMessage = `El campo debe tener entre ${minLength} y ${maxLength} caracteres alfanuméricos`;
+                    }
+                break;
+                case 'email':
+                    let regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                    errorMessage = 'Formato de email inválido';
+                break;
+            }
+            result = this.__validate(field, regex, errorMessage);
+        }
+        return result;
+    }
+    
+    __getAtributeValue(field, atributeName, defaultValue) {
+        let value = field.getAttribute(atributeName);
+        return (value === null || value === '') ? defaultValue : value;
+    }
+
+    __addSpanError(field, error) {
+        let nextElement = field.nextElementSibling;
+        if (nextElement !== null && nextElement !== undefined && nextElement.tagName === 'SPAN' && nextElement.classList.contains('error')) {
+            return;
+        }
+        let node = document.createElement('span');
+        node.classList.add('error');
+        node.textContent = error;
+        if (nextElement === null || nextElement === undefined) {
+            this._form.appendChild(node);
+        }else {
+            this._form.insertBefore(node, nextElement);
+        }
+    }
+
+    __removeSpanError(field) {
+        let nextElement = field.nextElementSibling;
+        if (nextElement === null || nextElement === undefined || nextElement.tagName !== 'SPAN') {
+            return;
+        }
+        nextElement.parentNode.removeChild(nextElement);
+    }
+
+    __validate(field, regex, errorMessage) {
+        let result = 1;
+        if(regex.test(field.value.trim())) {
+            this.__removeSpanError(field);
+            result = 0;
+        }else {
+            this.__addSpanError(field, errorMessage);
+        }
+        return result;
+    }
+    
+    __checkBlur() {
+        let elements = this._form.querySelectorAll('input[data-blur]');
+        Array.form(elements).forEach(node => {
+           node.addErrorListener('blur', event => {
+               if(this._blurCallback !== null) {
+                   this._blurCallback(node.currentTarget);
+               }
+           });
+        });
+    }
+}
