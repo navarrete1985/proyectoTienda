@@ -1,3 +1,4 @@
+
 (function () {
 
     /* global $ */
@@ -22,7 +23,7 @@
     $(document).ajaxStop(function () {
         $('.wrapper-loader').addClass('hidden');
     });
-    
+  
     var genericAjax = function (url, data, type, callBack) {
         $.ajax({
             url: url,
@@ -42,7 +43,7 @@
             console.log('ajax always');
         });
     }
-
+  
     var getListado = function (data, pagina, orden) {      
         switch(data) {
             case 'usuario':
@@ -99,7 +100,7 @@
           
         });
         result += '<td><a href="admin/edituser?id='+objeto.id+'" class="btn btn-dark editar-usuario">Editar</a></td>'; 
-        result += '<td><a href="#" id="borrar-user" data-id="'+objeto.id+'"> class="btn btn-dark editar-usuario">Borrar</a></td>'; 
+        result += '<td><a href="#"  data-id="'+objeto.id+'" class="btn borrar-user btn-dark editar-usuario">Borrar</a></td>'; 
         
         result += '</tr>';
         return result;
@@ -155,10 +156,17 @@
         getListado(data,pagina,dataorden);
     })
     
-    $('#borrar-user').on('click', function(event){
+    $('.borrar-user').on('click', function(event){
         event.preventDefault();
-        dataid = $(event.currentTarget).attr('data-id');
-        history.pushState(null, "", 'admin/borrar'+dataid);
+        id = $(event.currentTarget).attr('data-id');
+        if(confirm("¿Seguro que quieres borrar al usuario cuya id es :" +id+"?")){
+            
+        
+        history.pushState(null, "", 'admin/borrar'+id);
+         genericAjax('ajax/deleteuser', {'id': id }, 'get', function(json) {
+                    getListado(data,pagina,dataorden)
+                });
+        }
         
     })
     
@@ -181,6 +189,55 @@
 
 (function() {
     
+    var genericAjax = function (url, data, type, callBack) {
+        $.ajax({
+            url: url,
+            data: data,
+            type: type,
+            dataType : 'json',
+        })
+        .done(function( json ) {
+            console.log('ajax done');
+            console.log(json);
+            callBack(json);
+        })
+        .fail(function( xhr, status, errorThrown ) {
+            console.log('ajax fail');
+        })
+        .always(function( xhr, status ) {
+            console.log('ajax always');
+        });
+    }
     
+    if ($('#form-container').length > 0) {
+        let validacion = new Validate('form-container');
+        validacion.addSuccessListener(result => {
+            
+        });
+        
+        validacion.addErrorListener(error => {
+            
+        });
+        
+        validacion.addBlurCallback(node => {
+            let data = {
+                class: $('#form-container').attr('data-class'),
+                key: node.name,
+                value: node.value.trim(),
+            }
+            if (data.value.length > 0) {
+                genericAjax('ajax/isavailable', data, 'post', json => {
+                    if(json.result == 0) {
+                        validacion.__addSpanError(node, 'Campo existente en la base de datos, por favor inserte otro valor.')
+                    }
+                })
+            }
+        });
+        
+        $('a.submit').on('click', event => {
+            event.preventDefault();
+            validacion.start();
+        });
+    }
     
 })();

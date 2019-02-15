@@ -1,4 +1,4 @@
-class Validacion {
+class Validate {
     /**
      * 
      * @param {String} formId Identificador del formulario a tratar
@@ -92,11 +92,7 @@ class Validacion {
         let node = document.createElement('span');
         node.classList.add('error');
         node.textContent = error;
-        if (nextElement === null || nextElement === undefined) {
-            this._form.appendChild(node);
-        }else {
-            this._form.insertBefore(node, nextElement);
-        }
+        $(field).after(node);
     }
 
     __removeSpanError(field) {
@@ -120,10 +116,10 @@ class Validacion {
     
     __checkBlur() {
         let elements = this._form.querySelectorAll('input[data-blur]');
-        Array.form(elements).forEach(node => {
-           node.addErrorListener('blur', event => {
+        Array.from(elements).forEach(node => {
+           node.addEventListener('blur', event => {
                if(this._blurCallback !== null) {
-                   this._blurCallback(node.currentTarget);
+                   this._blurCallback(event.currentTarget);
                }
            });
         });

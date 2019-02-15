@@ -38,9 +38,19 @@ class AjaxController extends Controller {
         $this->getModel()->add($r);
     }
     
+    function deleteuser() {
+        $id = Reader::read('id');
+        
+        $this->getModel()->delete('Usuario',['id' => $id]);
+    }
     
-    
-
+    function isavailable() {
+        $class = ucfirst(strtolower(Reader::read('class')));
+        $key = Reader::read('key');
+        $value = Reader::read('value');
+        $result = $this->getModel()->get($class, [$key => $value]);
+        $this->getModel()->set('result', ($result == null) ? 1 : 0);
+    }
 
     
 }

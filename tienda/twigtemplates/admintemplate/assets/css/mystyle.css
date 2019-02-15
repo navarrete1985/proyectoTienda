@@ -163,7 +163,7 @@ h4 {
     width: 69%;
     max-width: 69%;
     margin-bottom: 20px;
-    margin: 0 auto;
+    margin: 65px auto;
     border: 1px solid #dddddd;
 }
 
@@ -210,4 +210,19 @@ td{
 }
 #pintarPaginas a{
     margin:10px;
+}
+
+.error {
+    color: #c25769;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container > a {
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    font-size: 24px;
 }

@@ -16,7 +16,7 @@ class Model {
         $this->gestor = $this->bootstrap->getEntityManager();
     }
 
-    function get($name) {
+    function getData($name) {
         if(isset($this->datosVista[$name])) {
             return $this->datosVista[$name];
         }

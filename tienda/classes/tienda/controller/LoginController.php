@@ -28,7 +28,7 @@ class LoginController extends Controller {
     function dosignup()  {
         $usuario = Reader::readObject('tienda\data\Usuario');
         $usuario->setClave(Util::encriptar($usuario->getClave()));
-        $result = $this->getModel()->createUser($usuario);
+        $result = $this->getModel()->create($usuario);
         Mail::sendActivation($usuario);
         $this->sendRedirect(($result == 1) ? 'login/main' : 'login/signup' . '?op=signup?r=' . $result);
     }
