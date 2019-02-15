@@ -13,7 +13,7 @@
 									<h3 class="panel-title">Datos Genéricos</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
 									</div>
 								</div>
 								<div class='panel-body'>
@@ -46,7 +46,7 @@
 									<h3 class="panel-title">Datos Técnicos</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
 									</div>
 								</div>
 								<div class='panel-body'>
@@ -112,28 +112,105 @@
 									{% endif %}
 								</div>
 							</div>
-							{#----------------FIN CARTA DATOS TÉCNICOS------------------#}
-							
-							{#<div class="panel todo-list">#}
-							{#	<div class="panel-heading">#}
-							{#		<h3 class="panel-title">Datos Personales</h3>#}
-							{#		<div class="right">#}
-							{#			<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>#}
-							{#			<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
-							{#		</div>#}
-							{#	</div>#}
-							{#	<div class='panel-body'>#}
-							{#	</div>#}
-							{#</div>#}
+							{#------------------CATEGORIAS-------------------------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Categorias</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
+									</div>
+								</div>
+								<div class='panel-body'>
+									<div class='row'>
+										<div class='col-md-6'>
+											{% for categorie in categories.par %}
+												<label class='fancy-checkbox'>
+													<input type='checkbox' categorie.checked>
+													<span>{{categorie.name}}</span>
+												</label>
+											{% endfor %}
+										</div>
+										<div class='col-md-6'>
+											{% for categorie in categories.impar %}
+												<label class='fancy-checkbox'>
+													<input type='checkbox' categorie.checked>
+													<span>{{categorie.name}}</span>
+												</label>
+											{% endfor %}
+										</div>
+									</div>
+									<p>
+										<span class="date">Selecciona las categorías que posee el producto</span>
+									</p>
+								</div>
+							</div>
+							{#-------------------------------FIN CARTA CATEGORIAS-------------------#}
+							{#----------------------------DESTINATARIO-------------------------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Destinatarios</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
+									</div>
+								</div>
+								<div class='panel-body'>
+									<div class='row'>
+										<div class='col-md-6'>
+											{% for destinatario in destinatarios.par %}
+												<label class='fancy-checkbox'>
+													<input type='checkbox' destinatario.checked>
+													<span>{{destinatario.name}}</span>
+												</label>
+											{% endfor %}
+										</div>
+										<div class='col-md-6'>
+											{% for destinatario in destinatarios.impar %}
+												<label class='fancy-checkbox'>
+													<input type='checkbox' destinatario.checked>
+													<span>{{destinatario.name}}</span>
+												</label>
+											{% endfor %}
+										</div>
+									</div>
+									<p>
+										<span class="date">Selecciona las categorías que posee el producto</span>
+									</p>
+								</div>
+							</div>
+							{#-------------------------------FIN CARTA DESTINATARIO--------------------#}
 						</div>
 						<div class='col-md-6'>
+							{#----------------GUARDAR CAMBIOS------------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Salvar Entrada</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
+									</div>
+								</div>
+								<div class='panel-body'>
+									<div class='row'>
+										<div class='col-md-6'>
+											<a href="#" class="btn btn-primary">Guardar Cambios</a>	
+										</div>
+									</div>
+									<p>
+										<span class="short-description">Guarde el producto en la base de datos</span>
+										<span class="date">Una vez salvados los cambios puede seguir editando el producto</span>
+									</p>
+								</div>
+							</div>
+							{#----------------------FIN CARTA GUARDAR CAMBIOS-----------------------#}
 							{#---------------------CARTA IMAGEN DESTACADA----------------------#}
 							<div class="panel todo-list">
 								<div class="panel-heading">
 									<h3 class="panel-title">Imagen Destacada</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
 									</div>
 								</div>
 								<div class='panel-body'>
@@ -158,7 +235,7 @@
 									<h3 class="panel-title">Galería</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
 									</div>
 								</div>
 								<div class='panel-body'>
@@ -177,7 +254,7 @@
 									<h3 class="panel-title">Detalle</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
 									</div>
 								</div>
 								<div class='panel-body'>
@@ -204,7 +281,7 @@
 									<h3 class="panel-title">Stock</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
 									</div>
 								</div>
 								<div class='panel-body'>

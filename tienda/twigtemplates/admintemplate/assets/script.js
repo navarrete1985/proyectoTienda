@@ -4,23 +4,23 @@
     var aliasok = true;
     var emailok = false;
     var usuario = null
-    var data = "";
+     data = "";
     
     $('.onClickLista').on('click', function(event){
         event.preventDefault();
         data = $(event.currentTarget).attr('data-lista');
         pagina = $(event.currentTarget).attr('data-pagina');
-        getListado(data,pagina);
+        dataorden = $(event.currentTarget).attr('data-orden');
+        history.pushState(null, "", 'admin/'+data);
+        getListado(data,pagina,dataorden);
     });
     
     $(document).ajaxStart(function () {
-        console.log('pre shadow');
-        $('#loading').show();
+        $('.wrapper-loader').removeClass('hidden');
     });
 
     $(document).ajaxStop(function () {
-        console.log('post shadow');
-        $('#loading').hide();
+        $('.wrapper-loader').addClass('hidden');
     });
     
     var genericAjax = function (url, data, type, callBack) {
@@ -43,12 +43,13 @@
         });
     }
 
-    var getListado = function (data,pagina) {      
+    var getListado = function (data,pagina,orden) {      
         switch(data) {
             case 'usuario':
                 genericAjax('ajax/listarUsuario', {'pagina': pagina}, 'get', function(json) {
-                    console.log(json);
-                    pintar(json);
+                    console.log(json.usuarios);
+                    pintar(json.usuarios);
+                    procesarPaginas(json.paginas);
                 });
                 break;
             case 'complementos':
@@ -60,6 +61,7 @@
             case 'zapatos':
                 genericAjax('ajax/listar', {'pagina': pagina}, 'get', function(json) {
                     pintar(objeto);
+                    
                 });
                 break;
         }
@@ -71,10 +73,12 @@
         // $.each(objeto, (key, value) => {
             var value = objeto[0];
             $.each(value, (key2,value2) => {
-                 result += '<td>' + key2 + '<td>'; 
+                 result += '<th><a href="#" data-orden='+key2+'>' + key2 + '</a></th>'; 
             });
          
         // });
+        result += '<td>Editar</td>'; 
+        result += '<td>Borrar</td>'; 
         result += '</tr>';
         return result;
     }
@@ -82,14 +86,25 @@
     var getBody = function (objeto) {
         let result = '<tr>';
         $.each(objeto, (key, value) => {
-          result += '<td>' + value + '<td>'; 
+            if(value == true){
+                result += '<td><i class="fa fa-check-circle verde"></i></td>'; 
+            }else if(value == false){
+                result += '<td><i class="fa fa-times-circle rojo"></td>'; 
+            }else{
+                result += '<td>' + value + '</td>';  
+            }
+          
         });
+        result += '<td><button type="button" class="btn btn-dark editar-usuario">Editar</button></td>'; 
+        result += '<td><button type="button" class="btn btn-dark borrar-usuario">Borrar</button></td>'; 
+        
         result += '</tr>';
         return result;
     }
 
     var pintar = function (objeto) {
         var listaitems = '';
+        var div = '<div id="pintarPaginas"></div>';
         var header = getHeader(objeto);
         $.each(objeto, (key, value)  =>{
             listaitems += getBody(value);
@@ -98,10 +113,11 @@
         var tabla = '<table class="table"><thead class="table_thead"></thead><tbody class="table_body"></tbody></table>'
         $('.main').empty();
         $('.main').append(tabla);
+        $('.main').append(div);
         $('.table_thead').empty();
         $('.table_thead').append(header);
         $('.table_body').empty();
-        $('.table_body').append(header);
+        $('.table_body').append(listaitems);
     }
     
     var procesarPaginas = function (paginas) {
@@ -123,12 +139,20 @@
         $('.btnPagina').on('click', function(e) {
             e.preventDefault();
             var p = e.target.getAttribute('data-pagina');
-            getCiudades(p); 
+            getListado(data,p); 
         });
         $('.btnNoPagina').on('click', function(e) {
             e.preventDefault();
         });
+        
+        $('.table_thead tr th a').on('click', function(event){
+        event.preventDefault();
+        dataorden = $(event.currentTarget).attr('data-orden');
+        history.pushState(null, "", 'admin/'+data);
+        getListado(data,pagina,dataorden);
+    })
     }
+    
     
     // $('.onClickLista').on('click', function(){
         
@@ -140,4 +164,8 @@
     //     }    
     //     genericAjax(url, parametros, "POST");
     // })
+})();
+
+(function() {
+    
 })();

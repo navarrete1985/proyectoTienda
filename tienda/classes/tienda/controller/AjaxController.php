@@ -15,34 +15,26 @@ class AjaxController extends Controller {
     }
     
     function listarUsuario() {
-        // $ordenes = [
-        //     'id' => '',
-        //     'nombre' => '',
-        //     'correo' => '',
-        //     'apellidos' => '',
-        //     'alias' => '',
-        //     'direccion' => '',
-        //     'activo' => '',
-        //     'rol' => '',
-        //     'fechaalta' => '',
-        //     'clave' => ''
-        // ];
-        // $pagina = Reader::read('pagina');
-        // if($pagina === null || !is_numeric($pagina)) {
-        //     $pagina = 1;
-        // }
-        // $orden = Reader::read('orden');
-        // if(!isset($ordenes[$orden])) {
-        //     $orden = 'nombre';
-        // }                                        //$pagina, $orden
-        $r = $this->getModel()->getDoctrineUsuarios();
-        $resultado = [];
-        foreach($r['usuario'] as $usuario) {
-            
-            $resultado[] = $usuario->getUnset(array('id','clave','fechaalta','pedidos',));
+        $ordenes = [
+            'nombre' => '',
+            'correo' => '',
+            'apellidos' => '',
+            'alias' => '',
+            'direccion' => '',
+            'activo' => '',
+            'rol' => '',
+        ];
+        $pagina = Reader::read('pagina');
+        if($pagina === null || !is_numeric($pagina)) {
+            $pagina = 1;
         }
-        
-        $this->getModel()->add($resultado);
+        $orden = Reader::read('orden');
+        echo 'hola soy la orde:'. $orden;
+        if(!isset($ordenes[$orden])) {
+            $orden = 'nombre';
+        }                                        //$pagina, $orden
+        $r = $this->getModel()->getDoctrineUsuarios($pagina,$orden);
+        $this->getModel()->add($r);
     }
     
     
