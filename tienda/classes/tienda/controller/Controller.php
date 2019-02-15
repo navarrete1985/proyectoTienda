@@ -53,6 +53,13 @@ abstract class Controller {
         exit();
     }
     
+    function checkIsAdmin() {
+        if ($this->checkIsLogged() && $this->__isAdmin()) {
+            return;
+        }
+        $this->sendRedirect();
+    }
+    
     protected function __isAdmin() {
         return $this->sesion->getLogin()->getAdministrador() == 1;
     }

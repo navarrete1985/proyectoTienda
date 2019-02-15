@@ -57,7 +57,7 @@ class Validate {
             let minLength = this.__getAtributeValue(field, 'min-legth', minDefault);
             let maxLength = this.__getAtributeValue(field, 'max-length', maxDefault);
             let noEmpty = this.__getAtributeValue(field, 'no-empty', undefined);
-            let regex = new RegExp("^(?!\s*$).+");
+            var regex = new RegExp("^(?!\s*$).+");
             switch(type) {
                 case 'password':
                     regex = new RegExp("^([a-zA-Z0-9\\s]{" + minLength + "," + maxLength + "})$");
@@ -70,13 +70,39 @@ class Validate {
                     }
                 break;
                 case 'email':
-                    let regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                    regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                     errorMessage = 'Formato de email inválido';
                 break;
             }
             result = this.__validate(field, regex, errorMessage);
         }
         return result;
+    }
+    
+    getFormData(types) {
+        let formData = new FormData();
+        types.foreach(type => {
+            $(`input[type=${type}]`).each(function() {
+                formData.append($(this).attr('name'), $(this).val());
+            })
+        });
+        return formData;
+    }
+    
+    getObjectValues(types) {
+        let result = {};
+        Array.from(types).forEach(type => {
+            $(`input[type=${type}]`).each(function() {
+                result[$(this).attr('name')] = $(this).val();
+            })
+        });
+        return result;
+    }
+    
+    clearAllFields() {
+        $('input').each(function() {
+            $(this).val('');
+        })
     }
     
     __getAtributeValue(field, atributeName, defaultValue) {
@@ -87,6 +113,7 @@ class Validate {
     __addSpanError(field, error) {
         let nextElement = field.nextElementSibling;
         if (nextElement !== null && nextElement !== undefined && nextElement.tagName === 'SPAN' && nextElement.classList.contains('error')) {
+            nextElement.textContent = error;
             return;
         }
         let node = document.createElement('span');
@@ -115,11 +142,15 @@ class Validate {
     }
     
     __checkBlur() {
-        let elements = this._form.querySelectorAll('input[data-blur]');
+        let elements = this._form.querySelectorAll('input');
         Array.from(elements).forEach(node => {
            node.addEventListener('blur', event => {
-               if(this._blurCallback !== null) {
+               if(node.hasAttribute('ajax-callback') && this._blurCallback !== null) {
                    this._blurCallback(event.currentTarget);
+               }else {
+                   let min = node.type == 'password' ? '4' : '5';
+                   let max = node.type == 'password' ? '16' : '30';
+                   this.validarInput(node, node.type, min, max);
                }
            });
         });

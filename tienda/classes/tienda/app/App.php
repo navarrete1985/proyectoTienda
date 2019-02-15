@@ -20,5 +20,12 @@ class App {
           
           SESSION_NAME = 'APP_MVC_SESSION',
             
-          BASE= 'https://proyecto-tienda-navarrete.c9users.io/tienda/';
+          BASE= 'https://proyecto-tienda-navarrete.c9users.io/tienda/',
+          OBJECT = [
+              'usuario'     => 'tienda\data\Usuario',
+              'color'       => 'tienda\data\Color',
+              'categoria'   => 'tienda\data\Categoria',
+              'destinatario'=> 'tienda\data\Destinatario',
+              'articulo'    => 'tienda\data\Articulo'
+          ];
 }
