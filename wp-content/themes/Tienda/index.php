@@ -27,7 +27,7 @@
 <?php
 					$args = array(
 						'post_type' => array ('post'),
-						'posts_per_page' => 4,
+						'posts_per_page' => 6,
 						'tax_query' => array( 
 				                        	array(
 				                            	'taxonomy' => 'post_format',

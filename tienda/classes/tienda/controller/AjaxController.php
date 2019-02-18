@@ -54,6 +54,19 @@ class AjaxController extends Controller {
         $result = $this->getModel()->get($class, [$key => $value]);
         $this->getModel()->set('result', ($result == null) ? 1 : 0);
     }
+    function isavailableedit(){
+        $this->checkIsAdmin();
+        $class = ucfirst(strtolower(Reader::read('class')));
+        $key = Reader::read('key');
+        $value = Reader::read('value');
+        $alias = Reader::read('value');
+        echo 'key:'.$key.'<br>';
+        echo 'value1:'.$value.'<br>';
+        echo 'value2:'.$alias.'<br>';
+        $result = $this->getModel()->get($class, [$key => $value]);
+        if(result)
+        $this->getModel()->set('result', ($result == null) ? 1 : 0);
+    }
     
     function adddata() {
         $this->checkIsAdmin();

@@ -174,9 +174,25 @@
     
     }
     
+    
+    // $('.onClickLista').on('click', function(){
+        
+    //     var parametros = {
+    //         usuarios        :  $(e.currentTarget).attr('data-listar-usuario'),
+    //         complementos    :  $(e.currentTarget).attr('data-listar-complementos'),
+    //         zapatos         :  $(e.currentTarget).attr('data-listar-zapatos'),
+    //         accion          :  'listar'
+    //     }    
+    //     genericAjax(url, parametros, "POST");
+    // })
 })();
 
 (function() {
+    var editar = document.getElementById("editar-update");
+    console.log(editar)
+    if(editar == undefined){
+        
+    
     
     if ($('#form-container').length > 0) {
         
@@ -269,5 +285,100 @@
             }
         });
     }
-    
+    }else{
+        var alias = document.getElementById("signup-alias").value;
+        if ($('#form-container').length > 0) {
+        
+        $('.password-container a').on('click', event => {
+            event.preventDefault();
+            let ico = event.currentTarget.firstChild;
+            let input = event.currentTarget.nextElementSibling;
+            if(ico.classList.contains('fa-eye')) {
+                ico.classList.remove('fa-eye');
+                ico.classList.add('fa-eye-slash');
+                input.type = 'text';
+            }else {
+                ico.classList.remove('fa-eye-slash');
+                ico.classList.add('fa-eye');
+                input.type = 'password';
+            }
+        })
+        
+        $('.submit').on('click', event => {
+            event.preventDefault();
+            validacion.start();
+        })
+        
+        var genericAjax = function (url, data, type, callBack) {
+            $.ajax({
+                url: url,
+                data: data,
+                type: type,
+                dataType : 'json',
+            })
+            .done(function( json ) {
+                console.log('ajax done');
+                console.log(json);
+                callBack(json);
+            })
+            .fail(function( xhr, status, errorThrown ) {
+                console.log('ajax fail');
+            })
+            .always(function( xhr, status ) {
+                console.log('ajax always');
+            });
+        }
+        
+        let validacion = new Validate('form-container');
+        validacion.addSuccessListener(result => {
+            let data = null;
+            switch($('#form-container').attr('data-class')) {
+                case 'usuario':
+                    data = validacion.getObjectValues(['text', 'password', 'checkbox', 'email']);
+                    data.class = 'usuario';
+                    break;
+                case 'articulo':
+                    break;
+            }
+            if (data !== null) {
+                console.log(data);
+                genericAjax('ajax/adddata', data, 'post', response => {
+                   if (response.result == 1) {
+                       validacion.clearAllFields();
+                       //Mostramos modal para dar feedback al usuario
+                       alert('El usuario se ha agregado satisfactoriamente');
+                   }else {
+                       alert('Ha ocurrido algún error al añadir al usuario');
+                       //Mostramos modal para dar feedback al usuario
+                   }
+                });
+            }
+        });
+        
+        validacion.addErrorListener(error => {
+            
+        });
+        
+        validacion.addBlurCallback(node => {
+            let data = {
+                class: $('#form-container').attr('data-class'),
+                key: node.name,
+                value: node.value.trim(),
+                valuealias : alias
+            }
+            console.log(data);
+            if (data.value.length > 0) {
+                genericAjax('ajax/isavailableedit', data, 'post', json => {
+                    if(json.result == 0) {
+                        validacion.__addSpanError(node, 'Campo existente en la base de datos, por favor inserte otro valor.')
+                    }else {
+                        validacion.__removeSpanError(node)
+                    }
+                })
+            }else {
+                validacion.__removeSpanError(node);
+            }
+        });
+    }
+    }
 })();
