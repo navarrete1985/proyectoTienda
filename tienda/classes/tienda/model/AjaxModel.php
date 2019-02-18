@@ -21,8 +21,7 @@ class AjaxModel extends Model {
     use \tienda\common\CrudPedido;
 
     function getDoctrineUsuarios($pagina = 1, $orden = 'nombre', $limit = 3) {
-        
-        $dql = 'select c from tienda\data\Usuario c where c.nombre < :nombre 
+         $dql = 'select c from tienda\data\Usuario c where c.nombre < :nombre 
         order by c.'. $orden .', c.nombre, c.correo, c.apellidos, c.alias,c.direccion,c.activo,c.rol';
         $query = $this->gestor->createQuery($dql)->setParameter('nombre', 'zz');
         $paginator = new Paginator($query);

@@ -61,12 +61,12 @@
                                     </div>
                                     <!--Fin de post-content-->
 
-                                    <div class="post-footer">
-                                        <div class="post-tags">
-                                            <a href="../tag/corporate/index.html" rel="tag">Corporate</a> <a href="../tag/lifestyle/index.html" rel="tag">Lifestyle</a>
-                                            <a href="../tag/music/index.html" rel="tag">Music</a> <a href="../tag/news/index.html" rel="tag">News</a> <a href="../tag/travel/index.html" rel="tag">Travel</a>
-                                        </div>
-                                    </div>
+                                    <!--<div class="post-footer">-->
+                                    <!--    <div class="post-tags">-->
+                                    <!--        <a href="../tag/corporate/index.html" rel="tag">Corporate</a> <a href="../tag/lifestyle/index.html" rel="tag">Lifestyle</a>-->
+                                    <!--        <a href="../tag/music/index.html" rel="tag">Music</a> <a href="../tag/news/index.html" rel="tag">News</a> <a href="../tag/travel/index.html" rel="tag">Travel</a>-->
+                                    <!--    </div>-->
+                                    <!--</div>-->
                                 </article>
                                 <!-- Post end-->
                                 

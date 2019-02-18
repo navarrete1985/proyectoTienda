@@ -59,6 +59,7 @@ class AdminController extends Controller {
             $user = $this->getModel()->get('Usuario',['id' => $id]);
             
             $this->getModel()->set('user', $user);
+            $this->getModel()->set('edit', true);
             
 
     }

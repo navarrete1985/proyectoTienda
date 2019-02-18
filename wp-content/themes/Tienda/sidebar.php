@@ -15,7 +15,11 @@
 	<aside id="twitter-feed-2" class="widget twitter-feed-widget">
 		<!-- Sección para las redes sociales de la tienda (Borrar si no las ponemos)  -->
 		<div class="widget-title font-alt">Widgets</div>
-		<div class="twitter-feed" data-twitter="345170787868762112" data-number="2">
+		<!--<div class="twitter-feed" data-twitter="345170787868762112" data-number="2">-->
+			<?php
+	             if (!function_exists('crea_area_widgets') || !dynamic_sidebar('Sidebar Widget')) : ?>
+	                 	<div class="warning title text-center">No hay Widgets instalados</div>
+	        <?php endif; ?>
 		</div>
 	</aside>
 	
@@ -29,11 +33,15 @@
 			    ); 
 			    $custom_query = new WP_Query($args);
 			    if ( $custom_query->have_posts() ): while ($custom_query->have_posts()): $custom_query->the_post(); 
-
+				
+				 $category = get_the_category();
+							 $categoria = $category[0]->cat_name;
+				
 			    if(has_post_thumbnail() ) {
 			        $postImg = get_the_post_thumbnail_url();
 			    } 
 			        $postImg;
+			        
 			?>
 				<li class="clearfix">
 					<div class="wi imgResponsive" style="background-image: url(<?php echo $postImg; ?>)">
@@ -58,17 +66,42 @@
 	<aside id="categories-3" class="widget widget_categories">
 		<div class="widget-title font-alt">Categorías</div>
 		<ul>
-			<li class="cat-item cat-item-3">
-				<a href="../category/branding/index.html" title="We know what we’re good at, and we stick to it">Branding</a>
-			</li>
-			<li class="cat-item cat-item-4">
-				<a href="../category/design/index.html" title="We know what we’re good at, and we stick to it">Design</a>
-			</li>
-			<li class="cat-item cat-item-5">
-				<a href="../category/printing/index.html" title="We know what we’re good at, and we stick to it">Printing</a>
-			</li>
+			<?php
+				                //wp_list_categories(); // Mostrar el listado de categorías, Para quitar el titulo de 'Categorías' por defecto le pasamos los siguientes argumentos:
+				                $args = array(
+				                        //Eliminar el título
+				                        'title_li' => '',
+				                        //Mostrar el número de post por categoría
+				                        'show_count' => true,
+				                        //Que no se muestren sin un echo
+				                        'echo' => false
+				                        );
+				                $catgs = wp_list_categories($args);
+				                // Quitar <li class="cat-item cat-item-6"> para que muestre Diseñadores: entraxas publicadas X
+				                $catgs = preg_replace('/<li class="cat-item cat-item-6"><\/a> \(([0-9]+)\)/', '<span class="catnum"> - Entradas publicadas: \\1</span></a></li>', $catgs);
+				                echo $catgs;
+				            ?>
 			<li class="cat-item cat-item-6">
-				<a href="../category/sport/index.html" title="We know what we’re good at, and we stick to it">Sport</a>
+				<!--<a href="../category/sport/index.html" title="We know what we’re good at, and we stick to it">Sport</a>-->
+			</li>
+		</ul>
+	</aside>
+	
+	<aside id="categories-3" class="widget widget_categories">
+		<div class="widget-title font-alt">Autores</div>
+		<ul>
+			<?php
+				 //wp_list_authors(); //Función que muestra la lista de autores, se le puede pasar el siguiente array de argumentos:
+				 $args = array(
+	                    	'optioncount' => true,  //Número de post publicados
+	                        'orderby' => 'postcount',
+	                        'order' => 'ASC',
+	                        'hide_empty' => false, //Oculta los que no tienen post, estos salsrán en el listado de archives
+	                        );
+				 $autores = wp_list_authors($args);
+			?>
+			<li class="cat-item cat-item-6">
+				<!--<a href="../category/sport/index.html" title="We know what we’re good at, and we stick to it">Sport</a>-->
 			</li>
 		</ul>
 	</aside>
@@ -90,13 +123,13 @@
 			?>
 				<li class="clearfix">
 					<div class="wi">
-						<a href="../mini-california-sushi-cones/index.html">
+						<a href="<?php the_permalink(); ?>">
 							<img width="150" height="150" src="<?php echo $postImg ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 150px) 100vw, 150px" />
 						</a>
 					</div>
 					<div class="wb">
 						<h6 class="font-alt">
-							<a href="../mini-california-sushi-cones/index.html"><?php the_title(); ?></a>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</h6>
 						<span class="post-date"> <?php echo get_the_date('d M y'); ?> </span>
 					</div>
@@ -123,7 +156,11 @@
 	<aside id="twitter-feed-2" class="widget twitter-feed-widget">
 		<!-- Sección para las redes sociales de la tienda (Borrar si no las ponemos)  -->
 		<div class="widget-title font-alt">Descubre nuestro lado más social</div>
-		<div class="twitter-feed" data-twitter="345170787868762112" data-number="2">
+		<div class="twitter-feed rrss-margin" data-twitter="345170787868762112" data-number="2">
+			<a href="https://twitter.com/?lang=es"><i class="fab fa-twitter fa-3x"></i></a>
+			<a href="https://es-es.facebook.com/"><i class="fab fa-facebook-f fa-3x rrss"></i></a>
+			<a href="https://www.instagram.com/?hl=es"><i class="fab fa-instagram fa-3x rrss"></i></a>
+			<a href="https://www.pinterest.es/"><i class="fab fa-pinterest-p fa-3x rrss"></i></a>
 		</div>
 	</aside>
 	
