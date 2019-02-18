@@ -58,14 +58,12 @@ class AjaxController extends Controller {
         $this->checkIsAdmin();
         $class = ucfirst(strtolower(Reader::read('class')));
         $key = Reader::read('key');
-        $value = Reader::read('value');
-        $alias = Reader::read('value');
-        echo 'key:'.$key.'<br>';
-        echo 'value1:'.$value.'<br>';
-        echo 'value2:'.$alias.'<br>';
-        $result = $this->getModel()->get($class, [$key => $value]);
-        if(result)
+        $newvalue = Reader::read('value');
+        $valueestatico = Reader::read('valoranterior');
+        if($newvalue!=$valueestatico){
+        $result = $this->getModel()->get($class, [$key => $newvalue]);
         $this->getModel()->set('result', ($result == null) ? 1 : 0);
+        }
     }
     
     function adddata() {

@@ -287,6 +287,7 @@
     }
     }else{
         var alias = document.getElementById("signup-alias").value;
+        var correo = document.getElementById("signup-email").value;
         if ($('#form-container').length > 0) {
         
         $('.password-container a').on('click', event => {
@@ -360,13 +361,17 @@
         });
         
         validacion.addBlurCallback(node => {
+            
             let data = {
                 class: $('#form-container').attr('data-class'),
                 key: node.name,
                 value: node.value.trim(),
-                valuealias : alias
             }
-            console.log(data);
+            if (node.type === 'email') {
+                data.valoranterior = correo;
+            }else {
+                data.valoranterior = alias;
+            }
             if (data.value.length > 0) {
                 genericAjax('ajax/isavailableedit', data, 'post', json => {
                     if(json.result == 0) {
