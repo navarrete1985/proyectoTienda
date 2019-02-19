@@ -31,7 +31,7 @@ trait Crud {
     
     function update ($item) {
         $this->gestor->persist($item);
-        $this->persist();
+        $this->gestor->flush();
         return $item;
     }
     

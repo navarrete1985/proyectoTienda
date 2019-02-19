@@ -37,4 +37,19 @@ class AjaxModel extends Model {
         return ['usuarios' => $usuarios, 'paginas' => $pagination->values()];
         
     }
+    
+    function  updateUser($obj,$userId){
+        $usuario = $this->get('Usuario',['id' => $userId]);
+        echo 'objeto'. Util::varDump($obj).'</br>';
+        $usuario->setNombre($obj->getNombre());
+        $usuario->setCorreo($obj->getCorreo());
+        $usuario->setApellidos($obj->getApellidos());
+        $usuario->setAlias($obj->getAlias());
+        $usuario->setDireccion($obj->getDireccion());
+        $usuario->setActivo($obj->getActivo());
+        $usuario->setRol($obj->getRol());
+        
+        echo 'referencia'. Util::varDump($usuario).'</br>';
+        return $this->update($usuario);
+    }
 }

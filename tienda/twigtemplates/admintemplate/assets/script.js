@@ -241,7 +241,7 @@
             let data = null;
             switch($('#form-container').attr('data-class')) {
                 case 'usuario':
-                    data = validacion.getObjectValues(['text', 'password', 'checkbox', 'email']);
+                    data = validacion.getObjectValues(['text', 'checkbox', 'email']);
                     data.class = 'usuario';
                     break;
                 case 'articulo':
@@ -337,13 +337,14 @@
                 case 'usuario':
                     data = validacion.getObjectValues(['text', 'password', 'checkbox', 'email']);
                     data.class = 'usuario';
+                    data.id = document.getElementById("id-edit").value;
                     break;
                 case 'articulo':
                     break;
             }
             if (data !== null) {
                 console.log(data);
-                genericAjax('ajax/adddata', data, 'post', response => {
+                genericAjax('ajax/updatedata', data, 'post', response => {
                    if (response.result == 1) {
                        validacion.clearAllFields();
                        //Mostramos modal para dar feedback al usuario

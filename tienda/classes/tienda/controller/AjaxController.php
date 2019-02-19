@@ -66,6 +66,34 @@ class AjaxController extends Controller {
         }
     }
     
+    function updatedata(){
+        $this->checkIsAdmin();
+        $class = Reader::read('class');
+        $id = Reader::read('id');
+        $obj = Reader::readObject(App::OBJECT[$class]);
+        // echo 'clase'. Util::varDump($class).'</br>';
+        // echo 'objeto'. Util::varDump($obj).'</br>';
+        echo 'objeto antes del switcg'. Util::varDump($obj).'</br>';
+        switch ($class) {
+            case 'usuario':
+                 $obj->setClave(Util::encriptar($obj->getClave()));
+                 $obj->setActivo($obj->getActivo() == 'on' ? 1 : 0);
+                 $obj->setRol($obj->getRol() == 'on' ? 1 : 0);
+                 echo 'objeto'. Util::varDump($obj).'</br>';
+                
+                break;
+        }
+        $result = 0;
+        if ($obj !== null) {
+            echo 'id'.$id;
+            $this->getModel()->updateUser($obj,$id);
+            $result = $obj->getId() > 0 ? 1 : 0;
+            echo 'toflama si me llega'. Util::varDump($obj).'</br>';
+        }
+        
+        $this->getModel()->set('result', $result);
+    }
+    
     function adddata() {
         $this->checkIsAdmin();
         $class = Reader::read('class');

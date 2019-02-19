@@ -201,10 +201,10 @@
                     <div class="col-sm-12">
                         <ul class="filters font-alt" id="filters">
                             <li>
-                                <a class="current" href="#" data-filter="*">Todos<sup><small>.10</small></sup></a>
+                                <a class="current" href="#" data-filter="*">Novedades<sup><small>.10</small></sup></a>
                             </li>
                             <li>
-                                <a href="#" data-filter=".category_14">Hombre<sup><small>.4</small></sup></a>
+                                <a href="#" data-filter=".category_14">Hombre<sup><small>.5</small></sup></a>
                             </li>
                             <li>
                                 <a href="#" data-filter=".category_15">Mujer<sup><small>.6</small></sup></a>
@@ -213,7 +213,7 @@
                                 <a href="#" data-filter=".category_16">Complementos<sup><small>.4</small></sup></a>
                             </li>
                             <li>
-                                <a href="#" data-filter=".category_17">Novedades<sup><small>.3</small></sup></a>
+                                <a href="#" data-filter=".category_17">Niños<sup><small>.3</small></sup></a>
                             </li>
                         </ul>
                     </div>
@@ -224,9 +224,9 @@
                 <div class="row row-portfolio">
                     <div class="grid-sizer"></div>
                     <!-- Portfolio single page-->
-                    <div id="post-91" class="category_14 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
+                    <div id="post-91" class="category-count category_14 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer5.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/hombre3.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">The Deep Surface</h6>
@@ -239,7 +239,7 @@
                     <!-- Portfolio single end-->
 
                     <!-- Portfolio single page-->
-                    <div id="post-87" class="category_15 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-87" class="category-count category_15 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer4.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
@@ -265,9 +265,9 @@
                     <!--    <a class="portfolio-link" href="project/drawing-inspiration/index.html"></a>-->
                     <!--</div>-->
                     
-                    <div id="post-90" class="category_14 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-90" class="category-count category_14 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer1.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/hombre2.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Fresh Fruits Company</h6>
@@ -277,9 +277,9 @@
                         <a class="portfolio-link" href="project/fresh-fruits-company/index.html"></a>
                     </div>
                     
-                      <div id="post-90" class="category_14 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                      <div id="post-90" class="category-count category_14 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer1.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/hombre4.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Fresh Fruits Company</h6>
@@ -304,7 +304,7 @@
                     <!-- Portfolio single end-->
                     
                     <!-- Portfolio single page-->
-                    <div id="post-85" class="category_14 wide portfolio-item post-85 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design fw-portfolio-category-photo fw-portfolio-category-web">
+                    <div id="post-85" class="category-count category_14 wide portfolio-item post-85 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design fw-portfolio-category-photo fw-portfolio-category-web">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-img-wrap imgResponsive" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/hombre1.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
@@ -317,9 +317,9 @@
                     </div>
                     <!-- Portfolio single end-->
                     
-                    <div id="post-91" class="category_14 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
+                    <div id="post-91" class="category-count category_14 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer5.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/hombre5.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">The Deep Surface</h6>
@@ -332,7 +332,7 @@
                     <!-- FIN HOMBRE-->
                     
                     <!-- MUJER-->
-                    <div id="post-85" class="category_15 wide portfolio-item post-85 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design fw-portfolio-category-photo fw-portfolio-category-web">
+                    <div id="post-85" class="category-count category_15 wide portfolio-item post-85 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design fw-portfolio-category-photo fw-portfolio-category-web">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-img-wrap imgResponsive" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/hombre1.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
@@ -344,7 +344,7 @@
                         <a class="portfolio-link" href="project/uncomplicated-beauty/index.html"></a>
                     </div>
                     
-                    <div id="post-91" class="category_15 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
+                    <div id="post-91" class="category-count category_15 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer5.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
@@ -357,7 +357,7 @@
                     </div>
                     
                      <!-- Portfolio single page-->
-                    <div id="post-90" class="category_15 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-90" class="category-count category_15 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer1.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
@@ -371,7 +371,7 @@
                     <!-- Portfolio single end-->
 
                     <!-- Portfolio single page-->
-                    <div id="post-89" class="category_15 default portfolio-item post-89 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-89" class="category-count category_15 default portfolio-item post-89 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer2.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
@@ -385,7 +385,7 @@
                     <!-- Portfolio single end-->
                     
                      <!-- Portfolio single page-->
-                    <div id="post-90" class="category_15 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-90" class="category-count category_15 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer1.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
@@ -401,7 +401,7 @@
                     <!-- FIN MUJER-->
                     
                     <!-- COMPLEMENTOS -->
-                    <div id="post-86" class="category_16 large portfolio-item post-86 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding fw-portfolio-category-photo fw-portfolio-category-web">
+                    <div id="post-86" class="category-count category_16 large portfolio-item post-86 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding fw-portfolio-category-photo fw-portfolio-category-web">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/complementos1.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
@@ -412,9 +412,9 @@
                         </div>
                         <a class="portfolio-link" href="project/drawing-inspiration/index.html"></a>
                     </div>
-                    <div id="post-87" class="category_16 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-87" class="category-count category_16 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer4.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/complementos3.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Bluetooth Speaker</h6>
@@ -423,9 +423,9 @@
                         </div>
                         <a class="portfolio-link" href="project/bluetooth-speaker/index.html"></a>
                     </div>
-                    <div id="post-87" class="category_16 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-87" class="category-count category_16 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer4.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/complementos5.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Bluetooth Speaker</h6>
@@ -434,9 +434,9 @@
                         </div>
                         <a class="portfolio-link" href="project/bluetooth-speaker/index.html"></a>
                     </div>
-                    <div id="post-87" class="category_16 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-87" class="category-count category_16 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer4.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/complementos2.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Bluetooth Speaker</h6>
@@ -445,9 +445,9 @@
                         </div>
                         <a class="portfolio-link" href="project/bluetooth-speaker/index.html"></a>
                     </div>
-                    <div id="post-87" class="category_16 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-87" class="category-count category_16 default portfolio-item post-87 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer4.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/complementos4.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Bluetooth Speaker</h6>
@@ -459,9 +459,20 @@
                     <!--FIN COMPLEMENTOS-->
                     
                     <!--NOVEDADES-->
-                    <div id="post-90" class="category_17 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                    <div id="post-91" class="category-count category_17 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
                         <div class="portfolio-wrapper">
-                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/mujer1.jpg';?>"></div>
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/niño5.jpg';?>"></div>
+                            <div class="portfolio-overlay"></div>
+                            <div class="portfolio-caption font-alt">
+                                <h6 class="portfolio-title">The Deep Surface</h6>
+                                <span class="portfolio-subtitle">Branding</span>
+                            </div>
+                        </div>
+                        <a class="portfolio-link" href="project/the-deep-surface/index.html"></a>
+                    </div>
+                    <div id="post-90" class="category-count category_17 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/niño2.jpg';?>"></div>
                             <div class="portfolio-overlay"></div>
                             <div class="portfolio-caption font-alt">
                                 <h6 class="portfolio-title">Fresh Fruits Company</h6>
@@ -469,6 +480,39 @@
                             </div>
                         </div>
                         <a class="portfolio-link" href="project/fresh-fruits-company/index.html"></a>
+                    </div>
+                    <div id="post-90" class="category-count category_17 default portfolio-item post-90 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-img-wrap" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/niño4.jpg';?>"></div>
+                            <div class="portfolio-overlay"></div>
+                            <div class="portfolio-caption font-alt">
+                                <h6 class="portfolio-title">Fresh Fruits Company</h6>
+                                <span class="portfolio-subtitle">Design</span>
+                            </div>
+                        </div>
+                        <a class="portfolio-link" href="project/fresh-fruits-company/index.html"></a>
+                    </div>
+                    <div id="post-85" class="category-count category_17 wide portfolio-item post-85 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-design fw-portfolio-category-photo fw-portfolio-category-web">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-img-wrap imgResponsive" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/niño1.jpg';?>"></div>
+                            <div class="portfolio-overlay"></div>
+                            <div class="portfolio-caption font-alt">
+                                <h6 class="portfolio-title">Uncomplicated Beauty</h6>
+                                <span class="portfolio-subtitle">Design / Photo / Web</span>
+                            </div>
+                        </div>
+                        <a class="portfolio-link" href="project/uncomplicated-beauty/index.html"></a>
+                    </div>
+                    <div id="post-91" class="category-count category_17 tall portfolio-item post-91 fw-portfolio type-fw-portfolio status-publish has-post-thumbnail hentry fw-portfolio-category-branding">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-img-wrap img-responsive" data-background="<?php echo bloginfo('template_directory') . '/assets/img/front_page/niño3.jpg';?>"></div>
+                            <div class="portfolio-overlay"></div>
+                            <div class="portfolio-caption font-alt">
+                                <h6 class="portfolio-title">The Deep Surface</h6>
+                                <span class="portfolio-subtitle">Branding</span>
+                            </div>
+                        </div>
+                        <a class="portfolio-link" href="project/the-deep-surface/index.html"></a>
                     </div>
                     <!--FIN NOVEDADES-->
                 
@@ -616,11 +660,11 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p>If you want to know what a man&#039;s like, take a good look at how he treats his inferiors, not his equals.</p>
+                                            <p>Estoy encantado. He realizado varios pedidos y sólo tuve que devolver uno, pero fue facilísimo y muy rápido. ¡¡¡Un equipo estupendo!!!</p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">
-                                        <span class="font-alt">J.K. Rowling</span>
+                                        <span class="font-alt">David González</span>
                                     </div>
                                 </div>
 
@@ -630,11 +674,11 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p>To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.</p>
+                                            <p>Comprar está muy bien, es rápido en el envío y si no aciertas o no te gustan se devuelve rápida y cómodamente. La recomiendo.</p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">
-                                        <span class="font-alt">Ralph Waldo Emerson</span>
+                                        <span class="font-alt">Rosa Marañon</span>
                                     </div>
                                 </div>
 
@@ -644,11 +688,11 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p>Imperfection is beauty, madness is genius and it&#039;s better to be absolutely ridiculous than absolutely boring.</p>
+                                            <p>Me gusta por la variedad y la calidad de sus productos y eso hace que las personas se sientan más cómodas con lo que lucen.</p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">
-                                        <span class="font-alt">Marilyn Monroe</span>
+                                        <span class="font-alt">Beatriz Olmedo</span>
                                     </div>
                                 </div>
                             </div>

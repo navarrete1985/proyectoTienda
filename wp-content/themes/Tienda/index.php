@@ -18,50 +18,93 @@
 </header>
 
 <div class="wrapper">
-    <section  id="portada" class="module-header default-height parallax bg-light bg-light-60 bg-film bloqueflex" data-background="<?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>">
-        <div class="container">
-            <div class="row">
+<!--    <section  id="portada" class="module-header default-height parallax bg-light bg-light-60 bg-film bloqueflex" data-background="<?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
 <!-------------------- Inicio Post Quote ---------------------------------->
-                <div  id="content-quote" class="col-sm-12">
+<!--                <div  id="content-quote" class="col-sm-12">-->
 <!--  Inicio del loop  -->
-<?php
-					$args = array(
-						'post_type' => array ('post'),
-						'posts_per_page' => 6,
-						'tax_query' => array( 
-				                        	array(
-				                            	'taxonomy' => 'post_format',
-				                                'field' => 'slug',
-				                                'terms' => array(
-				                                			 'post-format-video',
-				                                	         'post-format-gallery', 
-				                                             'post-format-link', 
-				                                             'post-format-image', 
-				                                             'post-format-audio',
-				                                             'post-format-standar'
-				                                    		),
-				                                'operator' => 'NOT IN'
-				                            ),
-				                        ),        
-					);
+<!--< ?php-->
+<!--					$args = array(-->
+<!--						'post_format' => 'post-format-quote',-->
+<!--						'posts_per_page' => 6,-->
+<!--					);-->
 								
-					$post_quote = new WP_Query($args);
+<!--					$post_quote = new WP_Query($args);-->
 								
-					if ($post_quote -> have_posts()):
-						while ($post_quote -> have_posts()):
-							$post_quote -> the_post();
-							get_template_part('templates/content',get_post_format());
-						endwhile;	
-					endif;
-					wp_reset_postdata();
-?>
+<!--					if ($post_quote -> have_posts()):-->
+<!--						while ($post_quote -> have_posts()):-->
+<!--							$post_quote -> the_post();-->
+<!--							get_template_part('templates/content',get_post_format());-->
+<!--						endwhile;	-->
+<!--					endif;-->
+<!--					wp_reset_postdata();-->
+<!--?>-->
 <!--  Fin del loop  -->
-                </div>
+<!--                </div>-->
 <!-------------------- Fin Post Quote ------------------------------------->				
-            </div>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>	-->
+
+	<section  id="portada" class="module-header default-height parallax bg-light bg-light-60 bg-film bloqueflex" data-background="<?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>">
+		<div class="wrapper">
+            <section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/module-3.jpg';?>">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <div class="tms-slides owl-carousel">
+                                <div class="tms-item">
+                                    <div class="tms-icons">
+                                        <span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>
+                                    </div>
+                                    <div class="tms-content">
+                                        <blockquote>
+                                            <p>If you want to know what a man&#039;s like, take a good look at how he treats his inferiors, not his equals.</p>
+                                        </blockquote>
+                                    </div>
+                                    <div class="tms-author">
+                                        <span class="font-alt">J.K. Rowling</span>
+                                    </div>
+                                </div>
+
+                                <div class="tms-item">
+                                    <div class="tms-icons">
+                                        <span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>
+                                    </div>
+                                    <div class="tms-content">
+                                        <blockquote>
+                                            <p>To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.</p>
+                                        </blockquote>
+                                    </div>
+                                    <div class="tms-author">
+                                        <span class="font-alt">Ralph Waldo Emerson</span>
+                                    </div>
+                                </div>
+
+                                <div class="tms-item">
+                                    <div class="tms-icons">
+                                        <span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>
+                                    </div>
+                                    <div class="tms-content">
+                                        <blockquote>
+                                            <p>Imperfection is beauty, madness is genius and it&#039;s better to be absolutely ridiculous than absolutely boring.</p>
+                                        </blockquote>
+                                    </div>
+                                    <div class="tms-author">
+                                        <span class="font-alt">Marilyn Monroe</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <!--Fin de row-->
+                </div>
+            </section>
         </div>
-    </section>	
-    
+    </section>
     <section class="module" id="sectionB2">
         <div class="container">    
 <!-------------------- Inicio Post Destacado ---------------------------------->

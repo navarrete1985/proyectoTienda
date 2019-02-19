@@ -57,6 +57,9 @@
         wp_register_script('minnnnn', get_template_directory_uri() . '/assets/js/ini.js',array('jquery'),null,true);
         wp_enqueue_script('minnnnn');
         
+        wp_register_script('mijs', get_template_directory_uri() . '/assets/js/mijs.js',array('jquery'),null,true);
+        wp_enqueue_script('mijs');
+        
     }
     add_action('wp_enqueue_scripts','my_theme_scripts');
 
