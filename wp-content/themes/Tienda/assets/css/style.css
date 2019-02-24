@@ -52,3 +52,12 @@
         display: flex !important;
         flex-flow: column;
     }
+
+/*-------------------------------ESTILOS PARALLAX QUOTE BLOG------------------------*/
+.blog-quote-parallax .owl-pagination {
+    display: none !important;
+}
+
+.blog-quote-parallax p {
+    font-size: 22px !important;
+}

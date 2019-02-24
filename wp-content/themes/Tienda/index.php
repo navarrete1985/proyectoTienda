@@ -46,64 +46,47 @@
 <!--            </div>-->
 <!--        </div>-->
 <!--    </section>	-->
-
-	<section  id="portada" class="module-header default-height parallax bg-light bg-light-60 bg-film bloqueflex" data-background="<?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>">
-		<div class="wrapper">
-            <section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/module-3.jpg';?>">
+	
+	<section class="module-header bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>" style="background-image: none; background-attachment: scroll; background-size: auto;" data-jarallax-original-styles="background-image: url('<?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>');">
+            
+	<!--<section  id="portada" class="module-header default-height parallax bg-light bg-light-60 bg-film bloqueflex" data-background="< ?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>">-->
+	<!--	<div class="wrapper">-->
+            <!--<section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/assets/img/default.jpg';?>">-->
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-6">
-                            <div class="tms-slides owl-carousel">
-                                <div class="tms-item">
-                                    <div class="tms-icons">
-                                        <span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>
-                                    </div>
-                                    <div class="tms-content">
-                                        <blockquote>
-                                            <p>If you want to know what a man&#039;s like, take a good look at how he treats his inferiors, not his equals.</p>
-                                        </blockquote>
-                                    </div>
-                                    <div class="tms-author">
-                                        <span class="font-alt">J.K. Rowling</span>
-                                    </div>
-                                </div>
-
-                                <div class="tms-item">
-                                    <div class="tms-icons">
-                                        <span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>
-                                    </div>
-                                    <div class="tms-content">
-                                        <blockquote>
-                                            <p>To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.</p>
-                                        </blockquote>
-                                    </div>
-                                    <div class="tms-author">
-                                        <span class="font-alt">Ralph Waldo Emerson</span>
-                                    </div>
-                                </div>
-
-                                <div class="tms-item">
-                                    <div class="tms-icons">
-                                        <span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>
-                                    </div>
-                                    <div class="tms-content">
-                                        <blockquote>
-                                            <p>Imperfection is beauty, madness is genius and it&#039;s better to be absolutely ridiculous than absolutely boring.</p>
-                                        </blockquote>
-                                    </div>
-                                    <div class="tms-author">
-                                        <span class="font-alt">Marilyn Monroe</span>
-                                    </div>
-                                </div>
+                        <!--<div class="col-md-3"></div>-->
+                        <div class="col-sm-12">
+                            <div class="blog-quote-parallax tms-slides owl-carousel">
+                                <?php
+									$args = array(
+										'post_format' => 'post-format-quote',
+										'posts_per_page' => 6,
+									);
+									
+									$post_quote = new WP_Query($args);
+												
+									if ($post_quote -> have_posts()):
+										while ($post_quote -> have_posts()):
+											$post_quote -> the_post();
+								?>
+								<div class="tms-item">
+								    <div class="tms-content">
+								        <p><?= get_the_content(); ?></p>
+								    </div>
+								</div>
+								<?php
+										endwhile;	
+									endif;
+									wp_reset_query();
+								?>
                             </div>
                         </div>
-                        <div class="col-sm-3"></div>
+                        <!--<div class="col-md-3"></div>-->
                     </div>
                     <!--Fin de row-->
-                </div>
-            </section>
-        </div>
+        <!--        </div>-->
+            <!--</section>-->
+        <!--</div>-->
     </section>
     <section class="module" id="sectionB2">
         <div class="container">    

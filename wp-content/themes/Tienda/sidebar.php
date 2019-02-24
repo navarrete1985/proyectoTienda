@@ -1,6 +1,6 @@
 <div class="sidebar">
 	<aside id="search-2" class="widget widget_search">
-		<form role="search" method="get" class="search-form" action="http://vortex-wp.2the.me/">
+	<!--	<form role="search" method="get" class="search-form" action="http://vortex-wp.2the.me/">
 			<input type="search"
 				   class="search-field form-control"
 				   placeholder="Search..."
@@ -9,7 +9,8 @@
 			<button class="search-button" type="submit">
 				<span class="fa fa-search"></span>
 			</button>
-		</form>
+		</form>-->
+		<?php get_search_form(); ?> 
 	</aside>
 	
 	<aside id="twitter-feed-2" class="widget twitter-feed-widget">
@@ -34,9 +35,11 @@
 			    $custom_query = new WP_Query($args);
 			    if ( $custom_query->have_posts() ): while ($custom_query->have_posts()): $custom_query->the_post(); 
 				
-				 $category = get_the_category();
+					$category = get_the_category();
 							 $categoria = $category[0]->cat_name;
-				
+							 
+					$id_destacado = $post -> ID;
+
 			    if(has_post_thumbnail() ) {
 			        $postImg = get_the_post_thumbnail_url();
 			    } 
@@ -112,6 +115,7 @@
 			<?php 
 			    $args = array(
 			    	'posts_per_page' => 3,
+			    	'post__not_in' => array($id_destacado),
 			    ); 
 			    $custom_query = new WP_Query($args);
 			    if ( $custom_query->have_posts() ): while ($custom_query->have_posts()): $custom_query->the_post(); 

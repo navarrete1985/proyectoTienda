@@ -40,6 +40,32 @@ class AjaxController extends Controller {
         $this->getModel()->add($r);
     }
     
+    function listarZapato() {
+        $this->checkIsAdmin();
+        $ordenes = [
+            'id' => '',
+            'marca' => '',
+            'modelo' => '',
+            'precio' => '',
+            'peso' => '',
+            'referencia' => '',
+            'coleccion' => '',
+            'img' => '',
+        ];
+        $pagina = Reader::read('pagina');
+        if($pagina === null || !is_numeric($pagina)) {
+            $pagina = 1;
+        }
+        $orden = Reader::read('orden');
+        if(!isset($ordenes[$orden])) {
+            $orden = 'marca';
+        }                                        //$pagina, $orden
+        $r = $this->getModel()->getDoctrineZapatos($pagina,$orden);
+        // echo Util::varDump($r);
+       
+        $this->getModel()->add($r);
+    }
+    
     function deleteuser() {
         $this->checkIsAdmin();
         $id = Reader::read('id');
@@ -116,6 +142,4 @@ class AjaxController extends Controller {
         
         $this->getModel()->set('result', $result);
     }
-
-    
 }

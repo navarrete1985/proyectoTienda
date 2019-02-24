@@ -1,0 +1,18 @@
+    tr > th {
+        font-size: 1.125em;
+        background-color: #F2F2F2;
+    }
+
+    tr > th:nth-child(2) {
+        text-align: center;
+    }
+    
+    td a,
+    td p {
+        font-size: 0.8em;
+        color: #666666 !important;
+    }
+
+    td a:hover {
+        color: #f5a319 !important;
+    }

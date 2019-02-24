@@ -3,6 +3,7 @@
 namespace tienda\model;
 
 use tienda\tools\Bootstrap;
+use tienda\tools\Util;
 
 class Model {
     

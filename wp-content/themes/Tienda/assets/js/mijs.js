@@ -11,4 +11,6 @@
              $('#filters a[data-filter="' + value + '"] small').text('.' + count);
         }
     })
+    
+    $('.blog-quote-parallax blockquote').removeClass('wp-block-quote');
 })(jQuery);

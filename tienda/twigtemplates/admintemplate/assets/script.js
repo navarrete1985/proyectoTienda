@@ -16,6 +16,15 @@
         getListado(data,pagina,dataorden);
     });
     
+    $('.onClickListaZapatos').on('click', function(event){
+        event.preventDefault();
+        data = $(event.currentTarget).attr('data-lista');
+        pagina = $(event.currentTarget).attr('data-pagina');
+        dataorden = $(event.currentTarget).attr('data-orden');
+        history.pushState(null, "", 'admin/'+data);
+        getListado(data,pagina,dataorden);
+    });
+    
     $(document).ajaxStart(function () {
         $('.wrapper-loader').removeClass('hidden');
     });
@@ -60,8 +69,10 @@
                 });
                 break;
             case 'zapatos':
-                genericAjax('ajax/listar', {'pagina': pagina}, 'get', function(json) {
-                    pintar(objeto);
+                genericAjax('ajax/listarZapato', {'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                    console.log(json.zapatos);
+                    pintar(json.zapatos);
+                    procesarPaginas(json.paginas);
                     
                 });
                 break;
@@ -329,6 +340,19 @@
                 console.log('ajax always');
             });
         }
+        
+        
+
+    
+        
+         $('#rol').on('change', function(event){
+            var checkbox = document.getElementById("rol");
+                if(checkbox.checked == false){
+                    checkbox.removeAttribute("checked");
+                }else{
+                    checkbox.createAttribute("checked");
+                }
+        });
         
         let validacion = new Validate('form-container');
         validacion.addSuccessListener(result => {

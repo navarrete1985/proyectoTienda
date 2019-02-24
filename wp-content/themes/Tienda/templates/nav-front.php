@@ -19,5 +19,9 @@
 		<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314 ">
 			<a href="<?php echo get_template_directory_uri ()?>/tienda/login" class="far fa-user fa-2x"></a>
 		</li>
+		<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314 ">
+			<a href="<?php echo get_template_directory_uri ()?>/tienda/search" class="fas fa-search fa-2x"></a>
+		</li>		
+		
 	</ul>
-</div>
+</div>   
