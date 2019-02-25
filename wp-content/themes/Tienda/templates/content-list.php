@@ -1,6 +1,6 @@
 <div class="col-md-12">                        
     <div class="titulo bloqueflex">
-        <p> Posts encontrados para: </p>
+        <h2> POST ENCONTRADOS:</h2>
     </div>  
     
     <div class="posts_table">
@@ -20,7 +20,7 @@
                     <td><p><?php the_author(); ?></p></td>
                     <td><p><?php the_category(); ?></p></td>
                 </tr>
-<?php       endwhile;  ?>
+<?php       endwhile; ?>
         </table>                     
     </div> 
 </div>

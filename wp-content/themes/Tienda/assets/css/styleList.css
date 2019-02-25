@@ -1,5 +1,9 @@
+    table {
+        width: 100%;    
+    }
+    
     tr > th {
-        font-size: 1.125em;
+        font-size: 1.2em;
         background-color: #F2F2F2;
     }
 
@@ -9,7 +13,7 @@
     
     td a,
     td p {
-        font-size: 0.8em;
+        font-size: 1em;
         color: #666666 !important;
     }
 

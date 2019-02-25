@@ -71,6 +71,10 @@
 @import url('assets/css/styleList.css');
 
 
+/* ----------------------   ESPECÍFICOS DE Search ----------------------------------------------------------- */
+@import url('assets/css/styleSearch.css');
+
+
 /* ----------------------   MODIFICACION DE ESTILOS  ------------------------------------------------------ */
 @import url('assets/css/styleBlog.css');
 

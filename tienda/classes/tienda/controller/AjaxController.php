@@ -18,48 +18,34 @@ class AjaxController extends Controller {
     
     function listarUsuario() {
         $this->checkIsAdmin();
-        $ordenes = [
-            'id' => '',
-            'nombre' => '',
-            'correo' => '',
-            'apellidos' => '',
-            'alias' => '',
-            'direccion' => '',
-            'activo' => '',
-            'rol' => '',
-        ];
+        
         $pagina = Reader::read('pagina');
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;
         }
         $orden = Reader::read('orden');
-        if(!isset($ordenes[$orden])) {
+        
+        if (!property_exists(App::OBJECT['usuario'],  $orden)) {
             $orden = 'nombre';
-        }                                        //$pagina, $orden
+        }
+                                                //$pagina, $orden
         $r = $this->getModel()->getDoctrineUsuarios($pagina,$orden);
         $this->getModel()->add($r);
     }
     
     function listarZapato() {
         $this->checkIsAdmin();
-        $ordenes = [
-            'id' => '',
-            'marca' => '',
-            'modelo' => '',
-            'precio' => '',
-            'peso' => '',
-            'referencia' => '',
-            'coleccion' => '',
-            'img' => '',
-        ];
+        
         $pagina = Reader::read('pagina');
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;
         }
         $orden = Reader::read('orden');
-        if(!isset($ordenes[$orden])) {
+        
+        if (!property_exists(App::OBJECT['articulo'],  $orden)) {
             $orden = 'marca';
-        }                                        //$pagina, $orden
+        }
+                                                //$pagina, $orden
         $r = $this->getModel()->getDoctrineZapatos($pagina,$orden);
         // echo Util::varDump($r);
        
@@ -80,6 +66,7 @@ class AjaxController extends Controller {
         $result = $this->getModel()->get($class, [$key => $value]);
         $this->getModel()->set('result', ($result == null) ? 1 : 0);
     }
+    
     function isavailableedit(){
         $this->checkIsAdmin();
         $class = ucfirst(strtolower(Reader::read('class')));

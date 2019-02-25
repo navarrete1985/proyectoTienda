@@ -35,7 +35,7 @@
 	</header>
 	
 	<div class="wrapper">
-		<section class="module-header">
+		<section class="module-header  header-search">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
@@ -45,16 +45,15 @@
 				</div>
 			</div>
 		</section>
-		
 <!-- Blog-->
 		<section class="module">
 			<div class="container">
 				<div class="row">
 <!-- Content-->
-					<div class="col-sm-9 bordeB">
+					<div class="col-sm-9">
 <!-- Posts-->
 
-						<article id="post-11" class=" bordeR post-11 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-sport tag-lifestyle tag-music tag-news tag-responsive tag-travel">
+						<article id="post-11" class="post-11 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-sport tag-lifestyle tag-music tag-news tag-responsive tag-travel">
 <?php       
 						    if (have_posts()):  
 						   	    get_template_part('templates/content','list'); 
