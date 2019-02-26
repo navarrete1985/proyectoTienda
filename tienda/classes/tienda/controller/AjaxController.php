@@ -24,7 +24,8 @@ class AjaxController extends Controller {
             $pagina = 1;
         }
         $orden = Reader::read('orden');
-        
+        // echo 'orden'.$orden;
+        // exit();
         if (!property_exists(App::OBJECT['usuario'],  $orden)) {
             $orden = 'nombre';
         }
@@ -116,6 +117,8 @@ class AjaxController extends Controller {
                 $obj->setClave(Util::encriptar($obj->getClave()));
                 $obj->setActivo($obj->getActivo() == 'on' ? 1 : 0);
                 $obj->setRol($obj->getRol() == 'on' ? 1 : 0);
+                break;
+            case 'articulo':
                 break;
         }
         $result = 0;

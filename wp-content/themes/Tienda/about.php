@@ -2,13 +2,12 @@
 	/*
 		Template Name: about
 	*/
+	
+    global $wp;
+    $current_slug = add_query_arg(array(), $wp -> request);
+	
     get_header();
 ?>
-		<!-- Preloader-->
-<div class="page-loader">
-	<div class="loader">Loading...</div>
-</div>
-<!-- Preloader end-->
 
 <!-- Header-->
 <header class="header">

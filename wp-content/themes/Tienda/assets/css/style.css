@@ -29,6 +29,10 @@
     border: 1px solid blue;
 }
 
+.is_active {
+    background: black;
+    color: white;
+}
 /*-------------------------- Bloques con Flex --------------------------------*/
     .bloqueflex {
         display: flex !important;
@@ -47,11 +51,19 @@
         justify-content: space-between;
         align-items: center;
     }
+  
+    .bloqueflex-around {
+        display: flex !important;
+        justify-content: space-around;
+        align-items: center;        
+    }
     
     .bloqueflex-col {
         display: flex !important;
         flex-flow: column;
     }
+    
+    
 
 /*-------------------------------ESTILOS PARALLAX QUOTE BLOG------------------------*/
 .blog-quote-parallax .owl-pagination {

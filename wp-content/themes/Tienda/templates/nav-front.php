@@ -1,20 +1,27 @@
+<?php 
+    global  $current_slug;
+?> 
+
 <div class="inner-navigation">
 	<ul id="menu-additional-menu" class="">
 		<li id="menu-item-315" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-315">
-			<a href="<?php echo get_option('home');?>">Inicio</a>
+			<a href="<?php echo get_option('home');?>"><span class="<?php if($current_slug == "home") {echo "is_active";};?>">Inicio</span></a>
 		</li>
 		<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314">
-			<a href="<?= get_site_url() ?>/tienda"/>Tienda</a>
+			<a href="<?= get_site_url() ?>/tienda"/><span class="<?php if($current_slug == "tienda") {echo "is_active";};?>">Tienda</span></a>
 		</li>
 		<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
-			<a href="<?php echo get_page_link(get_page_by_title('blog')->ID); ?>">Blog</a>
+			<a href="<?php echo get_page_link(get_page_by_title('blog')->ID); ?>"><span class="<?php if($current_slug == "blog") {echo "is_active";};?>">Blog</span></a>
 		</li>		
 		<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
-			<a href="<?php echo get_page_link(get_page_by_title('about')->ID); ?>">La empresa</a>
+			<a  href="<?php echo get_page_link(get_page_by_title('about')->ID); ?>"><span class="<?php if($current_slug == "about") {echo "is_active";};?>">La empresa</span></a>
 		</li>
 		<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314">
-			<a href="<?php echo get_page_link(get_page_by_title('contact')->ID); ?>">Contacto</a>
+			<a  href="<?php echo get_page_link(get_page_by_title('contact')->ID); ?>"><span class="<?php if($current_slug == "contact") {echo "is_active";};?>">Contacto</span></a>
 		</li>
+		<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314">
+			<a  href="<?php echo get_page_link(get_page_by_title('archives')->ID); ?>"><span class="<?php if($current_slug == "archives") {echo "is_active";};?>">Archivos</span></a>
+		</li>		
 		
 		<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314 ">
 			<a href="<?php echo get_template_directory_uri ()?>/tienda/login" class="far fa-user fa-2x"></a>

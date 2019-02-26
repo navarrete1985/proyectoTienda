@@ -1,7 +1,65 @@
 .header-search {
     background-image: url('../img/module-5.jpg');
-    
+    background-position: 50% 20%; 
+    padding: 100px 0 300px 0 !important;
+    height: 500px;
 }
+    .cab-search {
+        background-color: rgba(242,242,242,0.6);
+    }
+
     .header-search h1 {
         color: white;
     }
+
+    .post-title {
+        color: rgba(17,17,17,.55);
+    }
+    
+    .search-form {
+        background-image: url('../img/img-14.jpg');
+        background-position: top;
+        background-attachment: fixed; 
+        height: 495px;        
+    }
+        .search-form article {
+            justify-content: flex-end !important;
+        }
+        .formS {
+            width: 50%;  
+            align-items: center;
+        }
+            .formS form {
+                width: 100%;
+            }
+                .formS form div {
+                    display: flex;
+                    justify-content: center;
+                    
+                }
+                    #s {
+                        width: 60%;
+                        margin-right: 2vw;
+                        height: 30px;
+                        border-radius: 5px;
+                    }
+                    #searchsubmit {
+                        height: 30px;
+                        background-color: #333333;
+                        border-color: #333333; 
+                        color: #fff;
+                        border-radius: 5px;
+                        font-family: Dosis;
+                        font-style: normal;
+                        font-weight: 400;   
+                        transition: all .3s ease-out;
+                        font-size: 11px; 
+                        border-width: 2px;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;    
+                    }
+    
+    
+
+   
+    

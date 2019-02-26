@@ -15,7 +15,7 @@ class Mail {
         // $enlace = App::BASE . 'login/activate?id='. $usuario->getId() .'&code=' . $jwt;
         // $mensaje = "Correo de activación para:  ". $usuario->getNombre();
         // $mensaje .= '<br><a href="' . $enlace . '">Activar cuenta</a>';
-        $mensaje = $this->getEmailBody($usuario->getNombre(), $usuario->getId(), $jwt);
+        $mensaje = self::getEmailBody($usuario->getNombre(), $usuario->getId(), $jwt);
         return self::sendMail($usuario->getCorreo(), $asunto, $mensaje);
     }
     

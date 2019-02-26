@@ -1,4 +1,7 @@
 <?php
+
+    global $wp;
+    $current_slug = add_query_arg(array(), $wp->request);  
     get_header();
 ?>
     <!-- Preloader-->
@@ -14,35 +17,14 @@
                 <a class="inner-brand" href="index.html">
 						<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" />
 						<img class="brand-light" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" />
-					</a>
+				</a>
             </div>
-            <!--		<div class="header-nav-toogle">
-					<a class="show-menu-btn" href="#">
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
-				</div>  -->
+
 <?php
 				get_template_part('templates/nav','front');
 				the_post();
         		$post_id = $post->ID;
 ?>
-                <!--
-				<div class="inner-navigation">
-					<ul id="menu-additional-menu" class="">
-						<li id="menu-item-315" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-315">
-							<a href="index.html">Home</a>
-						</li>
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
-							<a href="about.html">About</a>
-						</li>
-						<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314">
-							<a href="contact.html">Contact</a>
-						</li>
-					</ul>
-				</div>
--->
         </div>
     </header>
     <!-- Header end-->
@@ -52,7 +34,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1 class="h3 font-alt">James Vortex</h1>
+                        <h1 class="h3 font-alt"><?php echo $current_slug; ?></h1>
                         <h1 class="h4 font-alt">Professional Photographer</h1>
                     </div>
                 </div>
