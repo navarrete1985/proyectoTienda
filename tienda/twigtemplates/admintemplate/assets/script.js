@@ -188,25 +188,27 @@
         }
     })
     
-    //Cambiar estado de los input de tipo checkbox
-    $('#rol').on('change', function(event){
-        var checkbox = document.getElementById("rol");
-        
-        if (checkbox.checked == false){
-            checkbox.removeAttribute("checked");
-        } else{
-            checkbox.createAttribute("checked");
-        }
-    });
-    
     var editar = document.getElementById("editar-update");
+    if (editar !== null) {
+        $('#signup-password').attr('data-empty', true);
+    }
     
     //Comprobamos de que tengamos un contenedor de formulario
     if ($('#form-container').length > 0) {
         
+        //Ponemos listener para nuestra imagen destacada
+        $('#img-thumbnail-btn').on('click', e => {
+            e.preventDefault();
+            $('#img-thumbnail').trigger('click');
+        })
+        
+        
+        
         //valores de alias y correo en caso de que editemos
-        var alias = document.getElementById("signup-alias").value;
-        var correo = document.getElementById("signup-email").value;
+        if (editar !== null) {
+            var alias = document.getElementById("signup-alias").value;
+            var correo = document.getElementById("signup-email").value;   
+        }
         
         $('.submit').on('click', event => {
             event.preventDefault();
@@ -219,11 +221,12 @@
             let data = null;
             switch($('#form-container').attr('data-class')) {
                 case 'usuario':
-                    data = validacion.getObjectValues(['text', 'checkbox', 'email']);
+                    data = validacion.getObjectValues(['text', 'checkbox', 'email', 'password']);
                     data.class = 'usuario';
                     data.id = document.getElementById("id-edit") !== null ? document.getElementById("id-edit").value : '';
                     break;
                 case 'articulo':
+                    data = validacion.getObjectValues(['text', 'checkbox', 'email', 'number']);
                     break;
             }
             
@@ -232,7 +235,9 @@
                 let action = editar == null ? 'ajax/adddata' : 'ajax/updatedata';
                 genericAjax.request(action, data, 'post', response => {
                    if (response.result == 1) {
-                       validacion.clearAllFields();
+                       if (editar === null) {
+                            validacion.clearAllFields();
+                       }
                        message.showMessage('Operación realizada con éxito', 'El usuario se ha añadido satisfactoriamente', 'success');
                    }else {
                        message.showMessage('Operación fallida', 'Ha ocurrido algún error al añadir al usuario', 'success');

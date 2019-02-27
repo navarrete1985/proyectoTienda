@@ -65,18 +65,16 @@
 @import url('assets/wp-content/themes/vortex/assets/css/linea-iconsbb98.css?ver=2.6.16');
 
 
-/* ----------------------   ESPECÍFICOS DE Post ----------------------------------------------------------- */
+/* ----------------------   PLANTILLAS DE ESTILO PROPIAS  ------------------------------------------------- */
 @import url('assets/css/style.css');
 @import url('assets/css/sidebar_css.css');
 @import url('assets/css/styleListS.css');
-
-
-/* ----------------------   ESPECÍFICOS DE Search ----------------------------------------------------------- */
 @import url('assets/css/styleSearch.css');
-
-
-/* ----------------------   MODIFICACION DE ESTILOS  ------------------------------------------------------ */
+@import url('assets/css/styleArchives.css');
 @import url('assets/css/styleBlog.css');
+@import url('assets/css/styleAuthor.css');
+
+/* ----------------------   MODIFICACION DE ESTILOS  -------------------------------------------------------- */
 
 /*formulario de single*/
 #commentform label{

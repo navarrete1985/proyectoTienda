@@ -9,7 +9,6 @@ use tienda\tools\Reader;
 use tienda\app\App;
 use tienda\tools\Mail;
 
-
 class LoginController extends Controller {
     
     function main() {
@@ -22,7 +21,6 @@ class LoginController extends Controller {
     
     function signup() {
         $this->getModel()->set('twigFile', '_signup.twig');
-        
     }
     
     function dosignup()  {

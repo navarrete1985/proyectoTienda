@@ -4,13 +4,7 @@
     $current_slug = add_query_arg(array(), $wp->request);  
     get_header();
 ?>
-    <!-- Preloader-->
-    <div class="page-loader">
-        <div class="loader">Loading...</div>
-    </div>
-    <!-- Preloader end-->
-
-    <!-- Header-->
+<!-- Header-->
     <header class="header">
         <div class="container">
             <div class="inner-header">

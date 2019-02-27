@@ -21,6 +21,12 @@
     background-size: cover; 
 }
 
+.imgResponsiveTop {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover; 
+}
+
 .bordeR {
     border: 1px solid red;
 }
@@ -33,6 +39,29 @@
     background: black;
     color: white;
 }
+
+.btn-general {
+    height: 50px;
+    background-color: #333333;
+    border-color: #333333; 
+    color: #fff;
+    border-radius: 5px;
+    font-family: Dosis;
+    font-style: normal;
+    font-weight: 400;   
+    transition: all .3s ease-out;
+    font-size: 1.125em; 
+    border-width: 2px;
+    letter-spacing: 3px;
+    text-transform: uppercase; 
+    padding: 10px;
+}
+    .btn-general:hover {
+        background-color: #DFE3E2;
+        border-color: #DFE3E2; 
+        color: #333333;
+    }
+    
 /*-------------------------- Bloques con Flex --------------------------------*/
     .bloqueflex {
         display: flex !important;

@@ -30,8 +30,10 @@ class Validate {
         this._elementos = this._form.querySelectorAll('input');
         let errors = 0;
         Array.from(this._elementos).forEach(field => {
+        if(field.getAttribute('data-empty') !== "true"){
             switch (field.type) {
                 case 'password':
+                if(this._elementos[0].value !== '')
                 errors += this.validarInput(field, field.type, "4", "16");
                 break;
                 case 'text':
@@ -41,6 +43,7 @@ class Validate {
                 errors += this.validarInput(field, field.type);
                 break;
             }
+        }
         });
         
         if(errors === 0 && this._success !== null) {
@@ -145,13 +148,15 @@ class Validate {
         let elements = this._form.querySelectorAll('input');
         Array.from(elements).forEach(node => {
            node.addEventListener('blur', event => {
-               if(node.hasAttribute('ajax-callback') && this._blurCallback !== null) {
-                   this._blurCallback(event.currentTarget);
-               }else {
-                   let min = node.type == 'password' ? '4' : '5';
-                   let max = node.type == 'password' ? '16' : '30';
-                   this.validarInput(node, node.type, min, max);
-               }
+                if(event.currentTarget.getAttribute('data-empty') !== "true") {
+                   if(node.hasAttribute('ajax-callback') && this._blurCallback !== null) {
+                       this._blurCallback(event.currentTarget);
+                    }else {
+                       let min = node.type == 'password' ? '4' : '5';
+                       let max = node.type == 'password' ? '16' : '30';
+                       this.validarInput(node, node.type, min, max);
+                   }
+                }
            });
         });
     }

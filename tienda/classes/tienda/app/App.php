@@ -27,5 +27,14 @@ class App {
               'categoria'   => 'tienda\data\Categoria',
               'destinatario'=> 'tienda\data\Destinatario',
               'articulo'    => 'tienda\data\Articulo'
+          ],
+          RELATIONSHIP = [
+              'Usuario'      => ['pedidos'],
+              'Articulo'     => [],
+              'Color'        => [],
+              'Categoria'    => [],
+              'Destinatario' => [],
+              'Detalle'      => [],
+              'Stock'        => []
           ];
 }

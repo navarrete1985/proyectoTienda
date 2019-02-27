@@ -1,0 +1,35 @@
+#header-archives {
+    background-image: url('../img/img-15.jpg');
+    padding: 300px 0;
+}
+    .post-block {
+        margin-top: 30px;
+    }
+        .small-archive-text {
+            background: white;
+            border: 1px solid #ebebeb;
+            padding: 25px;              
+        }
+            .small-archive-text h5 {
+                width: 100%;
+                padding: 1vh 0;
+                margin-bottom: 2vh;
+                text-align: center;
+                background-color: #F2F2F2;    
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                margin-top: 0;    
+            }
+            .small-archive-text ul {
+                list-style: circle !important;
+                width: 100%;
+            }    
+                .small-archive-text ul li span {
+                    float: right;
+                }             
+            
+                .small-archive-text a {
+                    text-align: justify;
+                }
+   
+            

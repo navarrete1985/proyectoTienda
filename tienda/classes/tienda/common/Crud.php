@@ -1,7 +1,8 @@
 <?php 
 
 namespace tienda\common;
-
+use tienda\tools\Util;
+use tienda\app\App;
 trait Crud {
     
     private $prefix = '\tienda\data\\';
@@ -30,9 +31,28 @@ trait Crud {
     }
     
     function update ($item) {
-        $this->gestor->persist($item);
+        
+        $before = $this->__update($item);
+        $this->gestor->persist($before);
         $this->gestor->flush();
-        return $item;
+        return $before;
+    }
+    
+    private function __update($item) {/*Le pasamos el item que recogemos*/
+        /*Conseguimos la clase */
+        $class = get_class($item);
+        $class = explode('\\', $class);
+        $class = end($class);
+        $before = $this->get($class, ['id' => $item->getID()]);
+        $values = $item->getUnset(App::RELATIONSHIP[$class]);
+        foreach ($values as $key=>$value) {
+            // echo '***key --> ' . $key . ' / valor --> ' . $value . '<br>';
+            if ($value !== null && $value !== '') {
+                $value = is_string($value) ? trim($value) : $value;
+                $before->setObject($key, $value);
+            }
+        }
+        return $before;
     }
     
     function delete($clase, $id) {

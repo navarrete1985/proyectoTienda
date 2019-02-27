@@ -28,8 +28,7 @@
         
         wp_register_script('scripts4906', get_template_directory_uri() . '/assets/wp-content/plugins/contact-form-7/includes/js/scripts4906.js',array('jquery'),null,false);
         wp_enqueue_script('scripts4906');
-        
-        
+
         wp_register_script('cf7-scriptsf718', get_template_directory_uri() . '/assets/wp-content/themes/vortex/includes/additional-sources/static/js/cf7-scriptsf718.js',array('jquery'),null,false);
         wp_enqueue_script('cf7-scriptsf718');
         
@@ -41,8 +40,7 @@
         
         wp_register_script('custom.minf718', get_template_directory_uri() . '/assets/wp-content/themes/vortex/assets/js/custom.minf718.js',array('jquery'),null,false);
         wp_enqueue_script('custom.minf718');
-        
-        
+
         wp_register_script('infinitescroll', get_template_directory_uri() . '/assets/wp-content/themes/vortex/framework/extensions/portfolio/static/js/infinitescroll.minf718.js',array('jquery'),null,false);
         wp_enqueue_script('infinitescroll');
         
@@ -54,11 +52,21 @@
         
         wp_register_script('wp-embed.minf718', get_template_directory_uri() . '/assets/wp-includes/js/wp-embed.minf718.js',array('jquery'),null,false);
         wp_enqueue_script('wp-embed.minf718');
+        
         wp_register_script('minnnnn', get_template_directory_uri() . '/assets/js/ini.js',array('jquery'),null,true);
         wp_enqueue_script('minnnnn');
         
         wp_register_script('mijs', get_template_directory_uri() . '/assets/js/mijs.js',array('jquery'),null,true);
         wp_enqueue_script('mijs');
+        
+        wp_register_script('embed', get_template_directory_uri() . '/assets/wp-includes/js/wp-embed.minf718.js',array('jquery'),null,true);
+        wp_enqueue_script('embed');  
+        
+        wp_register_script('b8ff', get_template_directory_uri() . '/assets/wp-includes/js/jquery/jqueryb8ff.js',array('jquery'),null,false);
+        wp_enqueue_script('b8ff');  
+        
+    /*    wp_register_script('min330', get_template_directory_uri() . '/assets/wp-includes/js/jquery/jquery-migrate.min330a.js',array('jquery'),null,false);
+        wp_enqueue_script('min330');       */  
         
     }
     add_action('wp_enqueue_scripts','my_theme_scripts');
@@ -92,45 +100,160 @@
     add_action('wp_enqueue_scripts','myScripts'); 
     
     
-//Función para los tags
-
-function get_tag_id($tag) {
-    global $wpdb;
-    $link_id = $wpdb->get_var($wpdb->prepare("SELECT term_id FROM $wpdb->terms WHERE name =  %s", $tag));
-    return $link_id;
-}
-
-// Creación del área para los widgets
-
-function crea_area_widgets() {
-    $sidebarArgs = array(
-        'name' => 'Sidebar Widget',
-        'id' => 'sidebar',
-        'description' => 'Sidebar Widgets Area',
-        'before_widget' => '<div class="widget %2$s">',  //%2$s -> Hace que se mantenga la clase de widgets
-        'after_widget' => '</div>'
-    );
-}
-
-
-// Quitar field URL de comentario y añadir politica de privacidad
-
-function remove_url_field($fields){
-    unset($fields['url']);
-    return $fields;
-}
-add_filter('comment_form_default_fields','remove_url_field');
-
-function push_comment_to_bottom($fields){
-    $comment=$fields['comment'];
-    unset($fields['comment']);
-    $fields['comment']=$comment;
+    //Función para los tags
     
-    $fields['checkpoliticas'] = 
-                 '<input id="checkpoliticas" name="checkpoliticas" type="checkbox" />
-                <label id = "labelcheck"for="checkpoliticas">Aceptas nuestras politicas de privacidad y esas cosas  <a href="http://ladireccionquequieras">Politica de privacidad</a></label>';
+    function get_tag_id($tag) {
+        global $wpdb;
+        $link_id = $wpdb->get_var($wpdb->prepare("SELECT term_id FROM $wpdb->terms WHERE name =  %s", $tag));
+        return $link_id;
+    }
     
-    return $fields;
-}
-add_filter('comment_form_fields','push_comment_to_bottom');
+    // Creación del área para los widgets
+    
+    function crea_area_widgets() {
+        $sidebarArgs = array(
+            'name' => 'Sidebar Widget',
+            'id' => 'sidebar',
+            'description' => 'Sidebar Widgets Area',
+            'before_widget' => '<div class="widget %2$s">',  //%2$s -> Hace que se mantenga la clase de widgets
+            'after_widget' => '</div>'
+        );
+    }
 
+
+    // Quitar field URL de comentario y añadir politica de privacidad
+    
+    function remove_url_field($fields){
+        unset($fields['url']);
+        return $fields;
+    }
+    add_filter('comment_form_default_fields','remove_url_field');
+    
+    function push_comment_to_bottom($fields){
+        $comment=$fields['comment'];
+        unset($fields['comment']);
+        $fields['comment']=$comment;
+        
+        $fields['checkpoliticas'] = 
+                     '<input id="checkpoliticas" name="checkpoliticas" type="checkbox" />
+                    <label id = "labelcheck"for="checkpoliticas">Aceptas nuestras politicas de privacidad y esas cosas  <a href="http://ladireccionquequieras">Politica de privacidad</a></label>';
+        
+        return $fields;
+    }
+    add_filter('comment_form_fields','push_comment_to_bottom');
+
+
+/***************** CAMPOS DE USUARIO EN BACK-END    ***************************/
+    function extra_profile_fields( $user ) { ?>
+    
+        <h3>Extra profile information Redes</h3>
+        <table class="form-table">
+            <tr>
+                <th><label for="twitter">Twitter</label></th>
+                <td>
+                    <input type="text" name="twitter" id="twitter" value="<?php echo esc_attr( get_the_author_meta( 'twitter', $user->ID ) ); ?>" class="regular-text" />
+                    <span class="description">Please enter your Twitter username.</span>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="facebook">Facebook</label></th>
+                <td>
+                    <input type="text" name="facebook" id="facebook" value="<?php echo esc_attr( get_the_author_meta( 'facebook', $user->ID ) ); ?>" class="regular-text" />
+                    <span class="description">Please enter your Facebook page.</span>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="linkedin">Linkedin</label></th>
+                <td>
+                    <input type="text" name="linkedin" id="linkedin" value="<?php echo esc_attr( get_the_author_meta( 'linkedin', $user->ID ) ); ?>" class="regular-text" />
+                    <span class="description">Please enter your Facebook page.</span>
+                </td>
+            </tr>        
+        </table>
+        
+        <h3>Extra profile Skills</h3>
+        <table class="form-table"> 
+            <tr>
+                <th><label for="networking">Networking</label></th>
+                <td>
+                    <input type="text" name="networking" id="networking" value="<?php echo esc_attr( get_the_author_meta( 'networking', $user->ID ) ); ?>" class="regular-text" />
+                    <span class="description">Introduce % nivel en Networking.</span>
+                </td>
+            </tr>    
+            <tr>
+                <th><label for="moda">Moda</label></th>
+                <td>
+                    <input type="text" name="moda" id="moda" value="<?php echo esc_attr( get_the_author_meta( 'moda', $user->ID ) ); ?>" class="regular-text" />
+                    <span class="description">Introduce % en conocimientos de moda.</span>
+                </td>
+            </tr>   
+            <tr>
+                <th><label for="innovacion">Innovación y tecnologia</label></th>
+                <td>
+                    <input type="text" name="innovacion" id="innovacion" value="<?php echo esc_attr( get_the_author_meta( 'innovacion', $user->ID ) ); ?>" class="regular-text" />
+                    <span class="description">Introduce % nivel de innovación y técnología.</span>
+                </td>
+            </tr> 
+            <tr>
+                <th><label for="marketing">Marketing</label></th>
+                <td>
+                    <input type="text" name="marketing" id="marketing" value="<?php echo esc_attr( get_the_author_meta( 'marketing', $user->ID ) ); ?>" class="regular-text" />
+                    <span class="description">Introduce % nivel de marketing.</span>
+                </td>
+            </tr>         
+        </table> 
+        
+        <h3>Campos adicionales</h3>
+        <table class="form-table"> 
+            <tr>
+                <th><label for="Pais">Pais:</label></th>
+                <td>
+                    <input type="text" name="Pais" id="Pais" value="<?php echo esc_attr( get_the_author_meta( 'Pais', $user->ID ) ); ?>" class="regular-text" />
+                </td>
+            </tr>  
+            <tr>
+                <th><label for="Telefono">Telefono:</label></th>
+                <td>
+                    <input type="text" name="Telefono" id="Telefono" value="<?php echo esc_attr( get_the_author_meta( 'Telefono', $user->ID ) ); ?>" class="regular-text" />
+                </td>
+            </tr>   
+            <tr>
+                <th><label for="Fecha_nac">Fecha nacimiento:</label></th>
+                <td>
+                    <input type="text" name="Fecha_nac" id="Fecha_nac" value="<?php echo esc_attr( get_the_author_meta( 'Fecha_nac', $user->ID ) ); ?>" class="regular-text" />
+                </td>
+            </tr>            
+        </table>        
+<?php        
+    }  
+    add_action( 'show_user_profile', 'extra_profile_fields' );
+    add_action( 'edit_user_profile', 'extra_profile_fields' );
+
+    function save_custom_profile_fields($user_id) {
+        if ( !current_user_can( 'edit_user', $user_id ) ) return false;             /*Si el usuario no tiene permisos se sale de la función */
+        update_usermeta( $user_id, 'facebook', $_POST['facebook'] );
+        update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
+        update_usermeta( $user_id, 'linkedin', $_POST['linkedin'] );  
+        update_usermeta( $user_id, 'networking', $_POST['networking'] );
+        update_usermeta( $user_id, 'moda', $_POST['moda'] );
+        update_usermeta( $user_id, 'innovacion', $_POST['innovacion'] );   
+        update_usermeta( $user_id, 'marketing', $_POST['marketing'] );
+        update_usermeta( $user_id, 'Pais', $_POST['Pais'] ); 
+        update_usermeta( $user_id, 'Telefono', $_POST['Telefono'] ); 
+        update_usermeta( $user_id, 'Fecha_nac', $_POST['Fecha_nac'] );          
+    }
+    add_action( 'personal_options_update', 'save_custom_profile_fields' );
+    add_action( 'edit_user_profile_update', 'save_custom_profile_fields' );
+    
+    
+    function get_author_role($author_id) {
+        $user_info = get_userdata($author_id);
+        return implode(', ',$user_info->roles);
+    }  
+    
+    /*--------   Función para sacar la imagen de autor  ----------------------*/
+    function imgAutor($alias) {
+        $imgAutor = $alias . '.jpg';
+        $urlimgAutor = '/assets/img/usuarios/' . $imgAutor;
+        return $urlimgAutor;
+    }    

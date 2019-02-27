@@ -66,5 +66,12 @@ trait Common {
         }
         return $this;
     }
+    
+    function setObject($attr, $value) {
+        if (property_exists($this, $attr)) {
+            $this->$attr = $value;    
+        }
+        return $this;
+    }
 
 }

@@ -27,7 +27,6 @@
     }
 
 ?>
-
 	<header class="header cab-search">
 		<div class="container">
 			<div class="inner-header">
@@ -43,10 +42,10 @@
 			</div>
 		</div>
 	</header>
-	
+
 	<div class="wrapper">
 <!-- header -->		
-		<section class="module-header  header-search imgResponsive">
+		<section class="module-header  header-search imgResponsive module-header default-height parallax bg-dark bg-dark-30 bg-film">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">

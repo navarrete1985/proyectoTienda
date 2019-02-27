@@ -28,7 +28,7 @@ class GenericAjax {
 
 class Message {
     
-    constructor(delay = 3000, animateEnter = 'animated zoomInDown', animateExit = 'animated zoomOutUp', axisX = 'left', axisY = 'top'){
+    constructor(delay = 5000, animateEnter = 'animated zoomInDown', animateExit = 'animated zoomOutUp', axisX = 'left', axisY = 'top'){
         this._delay = delay;
         this._animateEnter = animateEnter;
         this._animateExit = animateExit;

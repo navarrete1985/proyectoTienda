@@ -1,0 +1,61 @@
+#contentAuthor {
+    background-image: url('../img/b4-2.jpg');
+    padding: 250px 0 450px 0;
+}
+
+#imgAutor {
+    border-radius: 50%;
+   /* margin-left: 3vw;*/
+}
+
+.page-scroll {
+   /* margin-left: 3vw;*/
+}
+
+#nav-margin {
+    width: 100%;
+    padding: 3vh 0;
+    align-items: center;
+    background-color: #F2F2F2;
+}
+    #nav-margin > p:nth-child(2) {
+        margin-top: 3vh;        
+    }
+    
+.account-info-content {
+    background-color: #f8f8f8;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 0;
+} 
+    .account-info-content > h4 {
+        width: 100%;
+        height: 4vh;
+        line-height: 4vh;
+        text-align: center;
+        margin: 0 !important;
+        background-color: #BDBDBD;
+    }
+    .account-info-content > div {
+        margin: 30px;
+    }
+        .account-info-content > div p,
+        .account-info-content > div span,
+        .account-info-content > p {
+            font-size: 1.125em;
+        }
+
+    .account-info-content > p {
+        text-align: justify;
+        margin: 30px;
+    }  
+    
+    #my-orders img {
+        width: 200px;
+        height: 50px;        
+    }
+    
+    .module {
+        padding: 100px 0 100px 0;
+    }
