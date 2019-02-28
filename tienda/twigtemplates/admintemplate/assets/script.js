@@ -171,6 +171,11 @@
     let genericAjax = new GenericAjax();
     //Objeto para sacar los feedbacks
     let message = new Message();
+    let files = null;
+    
+    if ($('#add-img-gallery').length > 0) {
+        files = new Files('#img-gallery', '#show-gallery', '#add-img-gallery');
+    }
     
     //Destapar clave
     $('#form-container .password-container a').on('click', event => {
@@ -232,7 +237,10 @@
                 case 'articulo':
                     data = validacion.getFormData(['text', 'checkbox', 'email', 'number', 'file']);
                     data.append('articulo', 'articulo');
-                    // dt = 'formData';
+                    // files = new Files('#img-gallery', '#show-gallery', '#add-img-gallery');
+                    if (files !== null) {
+                        files.appendFiles(data);
+                    }
                     break;
             }
             
