@@ -68,7 +68,7 @@ class Validate {
                 break;
                 case 'text':
                     if (noEmpty === undefined) {
-                        regex = new RegExp("^([a-zA-Z0-9\\s]{" + minLength + "," + maxLength + "})$");
+                        regex = new RegExp("^([a-zA-Z0-9\\s_@./#&+-]{" + minLength + "," + maxLength + "})$");
                         errorMessage = `El campo debe tener entre ${minLength} y ${maxLength} caracteres alfanuméricos`;
                     }
                 break;
@@ -84,10 +84,13 @@ class Validate {
     
     getFormData(types) {
         let formData = new FormData();
-        types.foreach(type => {
+        Array.from(types).forEach(type => {
             $(`input[type=${type}]`).each(function() {
                 formData.append($(this).attr('name'), $(this).val());
-            })
+            });
+        });
+        $('textarea').each(function() {
+            formData.append($(this).attr('name'), $(this).val());
         });
         return formData;
     }
@@ -99,6 +102,9 @@ class Validate {
                 result[$(this).attr('name')] = $(this).val();
             })
         });
+        $('textarea').each(function() {
+            result[$(this).attr('name')] = $(this).val();
+        })
         return result;
     }
     

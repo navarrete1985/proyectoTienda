@@ -50,22 +50,7 @@
     };
     /* ]]> */
 </script>
-<!--<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/scripts4906.js?ver=4.7'></script>-->
-<!--<script type='text/javascript' src='wp-content/themes/vortex/includes/additional-sources/static/js/cf7-scriptsf718.js?ver=4.7.12'></script>-->
-<!--<script type='text/javascript' src='wp-content/themes/vortex/assets/bootstrap/js/bootstrap.minf718.js?ver=4.7.12'></script>-->
-<!--<script type='text/javascript' src='wp-content/themes/vortex/assets/js/plugins.minf718.js?ver=4.7.12'></script>-->
-<!--<script type='text/javascript' src='wp-content/themes/vortex/assets/js/custom.minf718.js?ver=4.7.12'></script>-->
-<!--<script type='text/javascript' src='http://maps.googleapis.com/maps/api/js?key=AIzaSyA0rANX07hh6ASNKdBr4mZH0KZSqbHYc3Q&amp;ver=4.7.12'></script>-->
-<!--<script type='text/javascript' src='wp-content/themes/vortex/framework/extensions/portfolio/static/js/infinitescroll.minf718.js?ver=4.7.12'></script>-->
-<!--<script type='text/javascript' src='wp-content/themes/vortex/framework/extensions/portfolio/static/js/filterinfscrf718.js?ver=4.7.12'></script>-->
-<!--<script type='text/javascript' src='wp-content/themes/vortex/includes/additional-sources/static/js/extra-scriptsf718.js?ver=4.7.12'></script>-->
-<!--<script type='text/javascript' src='wp-includes/js/wp-embed.minf718.js?ver=4.7.12'></script>-->
-
-<?php
-    wp_footer();
-?>
+<?php wp_footer(); ?>
 </body>
-
-<!-- Mirrored from vortex-wp.2the.me/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jan 2019 09:51:53 GMT -->
 
 </html>

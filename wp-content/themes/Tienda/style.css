@@ -73,6 +73,7 @@
 @import url('assets/css/styleArchives.css');
 @import url('assets/css/styleBlog.css');
 @import url('assets/css/styleAuthor.css');
+@import url('assets/css/comments.css');
 
 /* ----------------------   MODIFICACION DE ESTILOS  -------------------------------------------------------- */
 
@@ -86,6 +87,9 @@
 #labelcheck{
     display:inline-block !important;
 }
+    #labelcheck > a {
+        color: #c39d6d;
+    }
 
 #submit{
    background-color: #111;
@@ -176,4 +180,43 @@
 }
 .post{
     margin-right:30px;
+}
+
+#mensaje-rgpd {
+    display: none;
+    background-color: #FF0000;
+    color: white;
+    width: 80%;
+    font-size: 1.125em;
+    text-align: center;
+    cursor: pointer;
+    
+    animation-name: parpadeo;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+    -webkit-animation-name:parpadeo;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite; 
+}
+
+
+@-moz-keyframes parpadeo{  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {  
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
 }

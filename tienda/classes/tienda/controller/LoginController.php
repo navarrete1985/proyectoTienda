@@ -72,7 +72,8 @@ class LoginController extends Controller {
             if($usuario !== null && $user->getActivo() && $resultado) {
                 $user->setclave('');
                 $this->getSesion()->login($user);
-                $this->sendRedirect('admin/main?op=login&resultado=1');
+                $ruta = $user->getRol() == 1 ? 'admin' : 'index';
+                $this->sendRedirect($ruta . '/main?op=login&resultado=1');
             }
         }
         $this->sendRedirect('login/main?op=login&resultado=0');

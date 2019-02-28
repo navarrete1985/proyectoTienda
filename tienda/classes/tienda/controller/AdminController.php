@@ -10,6 +10,11 @@ use tienda\tools\Util;
 
 class AdminController extends Controller {
     
+    function __construct(Model $model) {
+        parent::__construct($model);
+        // $this->checkPermission();
+    } 
+    
     function main() {
         $this->checkIsLogged();
         $this->getModel()->set('twigFile', '_index.twig');
@@ -60,9 +65,12 @@ class AdminController extends Controller {
             
             $this->getModel()->set('user', $user);
             $this->getModel()->set('edit', true);
-            
 
     }
     
-    
+    function checkPermission() {
+        if ($this->getSesion()->getLogin()->getRol() != 1) {
+            $this->sendRedirect('index/main');
+        }
+    }
 }

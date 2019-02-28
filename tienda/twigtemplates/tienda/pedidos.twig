@@ -1,0 +1,74 @@
+{% extends 'base.twig' %}
+{% block content %}
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Detalles pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        cosas
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+	<section class="module-header default-height parallax bg-dark bg-dark-30 bg-film" data-background="{{twigFolder}}/src/images/module-5.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="h3 font-alt">Pedidos</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="fw-page-builder-content">
+		<section class="module">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="module-title">
+							<h2 class="font-alt">Ultimos Pedidos</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<table class="table">
+                                <thead>
+                                	
+                                    <tr>
+                                        <th scope="col" class="font-alt">Id del pedido</th>
+                                        <th scope="col" class="font-alt">Numero de tarjeta</th>
+                                        <th scope="col" class="font-alt">Realizado</th>
+                                    </tr>
+                                   
+                                </thead>
+                                <tbody>
+                                	 {% for item in data.pedidos%}
+						                <tr>
+						                  <td scope="row">{{item.id}}</td>
+						                  <td>{{item.numtarjeta}}</td>
+						                  <td>{{item.fechaexp.date}}</td>
+						                 <td><button class="detalles" data-idpedido='{{item.id}}' data-toggle="modal" data-target="#exampleModalLong">Detalles</button></td>
+						                </tr>
+						             {% endfor %}
+                                </tbody>
+                            </table>
+					
+					
+				</div>
+
+			</div>
+		</section>
+
+		
+	</div>
+{% endblock %}

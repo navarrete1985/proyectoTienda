@@ -19,6 +19,8 @@ abstract class Controller {
         $this->model = $model;
         $this->sesion = new Session(App::SESSION_NAME);
         $this->getModel()->set('urlbase', App::BASE);
+        $user = $this->sesion->getLogin();
+        $this->getModel()->set('user', $user);
     }
     
     function getModel() {

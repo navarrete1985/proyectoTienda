@@ -2,12 +2,15 @@ class GenericAjax {
     
     constructor() {}
     
-    request(url, data, type, callBackDone, callBackFail = null, callBackAlways = null) {
+    request( dt, url, data, type, callBackDone, callBackFail = null, callBackAlways = null) {
+        dt = dt == null ? 'json' : dt;
         $.ajax({
             url: url,
             data: data,
             type: type,
-            dataType : 'json',
+            dataType : dt,
+            contentType: false,
+            processData: false,
         })
         .done(function( json ) {
             callBackDone(json);

@@ -5,7 +5,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<div class='row' id='form-container' data-class='producto'>
+					<div class='row' id='form-container' data-class='articulo'>
 						<div class='col-md-6'>
 							{#-------CARTA DATOS PERSONALES--------------#}
 							<div class="panel todo-list">
@@ -23,11 +23,11 @@
 									</div>
 									<div class="form-group">
 										<label for="signup-marca" class="control-label title">Marca</label>
-										<input type="text" class="form-control" id="signup-marca" placeholder="Introduzca una marca" name='marca'>
+										<input min-legth='2' type="text" class="form-control" id="signup-marca" placeholder="Introduzca una marca" name='marca'>
 									</div>
 									<div class="form-group">
 										<label for="signup-modelo" class="control-label title">Modelo</label>
-										<input type="text" class="form-control" id="signup-modelo" placeholder="Introduzca modelo" name='modelo'>
+										<input data-empty='true' type="text" class="form-control" id="signup-modelo" placeholder="Introduzca modelo" name='modelo'>
 									</div>
 									<div class="form-group">
 										<label for="signup-precio" class="control-label title">Precio</label>
@@ -52,62 +52,62 @@
 								<div class='panel-body'>
 									<div class="form-group">
 										<label for="signup-material" class="control-label title">Material</label>
-										<input type="text" class="form-control" id="signup-material" placeholder="Introduzca material" name='material'>
+										<input data-empty='true' type="text" class="form-control" id="signup-material" placeholder="Introduzca material" name='material'>
 									</div>
 									<div class="form-group">
 										<label for="signup-peso" class="control-label title">Peso</label>
-										<input type="number" class="form-control" id="signup-peso" placeholder="Peso" name='peso'>
+										<input data-empty='true' type="number" class="form-control" id="signup-peso" placeholder="Peso" name='peso'>
 									</div>
 									<div class="form-group">
 										<label for="signup-estampado" class="control-label title">Estampado</label>
-										<input type="text" class="form-control" id="signup-estampado" placeholder="Estampado" name='estampado'>
+										<input data-empty='true' type="text" class="form-control" id="signup-estampado" placeholder="Estampado" name='estampado'>
 									</div>
 									{% if zapato %}
 										<div class="form-group">
 											<label for="signup-puntera" class="control-label title">Puntera</label>
-											<input type="text" class="form-control" id="signup-puntera" placeholder="Introduzca puntera" name='puntera'>
+											<input data-empty='true' type="text" class="form-control" id="signup-puntera" placeholder="Introduzca puntera" name='puntera'>
 										</div>
 										<div class="form-group">
 											<label for="signup-cierre" class="control-label title">Cierre</label>
-											<input type="text" class="form-control" id="signup-cierre" placeholder="Cierre" name='cierre'>
+											<input data-empty='true' type="text" class="form-control" id="signup-cierre" placeholder="Cierre" name='cierre'>
 										</div>
 										<div class="form-group">
 											<label for="signup-tipo" class="control-label title">Tipo</label>
-											<input type="number" class="form-control" id="signup-tipo" placeholder="Introduzca tipo" name='tipo'>
+											<input data-empty='true' type="number" class="form-control" id="signup-tipo" placeholder="Introduzca tipo" name='tipo'>
 										</div>
 										<div class="form-group">
 											<label for="signup-altura" class="control-label title">Altura</label>
-											<input type="number" class="form-control" id="signup-altura" placeholder="Introduzca altura" name='altura'>
+											<input data-empty='true' type="number" class="form-control" id="signup-altura" placeholder="Introduzca altura" name='altura'>
 										</div>
 										<div class="form-group">
 											<label for="signup-temporada" class="control-label title">Temporada</label>
-											<input type="text" class="form-control" id="signup-temporada" placeholder="Introduzca temporada" name='temporada'>
+											<input data-empty='true' type="text" class="form-control" id="signup-temporada" placeholder="Introduzca temporada" name='temporada'>
 										</div>
 										
 										<div class="form-group">
 											<label for="signup-ftacon" class="control-label title">Forma Tacon</label>
-											<input type="text" class="form-control" id="signup-ftacon" placeholder="Forma tacon" name='ftacon'>
+											<input data-empty='true' type="text" class="form-control" id="signup-ftacon" placeholder="Forma tacon" name='ftacon'>
 										</div>
 									{% else %}
 										<div class="form-group">
 											<label for="signup-alto" class="control-label title">Alto</label>
-											<input type="number" class="form-control" id="signup-alto" placeholder="Introduzca alto" name='alto'>
+											<input data-empty='true' type="number" class="form-control" id="signup-alto" placeholder="Introduzca alto" name='alto'>
 										</div>
 										<div class="form-group">
 											<label for="signup-ancho" class="control-label title">Ancho</label>
-											<input type="number" class="form-control" id="signup-ancho" placeholder="Introduzca ancho" name='ancho'>
+											<input data-empty='true' type="number" class="form-control" id="signup-ancho" placeholder="Introduzca ancho" name='ancho'>
 										</div>
 										<div class="form-group">
 											<label for="signup-profundo" class="control-label title">Profundo</label>
-											<input type="number" class="form-control" id="signup-profundo" placeholder="Introduzca profundo" name='profundo'>
+											<input data-empty='true' type="number" class="form-control" id="signup-profundo" placeholder="Introduzca profundo" name='profundo'>
 										</div>
 										<div class="form-group">
 											<label for="signup-coleccion" class="control-label title">Coleccion</label>
-											<input type="text" class="form-control" id="signup-coleccion" placeholder="Introduzca coleccion" name='coleccion'>
+											<input data-empty='true' type="text" class="form-control" id="signup-coleccion" placeholder="Introduzca coleccion" name='coleccion'>
 										</div>
 										<div class="form-group">
 											<label for="signup-nbolsillos" class="control-label title">Numero de bolsillos</label>
-											<input type="number" class="form-control" id="signup-nbolsillos" placeholder="Numero de bolsillos" name='nbolsillos'>
+											<input data-empty='true' type="number" class="form-control" id="signup-nbolsillos" placeholder="Numero de bolsillos" name='nbolsillos'>
 										</div>
 									{% endif %}
 								</div>
@@ -126,16 +126,16 @@
 										<div class='col-md-6'>
 											{% for categorie in categories.par %}
 												<label class='fancy-checkbox'>
-													<input type='checkbox' categorie.checked>
-													<span>{{categorie.name}}</span>
+													<input type='checkbox' categorie.checked value='{{categorie.nombre}}'>
+													<span>{{categorie.nombre}}</span>
 												</label>
 											{% endfor %}
 										</div>
 										<div class='col-md-6'>
 											{% for categorie in categories.impar %}
 												<label class='fancy-checkbox'>
-													<input type='checkbox' categorie.checked>
-													<span>{{categorie.name}}</span>
+													<input type='checkbox' categorie.checked value='{{categorie.nombre}}'>
+													<span>{{categorie.nombre}}</span>
 												</label>
 											{% endfor %}
 										</div>
@@ -160,16 +160,16 @@
 										<div class='col-md-6'>
 											{% for destinatario in destinatarios.par %}
 												<label class='fancy-checkbox'>
-													<input type='checkbox' destinatario.checked>
-													<span>{{destinatario.name}}</span>
+													<input type='checkbox' destinatario.checked value='{{destinatario.nombre}}'>
+													<span>{{destinatario.nombre}}</span>
 												</label>
 											{% endfor %}
 										</div>
 										<div class='col-md-6'>
 											{% for destinatario in destinatarios.impar %}
 												<label class='fancy-checkbox'>
-													<input type='checkbox' destinatario.checked>
-													<span>{{destinatario.name}}</span>
+													<input type='checkbox' destinatario.checked value='{{destinatario.nombre}}'>
+													<span>{{destinatario.nombre}}</span>
 												</label>
 											{% endfor %}
 										</div>
@@ -214,7 +214,7 @@
 									</div>
 								</div>
 								<div class='panel-body'>
-									<input type='file' class='thumbnail hidden' name='img' id='img-thumbnail'>
+									<input data-empty='true' type='file' class='thumbnail hidden' name='img' id='img-thumbnail'>
 									<div class='container-flex-row justify-content-center'>
 										<div class='rectangle'>
 											<div class='image container-flex-column justify-content-center align-items-center'>
@@ -260,13 +260,13 @@
 								<div class='panel-body'>
 									<div class="form-group">
 										<label for="signup-detalle" class="control-label title">Detalle</label>
-										<textarea type="" class="form-control" id="signup-detalle" placeholder="Descripcion" name='detalle' rows='8'></textarea>
+										<textarea data-empty='true' type="" class="form-control" id="signup-detalle" placeholder="Descripcion" name='detalle' rows='8'></textarea>
 										<span class="date">Añade la descripción del producto que se verá al mostrar este</span>
 									</div>
 									
 									<div class="form-group">
 										<label for="signup-otrascaracteristicas" class="control-label title">Otras carecteristicas</label>
-										<textarea type="text" class="form-control" id="signup-otrascaracteristicas" placeholder="Introduzca otras caracteristicas" name='otrascaracteristicas' rows='8'></textarea>
+										<textarea data-empty='true' type="text" class="form-control" id="signup-otrascaracteristicas" placeholder="Introduzca otras caracteristicas" name='otrascaracteristicas' rows='8'></textarea>
 										<span class="date">Añade las características especiales del producto</span>
 									</div>
 								</div>

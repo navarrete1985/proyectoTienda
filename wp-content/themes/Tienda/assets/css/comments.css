@@ -1,0 +1,65 @@
+.media-list > li,
+.children > li {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 3vh;
+}
+
+.children > li {
+    margin-top: 3vh;
+}
+    .comment-body {
+        margin: 0;
+        display: flex !important;
+        flex-flow: column;
+    }
+        .comment-author {
+            width: 100%;
+            display: flex;  
+            align-items: center;
+            order: 1;
+            border-bottom: 1px solid #eee;
+        }
+            .comment-author img {
+                margin: 0 !important;
+                margin-right: 2vw !important;
+            }
+            .comment-author cite {
+                font-size: 1.125em;
+                margin-right: 1vw;
+                color: #c39d6d;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            .comment-author spam {
+            }
+   
+       .comment-meta {
+            order: 3;
+            margin-left: 5vw;
+        }
+            .comment-meta > a {
+                color: rgba(51, 51, 51, .6);
+                font-weight: normal;
+            }
+        
+        .comment-body p {
+            font-size: 1em;
+            margin-left: 5vw;
+            margin-bottom: 2vh;
+            order: 2;
+            text-align: justify;
+        } 
+        
+        .reply {
+            order: 4;
+            margin-left: 5vw;  
+                        border-bottom: 1px solid #eee;
+        }
+            .reply > a {
+                color: #c39d6d;
+                margin-bottom: 2vh;
+            }
+                .reply > a:hover {
+                    color: black;
+                }

@@ -96,6 +96,9 @@
     function myScripts(){
         wp_register_script('sliderQuote', get_template_directory_uri() . '/assets/js/slider-quote.js', array('jquery'), null, false);
         wp_enqueue_script('sliderQuote'); 
+        
+        wp_register_script('submit', get_template_directory_uri() . '/assets/js/submit.js', array('jquery'), null, true);
+        wp_enqueue_script('submit');         
     }
     add_action('wp_enqueue_scripts','myScripts'); 
     
@@ -121,28 +124,67 @@
     }
 
 
-    // Quitar field URL de comentario y añadir politica de privacidad
+/*****************************   COMENTARIOS  *********************************/
+
+    // Quitar field URL de comentarios 
     
     function remove_url_field($fields){
         unset($fields['url']);
         return $fields;
     }
     add_filter('comment_form_default_fields','remove_url_field');
-    
-    function push_comment_to_bottom($fields){
+
+    /*    function push_comment_to_bottom($fields){
         $comment=$fields['comment'];
         unset($fields['comment']);
         $fields['comment']=$comment;
         
         $fields['checkpoliticas'] = 
-                     '<input id="checkpoliticas" name="checkpoliticas" type="checkbox" />
-                    <label id = "labelcheck"for="checkpoliticas">Aceptas nuestras politicas de privacidad y esas cosas  <a href="http://ladireccionquequieras">Politica de privacidad</a></label>';
-        
+                    '<input id="checkpoliticas" name="checkpoliticas" type="checkbox" />
+                     <label id = "labelcheck"for="checkpoliticas">Aceptas nuestras politicas de privacidad y esas cosas  <a href="http://ladireccionquequieras">Politica de privacidad</a></label>';
+                    
         return $fields;
     }
     add_filter('comment_form_fields','push_comment_to_bottom');
+*/
 
+    // Poner texarea al final
+    function push_comment_bottom($fields) {
+        $comment = $fields['comment'];
+        unset($fields['comment']);
+        $fields['comment'] = $comment;
+        return $fields;
+    } 
+    add_filter('comment_form_fields', 'push_comment_bottom'); 
 
+    //Añadir politica de privacidad y checkbox
+    function add_checkbox_rgpd($fields) {
+            $rgpd = '<input type="checkbox" id="rgpd" name="rgpd" value="check"/>';
+            $rgpd = $rgpd . '<label id = "labelcheck" for="rgpd">&nbsp&nbsp He leido y acepto la<a class="texto rgpd" href="';
+            $rgpd = $rgpd . get_page_link(get_page_by_title('politica')->ID); 
+            $rgpd = $rgpd . '" target="_blank">&nbsp&nbsp politica de privacidad</a>&nbsp&nbsp de Vortex.</label>';
+            $fields['rgpd'] = $rgpd;
+            return $fields;            
+    } 
+    add_filter('comment_form_fields','add_checkbox_rgpd'); 
+
+    //guarda el campo como comment meta
+    function save_comment_meta_data ($post_id) {
+    $rgpd = $_POST['rgpd'];
+        if ($rgpd) {
+            add_comment_meta($post_id,'rgpd','Aceptada politica de privacidad', true);
+        }
+    }
+    add_action( 'comment_post', 'save_comment_meta_data', 1 );
+    
+    // Mostramos el valor del metadato en la página de administración de comentarios
+    if ( is_admin() ) {
+        function show_commeta() {
+           echo get_comment_text(), '<br><br><strong>', get_comment_meta(get_comment_ID(), 'rgpd',1), '<strong>';
+           }
+        add_action('comment_text', 'show_commeta');
+    }    
+    
 /***************** CAMPOS DE USUARIO EN BACK-END    ***************************/
     function extra_profile_fields( $user ) { ?>
     

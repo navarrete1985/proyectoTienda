@@ -36,20 +36,20 @@
     var getListado = function (data, pagina) {      
         switch(data) {
             case 'usuario':
-                genericAjax.request('ajax/listarUsuario', {'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                genericAjax.request(null, 'ajax/listarUsuario', {'pagina': pagina ,'orden' : orden}, 'get', function(json) {
                     console.log(json.usuarios);
                     pintar(json.usuarios);
                     procesarPaginas(json.paginas);
                 });
                 break;
             case 'complementos':
-                genericAjax.request('ajax/listaciudades', {'pagina': pagina}, 'get', function(json) {
+                genericAjax.request(null, 'ajax/listaciudades', {'pagina': pagina}, 'get', function(json) {
                     procesarCiudades(json.ciudades);
                     procesarPaginas(json.paginas);
                 });
                 break;
             case 'zapatos':
-                genericAjax.request('ajax/listarZapato', {'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                genericAjax.request(null, 'ajax/listarZapato', {'pagina': pagina ,'orden' : orden}, 'get', function(json) {
                     console.log(json.zapatos);
                     pintar(json.zapatos);
                     procesarPaginas(json.paginas);
@@ -66,7 +66,7 @@
         var value = objeto[0];
         $.each(value, (key2,value2) => {
             if(key2 != "id"){
-              result += '<th><a href="#" data-orden='+key2+'>' + key2 + '</a></th>';  
+              result += '<th><i class="fas fa-sort flechasOrden"></i><a href="#" data-orden='+key2+'>' + key2 + '</a></th>';  
             }
               
         });
@@ -81,9 +81,9 @@
         let result = '<tr>';
         $.each(objeto, (key, value) => {
             if(value == true){
-                result += '<td><i class="fa fa-check-circle verde"></i></td>'; 
+                result += '<td><i class="fa fa-check-circle verde tamanioCirulo"></i></td>'; 
             }else if(value == false){
-                result += '<td><i class="fa fa-times-circle rojo"></td>'; 
+                result += '<td><i class="fa fa-times-circle rojo tamanioCirulo"></td>'; 
             }else if(key != "id"){
                result += '<td>' + value + '</td>';   
             }
@@ -104,7 +104,7 @@
             listaitems += getBody(value);
         });
         console.log(listaitems)
-        var tabla = '<table class="table"><thead class="table_thead"></thead><tbody class="table_body"></tbody></table>'
+        var tabla = '<div class="contenedorTabla"><table class="table"><thead class="table_thead"></thead><tbody class="table_body"></tbody></table></div>'
         $('.main').empty();
         $('.main').append(tabla);
         $('.main').append(div);
@@ -157,7 +157,7 @@
                 
             
             history.pushState(null, "", 'admin/borrar'+id);
-             genericAjax.request('ajax/deleteuser', {'id': id }, 'get', function(json) {
+             genericAjax.request(null, 'ajax/deleteuser', {'id': id }, 'get', function(json) {
                         getListado(data,pagina,dataorden)
                     });
             }
@@ -202,8 +202,6 @@
             $('#img-thumbnail').trigger('click');
         })
         
-        
-        
         //valores de alias y correo en caso de que editemos
         if (editar !== null) {
             var alias = document.getElementById("signup-alias").value;
@@ -219,21 +217,24 @@
         
         validacion.addSuccessListener(result => {
             let data = null;
+            let dt = null;
             switch($('#form-container').attr('data-class')) {
                 case 'usuario':
-                    data = validacion.getObjectValues(['text', 'checkbox', 'email', 'password']);
-                    data.class = 'usuario';
+                    data = validacion.getFormData(['text', 'checkbox', 'email', 'password']);
+                    data.append('usuario', 'usuario');
                     data.id = document.getElementById("id-edit") !== null ? document.getElementById("id-edit").value : '';
                     break;
                 case 'articulo':
-                    data = validacion.getObjectValues(['text', 'checkbox', 'email', 'number']);
+                    data = validacion.getFormData(['text', 'checkbox', 'email', 'number', 'file']);
+                    data.append('articulo', 'articulo');
+                    dt = 'formData';
                     break;
             }
             
             if (data !== null) {
                 //Ponemos la acción dependiendo de lo que queramos hacer, o editar o agregar
                 let action = editar == null ? 'ajax/adddata' : 'ajax/updatedata';
-                genericAjax.request(action, data, 'post', response => {
+                genericAjax.request(dt, action, data, 'post', response => {
                    if (response.result == 1) {
                        if (editar === null) {
                             validacion.clearAllFields();
@@ -267,7 +268,7 @@
             
             if (data.value.length > 0) {
                 let accion = editar == null ? 'ajax/isavailable' : 'ajax/isavailableedit';
-                genericAjax.request(accion, data, 'post', json => {
+                genericAjax.request(null, accion, data, 'post', json => {
                     if(json.result == 0) {
                         validacion.__addSpanError(node, 'Campo existente en la base de datos, por favor inserte otro valor.')
                     }else {
@@ -279,4 +280,21 @@
             }
         });
     }
+})();
+
+
+//modulo de pedidos
+
+
+(function() {
+    
+    let genericAjax = new GenericAjax();
+    //Objeto para sacar los feedbacks
+    let message = new Message();
+    
+    $('.detalles').on('click', function(event){
+            event.preventDefault();
+            let id = e.target.getAttribute('data-idpedido');
+            console.log(id);
+        })
 })();
