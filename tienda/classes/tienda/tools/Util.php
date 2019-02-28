@@ -61,5 +61,19 @@ class Util {
     	}
     	return $key;
     }
+    
+    static function getBlobImage($img, $compress = 50) {
+        //Abrimos el flujo de salida
+        ob_start();
+        //Generamos la imagen a partir del string que se nos pasó por post
+        $img_blob = imagecreatefromstring($img);
+        //Realizamos la compresión que queramos de la imagen y la metemos en el buffer
+        imagejpeg($img_blob,NULL,$compress);
+        //Vaciamos el buffer de salida y recogemos el blob generado
+        $blob = ob_get_contents();
+        //Cerramos el flujo
+        ob_end_clean(); 
+        return $blob;
+    }
 
 }

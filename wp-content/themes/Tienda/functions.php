@@ -157,17 +157,20 @@
     } 
     add_filter('comment_form_fields', 'push_comment_bottom'); 
 
-    //Añadir politica de privacidad y checkbox
-    function add_checkbox_rgpd($fields) {
-            $rgpd = '<input type="checkbox" id="rgpd" name="rgpd" value="check"/>';
-            $rgpd = $rgpd . '<label id = "labelcheck" for="rgpd">&nbsp&nbsp He leido y acepto la<a class="texto rgpd" href="';
-            $rgpd = $rgpd . get_page_link(get_page_by_title('politica')->ID); 
-            $rgpd = $rgpd . '" target="_blank">&nbsp&nbsp politica de privacidad</a>&nbsp&nbsp de Vortex.</label>';
-            $fields['rgpd'] = $rgpd;
-            return $fields;            
+    //Añadir politica de privacidad y checkbox tanto si el usuario esta logueado o no.
+    function add_checkbox_rgpd() {
+        $checkbox = '
+            <br>
+            <input type="checkbox" id="rgpd" name="rgpd" value="check"/>
+            <label id = "labelcheck" for="rgpd">&nbsp&nbsp He leido y acepto la<a class="texto rgpd" href="'
+            . get_page_link(get_page_by_title('politica')->ID) 
+            .'" target="_blank">&nbsp&nbsp politica de privacidad</a>&nbsp&nbsp de Vortex.</label>';
+            
+            echo $checkbox;
     } 
-    add_filter('comment_form_fields','add_checkbox_rgpd'); 
-
+    add_action('comment_form_logged_in_after','add_checkbox_rgpd'); 
+    add_action('comment_form_after_fields','add_checkbox_rgpd'); 
+        
     //guarda el campo como comment meta
     function save_comment_meta_data ($post_id) {
     $rgpd = $_POST['rgpd'];

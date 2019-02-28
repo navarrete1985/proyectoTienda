@@ -3,6 +3,7 @@ class GenericAjax {
     constructor() {}
     
     request( dt, url, data, type, callBackDone, callBackFail = null, callBackAlways = null) {
+        let pd = dt == null ? true : false;
         dt = dt == null ? 'json' : dt;
         $.ajax({
             url: url,
@@ -10,7 +11,7 @@ class GenericAjax {
             type: type,
             dataType : dt,
             contentType: false,
-            processData: false,
+            processData: pd,
         })
         .done(function( json ) {
             callBackDone(json);
@@ -71,4 +72,67 @@ class Message {
     	});
     }
 
+}
+
+class Files {
+    
+    constructor(input, containerId, btnShow) {
+        this._input = $(input);
+        this._container = $(containerId);
+        this._btnShow = $(btnShow);
+        this._files = [];
+        
+    }
+    
+    get files() {
+        return this._files;
+    }
+    
+    appendFiles(formData) {
+        formData.delete(this._input.name);
+        this._files.forEach(file => {
+            formData.append('files', file);
+        });
+    }
+    
+    trigger() {
+        $(this._btnShow).on(click, e => {
+            $(this._input).trigger('click');
+        })
+    }
+    
+    __imagePreview(image, previewContainer, imageName) {
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+            $(previewContainer).attr('style', 'background-image: url(' + e.target.result + ')');
+            $(previewContainer).attr('data-name', imageName);
+        }
+        reader.readAsDataURL(image);
+    }
+    
+    __startListener() {
+        this._input.change(function() {
+            let newFiles = []; 
+            for(let index = 0; index < this._input[0].files.length; index++) {
+                let file = this._input[0].files[index];
+                newFiles.push(file);
+                this._files.push(file);
+            }
+        
+            newFiles.forEach(file => {
+                let container = $('<div class="image container-flex-column justify-content-center align-items-center image-preview"><a href="#" class="danger" data-element="' + file + '">Eliminar</a></div>');
+                this._container.append(container);
+                
+                container.first().click(function(event) {
+                    event.preventDefault();
+                    let fileElement = $(event.target);
+                    let indexToRemove = files.indexOf(fileElement.attr('data-element'));
+                    fileElement.parent().remove();
+                    files.splice(indexToRemove, 1);
+                });
+            });
+        });
+    }
+    
 }

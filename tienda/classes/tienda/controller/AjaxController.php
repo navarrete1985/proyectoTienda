@@ -116,6 +116,10 @@ class AjaxController extends Controller {
                 $obj->setRol($obj->getRol() == 'on' ? 1 : 0);
                 break;
             case 'articulo':
+                if (isset($_FILES['img']) && $_FILES['img']['name'] !== '') {
+                    $blob = Util::getBlobImage(file_get_contents($_FILES['img']['tmp_name']));
+                    $obj->setImg($blob);
+                }
                 break;
         }
         

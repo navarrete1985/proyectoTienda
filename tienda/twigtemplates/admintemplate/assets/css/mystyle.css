@@ -241,17 +241,27 @@ td{
 .tamanioCirulo{
     width: 40px;
 }
+
 .flechasOrden{
     padding-right:5px;
 }
+
 .table>thead>tr>th{
     padding: 3px !important;
     padding-bottom: 8px !important;
     padding-top: 8px !important;
 }
+
 .table>tbody>tr>td{
     padding-right:20px !important;
 }
+
+#img-thumbnail-container {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 1390px) {
     
     .contenedorTabla{

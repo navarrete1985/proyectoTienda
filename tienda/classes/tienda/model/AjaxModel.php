@@ -38,7 +38,7 @@ class AjaxModel extends Model {
         
     }
     
-    function getDoctrineZapatos($pagina = 1, $orden = 'marca', $limit = 1) {
+    function getDoctrineZapatos($pagina = 1, $orden = 'marca', $limit = 4) {
          $dql = 'select c from tienda\data\Articulo c where c.marca < :marca 
         order by c.'. $orden .', c.marca, c.modelo, c.precio, c.peso,c.referencia,c.coleccion';
         $query = $this->gestor->createQuery($dql)->setParameter('marca', 'zz');
@@ -51,9 +51,11 @@ class AjaxModel extends Model {
         $zapatos = array();
         foreach($paginator as $zapato) {
             // echo 'Esta es la marca->'.$zapato->getMarca();
-            $img = base64_encode(stream_get_contents($zapato->getImg()));
-            $etiqueta =  '<img width="40px" src="data:image/jpg;base64,'.$img.'"/>';
-            $zapato->setImg($etiqueta);
+            if ($zapato->getImg() !== null) {
+                $img = base64_encode(stream_get_contents($zapato->getImg()));
+                $etiqueta =  '<img width="40px" src="data:image/jpg;base64,'.$img.'"/>';
+                $zapato->setImg($etiqueta);    
+            }
             $zapatos[] = $zapato->getUnset(array('colores','id', 'categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
             
         }

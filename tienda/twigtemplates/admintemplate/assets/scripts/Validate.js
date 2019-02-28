@@ -86,7 +86,11 @@ class Validate {
         let formData = new FormData();
         Array.from(types).forEach(type => {
             $(`input[type=${type}]`).each(function() {
-                formData.append($(this).attr('name'), $(this).val());
+                if (type === 'file') {
+                    formData.append($(this).attr('name'), $(this)[0].files[0]);
+                }else {
+                    formData.append($(this).attr('name'), $(this).val());   
+                }
             });
         });
         $('textarea').each(function() {

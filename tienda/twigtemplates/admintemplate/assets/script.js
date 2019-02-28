@@ -188,6 +188,11 @@
         }
     })
     
+    //PRevisualización de la imagen destacada
+    $('#img-thumbnail').on('change', function() {
+        imagePreview($(this)[0], '#img-thumbnail-container'); 
+    })
+    
     var editar = document.getElementById("editar-update");
     if (editar !== null) {
         $('#signup-password').attr('data-empty', true);
@@ -197,7 +202,7 @@
     if ($('#form-container').length > 0) {
         
         //Ponemos listener para nuestra imagen destacada
-        $('#img-thumbnail-btn').on('click', e => {
+        $('.btn-thubnail-img').on('click', e => {
             e.preventDefault();
             $('#img-thumbnail').trigger('click');
         })
@@ -217,7 +222,7 @@
         
         validacion.addSuccessListener(result => {
             let data = null;
-            let dt = null;
+            let dt = 'formData';
             switch($('#form-container').attr('data-class')) {
                 case 'usuario':
                     data = validacion.getFormData(['text', 'checkbox', 'email', 'password']);
@@ -227,11 +232,12 @@
                 case 'articulo':
                     data = validacion.getFormData(['text', 'checkbox', 'email', 'number', 'file']);
                     data.append('articulo', 'articulo');
-                    dt = 'formData';
+                    // dt = 'formData';
                     break;
             }
             
             if (data !== null) {
+                data.append('class', $('#form-container').attr('data-class'));
                 //Ponemos la acción dependiendo de lo que queramos hacer, o editar o agregar
                 let action = editar == null ? 'ajax/adddata' : 'ajax/updatedata';
                 genericAjax.request(dt, action, data, 'post', response => {
@@ -268,7 +274,7 @@
             
             if (data.value.length > 0) {
                 let accion = editar == null ? 'ajax/isavailable' : 'ajax/isavailableedit';
-                genericAjax.request(null, accion, data, 'post', json => {
+                genericAjax.request(null, accion, data, 'get', json => {
                     if(json.result == 0) {
                         validacion.__addSpanError(node, 'Campo existente en la base de datos, por favor inserte otro valor.')
                     }else {
@@ -279,6 +285,17 @@
                 validacion.__removeSpanError(node);
             }
         });
+        
+        function imagePreview(input, previewContainer) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    $(previewContainer).attr('style', 'background-image: url(' + e.target.result + ')');
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     }
 })();
 
