@@ -9,6 +9,7 @@ use tienda\data\Usuario;
 use tienda\tools\Util;
 use tienda\app\App;
 use tienda\tools\Mail;
+use tienda\tools\Multiupload;
 
 class AjaxController extends Controller {
     
@@ -122,7 +123,12 @@ class AjaxController extends Controller {
                 }
                 break;
         }
-        
+        echo Util::varDump($_FILES);
+        $upload = new Multiupload('files');
+        $result = $upload->setPolicy(Multiupload::POLICITY_OVERWRITE)
+                ->upload();
+        echo 'El resultado de la subida de las imagenes es --> ' . $result;
+        exit;
         $result = 0;
         if ($obj !== null) {
             $this->getModel()->create($obj);

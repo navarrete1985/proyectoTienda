@@ -1,7 +1,12 @@
 #header-login {
-    background-image: url('../img/b6-2.jpg');
-    padding: 475px 0;
+    background-image: url('../img/module-5.jpg');
+    background-attachment: scroll;
+    background-size: auto;
+    background-position-y: 30%;
+    position: relative;
+    padding: 200px 0;    
 }
     #header-login h1 {
-        font-size: 3em;
+        font-size: 2em;
+        opacity: 1;
     }

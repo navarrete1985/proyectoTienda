@@ -95,7 +95,7 @@ class Files {
     appendFiles(formData) {
         formData.delete(this._input.name);
         this._files.forEach(file => {
-            formData.append('files', file);
+            formData.append('files[]', file);
         });
     }
     

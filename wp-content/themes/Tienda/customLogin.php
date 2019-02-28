@@ -24,11 +24,11 @@
 	</header>
 
 	<div class="wrapper">
-		<section id="header-login" class="module-header  imgResponsive module-header default-height parallax bg-dark bg-dark-30 bg-film">
+		<section id="header-login" class="module-header module-header default-height parallax bg-dark bg-dark-30 bg-film">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h1 class="h4 font-alt">Login</h1>
+						<h1 class="h3 font-alt">Login y registro</h1>
 					</div>
 				</div>
 			</div>
