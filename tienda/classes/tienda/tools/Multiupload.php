@@ -28,7 +28,7 @@ class MultiUpload {
             $policity = self::POLICITY_KEEP, 
             $saved = false,
             $savedName = '', 
-            $target = './',
+            $target = './resources/images/',
             $type = '';
     
     function __construct($input) {
@@ -159,6 +159,15 @@ class MultiUpload {
         $this->target = (substr($strTarget, -1) === '/') ? $strTarget : $strTarget . '/';
       }
       return $this;
+    }
+    
+    function appendTarget($route) {
+      $this->target .= $route;
+      $result = true;
+      if (!is_dir($this->target)) {
+        $result = mkdir($this->target, 0777, true);
+      }
+      return $result;
     }
     
     function setType($type) {

@@ -13,13 +13,15 @@ use tienda\tools\Multiupload;
 
 class AjaxController extends Controller {
     
-    function main() {
+    function __construct(Model $model) {
+        parent::__construct($model);
         $this->checkIsAdmin();
+    } 
+    
+    function main() {
     }
     
     function listarUsuario() {
-        $this->checkIsAdmin();
-        
         $pagina = Reader::read('pagina');
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;
@@ -35,8 +37,6 @@ class AjaxController extends Controller {
     }
     
     function listarZapato() {
-        $this->checkIsAdmin();
-        
         $pagina = Reader::read('pagina');
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;
@@ -53,13 +53,11 @@ class AjaxController extends Controller {
     }
     
     function deleteuser() {
-        $this->checkIsAdmin();
         $id = Reader::read('id');
         $this->getModel()->delete('Usuario',['id' => $id]);
     }
     
     function isavailable() {
-        $this->checkIsAdmin();
         $class = ucfirst(strtolower(Reader::read('class')));
         $key = Reader::read('key');
         $value = Reader::read('value');
@@ -68,7 +66,6 @@ class AjaxController extends Controller {
     }
     
     function isavailableedit(){
-        $this->checkIsAdmin();
         $class = ucfirst(strtolower(Reader::read('class')));
         $key = Reader::read('key');
         $newvalue = Reader::read('value');
@@ -81,7 +78,6 @@ class AjaxController extends Controller {
     }
     
     function updatedata(){
-        $this->checkIsAdmin();
         $class = Reader::read('class');
         $id = Reader::read('id');
         $obj = Reader::readObject(App::OBJECT[$class]);
@@ -106,7 +102,6 @@ class AjaxController extends Controller {
     }
     
     function adddata() {
-        $this->checkIsAdmin();
         $class = Reader::read('class');
         $obj = Reader::readObject(App::OBJECT[$class]);
         
@@ -123,21 +118,24 @@ class AjaxController extends Controller {
                 }
                 break;
         }
-        echo Util::varDump($_FILES);
-        $upload = new Multiupload('files');
-        $result = $upload->setPolicy(Multiupload::POLICITY_OVERWRITE)
-                ->upload();
-        echo 'El resultado de la subida de las imagenes es --> ' . $result;
-        exit;
+        
         $result = 0;
         if ($obj !== null) {
             $this->getModel()->create($obj);
             $result = $obj->getId() > 0 ? 1 : 0;
-            if ($class == 'usuario') {
+            $uploadResult = 0;
+            
+            if ($class == 'usuario' && $result === 1) {
                 $mail = Mail::sendActivation($obj);
+            } else if ($class == 'articulo' && $result === 1) {
+                $upload = new Multiupload('files');
+                $status = $upload->setPolicy(Multiupload::POLICITY_OVERWRITE)
+                        ->appendTarget('articulos/id_' . $obj->getId());
+                if($status) {
+                    $uploadResult = $upload->upload();
+                }
             }
         }
-        
-        $this->getModel()->set('result', $result);
+        $this->getModel()->add(['result' => $result, 'files_uploaded' => $uploadResult]);
     }
 }

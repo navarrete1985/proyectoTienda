@@ -1,0 +1,8 @@
+#header-private {
+    padding: 4vh 3vw;
+    background-color: rgba(164,164,164,0.7);
+}
+    #header-private > h1 {
+        color: #424242;
+        opacity: 1;
+    }
