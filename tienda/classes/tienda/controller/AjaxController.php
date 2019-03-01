@@ -138,4 +138,12 @@ class AjaxController extends Controller {
         }
         $this->getModel()->add(['result' => $result, 'files_uploaded' => $uploadResult]);
     }
+    
+    function detallespedido(){
+        $id = Reader::read('id');
+        $r = $this->getModel()->getDetalles($id);
+        echo Util::varDump($r);
+        exit();
+         $this->getModel()->add($r);
+    }
 }

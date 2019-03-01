@@ -98,7 +98,10 @@
         wp_enqueue_script('sliderQuote'); 
         
         wp_register_script('submit', get_template_directory_uri() . '/assets/js/submit.js', array('jquery'), null, true);
-        wp_enqueue_script('submit');         
+        wp_enqueue_script('submit'); 
+        
+        wp_register_script('formlogin', get_template_directory_uri() . '/assets/js/formlogin.js', array('jquery'), null, false);
+        wp_enqueue_script('formlogin');          
     }
     add_action('wp_enqueue_scripts','myScripts'); 
     
@@ -302,3 +305,35 @@
         $urlimgAutor = '/assets/img/usuarios/' . $imgAutor;
         return $urlimgAutor;
     }    
+
+    /*----------   Función para traducir rol del autor  ----------------------*/
+    function rol_author_sp($rol) {
+        $roles = array();
+        switch ($rol) {
+        	case 'administrator':
+        	    $rolsp = 'Administrador';
+        	    $capacidad = 'Tienes acceso a todas las funciones de administración dentro del sitio.';
+        	    break;
+        	case 'editor':
+        	    $rolsp = 'Editor';
+        	    $capacidad = 'Puedes publicar y administrar publicaciones, incluidas las de otros usuarios.';
+        	    break;        	    
+        	case 'author':
+        	    $rolsp = 'Autor'; 
+        	    $capacidad = 'Puedes publicar y administrar tus propios post.';
+        	    break;        	    
+        	case 'contributor':
+        	    $rolsp = 'Colaborador';  
+        	    $capacidad = 'Puedes escribir y administrar tus propias post, pero no puedes publicarlos.';
+        	    break;        	    
+        	case 'subscriber':
+        	    $rolsp = 'Suscriptor'; 
+        	    $capacidad = 'Solo tienes acceso para administrar tu perfil.';
+        	    break;        	    
+        }
+        $roles = array(
+                'rolsp' => $rolsp,
+                'capacidad' => $capacidad
+            );
+        return $roles;
+    }

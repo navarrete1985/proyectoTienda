@@ -31,7 +31,7 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <p class="copyright font-alt">2017 <a target="_blank" href="index.html">Vortex</a>. All Rights Reserved. Design with love by <a target="_blank" href="http://2the.me/">2Theme</a>.</p>
+                <p class="copyright font-alt">© Copyright 2019 <a target="_blank" href="index.html">Zapaterías Minelli S.L</a>. Todos los derechos reservados. </p>
             </div>
         </div>
     </div>

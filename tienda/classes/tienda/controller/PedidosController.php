@@ -27,7 +27,9 @@ class PedidosController extends Controller {
     
     function detallespedido(){
         $id = Reader::read('id');
-        $detalles = $this->getModel()->getDetalles($id);
-         $this->getModel()->set('data',$pedidos);
+        $r = $this->getModel()->getDetalles($id);
+        // echo Util::varDump($detalles);
+        // exit();
+         $this->getModel()->add($r);
     }
 }

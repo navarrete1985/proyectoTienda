@@ -1,8 +1,31 @@
-#header-private {
-    padding: 4vh 3vw;
-    background-color: rgba(164,164,164,0.7);
+.banner-border {
+    border: 5px solid rgba(255,255,255,0.75);
+    padding: 15px;
+    border-radius: 7px;
 }
-    #header-private > h1 {
-        color: #424242;
-        opacity: 1;
+    .banner-info {
+        background-color: rgba(255,255,255,0.75);
+        margin: 0;
+        padding: 6vh 4vw;
+        justify-content: center;
+        align-items: center;
+        border-radius: 7px;
     }
+        .banner-info > h1 {
+            opacity: 1 !important;
+            margin: 0 !important;
+        } 
+        .banner-info > h1:first-child {
+            color: #c39d6d !important;
+        }
+        .banner-info > h1:nth-child(2),
+        .banner-info > p {
+            color: #424242 !important;
+            margin-top: 2vh !important;
+        } 
+        .banner-info > a {
+            margin-top: 3vh !important;
+        }
+        .banner-info > p {
+            font-size: 1.125em;    
+        }

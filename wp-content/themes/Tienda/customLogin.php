@@ -43,29 +43,23 @@
                 <div id="login-form">
                     <h3 class="log-title">LOGIN</h3>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" placeholder="USERNAME" required data-error="*Please fill out this field">
-                        <div class="help-block with-errors"></div>
+<?php
+                        $args = array (
+                        	'remember' => true,
+                        	'form_id' => 'loginform',
+                        	'id_username' => 'user_login',
+                        	'id_password' => 'user_pass',
+                        	'id_remember' => 'rememberme',
+                        	'id_submit' => 'wp-submit',
+                        	'label_username' => '',
+                        	'label_password' => '',
+                        	'label_remember' => __ ('Recordarme'),
+                        	'label_log_in' => __ ('Acceder'),
+                        	'value_remember' => true
+                        );
+                        echo wp_login_form($args);
+?>
                     </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="password" placeholder="PASSWORD" required>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <!-- log-line -->
-                    <div class="log-line">
-                        <div class="pull-left">
-                            <div class="checkbox checkbox-primary space-bottom">
-                                <label class="hide"><input type="checkbox"></label>
-                                <input id="checkbox1" type="checkbox">
-                                <label for="checkbox1"><span><strong>Remember Me</strong></span></label>
-                            </div>
-                        </div>
-                        <div class="pull-right">
-                            <a href="my-account.html" class="btn btn-md btn-round btn-fill btn-brand">Log In</a>
-                            <div id="msgSubmit" class="h3 text-center hidden"></div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div><!-- / log-line -->
-                    <a href="#x" class="forgot-password">Forgot your Password?</a>
                 </div>
             </div><!-- / col-sm-6 -->
             <!-- / login form 1 -->

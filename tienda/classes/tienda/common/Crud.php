@@ -12,9 +12,8 @@ trait Crud {
         return $this->gestor->getRepository($this->prefix . $clase)->findOneBy($data);
     }
     
-    function getQuery(){
-        $query = $this->gestor->createQuery('SELECT d  FROM tienda\data\Detalle d join pedido p join usuario u 
-        where d.id = 1 AND u.id = 37');
+    function getQuery($dql){
+        $query = $this->gestor->createQuery($dql);
         $result = $query->getResult();
         return $result;
     }

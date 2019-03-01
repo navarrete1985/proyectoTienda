@@ -1,0 +1,51 @@
+{% extends '_base.twig' %}
+{% block adminregister %}
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<div class='row'>
+						<div class='col-md-12'>
+							{#-------CARTA CONTROL DE STOCK--------------#}
+							<div class="panel todo-list">
+								<div class="panel-heading">
+									<h3 class="panel-title">Colores</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										{#<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>#}
+									</div>
+								</div>
+								<div class='panel-body'>
+									<p>
+										<span class="title">Listado de Colores</span>
+										<span class="short-description">Añade un nuevo color para poder asociarlo a un producto</span>
+										<span class="date"><a href='#'>Añadir nuevo color</a></span>
+									</p>
+									<hr>
+									<div class='wrapper-stock'>
+										<div class='row'>
+											<div class='col-md-3 col-sm-6 img-item-stock'>
+												<img></img>
+											</div>
+											<div class='col-md-3 img-item-stock'>
+												<img></img>
+											</div>
+											<div class='col-md-3 img-item-stock'>
+												<img></img>
+											</div>
+											<div class='col-md-3 img-item-stock'>
+												<img></img>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+{% endblock %}

@@ -12,60 +12,58 @@ class AdminController extends Controller {
     
     function __construct(Model $model) {
         parent::__construct($model);
-        // $this->checkPermission();
+        $this->checkIsLogged();
+        $usuario = $this->getSesion()->getLogin()->get();
+        $this->getModel()->set('session', $usuario);
     } 
     
     function main() {
-        $this->checkIsLogged();
         $this->getModel()->set('twigFile', '_index.twig');
-        $usuario = $this->getSesion()->getLogin()->get();
     }
     
     function tables(){
-        $this->checkIsLogged();
         $this->getModel()->set('twigFile', '_tables.twig');
-        $usuario = $this->getSesion()->getLogin()->get();
     }
     
     function adduser(){
-        $this->checkIsLogged();
         $this->getModel()->set('twigFile', '_admin-register.twig');
-        $usuario = $this->getSesion()->getLogin()->get();
     }
     
     function addzapatos(){
-        $this->checkIsLogged();
         $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
         $this->getModel()->set('zapato', true);
-        $usuario = $this->getSesion()->getLogin()->get();
     }
     
     function addcomplementos(){
-        $this->checkIsLogged();
         $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
-        $usuario = $this->getSesion()->getLogin()->get();
     }
     
-    function listadousuarios(){
-        $this->checkIsLogged();    
+    function listadousuarios(){    
         $this->getModel()->set('twigFile', '_listadousuarios.twig');
         $this->getModel()->set('data', $this->getModel()->getAllUsers());
-        $usuario = $this->getSesion()->getLogin()->get();
     }
     
+    function addcolor() {
+        $this->getModel()->set('twigFile', '_admin-registercolor.twig');
+    }
     
+    function adddestinatario() {
+        $this->getModel()->set('twigFile', '_admin-registercaracteristica.twig');
+        $this->getModel()->set('section', ['type' => 2, 'action' => 'data-type="destinatario"']);
+    }
+    
+    function addcategoria() {
+        $this->getModel()->set('twigFile', '_admin-registercaracteristica.twig');
+        $this->getModel()->set('section', ['type' => 1, 'action' => 'data-type="categoria"']);
+    }
     
     function edituser(){
-        $this->checkIsLogged();  
         $id = Reader::read('id');
+        $this->getModel()->set('twigFile', '_admin-register.twig');
+        $user = $this->getModel()->get('Usuario',['id' => $id]);
         
-
-            $this->getModel()->set('twigFile', '_admin-register.twig');
-            $user = $this->getModel()->get('Usuario',['id' => $id]);
-            
-            $this->getModel()->set('user', $user);
-            $this->getModel()->set('edit', true);
-
+        $this->getModel()->set('user', $user);
+        $this->getModel()->set('edit', true);
     }
     
     function checkPermission() {

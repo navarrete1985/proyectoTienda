@@ -1,3 +1,7 @@
+.white {
+    fill: white;
+}
+
 .auth-box {
     height: auto;
     margin-top: 64px;

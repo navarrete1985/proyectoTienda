@@ -42,26 +42,24 @@ class PedidosModel extends Model {
         // $dql = 'SELECT d  FROM tienda\data\Detalle  d join pedido p join color c join articulo a
         
         // WHERE d.id = '.$id .' AND d.idPedido = p.id AND d.idColor=c.id AND d.idArticulo=a.id';  
-        $dql = 'SELECT d  FROM tienda\data\Detalle  d join pedido p on d.pedido=p.id join  color c on d.color=c.id join articulo a on d.articulo=a.id
+        // $dql = 'SELECT d  FROM tienda\data\Detalle  d join pedido p on d.pedido=p.id join  color c on d.color=c.id join articulo a on d.articulo=a.id
         
-        WHERE d.id = '.$id .' AND d.idPedido = p.id AND d.idColor=c.id AND d.idArticulo=a.id';  
+        // WHERE d.id = '.$id .' AND d.idPedido = p.id AND d.idColor=c.id AND d.idArticulo=a.id';  
         // $dql = 'SELECT *  FROM Pedido  where id = :id';
-        $query = $this->gestor->createQuery($dql)->setParameter('id',$id )->getResult();
+        
+             // $query = $this->gestor->createQuery($dql)->setParameter('id',$iduser )->getResult();
         // $result = $this->get('Pedido', ['id' => 1]);
         
-        $paginator = new Paginator($query);
-        $paginator->getQuery()
-            ->setFirstResult($limit * ($pagina - 1))
-            ->setMaxResults($limit);
-        $pagination = new Pagination($paginator->count(), $pagina, $limit);
-        // // return $paginator;
-        $pedidos = array();
-        foreach($query as $pedido) {
-            $pedidos['pedido'] = $pedido->getUnset(array('usuario','detalles'));
-        }
-        echo 'resultado'. Util::varDump($pedidos);
-        exit();
-        return ['pedidos' => $pedidos, 'paginas' => $pagination->values()];
+         $dql = 'SELECT p,u  FROM tienda\data\Pedido p join p.usuario u join p.detalles d
+        
+        WHERE d.id = '.$id.' AND u.id = 37';
+   
+        $pedido = $this->getQuery($dql);
+        $resultado = array();
+        $resultado = $pedido[0]->getUnset(array('usuario','justin'));
+        
+        return $resultado;
+        // return ['pedidos' => $pedidos, 'paginas' => $pagination->values()];
         
     }
     

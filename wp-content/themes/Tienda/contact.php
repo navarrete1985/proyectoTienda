@@ -34,8 +34,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1 class="h3 font-alt">Contact Us</h1>
-                        <h1 class="h4 font-alt">Let&#039;s keep in touch</h1></div>
+                        <h1 class="h3 font-alt">¿Tienes dudas?</h1>
+                        <h1 class="h4 font-alt">Contacta con nosotros</h1></div>
                 </div>
             </div>
         </section>
@@ -45,8 +45,8 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="module-title">
-                                <h2 class="font-alt">Get in Touch</h2>
-                                <p class="font-serif">We will get back to you as soon as possible</p>
+                                <h2 class="font-alt">Formulario de contacto</h2>
+                                <p class="font-serif">Desde aquí resolveremos todas las dudas que tengas sobre nuestro servicio de venta online.</p>
                             </div>
                         </div>
                     </div>
@@ -81,9 +81,9 @@
                             <div class="icon-box icon-box-left icon-exist">
                                 <div class="icon-box-icon" style="height: 28px;"><span class="icon icon-basic-paperplane"></span></div>
                                 <div class="icon-box-title">
-                                    <h5 class="font-alt">Say Hello</h5></div>
+                                    <h5 class="font-alt">Escríbenos</h5></div>
                                 <div class="icon-box-content">
-                                    <p>Correo: info@domain.com
+                                    <p>Correo: info@zapateriaminelli.com
                                         <br /> Teléfono: 958 89 38 50</p>
                                 </div>
                             </div>
@@ -91,10 +91,11 @@
                             <div class="icon-box icon-box-left icon-exist">
                                 <div class="icon-box-icon" style="height: 28px;"><span class="icon icon-basic-map"></span></div>
                                 <div class="icon-box-title">
-                                    <h5 class="font-alt">Where to Meet</h5></div>
+                                    <h5 class="font-alt">Nuestra ubicación</h5></div>
                                 <div class="icon-box-content">
-                                    <p>Vortex Company
-                                        <br /> 23 Greate Street, Los Angeles, 12345 LS</p>
+                                    <p>Zapatería Minelli
+                                        <br/>Avenida de la constitución Nº 25, CP 18014
+                                            <br>Granada</p>
                                     <p class="font-alt"><a target="_self" href="#map">Encuentranos en el mapa →</a></p>
                                 </div>
                             </div>
@@ -106,7 +107,8 @@
 
             <section class="maps-container">
                 <div id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.3132253746244!2d-5.9212874842186265!3d37.38242417983292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126f6ac549c70f%3A0x62027257c46e7941!2sAv.+V%C3%ADa+Apia%2C+10%2C+41016+Sevilla!5e0!3m2!1ses!2ses!4v1548316562802" style="border:0; width: 100%; height: 100%" allowfullscreen></iframe>
+                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.3132253746244!2d-5.9212874842186265!3d37.38242417983292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126f6ac549c70f%3A0x62027257c46e7941!2sAv.+V%C3%ADa+Apia%2C+10%2C+41016+Sevilla!5e0!3m2!1ses!2ses!4v1548316562802" style="border:0; width: 100%; height: 100%" allowfullscreen></iframe>-->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.9543890944565!2d-3.598530255298554!3d37.17755489926853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6cd44d03e9d18c67!2sZapateria+Minelli!5e0!3m2!1ses!2ses!4v1551395368070" style="border:0; width: 100%; height: 100%"  allowfullscreen></iframe>
                 </div>
 
             </section>
