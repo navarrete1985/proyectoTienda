@@ -170,7 +170,7 @@ class Pedido {
      *
      * @return Pedido
      */
-    public function setUsuario(\Usuario $usuario)
+    public function setUsuario(Usuario $usuario)
     {
         $this->usuario = $usuario;
 
@@ -194,7 +194,7 @@ class Pedido {
      *
      * @return Pedido
      */
-    public function addDetalle(\Detalle $detalle)
+    public function addDetalle(Detalle $detalle)
     {
         $this->detalles[] = $detalle;
 
@@ -206,7 +206,7 @@ class Pedido {
      *
      * @param \Detalle $detalle
      */
-    public function removeDetalle(\Detalle $detalle)
+    public function removeDetalle(Detalle $detalle)
     {
         $this->detalles->removeElement($detalle);
     }

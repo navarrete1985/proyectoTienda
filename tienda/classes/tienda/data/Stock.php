@@ -78,7 +78,7 @@ class Stock {
      *
      * @return Stock
      */
-    public function setArticulo(\Articulo $articulo)
+    public function setArticulo(Articulo $articulo)
     {
         $this->articulo = $articulo;
 
@@ -102,7 +102,7 @@ class Stock {
      *
      * @return Stock
      */
-    public function setColor(\Color $color)
+    public function setColor(Color $color)
     {
         $this->color = $color;
 

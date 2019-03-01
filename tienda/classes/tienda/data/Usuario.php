@@ -313,7 +313,7 @@ class Usuario {
      *
      * @return Usuario
      */
-    public function addPedido(\Pedido $pedido)
+    public function addPedido(Pedido $pedido)
     {
         $this->pedidos[] = $pedido;
 
@@ -325,7 +325,7 @@ class Usuario {
      *
      * @param \Pedido $pedido
      */
-    public function removePedido(\Pedido $pedido)
+    public function removePedido(Pedido $pedido)
     {
         $this->pedidos->removeElement($pedido);
     }

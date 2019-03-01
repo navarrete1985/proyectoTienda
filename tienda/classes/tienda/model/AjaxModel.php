@@ -76,31 +76,45 @@ class AjaxModel extends Model {
              // $query = $this->gestor->createQuery($dql)->setParameter('id',$iduser )->getResult();
         // $result = $this->get('Pedido', ['id' => 1]);
         
-         $dql = 'SELECT p, d  FROM tienda\data\Pedido p join p.usuario u join p.detalles d WHERE p.id = :pedidoid';
+        //  $dql = 'SELECT p, d  FROM tienda\data\Pedido p join p.usuario u join p.detalles d WHERE p.id = :pedidoid';
         // $resultado = $this->get('Pedido', ['id' => $id]);
    
         // $pedido = $this->getQuery($dql);
         // $resultado = array();
         // $resultado = $pedido[0]->getUnset(array('usuario','justin'));
         // $usuario = $this->getQuery($dql);
-         $result = $this->gestor->createQuery($dql)
-                ->setParameter( 'pedidoid', $id)
-                ->getResult();
+        //  $result = $this->gestor->createQuery($dql)
+        //         ->setParameter( 'pedidoid', $id)
+        //         ->getResult();
         // echo Util::varDump($usuario);
         // $resultado = $usuario[0]->getPedidos();
         // $pedido = new Pedido();
         // $pedido->set($usuario[0]);
-        echo Util::varDump($result);   
-        foreach($result as $item) {
+        // echo Util::varDump($result);   
+        // foreach($result as $item) {
             
-            // $usuario = new Usuario();
-            // $usuario->set($item);
+        //     // $usuario = new Usuario();
+        //     // $usuario->set($item);
             
-            echo Util::varDump($item);    
-            exit();
-        }
+        //     echo Util::varDump($item);    
+        //     exit();
+        // }
         // echo Util::varDump($usuario);
-        // exit();
+        // $pedidos = $this->get('Pedido', ['id' => $id]);
+        // $detalles = $pedidos->getDetalles();
+        $detalles = $this->getAll('Detalle');
+        
+        // $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);
+        foreach($detalles as $detalle) {
+              
+            $articulo = $this->get('Articulo', ['id' => $detalle->getArticulo()->getId()]);
+            // $articulo->getUnset(array('colores','id', 'categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+            // echo Util::varDump($articulo);  
+            echo $articulo->getModelo();
+        }
+        // echo Util::varDump();
+        
+        exit();
         
         
         return $resultado;

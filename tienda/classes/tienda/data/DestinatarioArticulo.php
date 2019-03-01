@@ -49,7 +49,7 @@ class DestinatarioArticulo {
      *
      * @return DestinatarioArticulo
      */
-    public function setDestinatario(\Destinatario $destinatario)
+    public function setDestinatario(Destinatario $destinatario)
     {
         $this->destinatario = $destinatario;
 
@@ -73,7 +73,7 @@ class DestinatarioArticulo {
      *
      * @return DestinatarioArticulo
      */
-    public function setArticulo(\Articulo $articulo)
+    public function setArticulo(Articulo $articulo)
     {
         $this->articulo = $articulo;
 

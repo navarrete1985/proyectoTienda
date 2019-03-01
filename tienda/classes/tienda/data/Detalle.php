@@ -143,7 +143,7 @@ class Detalle {
      *
      * @return Detalle
      */
-    public function setPedido(\Pedido $pedido)
+    public function setPedido(Pedido $pedido)
     {
         $this->pedido = $pedido;
 
@@ -167,7 +167,7 @@ class Detalle {
      *
      * @return Detalle
      */
-    public function setArticulo(\Articulo $articulo)
+    public function setArticulo(Articulo $articulo)
     {
         $this->articulo = $articulo;
 
@@ -191,7 +191,7 @@ class Detalle {
      *
      * @return Detalle
      */
-    public function setColor(\Color $color)
+    public function setColor(Color $color)
     {
         $this->color = $color;
 

@@ -77,7 +77,7 @@ class Destinatario {
      *
      * @return Destinatario
      */
-    public function addArticulo(\DestinatarioArticulo $articulo)
+    public function addArticulo(DestinatarioArticulo $articulo)
     {
         $this->articulos[] = $articulo;
 
@@ -89,7 +89,7 @@ class Destinatario {
      *
      * @param \DestinatarioArticulo $articulo
      */
-    public function removeArticulo(\DestinatarioArticulo $articulo)
+    public function removeArticulo(DestinatarioArticulo $articulo)
     {
         $this->articulos->removeElement($articulo);
     }

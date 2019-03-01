@@ -49,7 +49,7 @@ class CategoriaArticulo {
      *
      * @return CategoriaArticulo
      */
-    public function setCategoria(\Categoria $categoria)
+    public function setCategoria(Categoria $categoria)
     {
         $this->categoria = $categoria;
 
@@ -73,7 +73,7 @@ class CategoriaArticulo {
      *
      * @return CategoriaArticulo
      */
-    public function setArticulo(\Articulo $articulo)
+    public function setArticulo(Articulo $articulo)
     {
         $this->articulo = $articulo;
 

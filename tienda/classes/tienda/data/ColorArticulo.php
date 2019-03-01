@@ -49,7 +49,7 @@ class ColorArticulo {
      *
      * @return ColorArticulo
      */
-    public function setColor(\Color $color)
+    public function setColor(Color $color)
     {
         $this->color = $color;
 
@@ -73,7 +73,7 @@ class ColorArticulo {
      *
      * @return ColorArticulo
      */
-    public function setArticulo(\Articulo $articulo)
+    public function setArticulo(Articulo $articulo)
     {
         $this->articulo = $articulo;
 

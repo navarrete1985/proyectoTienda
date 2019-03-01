@@ -712,7 +712,7 @@ class Articulo {
      *
      * @return Articulo
      */
-    public function addColore(\Color $colore)
+    public function addColore(Color $colore)
     {
         $this->colores[] = $colore;
 
@@ -724,7 +724,7 @@ class Articulo {
      *
      * @param \Color $colore
      */
-    public function removeColore(\Color $colore)
+    public function removeColore(Color $colore)
     {
         $this->colores->removeElement($colore);
     }
@@ -746,7 +746,7 @@ class Articulo {
      *
      * @return Articulo
      */
-    public function addCategoria(\CategoriaArticulo $categoria)
+    public function addCategoria(CategoriaArticulo $categoria)
     {
         $this->categorias[] = $categoria;
 
@@ -758,7 +758,7 @@ class Articulo {
      *
      * @param \CategoriaArticulo $categoria
      */
-    public function removeCategoria(\CategoriaArticulo $categoria)
+    public function removeCategoria(CategoriaArticulo $categoria)
     {
         $this->categorias->removeElement($categoria);
     }
@@ -780,7 +780,7 @@ class Articulo {
      *
      * @return Articulo
      */
-    public function addDestinatario(\DestinatarioArticulo $destinatario)
+    public function addDestinatario(DestinatarioArticulo $destinatario)
     {
         $this->destinatarios[] = $destinatario;
 
@@ -792,7 +792,7 @@ class Articulo {
      *
      * @param \DestinatarioArticulo $destinatario
      */
-    public function removeDestinatario(\DestinatarioArticulo $destinatario)
+    public function removeDestinatario(DestinatarioArticulo $destinatario)
     {
         $this->destinatarios->removeElement($destinatario);
     }
@@ -814,7 +814,7 @@ class Articulo {
      *
      * @return Articulo
      */
-    public function addStock(\Stock $stock)
+    public function addStock(Stock $stock)
     {
         $this->stocks[] = $stock;
 
@@ -826,7 +826,7 @@ class Articulo {
      *
      * @param \Stock $stock
      */
-    public function removeStock(\Stock $stock)
+    public function removeStock(Stock $stock)
     {
         $this->stocks->removeElement($stock);
     }
@@ -848,7 +848,7 @@ class Articulo {
      *
      * @return Articulo
      */
-    public function addDetalle(\Detalle $detalle)
+    public function addDetalle(Detalle $detalle)
     {
         $this->detalles[] = $detalle;
 
@@ -860,7 +860,7 @@ class Articulo {
      *
      * @param \Detalle $detalle
      */
-    public function removeDetalle(\Detalle $detalle)
+    public function removeDetalle(Detalle $detalle)
     {
         $this->detalles->removeElement($detalle);
     }

@@ -77,7 +77,7 @@ class Categoria {
      *
      * @return Categoria
      */
-    public function addArticulo(\CategoriaArticulo $articulo)
+    public function addArticulo(CategoriaArticulo $articulo)
     {
         $this->articulos[] = $articulo;
 
@@ -89,7 +89,7 @@ class Categoria {
      *
      * @param \CategoriaArticulo $articulo
      */
-    public function removeArticulo(\CategoriaArticulo $articulo)
+    public function removeArticulo(CategoriaArticulo $articulo)
     {
         $this->articulos->removeElement($articulo);
     }

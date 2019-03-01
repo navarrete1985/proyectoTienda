@@ -112,7 +112,7 @@ class Color {
      *
      * @return Color
      */
-    public function addArticulo(\ColorArticulo $articulo)
+    public function addArticulo(ColorArticulo $articulo)
     {
         $this->articulos[] = $articulo;
 
@@ -124,7 +124,7 @@ class Color {
      *
      * @param \ColorArticulo $articulo
      */
-    public function removeArticulo(\ColorArticulo $articulo)
+    public function removeArticulo(ColorArticulo $articulo)
     {
         $this->articulos->removeElement($articulo);
     }
@@ -146,7 +146,7 @@ class Color {
      *
      * @return Color
      */
-    public function addDetalle(\Detalle $detalle)
+    public function addDetalle(Detalle $detalle)
     {
         $this->detalles[] = $detalle;
 
@@ -158,7 +158,7 @@ class Color {
      *
      * @param \Detalle $detalle
      */
-    public function removeDetalle(\Detalle $detalle)
+    public function removeDetalle(Detalle $detalle)
     {
         $this->detalles->removeElement($detalle);
     }
