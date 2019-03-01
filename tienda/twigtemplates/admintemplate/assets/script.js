@@ -363,6 +363,15 @@
                 });
             }
         });
+        
+        $('.tools-delete').each((index, element) => {
+            $(element).on('click', function() {
+                addDeleteListener({
+                    class: type,
+                    id: $(this).parent().parent().attr('data-id')
+                }, this)  
+            })
+        })
     }
     
     function paintRow(data) {
@@ -371,37 +380,39 @@
             case 'categoria':
             case 'destinatario':
                 container = $(`<div class='col-md-3 col-sm-6 item-tools' data-id="${data.id}">
-						            <span class="tools-title">${data.name}</span>
-						            <i class="fas fa-trash-alt danger"></i>
+						            <span class="tools-title">${data.name}<i class="far fa-times-circle tools-delete"></i></span>
 						       </div>`);
                 break;
             case 'color':
                 container = $(`<div class='col-md-3 col-sm-6 item-tools' data-id="${data.id}">
                                     <img src="${data.url}" width="24px"></img>
-						            <span class="tools-title">${data.name}</span>
-						            <i class="fas fa-trash-alt danger"></i>
+						            <span class="tools-title">${data.name}<i class="far fa-times-circle tools-delete"></i></span>
 						       </div>`);
                 break;
         }
         
         if (container !== null) {
             $('#tools-items-content').append(container);
-            container.children('i').on('click', function() {
-                sendDeleteConfirm('¿Está seguro de que quiere eliminar este elemento?', 'Eliminar', 'Cancelar', dialog => {
-                    let genericAjax = new GenericAjax();
-                    let message = new Message();
-                    genericAjax.request(null, 'ajax/deletetools', {'class': data.class , 'id': data.id}, 'get', jsonResponse => {
-                        if (jsonResponse.result == 1) {
-                            $(this).parent().remove();
-                            message.showMessage('Éxito', 'El elemento se ha eliminado correctamente.', 'success');
-                        } else {
-                            message.showMessage('Error', 'No se ha podido eliminar el elemento.', 'danger');
-                        }
-                        dialog.close();
-                    }, error => dialog.close());
-                });
+            container.children('span').children('i').on('click', function() {
+                addDeleteListener(data, this);
             })
         }
+    }
+    
+    function addDeleteListener(data, context) {
+        sendDeleteConfirm('¿Está seguro de que quiere eliminar este elemento?', 'Eliminar', 'Cancelar', dialog => {
+            let genericAjax = new GenericAjax();
+            let message = new Message();
+            genericAjax.request(null, 'ajax/deletetools', {'class': data.class , 'id': data.id}, 'get', jsonResponse => {
+                if (jsonResponse.result == 1) {
+                    $(context).parent().parent().remove();
+                    message.showMessage('Éxito', 'El elemento se ha eliminado correctamente.', 'success');
+                } else {
+                    message.showMessage('Error', 'No se ha podido eliminar el elemento.', 'danger');
+                }
+                dialog.close();
+            }, error => dialog.close());
+        });
     }
     
     function deleteRow(dataId) {
@@ -411,15 +422,17 @@
     function sendDeleteConfirm(message, titleConfirm, titleCancel, callback) {
         BootstrapDialog.show({
             message: message,
+            type: BootstrapDialog.TYPE_WARNING,
+            title: 'Información',
             buttons: [{
                 label: titleConfirm,
                 cssClass: 'btn-primary',
                 autospin: true,
+                cssClass: 'btn-danger',
                 action: function(dialogRef){
                     dialogRef.enableButtons(false);
                     dialogRef.setClosable(false);
-                    // dialogRef.getModalBody().html('Dialog closes in 5 seconds.');
-                    // dialogRef.close();
+                    dialogRef.getModalBody().html('Eliminando...');
                     callback(dialogRef);
                 }
             }, {

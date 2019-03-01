@@ -44,6 +44,24 @@
 	/*align-items:center;*/
 	/*flex-direction:column;*/
 }
+.tableDetalle{
+	margin:0 auto;
+	width:70%;
+	text-align:right;
+}
+.tableDetalle th{
+	text-align:right !important;
+}
+.center{
+	text-align:center;
+}
+.pDetalleTotal{
+	text-align:right;
+}
+.sameTable{
+	width:70%;
+	margin: 0 auto;
+}
 .fw-accordion .fw-accordion-title:first-child {
 	border-top: none;
 }

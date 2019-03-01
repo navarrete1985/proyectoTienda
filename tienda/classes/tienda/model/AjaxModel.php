@@ -104,30 +104,44 @@ class AjaxModel extends Model {
         // $detalles = $pedidos->getDetalles();
         
         // $detalles = $this->get('Detalle', ['id' => $id]);
-        
-         $dql = 'SELECT d  FROM tienda\data\Detalle d join d.pedido p  WHERE d.pedido = :id';
+         $resultado = array();
+         $resultado2 = array();
+         $resultado3 = array();
+         $resultadofinal = array();
+         $dql = 'SELECT d,p,a  FROM tienda\data\Detalle d join d.pedido p join d.articulo a WHERE d.pedido = :id';
         $query = $this->gestor->createQuery($dql)->setParameter('id', $id);
    
         $detalles=$query->getResult();
-        echo Util::varDump($detalles);
         
-        exit();
+        foreach($detalles as $detalle) {
+            $resultado['resultado'][]  = $detalle->getUnset(array('pedido','color'));
+            $resultado['detalles'][] = $detalle->getUnset(array('articulo','pedido','color'));
+        }
+        
+        foreach($resultado['resultado'] as $detalle) {
+            $resultado['articulo'][] = $detalle['articulo']->getUnset(array('colores','img','__initializer__','__cloner__','__isInitialized__','id', 'categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+        }
+        unset($resultado['resultado']);
+        
+        
         $usuario = $this->get('Usuario', ['id' => $iduser]);
-        $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);
-        echo Util::varDump($query);
-        
-        exit();
-        $resultado = array();
-        
-        // $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);
-        // foreach($detalles as $detalle) {
+        $resultado['usuario']=$usuario->getUnset(array('__initializer__','__cloner__','__isInitialized__','pedidos','fechaalta','clave'));
+        $resultado['pedido']=$id;
+        // echo Util::varDump($resultado);
+        // exit();
+        // // $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);
+
+
+       
+        // // $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);
+        // // foreach($detalles as $detalle) {
               
             
-        $resultado['articulo']=$articulo->getUnset(array('colores','img','__initializer__','__cloner__','__isInitialized__','id', 'modelo','categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+        // $resultado['articulo']=$articulo->getUnset(array('colores','img','__initializer__','__cloner__','__isInitialized__','id', 'modelo','categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
            
-        // }
-         $resultado['detalle']=$detalles->getUnset(array('articulo','pedido','color'));
-         $resultado['usuario']=$usuario->getUnset(array('pedidos','fechaalta','clave'));
+        // // }
+        //  $resultado['detalle']=$detalles->getUnset(array('articulo','pedido','color'));
+         
 
             // echo Util::varDump($resultado);  
             // echo $articulo->getModelo();

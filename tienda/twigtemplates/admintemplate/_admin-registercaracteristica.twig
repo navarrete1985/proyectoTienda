@@ -29,7 +29,11 @@
 									<hr>
 									<div class='wrapper-stock'>
 										<div class='row' id='tools-items-content'>
-											
+											{% for cat in data %}
+												<div class='col-md-3 col-sm-6 item-tools' data-id="{{cat.id}}">
+										            <span class="tools-title">{{cat.nombre}}<i class="far fa-times-circle tools-delete"></i></span>
+										       </div>
+											{% endfor %}
 										</div>
 									</div>
 								</div>

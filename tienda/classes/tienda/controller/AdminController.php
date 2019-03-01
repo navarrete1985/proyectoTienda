@@ -48,13 +48,15 @@ class AdminController extends Controller {
     }
     
     function adddestinatario() {
+        $elements = $this->getModel()->getAll('Destinatario');
         $this->getModel()->set('twigFile', '_admin-registercaracteristica.twig');
-        $this->getModel()->set('section', ['type' => 2, 'action' => 'data-type="destinatario"']);
+        $this->getModel()->add(['section' => ['type' => 2, 'action' => 'data-type="destinatario"'], 'data' => $elements]);
     }
     
     function addcategoria() {
+        $elements = $this->getModel()->getAll('Categoria');
         $this->getModel()->set('twigFile', '_admin-registercaracteristica.twig');
-        $this->getModel()->set('section', ['type' => 1, 'action' => 'data-type="categoria"']);
+        $this->getModel()->add(['section' => ['type' => 1, 'action' => 'data-type="categoria"'], 'data' => $elements]);
     }
     
     function edituser(){

@@ -151,6 +151,7 @@ class AjaxController extends Controller {
     function detallespedido(){
         $id = Reader::read('id');
         $r = $this->getModel()->getDetalles($id);
+       
         $this->getModel()->set('resultado', $r);
     }
 }
