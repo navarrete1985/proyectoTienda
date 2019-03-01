@@ -37,74 +37,48 @@
 		
 		<section class="module">
 			<div class="container">		
-                <div class="row">
-            <!-- login form 1 -->
-            <div class="col-sm-6">
-                <div id="login-form">
-                    <h3 class="log-title">LOGIN</h3>
-                    <div class="form-group">
+<!-- login form -->
+                <div class="row bloqueflex">
+                    <div class="col-sm-6">
+                        <div id="login-form">
+                            <h3 class="log-title">LOGIN</h3>
+                            <div class="form-group">
 <?php
-                        $args = array (
-                        	'remember' => true,
-                        	'form_id' => 'loginform',
-                        	'id_username' => 'user_login',
-                        	'id_password' => 'user_pass',
-                        	'id_remember' => 'rememberme',
-                        	'id_submit' => 'wp-submit',
-                        	'label_username' => '',
-                        	'label_password' => '',
-                        	'label_remember' => __ ('Recordarme'),
-                        	'label_log_in' => __ ('Acceder'),
-                        	'value_remember' => true
-                        );
-                        echo wp_login_form($args);
+                                $args = array (
+                                	'remember' => true,
+                                	'redirect' => 'https://proyecto-tienda-navarrete.c9users.io/index.php',
+                                	'form_id' => 'loginform',
+                                	'id_username' => 'user_login',
+                                	'id_password' => 'user_pass',
+                                	'id_remember' => 'rememberme',
+                                	'id_submit' => 'wp-submit',
+                                	'label_username' => '',
+                                	'label_password' => '',
+                                	'label_remember' => __ ('Recordarme'),
+                                	'label_log_in' => __ ('Acceder'),
+                                	'value_remember' => true
+                                );
+                                echo wp_login_form($args);
 ?>
-                    </div>
-                </div>
-            </div><!-- / col-sm-6 -->
-            <!-- / login form 1 -->
-
-            <!-- register form 1 -->
-            <div class="col-sm-6">
-                <div id="register-form">
-                    <h3 class="log-title">REGISTER</h3>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="register-email" placeholder="EMAIL" required data-error="*Please fill out this field">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="register-username" placeholder="USERNAME" required>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="register-password" placeholder="PASSWORD" required data-error="*Please fill out this field">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="register-cpassword" placeholder="CONFIRM PASSWORD" required>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <!-- log-line -->
-                    <div class="log-line reg-form-1 no-margin">
-                        <div class="pull-left">
-                            <div class="checkbox checkbox-primary space-bottom">
-                                <label class="hide"><input type="checkbox"></label>
-                                <input id="checkbox2" type="checkbox">
-                                <label for="checkbox2"><span><a href="#x">Terms & Conditions</a></span></label>
                             </div>
                         </div>
-                        <div class="pull-right">
-                            <button type="submit" id="reg-submit" class="btn btn-md btn-round btn-fill btn-brand">Register</button>
-                            <div id="register-msgSubmit" class="h3 text-center hidden"></div>
-                            <div class="clearfix"></div>
+                    </div><!-- / col-sm-6 -->
+                </div>    
+<!-- / login form -->
+
+<!-- register form -->
+                <div class="row bloqueflex">
+                    <div class="col-sm-6">
+                        <div id="register-form">
+                            <h3 class="log-title">¿QUIERES REGISTRARTE?</h3>
+                            <div class="form-group">
+                               <?php wp_register(); ?> 
+                            </div>
                         </div>
-                    </div><!-- / log-line -->
-                </div>
-            </div><!-- / col-sm-6 -->
-            <!-- / register form 1 -->
-        </div><!-- / row -->
-        <!-- / form 1 -->
-            </div><!-- / container -->
+                    </div><!-- / col-sm-6 -->
+<!-- / register form -->
+                </div><!-- / row -->
+            </div>
         </section>
     </div>
 

@@ -10,21 +10,7 @@
         font-size: 2em;
         opacity: 1;
     }
-  
-/*
-#loginform input {
-    box-shadow: none;
-    border-radius: 5px;
-    border-color: #eee;
-    padding: 12px 15px;
-    height: 40px;
-    font-size: 1em; 
-    font-family: Dosis,Arial,serif;
-}    
-  
-#loginform label {
-    background: transparent;
-    border-color: #333333;
-    color: #333333;    
-}    
-*/
+
+#register-form {
+    margin-top: 10vh;
+}
