@@ -307,10 +307,123 @@
     }
 })();
 
+//Modulo para manejar los colores/destinatarios/Categorias
+(function() {
+    
+    if($('#add-item-container').length > 0) {
+        let genericAjax = new GenericAjax();
+        let message = new Message();
+        let object = {
+            nombre: '',
+            class:  '',
+            img:    ''
+        };
+        
+        let opResult = (type) => {
+            let options = {
+                '-1': {
+                    title: 'Error',
+                    message: `Ya existe un ${type} con ese nombre` ,
+                    option: 'danger'
+                },
+                '0': {
+                    title: 'Error',
+                    message: `Se ha producido un error al insertar el ${type}, pruebe más tarde.` ,
+                    option: 'danger'
+                },
+                '1': {
+                    title: 'Éxito',
+                    message: `El ${type} se ha insertado correctamente` ,
+                    option: 'success'
+                }
+            }
+            
+            return function(index) {
+                return options[index];
+            };
+        }
+        
+        let type = $('#add-item-container').attr('data-type');
+        let response = opResult(type);
+        
+        $('#add-tools').on('click', function(){
+            let input = $('#tools-input');
+            if (input.val().trim().length > 0) {
+                genericAjax.request(null, 'ajax/adddata', {'class': type , 'nombre': input.val().trim()}, 'get', jsonResponse => {
+                   let resultado = response(jsonResponse.result);
+                   message.showMessage(resultado.title, resultado.message, resultado.option);
+                   if (jsonResponse.result == 1) {
+                       clearInputs(type);
+                   }
+                });
+            }
+        });
+    }
+    
+    function paintRow(data) {
+        let container = null;
+        switch (data.type) {
+            case 'categoria':
+            case 'destinatario':
+                container = $(`<div class='col-md-3 col-sm-6 item-tools' data-id="${data.id}">
+						            <span class="tools-title">${data.name}</span>
+						            <i class="fas fa-trash-alt danger"></i>
+						       </div>`);
+                break;
+            case 'color':
+                container = $(`<div class='col-md-3 col-sm-6 item-tools' data-id="${data.id}">
+                                    <img src="${data.url}" width="24px"></img>
+						            <span class="tools-title">${data.name}</span>
+						            <i class="fas fa-trash-alt danger"></i>
+						       </div>`);
+                break;
+        }
+        
+        if (container !== null) {
+            $('#tools-items-content').append(container);
+            container.children('i').on('click', function() {
+                $(this).parent().remove();
+            })
+        }
+    }
+    
+    function deleteRow(dataId) {
+        $(`#tools-items-content .item-tools[data-id=${dataId}]`).remove();
+    }
+    
+    function sendDeleteConfirm(message, titleConfirm, titleCancel, callback) {
+        BootstrapDialog.show({
+            message: message,
+            buttons: [{
+                label: titleConfirm,
+                cssClass: 'btn-primary',
+                autospin: true,
+                action: function(dialogRef){
+                    dialogRef.enableButtons(false);
+                    dialogRef.setClosable(false);
+                    // dialogRef.getModalBody().html('Dialog closes in 5 seconds.');
+                    // dialogRef.close();
+                    callback(dialogRef);
+                }
+            }, {
+                label: titleCancel,
+                action: function(dialogRef){
+                    dialogRef.close();
+                }
+            }]
+        });
+    }
+    
+    function clearInputs(type) {
+        if (type == 'color') {
+            $('#img-color').val('');
+        }
+        $('#tools-input').val('');
+    }
+})();
+
 
 //modulo de pedidos
-
-
 (function() {
     
     let genericAjax = new GenericAjax();

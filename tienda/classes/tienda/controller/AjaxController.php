@@ -103,6 +103,7 @@ class AjaxController extends Controller {
     
     function adddata() {
         $class = Reader::read('class');
+        $class = strtolower($class);
         $obj = Reader::readObject(App::OBJECT[$class]);
         
         switch ($class) {
@@ -127,23 +128,21 @@ class AjaxController extends Controller {
             
             if ($class == 'usuario' && $result === 1) {
                 $mail = Mail::sendActivation($obj);
-            } else if ($class == 'articulo' && $result === 1) {
-                $upload = new Multiupload('files');
+            } else if ($class == 'articulo' || $class == 'color' && $result === 1) {
+                $upload = new Multiupload($class == 'color' ? 'img' : 'files');
                 $status = $upload->setPolicy(Multiupload::POLICITY_OVERWRITE)
-                        ->appendTarget('articulos/id_' . $obj->getId());
+                        ->appendTarget($class == 'color' ? 'colores' : 'articulos/' . 'id_' . $obj->getId());
                 if($status) {
                     $uploadResult = $upload->upload();
                 }
             }
         }
-        $this->getModel()->add(['result' => $result, 'files_uploaded' => $uploadResult]);
+        $this->getModel()->add(['result' => $result, 'files_uploaded' => $uploadResult, 'id' => $obj !== null ? $obj->getId() : '-1']);
     }
     
     function detallespedido(){
         $id = Reader::read('id');
         $r = $this->getModel()->getDetalles($id);
-        echo Util::varDump($r);
-        exit();
-         $this->getModel()->add($r);
+        $this->getModel()->set('resultado', $r);
     }
 }

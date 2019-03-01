@@ -5,7 +5,7 @@
     $user = wp_get_current_user();
     $name = $user -> user_firstname; 
     $rol = get_author_role($user -> ID);
-	
+
 	$roles = rol_author_sp($rol);
 	$rolsp = $roles['rolsp'];
 	$capacidad = $roles['capacidad']; 
@@ -35,6 +35,7 @@
 						<div class="banner-info bloqueflex-col">
 							<h1 class="h3 font-alt">Bienvenido <?php echo $name; ?></h1>
 							<h1 class="h4 font-alt">Tu rol es de: <?php echo $rolsp; ?></h1>
+							<h1 class="h4 font-alt">Tu rol es de: <?php echo $rol2; ?></h1>
 							<p><?php echo $capacidad; ?></p>
 							<a class="btn btn-md btn-round btn-fill btn-brand" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
 						</div>

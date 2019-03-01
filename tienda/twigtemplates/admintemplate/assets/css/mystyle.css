@@ -297,6 +297,29 @@ td{
     position: relative;
 }
 
+/*----------ESTILOS PARA AGREGAR CAT/COL/DEST--------------*/
+.input-zone {
+    margin-top: 24px;
+}
+
+.input-zone input {
+    width: 100%;
+    max-width: 400px;
+    display: inline;
+}
+
+.input-zone i {
+    cursor: pointer;
+    margin-left: 16px;
+    color: #80AD93;
+    transition: all .25s;
+    font-size: 20px;
+}
+
+.input-zone i:hover {
+    color: #90C2A5;
+}
+
 @media screen and (max-width: 1390px) {
     
     .contenedorTabla{

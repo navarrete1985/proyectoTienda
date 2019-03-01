@@ -15,16 +15,21 @@ class GenericAjax {
         })
         .done(function( json ) {
             callBackDone(json);
+            console.log('Ajax ok');
         })
         .fail(function( xhr, status, errorThrown ) {
             if (callBackFail !== null) {
                 callBackFail(status);   
             }
+            console.log('Ajax fail');
+            console.log('Estado ' + status);
+            console.log('Error ' + errorThrown);
         })
         .always(function( xhr, status ) {
             if (callBackFail !== null) {
                 callBackAlways(status);   
             }
+            console.log('Ajax done');
         });
     }
     

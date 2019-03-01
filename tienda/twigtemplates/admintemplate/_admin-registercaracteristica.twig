@@ -5,7 +5,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<div class='row'>
+					<div class='row' id='add-item-container' data-type='{{section.type == 1 ? 'categoria' : 'destinatario'}}'>
 						<div class='col-md-12'>
 							{#-------CARTA CONTROL DE STOCK--------------#}
 							<div class="panel todo-list">
@@ -20,23 +20,16 @@
 									<p>
 										<span class="title">Listado de {{section.type == 1 ? 'Categorias' : 'Destinatarios'}}</span>
 										<span class="short-description">Añade {{section.type == 1 ? 'una nueva categoría' : 'un nuevo destinatario'}}  para poder asociarlo a un producto</span>
-										<span class="date"><a href='#'>Añadir {{section.type == 1 ? 'nueva categoría' : 'nuevo destinatario'}}</a></span>
+										{#<span class="date"><a href='#'>Añadir {{section.type == 1 ? 'nueva categoría' : 'nuevo destinatario'}}</a></span>#}
+										<div class="form-group date input-zone">
+											<input type='text' name='nombre' id='tools-input' class="form-control"/>
+											<i class="fas fa-plus" id='add-tools'></i>
+										</div>
 									</p>
 									<hr>
 									<div class='wrapper-stock'>
-										<div class='row'>
-											<div class='col-md-3 col-sm-6 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
-											</div>
+										<div class='row' id='tools-items-content'>
+											
 										</div>
 									</div>
 								</div>

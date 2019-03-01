@@ -5,7 +5,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<div class='row'>
+					<div class='row' id='add-item-container' data-type='color'>
 						<div class='col-md-12'>
 							{#-------CARTA CONTROL DE STOCK--------------#}
 							<div class="panel todo-list">
@@ -17,25 +17,35 @@
 									</div>
 								</div>
 								<div class='panel-body'>
-									<p>
-										<span class="title">Listado de Colores</span>
-										<span class="short-description">Añade un nuevo color para poder asociarlo a un producto</span>
-										<span class="date"><a href='#'>Añadir nuevo color</a></span>
-									</p>
+									<div class='row'>
+										<div class='col-md-6'>
+											<span class="title">Listado de Colores</span>
+											<span class="short-description">Añade un nuevo color para poder asociarlo a un producto</span>
+											<div class="form-group date input-zone">
+												<input type='text' name='nombre' id='tools-input' class="form-control"/>
+												<i class="fas fa-plus" id='add-tools'></i>
+											</div>	
+										</div>
+										<div class='col-md-6'>
+											<input data-empty='true' type='file' class='thumbnail hidden' name='img' id='img-color'>
+											<div class='container-flex-row justify-content-center'>
+												<div class='rectangle'>
+													<div class='image container-flex-column justify-content-center align-items-center' id='img-thumbnail-container'>
+														<a href='#' class='img-link'><i class="far fa-images btn-thubnail-img" id='img-thumbnail-btn'></i></a>
+													</div>
+												</div>
+											</div>
+											<p>
+												<a href='#' class='link-add-item btn-thubnail-img'>Añadir magen destacada del producto</a><br>
+												<span class="date">Imagen de previsualización del producto (sólamente puede haber una imagen destacada)</span>
+											</p>
+										</div>
+									</div>
 									<hr>
-									<div class='wrapper-stock'>
-										<div class='row'>
-											<div class='col-md-3 col-sm-6 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
+									<div class='row'>
+										<div class='row-md-12 wrapper-stock'>
+											<div class='row' id='tools-items-content'>
+												
 											</div>
 										</div>
 									</div>

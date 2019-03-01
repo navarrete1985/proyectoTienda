@@ -63,7 +63,7 @@ class AjaxModel extends Model {
         
     }
     
-     function getDetalles($id, $pagina = 1, $limit = 1){
+     function getDetalles($id){
         $iduser='37';
         // $dql = 'SELECT d  FROM tienda\data\Detalle  d join pedido p join color c join articulo a
         
@@ -102,19 +102,30 @@ class AjaxModel extends Model {
         // echo Util::varDump($usuario);
         // $pedidos = $this->get('Pedido', ['id' => $id]);
         // $detalles = $pedidos->getDetalles();
-        $detalles = $this->getAll('Detalle');
+        
+        $detalles = $this->get('Detalle', ['id' => $id]);
+        $usuario = $this->get('Usuario', ['id' => $iduser]);
+        $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);
+        // echo Util::varDump($detalles);
+        
+        // exit();
+        $resultado = array();
         
         // $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);
-        foreach($detalles as $detalle) {
+        // foreach($detalles as $detalle) {
               
-            $articulo = $this->get('Articulo', ['id' => $detalle->getArticulo()->getId()]);
-            // $articulo->getUnset(array('colores','id', 'categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
-            // echo Util::varDump($articulo);  
-            echo $articulo->getModelo();
-        }
+            
+        $resultado['articulo']=$articulo->getUnset(array('colores','img','__initializer__','__cloner__','__isInitialized__','id', 'modelo','categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+           
+        // }
+         $resultado['detalle']=$detalles->getUnset(array('articulo','pedido','color'));
+         $resultado['usuario']=$usuario->getUnset(array('pedidos','fechaalta','clave'));
+
+            // echo Util::varDump($resultado);  
+            // echo $articulo->getModelo();
         // echo Util::varDump();
         
-        exit();
+        // exit();
         
         
         return $resultado;
