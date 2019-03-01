@@ -26,7 +26,7 @@ class GenericAjax {
             console.log('Error ' + errorThrown);
         })
         .always(function( xhr, status ) {
-            if (callBackFail !== null) {
+            if (callBackAlways !== null) {
                 callBackAlways(status);   
             }
             console.log('Ajax done');

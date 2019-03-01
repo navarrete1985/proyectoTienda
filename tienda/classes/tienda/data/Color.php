@@ -24,7 +24,7 @@ class Color {
     private $imgsrc;
     
     /**
-     * @Column(type="string", length=50)
+     * @Column(type="string", length=50, unique=true)
      */
     private $nombre;
     

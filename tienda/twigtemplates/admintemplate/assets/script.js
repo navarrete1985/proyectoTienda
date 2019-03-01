@@ -328,7 +328,7 @@
                 },
                 '0': {
                     title: 'Error',
-                    message: `Se ha producido un error al insertar el ${type}, pruebe más tarde.` ,
+                    message: `Ya existe un ${type} con ese nombre` ,
                     option: 'danger'
                 },
                 '1': {
@@ -353,6 +353,11 @@
                    let resultado = response(jsonResponse.result);
                    message.showMessage(resultado.title, resultado.message, resultado.option);
                    if (jsonResponse.result == 1) {
+                       paintRow({
+                           class: type,
+                           name: input.val().trim(),
+                           id: jsonResponse.id
+                       });
                        clearInputs(type);
                    }
                 });
@@ -362,7 +367,7 @@
     
     function paintRow(data) {
         let container = null;
-        switch (data.type) {
+        switch (data.class) {
             case 'categoria':
             case 'destinatario':
                 container = $(`<div class='col-md-3 col-sm-6 item-tools' data-id="${data.id}">
@@ -382,7 +387,19 @@
         if (container !== null) {
             $('#tools-items-content').append(container);
             container.children('i').on('click', function() {
-                $(this).parent().remove();
+                sendDeleteConfirm('¿Está seguro de que quiere eliminar este elemento?', 'Eliminar', 'Cancelar', dialog => {
+                    let genericAjax = new GenericAjax();
+                    let message = new Message();
+                    genericAjax.request(null, 'ajax/deletetools', {'class': data.class , 'id': data.id}, 'get', jsonResponse => {
+                        if (jsonResponse.result == 1) {
+                            $(this).parent().remove();
+                            message.showMessage('Éxito', 'El elemento se ha eliminado correctamente.', 'success');
+                        } else {
+                            message.showMessage('Error', 'No se ha podido eliminar el elemento.', 'danger');
+                        }
+                        dialog.close();
+                    }, error => dialog.close());
+                });
             })
         }
     }

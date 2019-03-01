@@ -9,7 +9,8 @@
         <div class="container">
             <div class="inner-header">
                 <a class="inner-brand" href="index.html">
-						<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" />
+						<!--<img class="brand-dark" src="<?php// echo bloginfo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" />-->
+						<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli.png';?>" style="max-height: 35px;" />
 						<img class="brand-light" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" />
 				</a>
             </div>
@@ -24,12 +25,13 @@
     <!-- Header end-->
 
     <div class="wrapper">
-        <section class="module-header full-height parallax bg-light bg-light-30" data-background="<?php echo bloginfo('template_directory') .'/img/uploads/2017/05/module-21.jpg'?>">
+        <!--<section class="module-header full-height parallax bg-light bg-light-30" data-background="<?php //echo bloginfo('template_directory') .'/img/uploads/2017/05/module-21.jpg'?>">-->
+        <section class="module-header full-height parallax bg-light bg-light-30" data-background="<?php echo bloginfo('template_directory') .'/assets/img/portada.png'?>">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <h1 class="h3 font-alt"><?php echo $current_slug; ?></h1>
-                        <h1 class="h4 font-alt">Professional Photographer</h1>
+                        <h1 class="h4 font-alt">Zapatería Minelli</h1>
                     </div>
                 </div>
             </div>

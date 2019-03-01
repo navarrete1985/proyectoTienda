@@ -19,7 +19,7 @@ class Destinatario {
     private $id;
     
     /**
-     * @Column(type="string", nullable=false, length=50)
+     * @Column(type="string", nullable=false, length=50, unique=true)
      */
     private $nombre;
     

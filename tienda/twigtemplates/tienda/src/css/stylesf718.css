@@ -30,7 +30,20 @@
 .fw-accordion .fw-accordion-title:focus {
 	outline: medium none;
 }
-
+.comunDetalle{
+	margin-right:10px;
+}
+.comundivDetalle{
+	margin-left:45px;
+}
+.spanDetalles{
+	font-weight:bold;
+}
+.containerTotalDetalle{
+	/*display:flex;*/
+	/*align-items:center;*/
+	/*flex-direction:column;*/
+}
 .fw-accordion .fw-accordion-title:first-child {
 	border-top: none;
 }

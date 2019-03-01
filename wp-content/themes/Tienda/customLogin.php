@@ -58,7 +58,7 @@
                                 	'label_log_in' => __ ('Acceder'),
                                 	'value_remember' => true
                                 );
-                                echo wp_login_form($args);
+                                wp_login_form($args);
 ?>
                             </div>
                         </div>

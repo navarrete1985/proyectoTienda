@@ -17,6 +17,9 @@ trait Crud {
         $result = $query->getResult();
         return $result;
     }
+    function getAll2 ($clase, array $data = ['id' => '']) {
+        return $this->gestor->getRepository($this->prefix . $clase)->findAll($data);
+    }
     function getAll ($clase) {
         return $this->gestor->getRepository($this->prefix . $clase)->findAll();
     }

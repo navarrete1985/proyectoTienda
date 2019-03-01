@@ -103,12 +103,20 @@ class AjaxModel extends Model {
         // $pedidos = $this->get('Pedido', ['id' => $id]);
         // $detalles = $pedidos->getDetalles();
         
-        $detalles = $this->get('Detalle', ['id' => $id]);
+        // $detalles = $this->get('Detalle', ['id' => $id]);
+        
+         $dql = 'SELECT d  FROM tienda\data\Detalle d join d.pedido p  WHERE d.pedido = :id';
+        $query = $this->gestor->createQuery($dql)->setParameter('id', $id);
+   
+        $detalles=$query->getResult();
+        echo Util::varDump($detalles);
+        
+        exit();
         $usuario = $this->get('Usuario', ['id' => $iduser]);
         $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);
-        // echo Util::varDump($detalles);
+        echo Util::varDump($query);
         
-        // exit();
+        exit();
         $resultado = array();
         
         // $articulo = $this->get('Articulo', ['id' => $detalles->getArticulo()->getId()]);

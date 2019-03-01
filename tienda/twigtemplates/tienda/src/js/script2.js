@@ -37,28 +37,33 @@
         
      var pintar = function (objeto) {
          console.log(objeto)
+         let precioSin=objeto.detalle.precio/1.21;
+         let Iva=objeto.detalle.precio-(objeto.detalle.precio/1.21);
+         let precio = 7.6;
+         let total=(parseFloat(objeto.detalle.precio) + parseFloat(precio));
         var listaitems = `
-        <div>
-            <div>Id del pedido : ${objeto.detalle.id} | numero de articulos : ${objeto.detalle.cantidad}</div>
+        <div>Id del pedido : ${objeto.pedido.id} | numero de articulos : ${objeto.detalle.cantidad}</div>
+        <div class="containerTotalDetalle">
+            
             <br>
-            <div>
-                <div>Enviado a :</div>
-                <div>${objeto.usuario.nombre} ${objeto.usuario.apellidos}</div>
-                <div>${objeto.usuario.direccion}</div>
+            <div class="containerDetalles">
+                <div><span class="spanDetalles"><i class="fas fa-truck comunDetalle"></i>Enviado a :</span></div>
+                <div class="comundivDetalle">${objeto.usuario.nombre} ${objeto.usuario.apellidos}</div>
+                <div class="comundivDetalle">${objeto.usuario.direccion}</div>
             </div>
             <br>
-            <div>
-                <div>Metodo de pago</div>
-                <div>Tarjeta de crédito</div>
+            <div class="containerDetalles">
+                <div><span class="spanDetalles"><i class="fas fa-credit-card comunDetalle"></i>Metodo de pago :</span></div>
+                <div class="comundivDetalle">Tarjeta de crédito</div>
             </div>
             <br>
-            <div>
-                <div>Resumen</div>
-                <div>Subtotal : ${objeto.detalle.precio/1.21}</div>
-                <div>Envío</div>
-                <div>Impuestos</div>
+            <div class="containerDetalles">
+                <div><span class="spanDetalles"><i class="fas fa-file-alt comunDetalle"></i>Resumen :</span></div>
+                <div class="comundivDetalle">Subtotal : ${precioSin.toFixed(2)}</div>
+                <div class="comundivDetalle">Envío : 7.6</div>
+                <div class="comundivDetalle">Impuestos : ${Iva.toFixed(2)}</div>
                 <br>
-                <div>Total : ${objeto.detalle.precio}</div>
+                <div class="comundivDetalle">Total : ${total}</div>
             </div>
         </div>
         `;
