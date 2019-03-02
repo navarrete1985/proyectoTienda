@@ -75,5 +75,12 @@ class Util {
         ob_end_clean(); 
         return $blob;
     }
+    
+    static function excerpt($text, $length) {
+        if (strlen($text) > $length) {
+            return substr($text, 0, $length) . '[...]';
+        }
+        return $text;
+    }
 
 }

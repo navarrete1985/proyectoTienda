@@ -56,7 +56,7 @@ class AjaxModel extends Model {
                 $etiqueta =  '<img width="40px" src="data:image/jpg;base64,'.$img.'"/>';
                 $zapato->setImg($etiqueta);    
             }
-            $zapatos[] = $zapato->getUnset(array('colores','id', 'categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+            $zapatos[] = $zapato->getUnset(array('estampando','coleccion','colores','id', 'categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
             
         }
         return ['zapatos' => $zapatos, 'paginas' => $pagination->values()];

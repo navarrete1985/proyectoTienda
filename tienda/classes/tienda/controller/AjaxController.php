@@ -48,7 +48,7 @@ class AjaxController extends Controller {
         }
                                                 //$pagina, $orden
         $r = $this->getModel()->getDoctrineZapatos($pagina,$orden);
-       
+        
         $this->getModel()->add($r);
     }
     
@@ -88,22 +88,27 @@ class AjaxController extends Controller {
     function updatedata(){
         $class = Reader::read('class');
         $id = Reader::read('id');
-        $obj = Reader::readObject(App::OBJECT[$class]);
-
-        switch (strtolower($class)) {
-            case 'usuario':
-                if($obj->getClave()!==null && trim($obj->getClave() !== '')){
-                    $obj->setClave(Util::encriptar($obj->getClave()));
-                }
-                $obj->setActivo($obj->getActivo() == 'on' ? 1 : 0);
-                $obj->setRol($obj->getRol() == 'on' ? 1 : 0);
-                break;
-        }
-        
         $result = 0;
-        if ($obj !== null) {
-            $this->getModel()->update($obj);
-            $result = $obj->getId() > 0 ? 1 : 0;
+        
+        if ($class !== null && $id !== null) {
+            $class = trim($class);
+            $id = trim($id);
+            
+            $obj = Reader::readObject(App::OBJECT[$class]);
+            switch (strtolower($class)) {
+                case 'usuario':
+                    if($obj->getClave()!==null && trim($obj->getClave() !== '')){
+                        $obj->setClave(Util::encriptar($obj->getClave()));
+                    }
+                    $obj->setActivo($obj->getActivo() == 'on' ? 1 : 0);
+                    $obj->setRol($obj->getRol() == 'on' ? 1 : 0);
+                    break;
+            }
+            
+            if ($obj !== null) {
+                $this->getModel()->update($obj);
+                $result = $obj->getId() > 0 ? 1 : 0;
+            }   
         }
         
         $this->getModel()->set('result', $result);
@@ -113,6 +118,8 @@ class AjaxController extends Controller {
         $class = Reader::read('class');
         $class = strtolower($class);
         $obj = Reader::readObject(App::OBJECT[$class]);
+        $dest = Reader::read('dest');
+        $cat = Reader::read('cat');
         
         switch ($class) {
             case 'usuario':
@@ -130,22 +137,25 @@ class AjaxController extends Controller {
         
         $result = 0;
         if ($obj !== null) {
-            $this->getModel()->create($obj);
-            $result = $obj->getId() > 0 ? 1 : 0;
+            $result = $this->getModel()->create($obj);
+            $result =  $result === 1 && $obj->getId() > 0 ? 1 : 0;
             $uploadResult = 0;
             
             if ($class == 'usuario' && $result === 1) {
                 $mail = Mail::sendActivation($obj);
-            } else if ($class == 'articulo' || $class == 'color' && $result === 1) {
+            } else if ($class == 'articulo' && $result === 1) {
+                $this->getModel()->addDestinatarios($obj, $dest, 'tienda\data\Destinatario');
+                $this->getModel()->addCategories($obj, $cat, 'tienda\data\Categoria');
                 $upload = new Multiupload($class == 'color' ? 'img' : 'files');
                 $status = $upload->setPolicy(Multiupload::POLICITY_OVERWRITE)
-                        ->appendTarget($class == 'color' ? 'colores' : 'articulos/' . 'id_' . $obj->getId());
+                        ->appendTarget($class == 'color' ? 'colores' : 'articulos/' . 'id_' . $obj->getId() . '/');
                 if($status) {
                     $uploadResult = $upload->upload();
                 }
             }
+            
         }
-        $this->getModel()->add(['result' => $result, 'files_uploaded' => $uploadResult, 'id' => $obj !== null ? $obj->getId() : '-1']);
+        $this->getModel()->add(['result' => $result, 'files_uploaded' => $uploadResult, 'id' => $obj !== null && $result === 1 ? $obj->getId() : '-1']);
     }
     
     function detallespedido(){
@@ -154,4 +164,8 @@ class AjaxController extends Controller {
        
         $this->getModel()->set('resultado', $r);
     }
+    
+    
+    
+    
 }

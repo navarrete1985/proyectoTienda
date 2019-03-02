@@ -31,7 +31,7 @@ class PedidosModel extends Model {
         // return $paginator;
         $pedidos = array();
         foreach($paginator as $pedido) {
-            $pedidos['pedido'] = $pedido->getUnset(array('usuario','detalles'));
+            $pedidos[] = $pedido->getUnset(array('usuario','detalles'));
         }
         return ['pedidos' => $pedidos, 'paginas' => $pagination->values()];
         

@@ -88,6 +88,8 @@ class Validate {
             $(`input[type=${type}]`).each(function() {
                 if (type === 'file') {
                     formData.append($(this).attr('name'), $(this)[0].files[0]);
+                }else if (type === 'checkbox') {
+                    $(this).is(':checked') ? formData.append($(this).attr('name'), $(this).val()) : '';
                 }else {
                     formData.append($(this).attr('name'), $(this).val());   
                 }

@@ -124,19 +124,23 @@
 								<div class='panel-body'>
 									<div class='row'>
 										<div class='col-md-6'>
-											{% for categorie in categories.par %}
-												<label class='fancy-checkbox'>
-													<input type='checkbox' categorie.checked value='{{categorie.nombre}}'>
-													<span>{{categorie.nombre}}</span>
-												</label>
+											{% for categorie in categories %}
+												{% if loop.index is not even %}
+													<label class='fancy-checkbox'>
+														<input type='checkbox' name="cat[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{categorie.id}}'>
+														<span>{{categorie.nombre}}</span>
+													</label>
+												{% endif %}
 											{% endfor %}
 										</div>
 										<div class='col-md-6'>
-											{% for categorie in categories.impar %}
-												<label class='fancy-checkbox'>
-													<input type='checkbox' categorie.checked value='{{categorie.nombre}}'>
-													<span>{{categorie.nombre}}</span>
-												</label>
+											{% for categorie in categories %}
+												{% if loop.index is even %}
+													<label class='fancy-checkbox'>
+														<input type='checkbox' name="cat[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{categorie.id}}'>
+														<span>{{categorie.nombre}}</span>
+													</label>
+												{% endif %}
 											{% endfor %}
 										</div>
 									</div>
@@ -158,19 +162,24 @@
 								<div class='panel-body'>
 									<div class='row'>
 										<div class='col-md-6'>
-											{% for destinatario in destinatarios.par %}
-												<label class='fancy-checkbox'>
-													<input type='checkbox' destinatario.checked value='{{destinatario.nombre}}'>
-													<span>{{destinatario.nombre}}</span>
-												</label>
+											{% for destinatario in destinatarios %}
+												{% if loop.index is not even %}
+													<label class='fancy-checkbox'>
+														<input type='checkbox' name="dest[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{destinatario.id}}'>
+														<span>{{destinatario.nombre}}</span>
+													</label>	
+	        									{% endif %}
 											{% endfor %}
 										</div>
 										<div class='col-md-6'>
-											{% for destinatario in destinatarios.impar %}
-												<label class='fancy-checkbox'>
-													<input type='checkbox' destinatario.checked value='{{destinatario.nombre}}'>
-													<span>{{destinatario.nombre}}</span>
-												</label>
+											{% for destinatario in destinatarios %}
+												{% if loop.index is even %}
+													<label class='fancy-checkbox'>
+														<input type='checkbox' name="dest[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{destinatario.id}}'>
+														<span>{{destinatario.nombre}}</span>
+													</label>
+	    										{% endif %}
+												
 											{% endfor %}
 										</div>
 									</div>
@@ -241,7 +250,7 @@
 								<div class='panel-body'>
 									<input data-empty='true' type='file' multiple class='thumbnail hidden' name='gallery' id='img-gallery'>
 									<p>
-										<a href='#' class='link-add-item' id='add-img-gallery'>Añadiri magen</a><br>
+										<a href='#' class='link-add-item' id='add-img-gallery'>Añadir magen</a><br>
 										<span class="date">Añade la galería de imagenes a mostrar del producto</span>
 									</p>
 									<div class='gallery' id='show-gallery'>

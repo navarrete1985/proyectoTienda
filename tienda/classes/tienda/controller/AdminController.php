@@ -32,10 +32,14 @@ class AdminController extends Controller {
     function addzapatos(){
         $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
         $this->getModel()->set('zapato', true);
+        $this->getModel()->set('destinatarios', $this->getModel()->getAll('Destinatario'));
+        $this->getModel()->set('categories', $this->getModel()->getAll('Categoria'));
     }
     
     function addcomplementos(){
         $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
+        $this->getModel()->set('destinatarios', $this->getModel()->getAll('Destinatario'));
+        $this->getModel()->set('categories', $this->getModel()->getAll('Categoria'));
     }
     
     function listadousuarios(){    

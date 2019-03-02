@@ -110,7 +110,7 @@
                     </tbody>
                     
                 </table>
-                <div class="sameTable2"><p>Envio : </p><p>${envio}</p></div>
+                <div class="sameTable2"><p class="pprecio">Envio</p><p>${envio}</p></div>
                 <div class="sameTable"><p class="pDetalleTotal">${total} €</p></div>
             </div>
         </div>
