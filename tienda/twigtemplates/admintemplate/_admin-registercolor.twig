@@ -18,36 +18,26 @@
 								</div>
 								<div class='panel-body'>
 									<div class='row'>
-										<div class='col-md-6'>
+										<div class='col-md-12'>
 											<span class="title">Listado de Colores</span>
 											<span class="short-description">Añade un nuevo color para poder asociarlo a un producto</span>
 											<div class="form-group date input-zone">
 												<input type='text' name='nombre' id='tools-input' class="form-control"/>
-												<input type='color' name='imgsrc' id='tools-input-color' class="hidden"/>
-												<div class='color-preview'></div>
+												<input type='color' name='imgsrc' id='tools-input-color' class=""/>
 												<i class="fas fa-plus" id='add-tools'></i>
 											</div>	
 										</div>
-										{#<div class='col-md-6'>#}
-										{#	<input data-empty='true' type='file' class='thumbnail hidden' name='img' id='img-color'>#}
-										{#	<div class='container-flex-row justify-content-center'>#}
-										{#		<div class='rectangle'>#}
-										{#			<div class='image container-flex-column justify-content-center align-items-center' id='img-thumbnail-container'>#}
-										{#				<a href='#' class='img-link'><i class="far fa-images btn-thubnail-img" id='img-thumbnail-btn'></i></a>#}
-										{#			</div>#}
-										{#		</div>#}
-										{#	</div>#}
-										{#	<p>#}
-										{#		<a href='#' class='link-add-item btn-thubnail-img'>Añadir magen destacada del producto</a><br>#}
-										{#		<span class="date">Imagen de previsualización del producto (sólamente puede haber una imagen destacada)</span>#}
-										{#	</p>#}
-										{#</div>#}
 									</div>
 									<hr>
 									<div class='row'>
 										<div class='row-md-12 wrapper-stock'>
 											<div class='row' id='tools-items-content'>
-												
+												{% for color in colors %}
+												<div class='col-md-3 col-sm-6 item-tools' data-id="{{color.id}}">
+													<span class="tools-title color">{{color.nombre}}<i class="far fa-times-circle tools-delete"></i></span>
+													<div style="background-color:{{color.imgsrc}}" class="color-preview"></div>
+											     </div>
+												{% endfor %}
 											</div>
 										</div>
 									</div>

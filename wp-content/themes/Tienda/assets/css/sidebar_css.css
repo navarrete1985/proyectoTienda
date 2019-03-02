@@ -13,3 +13,11 @@
 .rrss-margin{
     margin: 0 auto;
 }
+
+.widget_recent_entries_custom .wi {
+    width: 120px !important;
+}
+
+.widget_recent_entries_custom .wb {
+  /*  text-align: justify;*/
+}

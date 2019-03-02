@@ -337,3 +337,18 @@
             );
         return $roles;
     }
+    
+/************************ CAMPOS META EN POST   *******************************/
+    /*----------   Función para sacar num visitas al post --------------------*/
+        function num_visits($post_id) {
+            $numvisits = 1;
+            $sufix = 'VISITA';
+            
+            if (!add_post_meta($post_id,'numvisits',$numvisits,true)) {
+                $numvisits = get_post_meta($post_id,'numvisits',true) + 1;
+                $sufix = 'VISITAS';
+                update_post_meta($post_id,'numvisits',$numvisits);
+            }
+            
+            return $numvisits . ' - ' . $sufix;
+        }

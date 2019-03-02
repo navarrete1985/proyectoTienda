@@ -308,6 +308,10 @@ td{
     display: inline;
 }
 
+.item-tools {
+    margin-bottom: 32px;
+}
+
 .input-zone i {
     cursor: pointer;
     margin-left: 16px;
@@ -332,13 +336,35 @@ td{
     cursor: pointer;
 }
 
+#tools-input-color {
+    width: 50px;
+    margin-left: 16px;
+    display: inline;
+    border: none;
+    padding: 0 !important;
+    cursor: pointer;
+    line-height: 4px;
+}
 
+.color-preview {
+    width: 16px;
+    background-color: #f1240e;
+    height: 16px;
+    position: absolute;
+    top: 3px;
+    left: 22px;
+    border-radius: 50%;
+}
+
+.tools-title.color {
+    padding-left: 32px;   
+}
 
 @media screen and (max-width: 1390px) {
     
     .contenedorTabla{
-    margin-right:5%;
-    margin-left:5%;
-}
+        margin-right:5%;
+        margin-left:5%;
+    }
 }
 

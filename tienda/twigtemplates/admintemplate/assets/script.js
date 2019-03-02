@@ -349,14 +349,24 @@
         $('#add-tools').on('click', function(){
             let input = $('#tools-input');
             if (input.val().trim().length > 0) {
-                genericAjax.request(null, 'ajax/adddata', {'class': type , 'nombre': input.val().trim()}, 'get', jsonResponse => {
+                let data = {
+                    class:    type,
+                    nombre:   input.val().trim() 
+                }
+                
+                if ($('#tools-input-color').length > 0 ) {
+                    data.imgsrc = $('#tools-input-color').val();
+                }
+                
+                genericAjax.request(null, 'ajax/adddata', data, 'get', jsonResponse => {
                    let resultado = response(jsonResponse.result);
                    message.showMessage(resultado.title, resultado.message, resultado.option);
                    if (jsonResponse.result == 1) {
                        paintRow({
                            class: type,
                            name: input.val().trim(),
-                           id: jsonResponse.id
+                           id: jsonResponse.id,
+                           imgColor: $('#tools-input-color').length > 0 ? $('#tools-input-color').val() : ''
                        });
                        clearInputs(type);
                    }
@@ -385,8 +395,8 @@
                 break;
             case 'color':
                 container = $(`<div class='col-md-3 col-sm-6 item-tools' data-id="${data.id}">
-                                    <img src="${data.url}" width="24px"></img>
-						            <span class="tools-title">${data.name}<i class="far fa-times-circle tools-delete"></i></span>
+                                    <span class="tools-title color">${data.name}<i class="far fa-times-circle tools-delete"></i></span>
+                                    <div style="background-color:${data.imgColor}" class="color-preview"></div>
 						       </div>`);
                 break;
         }

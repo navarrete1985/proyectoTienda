@@ -31,9 +31,11 @@
 		<div class="container">
 			<div class="inner-header">
 				<a class="inner-brand " href="#">
-					<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli_B.png';?>" style="max-height: 35px;" />				
+					<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli.png';?>" style="max-height: 35px;" />				
+					<img class="brand-light" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli_B.png';?>" style="max-height: 35px;" />				
 				</a>
 			</div>	
+
 			<div class="inner-navigation">
 	<?php
 			get_template_part('templates/nav','front');

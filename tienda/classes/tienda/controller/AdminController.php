@@ -49,6 +49,7 @@ class AdminController extends Controller {
     
     function addcolor() {
         $this->getModel()->set('twigFile', '_admin-registercolor.twig');
+        $this->getModel()->set('colors', $this->getModel()->getAll('Color'));
     }
     
     function adddestinatario() {

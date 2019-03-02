@@ -44,6 +44,13 @@
                     <div class="col-sm-8">
 <!-- Post-->
                         <article id="post-15" class="post-15 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-sport tag-corporate tag-lifestyle tag-music tag-news tag-travel">
+                            <div class="row">
+                                <div class="col-sm-12 bloqueflex-between">
+                                    <h4 class="comments-title font-alt"><?php echo num_visits($post -> ID); ?></h4>   
+                                    <h4 class="comments-title font-alt"><?php comments_popup_link('No hay comentarios', 'Un comentario', '% comentarios', 'comments-link', 'Los comentarios están cerrados') ;?></h4>
+
+                                </div>    
+                            </div>
                             <div class="post-content">
                                 <?php the_content(); ?>
                             </div>
@@ -52,7 +59,7 @@
                                 
 <!-- Comments and comment form-->
                         <div id="comments" class="comments-area">
-                            <h4 class="comments-title font-alt"><?php comments_popup_link('No hay comentarios', 'Un comentario', '% comentarios', 'comments-link', 'Los comentarios están cerrados') ;?></h4>
+                        <!--    <h4 class="comments-title font-alt"><?php /* comments_popup_link('No hay comentarios', 'Un comentario', '% comentarios', 'comments-link', 'Los comentarios están cerrados')*/ ;?></h4> -->
                             <?php comments_template(); ?>
                             <div id="mensaje">
                                 <p id="mensaje-rgpd">Debes aceptar la política de privacidad para publicar el comentario</p>
