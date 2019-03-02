@@ -230,9 +230,9 @@
             let dt = 'formData';
             switch($('#form-container').attr('data-class')) {
                 case 'usuario':
-                    data = validacion.getFormData(['text', 'checkbox', 'email', 'password']);
-                    data.append('usuario', 'usuario');
-                    data.id = document.getElementById("id-edit") !== null ? document.getElementById("id-edit").value : '';
+                    data = validacion.getFormData(['text', 'checkbox', 'email', 'password', 'hidden']);
+                    // data.append('usuario', 'usuario');
+                    dt = "json";
                     break;
                 case 'articulo':
                     data = validacion.getFormData(['text', 'checkbox', 'email', 'number', 'file']);
@@ -255,7 +255,7 @@
                        }
                        message.showMessage('Operación realizada con éxito', 'El usuario se ha añadido satisfactoriamente', 'success');
                    }else {
-                       message.showMessage('Operación fallida', 'Ha ocurrido algún error al añadir al usuario', 'success');
+                       message.showMessage('Operación fallida', 'Ha ocurrido algún error al añadir al usuario', 'danger');
                    }
                 });
             }

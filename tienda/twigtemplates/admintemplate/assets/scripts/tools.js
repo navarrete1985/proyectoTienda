@@ -29,7 +29,7 @@ class GenericAjax {
             if (callBackAlways !== null) {
                 callBackAlways(status);   
             }
-            console.log('Ajax done');
+            console.log('Ajax always');
         });
     }
     

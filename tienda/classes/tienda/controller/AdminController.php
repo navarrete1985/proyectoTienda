@@ -27,6 +27,8 @@ class AdminController extends Controller {
     
     function adduser(){
         $this->getModel()->set('twigFile', '_admin-register.twig');
+        $this->getModel()->set('user', false);
+        $this->getModel()->set('edit', false);
     }
     
     function addzapatos(){

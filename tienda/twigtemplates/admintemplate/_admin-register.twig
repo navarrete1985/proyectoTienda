@@ -2,7 +2,7 @@
 {% block adminregister %}
 		{% if edit %}
 			<input type='hidden' id='editar-update'>
-			<input type="hidden" class="form-control" id="id-edit"  value="{{user.id}}"   >
+			<input type="hidden" class="form-control" id="id"  value="{{user.id}}"   >
 		{% endif %}
 		<!-- MAIN -->
 		<div class="main">
@@ -21,7 +21,7 @@
 								</div>
 								<div class='panel-body'>
 									<form class="form-auth-small text-left" action="login/registeradmin">
-										<input type="hidden" class="form-control" id="id-edit"  value="{{user.id}}"   >
+										<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{user.id}}"   >
 									    <div class="form-group">
 											<label for="signup-nombre" class="control-label title">Nombre</label>
 											<input type="text" class="form-control" id="signup-nombre" placeholder="Introduzca su nombre" value="{{user.nombre}}"  name='nombre' >

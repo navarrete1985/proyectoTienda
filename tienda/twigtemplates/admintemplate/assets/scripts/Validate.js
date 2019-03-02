@@ -68,7 +68,7 @@ class Validate {
                 break;
                 case 'text':
                     if (noEmpty === undefined) {
-                        regex = new RegExp("^([a-zA-Z0-9\\s_@./#&+-]{" + minLength + "," + maxLength + "})$");
+                        regex = new RegExp("^([\u00C0-\u00FF-a-zA-Z0-9\\s_@./#&+-]{" + minLength + "," + maxLength + "})$");
                         errorMessage = `El campo debe tener entre ${minLength} y ${maxLength} caracteres alfanuméricos`;
                     }
                 break;

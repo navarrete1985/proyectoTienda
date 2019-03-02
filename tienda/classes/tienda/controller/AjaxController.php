@@ -89,7 +89,6 @@ class AjaxController extends Controller {
         $class = Reader::read('class');
         $id = Reader::read('id');
         $result = 0;
-        
         if ($class !== null && $id !== null) {
             $class = trim($class);
             $id = trim($id);
@@ -100,8 +99,8 @@ class AjaxController extends Controller {
                     if($obj->getClave()!==null && trim($obj->getClave() !== '')){
                         $obj->setClave(Util::encriptar($obj->getClave()));
                     }
-                    $obj->setActivo($obj->getActivo() == 'on' ? 1 : 0);
-                    $obj->setRol($obj->getRol() == 'on' ? 1 : 0);
+                    $obj->setActivo($obj->getActivo() === 'on' ? 1 : 0);
+                    $obj->setRol($obj->getRol() === 'on' ? 1 : 0);
                     break;
             }
             
@@ -124,8 +123,8 @@ class AjaxController extends Controller {
         switch ($class) {
             case 'usuario':
                 $obj->setClave(Util::encriptar($obj->getClave()));
-                $obj->setActivo($obj->getActivo() == 'on' ? 1 : 0);
-                $obj->setRol($obj->getRol() == 'on' ? 1 : 0);
+                $obj->setActivo($obj->getActivo() === 'on' ? 1 : 0);
+                $obj->setRol($obj->getRol() === 'on' ? 1 : 0);
                 break;
             case 'articulo':
                 if (isset($_FILES['img']) && $_FILES['img']['name'] !== '') {
