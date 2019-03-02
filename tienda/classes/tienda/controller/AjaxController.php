@@ -131,6 +131,7 @@ class AjaxController extends Controller {
                     $blob = Util::getBlobImage(file_get_contents($_FILES['img']['tmp_name']));
                     $obj->setImg($blob);
                 }
+                $obj->setTipo(Reader::read('tipo') === '1' ? 1 : 0);
                 break;
         }
         

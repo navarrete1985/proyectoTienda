@@ -83,7 +83,7 @@ class Articulo {
     /**
      * @Column(type="decimal", nullable=false, precision=2, options={"default" : 0})
      */
-    private $tipo;/*Se podrán elegir entre Articulo::ZAPATO / Articulo::COMPLEMENTO*/
+    private $tipo;/*Se podrán elegir entre Articulo::ZAPATO = 0 / Articulo::COMPLEMENTO = 1*/
     
     /**
      * @Column(type="string", nullable=false, length=30, options={"default" : "indefinido"}) 

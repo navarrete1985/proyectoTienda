@@ -78,7 +78,7 @@ trait Crud {
     }
     
     function delete($clase, $id) {
-        $item = $this->get($clase, ['id' => $id]);
+        $item = $this->gestor->getReference($clase, ['id' => $id]);
         $this->gestor->remove($item);
         $this->gestor->flush();
         return $item;

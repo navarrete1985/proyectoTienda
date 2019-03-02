@@ -6,6 +6,7 @@
 			<div class="main-content">
 				<div class="container-fluid">
 					<div class='row' id='form-container' data-class='articulo'>
+						<input data-empty='true' type="hidden" class="form-control" id="signup-tipo" placeholder="Introduzca tipo" name='tipo' value="{{zapato ? 0 : 1}}">
 						<div class='col-md-6'>
 							{#-------CARTA DATOS PERSONALES--------------#}
 							<div class="panel todo-list">
@@ -60,7 +61,7 @@
 									</div>
 									<div class="form-group">
 										<label for="signup-estampado" class="control-label title">Estampado</label>
-										<input data-empty='true' type="text" class="form-control" id="signup-estampado" placeholder="Estampado" name='estampado'>
+										<input data-empty='true' type="text" class="form-control" id="signup-estampado" placeholder="Estampado" name='estampando'>
 									</div>
 									{% if zapato %}
 										<div class="form-group">
@@ -71,10 +72,10 @@
 											<label for="signup-cierre" class="control-label title">Cierre</label>
 											<input data-empty='true' type="text" class="form-control" id="signup-cierre" placeholder="Cierre" name='cierre'>
 										</div>
-										<div class="form-group">
-											<label for="signup-tipo" class="control-label title">Tipo</label>
-											<input data-empty='true' type="number" class="form-control" id="signup-tipo" placeholder="Introduzca tipo" name='tipo'>
-										</div>
+										{#<div class="form-group">#}
+										{#	<label for="signup-tipo" class="control-label title">Tipo</label>#}
+										{#	<input data-empty='true' type="number" class="form-control" id="signup-tipo" placeholder="Introduzca tipo" name='tipo'>#}
+										{#</div>#}
 										<div class="form-group">
 											<label for="signup-altura" class="control-label title">Altura</label>
 											<input data-empty='true' type="number" class="form-control" id="signup-altura" placeholder="Introduzca altura" name='altura'>
@@ -86,7 +87,7 @@
 										
 										<div class="form-group">
 											<label for="signup-ftacon" class="control-label title">Forma Tacon</label>
-											<input data-empty='true' type="text" class="form-control" id="signup-ftacon" placeholder="Forma tacon" name='ftacon'>
+											<input data-empty='true' type="text" class="form-control" id="signup-ftacon" placeholder="Forma tacon" name='formatacon'>
 										</div>
 									{% else %}
 										<div class="form-group">
@@ -107,7 +108,7 @@
 										</div>
 										<div class="form-group">
 											<label for="signup-nbolsillos" class="control-label title">Numero de bolsillos</label>
-											<input data-empty='true' type="number" class="form-control" id="signup-nbolsillos" placeholder="Numero de bolsillos" name='nbolsillos'>
+											<input data-empty='true' type="number" class="form-control" id="signup-nbolsillos" placeholder="Numero de bolsillos" name='numbolsillos'>
 										</div>
 									{% endif %}
 								</div>

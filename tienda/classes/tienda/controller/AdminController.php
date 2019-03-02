@@ -13,6 +13,7 @@ class AdminController extends Controller {
     function __construct(Model $model) {
         parent::__construct($model);
         $this->checkIsLogged();
+        $this->checkPermission();
         $usuario = $this->getSesion()->getLogin()->get();
         $this->getModel()->set('session', $usuario);
     } 

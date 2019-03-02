@@ -227,15 +227,13 @@
         
         validacion.addSuccessListener(result => {
             let data = null;
-            let dt = 'formData';
             switch($('#form-container').attr('data-class')) {
                 case 'usuario':
                     data = validacion.getFormData(['text', 'checkbox', 'email', 'password', 'hidden']);
                     // data.append('usuario', 'usuario');
-                    dt = "json";
                     break;
                 case 'articulo':
-                    data = validacion.getFormData(['text', 'checkbox', 'email', 'number', 'file']);
+                    data = validacion.getFormData(['text', 'checkbox', 'email', 'number', 'file', 'hidden']);
                     data.append('articulo', 'articulo');
                     // files = new Files('#img-gallery', '#show-gallery', '#add-img-gallery');
                     if (files !== null) {
@@ -248,7 +246,7 @@
                 data.append('class', $('#form-container').attr('data-class'));
                 //Ponemos la acción dependiendo de lo que queramos hacer, o editar o agregar
                 let action = editar == null ? 'ajax/adddata' : 'ajax/updatedata';
-                genericAjax.request(dt, action, data, 'post', response => {
+                genericAjax.request('json', action, data, 'post', response => {
                    if (response.result == 1) {
                        if (editar === null) {
                             validacion.clearAllFields();

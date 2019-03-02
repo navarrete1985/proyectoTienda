@@ -19,7 +19,7 @@ class ProductosModel extends Model {
     use \tienda\common\CrudArticulo;
     
    
-    function getDoctrineZapatos($pagina = 1, $orden = 'marca', $limit = 6) {
+    function getDoctrineZapatos($pagina = 1, $orden = 'marca', $limit = 5) {
          $dql = 'select c from tienda\data\Articulo c where c.marca < :marca 
         order by c.'. $orden .', c.marca, c.modelo, c.precio, c.peso,c.referencia,c.coleccion';
         $query = $this->gestor->createQuery($dql)->setParameter('marca', 'zz');
