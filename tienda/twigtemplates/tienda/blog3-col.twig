@@ -14,7 +14,25 @@
 	<!-- Blog-->
 	<section class="module">
 		<div class="container">
-			<div class="row blog-grid multi-columns-row">
+			<div id="ordenIndex">
+		        <div class='col-md-3'>
+		            <a href="#" class="onClickLista" data-pagina='1' data-lista='todos'>Todo</a>
+		            <!--<a href="index/listarLinks?pagina={{lista.paginas.primero}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Primero</a>-->
+		        </div>
+		        <div class='col-md-3'>
+		            <a href="#" class="onClickLista" data-pagina='1' data-lista='zapatos'>Zapatos</a>
+		            <!--<a href="index/listarLinks?pagina={{lista.paginas.anterior}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Anterior</a>-->
+		        </div>
+		        <div class='col-md-3'>
+		            <a href="#" class="onClickLista" data-pagina='1' data-lista='complementos'>Complementos</a>
+		            <!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->
+		        </div>
+		        <div class='col-md-3'>
+		            <input type="text" name="filtro" class="form-control" id="filtro"  placeholder="Filtrar"  />
+	        		<button id="filtroBt">Filtrar</button>
+		        </div>
+   		 	</div>
+			<div class="row blog-grid multi-columns-row contenedorArticulos">
 				<!-- Posts-->
 				 {% for item in data.zapatos%}
 					<div class="col-sm-4 col-md-4 col-lg-4 post-item">
@@ -175,21 +193,27 @@
 				<!-- Posts end-->
 			</div>
 			<!-- Pagination-->
+			
+			
+		
+			
+			
 			<div class="row">
 				<div class="col-sm-12">
-					<ul class="pagination font-alt">
-						<li class="active">
-							<span>1</span>
+					<ul class="pagination font-alt" id="pintarPaginas">
+						<li>
+							 <a href = "#" class = "btnPagina " data-pagina='{{lista.paginas.primero}}'>Primero</a>
+						</li>
+						<li>
+							<a href = "#" class = "btnPagina " data-pagina='{{data.paginas.siguiente}}'>siguiente</a>
 						</li> 
 						<li>
-							<a href="page/2/index.html">2</a>
+							<a href = "#" class = "btnPagina" data-pagina='{{data.paginas.anterior}}'>anterior</a>
 						</li>
-						<li class="next">
-							<a href="page/2/index.html">
-								<i class="fa fa-angle-right"></i>
-							</a>
+						<li>
+							 <a href = "#" class = "btnPagina " data-pagina='{{lista.paginas.ultimo}}'>ultima</a>
 						</li>
-						<li class="prev"></li>
+						
 					</ul>
 				</div>
 			</div>

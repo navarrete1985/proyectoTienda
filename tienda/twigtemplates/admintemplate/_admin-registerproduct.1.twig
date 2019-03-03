@@ -1,5 +1,9 @@
 {% extends '_base.twig' %}
 {% block adminregister %}
+		{% if edit %}
+			<input type='hidden' id='editar-updateArticulo'>
+			<input type="hidden" class="form-control" id="idArticulo"  value="{{articulo.id}}"   >
+		{% endif %}
 		<!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
@@ -20,23 +24,23 @@
 								<div class='panel-body'>
 									<div class="form-group">
 										<label for="signup-referencia" class="control-label title">Referencia</label>
-										<input type="text" class="form-control" id="signup-referencia" ajax-callBack placeholder="Introduzca referencia" name='referencia'>
+										<input type="text" class="form-control" value="{{articulo.referencia}}" id="signup-referencia" ajax-callBack placeholder="Introduzca referencia" name='referencia'>
 									</div>
 									<div class="form-group">
 										<label for="signup-marca" class="control-label title">Marca</label>
-										<input min-legth='2' type="text" class="form-control" id="signup-marca" placeholder="Introduzca una marca" name='marca'>
+										<input min-legth='2' type="text" value="{{articulo.marca}}"  class="form-control" id="signup-marca" placeholder="Introduzca una marca" name='marca'>
 									</div>
 									<div class="form-group">
 										<label for="signup-modelo" class="control-label title">Modelo</label>
-										<input data-empty='true' type="text" class="form-control" id="signup-modelo" placeholder="Introduzca modelo" name='modelo'>
+										<input data-empty='true' type="text" value="{{articulo.modelo}}"  class="form-control" id="signup-modelo" placeholder="Introduzca modelo" name='modelo'>
 									</div>
 									<div class="form-group">
 										<label for="signup-precio" class="control-label title">Precio</label>
-										<input type="number" class="form-control" id="signup-precio" placeholder="Introduzca el precio del articulo" name='precio'>
+										<input type="number" class="form-control" value="{{articulo.precio}}"  id="signup-precio" placeholder="Introduzca el precio del articulo" name='precio'>
 									</div>
 									<div class="form-group">
 										<label for="signup-paisfabricacion" class="control-label title">País fabricación</label>
-										<input type="text" class="form-control" id="signup-paisfabricacion" placeholder="Introduzca país fabricación" name='paisfabricacion'>
+										<input type="text" class="form-control" value="{{articulo.paisfabricacion}}"  id="signup-paisfabricacion" placeholder="Introduzca país fabricación" name='paisfabricacion'>
 									</div>
 								</div>
 							</div>
@@ -53,24 +57,24 @@
 								<div class='panel-body'>
 									<div class="form-group">
 										<label for="signup-material" class="control-label title">Material</label>
-										<input data-empty='true' type="text" class="form-control" id="signup-material" placeholder="Introduzca material" name='material'>
+										<input data-empty='true' type="text" value="{{articulo.material}}" class="form-control" id="signup-material" placeholder="Introduzca material" name='material'>
 									</div>
 									<div class="form-group">
 										<label for="signup-peso" class="control-label title">Peso</label>
-										<input data-empty='true' type="number" class="form-control" id="signup-peso" placeholder="Peso" name='peso'>
+										<input data-empty='true' type="number" value="{{articulo.peso}}" class="form-control" id="signup-peso" placeholder="Peso" name='peso'>
 									</div>
 									<div class="form-group">
 										<label for="signup-estampado" class="control-label title">Estampado</label>
-										<input data-empty='true' type="text" class="form-control" id="signup-estampado" placeholder="Estampado" name='estampando'>
+										<input data-empty='true' type="text" value="{{articulo.estampando}}" class="form-control" id="signup-estampado" placeholder="Estampado" name='estampando'>
 									</div>
 									{% if zapato %}
 										<div class="form-group">
 											<label for="signup-puntera" class="control-label title">Puntera</label>
-											<input data-empty='true' type="text" class="form-control" id="signup-puntera" placeholder="Introduzca puntera" name='puntera'>
+											<input data-empty='true' type="text" value="{{articulo.puntera}}" class="form-control" id="signup-puntera" placeholder="Introduzca puntera" name='puntera'>
 										</div>
 										<div class="form-group">
 											<label for="signup-cierre" class="control-label title">Cierre</label>
-											<input data-empty='true' type="text" class="form-control" id="signup-cierre" placeholder="Cierre" name='cierre'>
+											<input data-empty='true' type="text" value="{{articulo.cierre}}" class="form-control" id="signup-cierre" placeholder="Cierre" name='cierre'>
 										</div>
 										{#<div class="form-group">#}
 										{#	<label for="signup-tipo" class="control-label title">Tipo</label>#}
@@ -78,36 +82,36 @@
 										{#</div>#}
 										<div class="form-group">
 											<label for="signup-altura" class="control-label title">Altura</label>
-											<input data-empty='true' type="number" class="form-control" id="signup-altura" placeholder="Introduzca altura" name='altura'>
+											<input data-empty='true' type="number" value="{{articulo.altura}}" class="form-control" id="signup-altura" placeholder="Introduzca altura" name='altura'>
 										</div>
 										<div class="form-group">
 											<label for="signup-temporada" class="control-label title">Temporada</label>
-											<input data-empty='true' type="text" class="form-control" id="signup-temporada" placeholder="Introduzca temporada" name='temporada'>
+											<input data-empty='true' type="text" value="{{articulo.temporada}}" class="form-control" id="signup-temporada" placeholder="Introduzca temporada" name='temporada'>
 										</div>
 										
 										<div class="form-group">
 											<label for="signup-ftacon" class="control-label title">Forma Tacon</label>
-											<input data-empty='true' type="text" class="form-control" id="signup-ftacon" placeholder="Forma tacon" name='formatacon'>
+											<input data-empty='true' type="text" value="{{articulo.tacon}}" class="form-control" id="signup-ftacon" placeholder="Forma tacon" name='formatacon'>
 										</div>
 									{% else %}
 										<div class="form-group">
 											<label for="signup-alto" class="control-label title">Alto</label>
-											<input data-empty='true' type="number" class="form-control" id="signup-alto" placeholder="Introduzca alto" name='alto'>
+											<input data-empty='true' type="number" value="{{articulo.alto}}" class="form-control" id="signup-alto" placeholder="Introduzca alto" name='alto'>
 										</div>
 										<div class="form-group">
 											<label for="signup-ancho" class="control-label title">Ancho</label>
-											<input data-empty='true' type="number" class="form-control" id="signup-ancho" placeholder="Introduzca ancho" name='ancho'>
+											<input data-empty='true' type="number" value="{{articulo.ancho}}" class="form-control" id="signup-ancho" placeholder="Introduzca ancho" name='ancho'>
 										</div>
 										<div class="form-group">
 											<label for="signup-profundo" class="control-label title">Profundo</label>
-											<input data-empty='true' type="number" class="form-control" id="signup-profundo" placeholder="Introduzca profundo" name='profundo'>
+											<input data-empty='true' type="number" value="{{articulo.profundo}}" class="form-control" id="signup-profundo" placeholder="Introduzca profundo" name='profundo'>
 										</div>
 										<div class="form-group">
 											<label for="signup-coleccion" class="control-label title">Coleccion</label>
-											<input data-empty='true' type="text" class="form-control" id="signup-coleccion" placeholder="Introduzca coleccion" name='coleccion'>
+											<input data-empty='true' type="text" value="{{articulo.coleccion}}" class="form-control" id="signup-coleccion" placeholder="Introduzca coleccion" name='coleccion'>
 										</div>
 										<div class="form-group">
-											<label for="signup-nbolsillos" class="control-label title">Numero de bolsillos</label>
+											<label for="signup-nbolsillos" value="{{articulo.numbolsillos}}" class="control-label title">Numero de bolsillos</label>
 											<input data-empty='true' type="number" class="form-control" id="signup-nbolsillos" placeholder="Numero de bolsillos" name='numbolsillos'>
 										</div>
 									{% endif %}
@@ -131,7 +135,12 @@
 											{% for categorie in categories %}
 												{% if loop.index is not even %}
 													<label class='fancy-checkbox'>
-														<input type='checkbox' name="cat[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{categorie.id}}'>
+														{#<input type='checkbox' name="cat[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{categorie.id}}'>#}
+														<input type='checkbox' name="cat[]" {{ (categorie.id in catArt) ? 'checked' : '' }} value='{{categorie.id}}'>
+														{#{% if categorie.id in catArt %}#}
+														{#	'selected' #}
+														{#{% endif %}#}
+														
 														<span>{{categorie.nombre}}</span>
 													</label>
 												{% endif %}
@@ -141,7 +150,11 @@
 											{% for categorie in categories %}
 												{% if loop.index is even %}
 													<label class='fancy-checkbox'>
-														<input type='checkbox' name="cat[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{categorie.id}}'>
+														{#{% if categorie.id not in catArt %}#}
+														{#	'selected' #}
+														{#{% endif %}#}
+														<input type='checkbox' name="cat[]" {{ (categorie.id in catArt) ? 'checked' : '' }} value='{{categorie.id}}'>
+
 														<span>{{categorie.nombre}}</span>
 													</label>
 												{% endif %}

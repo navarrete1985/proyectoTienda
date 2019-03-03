@@ -1,6 +1,11 @@
 (function() {
     
     let genericAjax = new GenericAjax();
+    
+    var orden = 'a.marca';
+    var pagina = 1;
+    var filtro = null;
+    var data = "todos";
     //Objeto para sacar los feedbacks
     // var genericAjax = function (url, data, type, callBack) {
     //     $.ajax({
@@ -21,6 +26,132 @@
     //         console.log('ajax always');
     //     });
     // }
+    
+    $('.btnPagina').on('click', function(e) {
+            e.preventDefault();
+            pagina = e.target.getAttribute('data-pagina');
+            getListado(); 
+        });
+    
+    $('#filtroBt').on('click', function(e) {
+            e.preventDefault();
+            filtro = document.getElementById('filtro').value;
+            pagina = 1;
+            getListado(); 
+        });
+    
+     $('.onClickLista').on('click', function(event){
+        event.preventDefault();
+        data = $(event.currentTarget).attr('data-lista');
+        pagina = 1;
+        filtro = null;
+        orden = 'a.marca';
+        getListado();
+    });
+    
+     var getListado = function () {
+             switch(data) {
+            case 'todos':
+                genericAjax.request(null, 'ajax/listarArticulo', {'tipo': 2, 'filtro':filtro,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                    
+                    pintarArticulos(json.articulos);
+                    procesarPaginas(json.paginas);
+                });
+                break;
+            case 'complementos':
+                genericAjax.request(null, 'ajax/listarArticulo', {'tipo': 1, 'filtro':filtro,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                    
+                    pintarArticulos(json.articulos);
+                    procesarPaginas(json.paginas);
+                });
+                break;
+            case 'zapatos':
+                genericAjax.request(null, 'ajax/listarArticulo', {'tipo': 0, 'filtro':filtro,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                    
+                    pintarArticulos(json.articulos);
+                    procesarPaginas(json.paginas);
+                });
+                break;
+        }
+    
+                
+                
+        
+    }
+
+
+
+    var pintarArticulos = function (objeto) {
+        var listaitems = '';
+        $.each(objeto, (key, item)  =>{
+            listaitems += `<div class="col-sm-4 col-md-4 col-lg-4 post-item">
+						<article  class="post-27 post type-post status-publish format-standard has-post-thumbnail hentry category-branding category-design category-printing tag-business tag-lifestyle tag-music tag-news tag-travel">
+							<div class="post-preview">
+								<a href="../mini-california-sushi-cones/index.html">
+									
+									<img width="340px" src="data:image/jpg;base64, ${item.img}">
+								</a>
+								
+
+							<div class="post-header">
+								<h2 class="post-title font-alt">
+									<a href="../mini-california-sushi-cones/index.html">${item.modelo}</a>
+								</h2>
+								<ul class="post-meta font-alt">
+									<li>
+										<span>${item.marca}</span>
+										
+									</li>
+									<li>
+										<span>${item.referencia}</span>
+									</li>
+								</ul>
+							</div>
+							<div class="post-content">
+								<p>${item.detalle}</p>
+								<p>${item.precio}€</p>
+							</div>
+							<div class="post-more">
+								<a class="font-alt" href="../mini-california-sushi-cones/index.html">Read More &rarr;</a>
+							</div>
+						</article>
+					</div>`;
+        });
+       
+        $('.contenedorArticulos').empty();
+        $('.contenedorArticulos').append(listaitems);
+        
+    }
+    
+    
+    var procesarPaginas = function (paginas) {
+        var stringFirst = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.primero+'><</a></li>';
+        var stringPrev  = '<li><a href = "#" class = "btnPagina2" data-pagina='+paginas.anterior+'>anterior</a></li>';
+        var stringRange = '';
+        $.each(paginas.rango, function(key, value) {
+            if(paginas.pagina == value) {
+                stringRange += '<li><a href = "#" class = "btnPagina2">' + value + '</a></li> ';
+            } else {
+                stringRange += '<li><a href = "#" class = "btnPagina2" data-pagina="' + value + '">' + value + '</a></li>';
+            }
+        });
+        var stringNext = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.siguiente+'>siguiente</a></li>';
+        var stringLast = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.ultimo+'>></a></li>';
+        var finalString = stringFirst + stringPrev + stringRange + stringNext + stringLast;
+        $('#pintarPaginas').empty();
+        $('#pintarPaginas').append(finalString);
+        $('.btnPagina2').on('click', function(e) {
+            e.preventDefault();
+            pagina = e.target.getAttribute('data-pagina');
+            getListado(); 
+        });
+    
+    } 
+    
+    
+    
+    
+    
     
     $('.detalles').on('click', function(event){
             event.preventDefault();

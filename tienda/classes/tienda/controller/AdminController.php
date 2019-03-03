@@ -76,6 +76,25 @@ class AdminController extends Controller {
         $this->getModel()->set('edit', true);
     }
     
+    function editarticulo(){
+        $id = Reader::read('id');
+        $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
+        $articulo = $this->getModel()->get('Articulo',['id' => $id]);
+        
+        $this->getModel()->set('articulo', $articulo);
+        
+        $categorias = $this->getModel()->getAll('Categoria');
+        $catArt=[];
+        foreach($articulo->getCategorias() as $valor){
+            $catArt[]  = $valor->getCategoria()->getUnset(array('articulos','nombre','categoria'))['id'];
+        }
+        // echo Util::varDump($catArt);
+        // exit();
+        $this->getModel()->set('categories', $categorias);
+        $this->getModel()->set('catArt', $catArt);
+        $this->getModel()->set('edit', true);
+    }
+    
     function checkPermission() {
         if ($this->getSesion()->getLogin()->getRol() != 1) {
             $this->sendRedirect('index/main');

@@ -38,10 +38,10 @@ class AjaxModel extends Model {
         
     }
     
-    function getDoctrineZapatos($pagina = 1, $orden = 'marca', $limit = 4) {
-         $dql = 'select c from tienda\data\Articulo c where c.marca < :marca 
+    function getDoctrineZapatos($tipo,$pagina = 1, $orden = 'marca', $limit = 4) {
+         $dql = 'select c from tienda\data\Articulo c where c.marca < :marca and c.tipo = :tipo
         order by c.'. $orden .', c.marca, c.modelo, c.precio, c.peso,c.referencia,c.coleccion';
-        $query = $this->gestor->createQuery($dql)->setParameter('marca', 'zz');
+        $query = $this->gestor->createQuery($dql)->setParameter('marca', 'zz')->setParameter('tipo', $tipo);
         $paginator = new Paginator($query);
         $paginator->getQuery()
             ->setFirstResult($limit * ($pagina - 1))
@@ -56,7 +56,7 @@ class AjaxModel extends Model {
                 $etiqueta =  '<img width="40px" src="data:image/jpg;base64,'.$img.'"/>';
                 $zapato->setImg($etiqueta);    
             }
-            $zapatos[] = $zapato->getUnset(array('estampando','coleccion','colores','id', 'categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+            $zapatos[] = $zapato->getUnset(array('estampando','coleccion','colores', 'categorias', 'destinatarios', 'stocks', 'detalles','material','estampado','detalle','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
             
         }
         return ['zapatos' => $zapatos, 'paginas' => $pagination->values()];
@@ -171,5 +171,52 @@ class AjaxModel extends Model {
     //     return $this->update($usuario);
     // }
     
-    
+    function getDoctrineArticulos($tipo,$pagina = 1, $orden = 'marca', $filtro, $limit = 6) {
+
+        if($filtro !== null){
+            $dql = 'select c from tienda\data\Articulo c where c.marca like :filtro
+            or c.modelo like :filtro or c.precio like :filtro or  c.peso like :filtro or c.referencia like :filtro or c.coleccion like :filtro';
+            $query = $this->gestor->createQuery($dql)->setParameter('filtro','%'.$filtro.'%' );
+        }else if($tipo == 2){
+            
+            $dql = 'select c from tienda\data\Articulo c where c.marca < :marca
+            order by c.'. $orden .', c.marca, c.modelo, c.precio, c.peso,c.referencia,c.coleccion';
+            $query = $this->gestor->createQuery($dql)->setParameter('marca', 'zz');
+        }else{
+            $dql = 'select c from tienda\data\Articulo c where c.marca < :marca and c.tipo = :tipo
+            order by c.'. $orden .', c.marca, c.modelo, c.precio, c.peso,c.referencia,c.coleccion';
+            $query = $this->gestor->createQuery($dql)->setParameter('marca', 'zz')->setParameter('tipo', $tipo);            
+
+
+        }
+        
+        
+        $paginator = new Paginator($query);
+        $paginator->getQuery()
+            ->setFirstResult($limit * ($pagina - 1))
+            ->setMaxResults($limit);
+        $pagination = new Pagination($paginator->count(), $pagina, $limit);
+        // return $paginator;
+        $zapatos = array();
+        foreach($paginator as $zapato) {
+            // echo 'Esta es la marca->'.$zapato->getMarca();
+            if ($zapato->getImg() !== null) {
+                $img = base64_encode(stream_get_contents($zapato->getImg()));
+                // $etiqueta =  '<img width="340px" src="data:image/jpg;base64,'.$img.'"/>';
+                $etiqueta = $img;
+                $zapato->setImg($etiqueta);    
+            }
+            $text =  Util::excerpt($zapato->getDetalle(),130);
+        
+            
+            
+            $zapato->setDetalle($text);
+            
+            $zapatos[] = $zapato->getUnset(array('colores','id', 'categorias', 'destinatarios', 'stocks','peso','coleccion', 'detalles','material','estampando','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+            
+           
+        }
+        return ['articulos' => $zapatos, 'paginas' => $pagination->values()];
+        
+    }
 }

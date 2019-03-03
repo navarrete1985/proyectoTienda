@@ -16,6 +16,13 @@
         getListado(data,pagina);
     });
     
+     $('#filtroBt').on('click', function(e) {
+            e.preventDefault();
+            filtro = document.getElementById('filtro').value;
+            pagina = 1;
+            getListado(); 
+        });
+    
     $('.onClickListaZapatos').on('click', function(event){
         event.preventDefault();
         data = $(event.currentTarget).attr('data-lista');
@@ -43,13 +50,15 @@
                 });
                 break;
             case 'complementos':
-                genericAjax.request(null, 'ajax/listaciudades', {'pagina': pagina}, 'get', function(json) {
-                    procesarCiudades(json.ciudades);
+                genericAjax.request(null, 'ajax/listarZapato', {tipo:1,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                    console.log(json.zapatos);
+                    pintar(json.zapatos);
                     procesarPaginas(json.paginas);
+                    
                 });
                 break;
             case 'zapatos':
-                genericAjax.request(null, 'ajax/listarZapato', {'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                genericAjax.request(null, 'ajax/listarZapato', {tipo:0,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
                     console.log(json.zapatos);
                     pintar(json.zapatos);
                     procesarPaginas(json.paginas);
@@ -89,8 +98,15 @@
             }
           
         });
-        result += '<td><a href="admin/edituser?id='+objeto.id+'" class="btn btn-dark editar-usuario">Editar</a></td>'; 
-        result += '<td><a href="#"  data-id="'+objeto.id+'" class="btn borrar-user btn-dark editar-usuario">Borrar</a></td>'; 
+        if(data === 'usuario'){
+            result += '<td><a href="admin/edituser?id='+objeto.id+'" class="btn btn-dark editar-usuario">Editar</a></td>'; 
+            result += '<td><a href="#"  data-id="'+objeto.id+'" class="btn borrar-user btn-dark editar-usuario">Borrar</a></td>'; 
+        }else{
+            result += '<td><a href="#"  data-id="'+objeto.id+'" class="btn borrar-articulo btn-dark editar-articulo">Borrar</a></td>'; 
+            result += '<td><a href="admin/editarticulo?id='+objeto.id+'" class="btn btn-dark editar-articulo">Editar</a></td>'; 
+        }
+        
+        
         
         result += '</tr>';
         return result;

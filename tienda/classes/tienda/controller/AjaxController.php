@@ -38,6 +38,8 @@ class AjaxController extends Controller {
     
     function listarZapato() {
         $pagina = Reader::read('pagina');
+        $tipo = Reader::read('tipo');
+        
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;
         }
@@ -47,8 +49,34 @@ class AjaxController extends Controller {
             $orden = 'marca';
         }
                                                 //$pagina, $orden
-        $r = $this->getModel()->getDoctrineZapatos($pagina,$orden);
+        $r = $this->getModel()->getDoctrineZapatos($tipo, $pagina, $orden);
         
+        $this->getModel()->add($r);
+    }
+    
+    
+    function listarArticulo() {
+        $filtro = Reader::read('filtro');
+        $tipo = Reader::read('tipo');
+        $pagina = Reader::read('pagina');
+        $orden = Reader::read('orden');
+
+        if($filtro === ''){
+                $filtro = null;
+            }
+        
+        if($pagina === null || !is_numeric($pagina)) {
+            $pagina = 1;
+        }
+        $orden = Reader::read('orden');
+        
+        if (!property_exists(App::OBJECT['articulo'],  $orden)) {
+            $orden = 'marca';
+        }
+                                                //$pagina, $orden
+        $r = $this->getModel()->getDoctrineArticulos($tipo, $pagina, $orden,$filtro);
+        // echo Util::varDump($r);
+        // exit();
         $this->getModel()->add($r);
     }
     
@@ -132,6 +160,7 @@ class AjaxController extends Controller {
                     $obj->setImg($blob);
                 }
                 $obj->setTipo(Reader::read('tipo') === '1' ? 1 : 0);
+                
                 break;
         }
         
