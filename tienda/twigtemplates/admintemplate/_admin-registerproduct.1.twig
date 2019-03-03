@@ -312,23 +312,55 @@
 									<p>
 										<span class="title">Control de Inventario</span>
 										<span class="short-description">Añade el número de artículos de cada tipo que tiene disponible para la venta</span>
-										<span class="date"><a href='#'>Añadir nuevo artículo</a></span>
+										<div class="form-group stock-group">
+											<label for="signup-detalle" class="control-label title">Color</label>
+											<select id='select-stock-color' class="form-control">
+												{% for color in colors %}
+													<option value="{{color.id}}">{{color.nombre}}</option>
+												{% endfor %}
+											</select>
+										</div>
+										<div class="form-group stock-group">
+											<label for="signup-alto" class="control-label title">Talla</label>
+											<input data-empty='true' type="number" class="form-control" id="stock-talla" placeholder="Introduzca la talla del artículo">
+										</div>
+										<div class="form-group stock-group">
+											<label for="signup-ancho" class="control-label title">Stock</label>
+											<input data-empty='true' type="number"  class="form-control" id="stock-cantidad" placeholder="Introduzca cantidad de artículos">
+										</div>
+										<span class="date"><a href='#' id="add-stock-btn" class="btn btn-primary">Añadir Stock</a></span>
 									</p>
 									<hr>
 									<div class='wrapper-stock'>
-										<div class='row'>
-											<div class='col-md-3 col-sm-6 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
-											</div>
-											<div class='col-md-3 img-item-stock'>
-												<img></img>
-											</div>
+										<div class='row' id="content-stock">
+											<table class="table table-striped table-stock">
+												<thead>
+													<tr>
+														<th>Color</th>
+														<th>Talla</th>
+														<th>Stock</th>
+														<th>Eliminar</th>
+													</tr>
+												</thead>
+												<tbody>
+													{% for item in stock%}
+									                    <tr class="saved" data-id="{{item.id}}" data-talla="{{item.talla}}" data-color="{{item.color}}" data-stock="{{item.stock}}">
+									                      <td>
+									                        {{item.color}}
+									                      </td>
+									                      <td>
+									                        {{item.talla}}
+									                      </td>
+									                      <td>
+									                        {{item.stock}}
+									                      </td>
+									                      <td>
+									                        <i class="far fa-times-circle delete-stock"></i>
+									                      </td>
+									                    </tr>
+									                  {% endfor %}
+												</tbody>
+											</table>
 										</div>
 									</div>
 								</div>

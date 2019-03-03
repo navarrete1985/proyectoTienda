@@ -22,6 +22,11 @@ class Stock {
      */
     private $talla;
     
+    /**
+     * @Column(type="smallint", nullable=false, precision=2) 
+     */
+    private $stock;
+    
     /*-------------------------------------RELACIONES--------------------------------*/
     
     /**
@@ -118,4 +123,29 @@ class Stock {
     {
         return $this->color;
     }
+    
+    /**
+     * Set stock
+     *
+     * @param integer $stock
+     *
+     * @return Detalle
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * Get stock
+     *
+     * @return integer
+     */
+    public function getStock()
+    {
+        return $this->stock;
+    }
+    
 }

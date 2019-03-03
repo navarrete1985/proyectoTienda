@@ -37,6 +37,7 @@ class AdminController extends Controller {
         $this->getModel()->set('zapato', true);
         $this->getModel()->set('destinatarios', $this->getModel()->getAll('Destinatario'));
         $this->getModel()->set('categories', $this->getModel()->getAll('Categoria'));
+        $this->getModel()->set('colors', $this->getModel()->getAll('Color'));
     }
     
     function addcomplementos(){

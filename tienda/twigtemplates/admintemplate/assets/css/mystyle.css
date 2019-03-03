@@ -360,6 +360,21 @@ td{
     padding-left: 32px;   
 }
 
+/*Estilos stock*/
+.stock-group {
+    max-width: 400px;
+}
+
+.table-stock {
+    width: 97%;
+    max-width: none;
+    margin-top: 32px;
+}
+
+.table-stock th {
+    text-align: center;
+}
+
 @media screen and (max-width: 1390px) {
     
     .contenedorTabla{
