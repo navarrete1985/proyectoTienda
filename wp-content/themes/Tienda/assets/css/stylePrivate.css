@@ -23,9 +23,13 @@
             color: #424242 !important;
             margin-top: 2vh !important;
         } 
-        .banner-info > a {
+        .banner-info  a {
             margin-top: 3vh !important;
         }
         .banner-info > p {
             font-size: 1.125em;    
         }
+        .banner-info > div {
+            width: 100%;
+        }
+        

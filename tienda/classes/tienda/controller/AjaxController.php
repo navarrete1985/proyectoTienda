@@ -90,7 +90,7 @@ class AjaxController extends Controller {
         $class = ucfirst(strtolower(Reader::read('class')));
         $id = Reader::read('id');
         $item = $this->getModel()->delete($class, ['id' => $id]);
-        $this->getModel()->set('result', ($item === null || $item->getId() === null) ? '1' : '0');
+        $this->getModel()->set('result', ($item === null || $item->getId() === null || $item->getId() === 0) ? '1' : '0');
     }
     
     function isavailable() {

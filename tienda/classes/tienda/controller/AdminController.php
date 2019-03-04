@@ -81,18 +81,31 @@ class AdminController extends Controller {
         $id = Reader::read('id');
         $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
         $articulo = $this->getModel()->get('Articulo',['id' => $id]);
-        
+         
         $this->getModel()->set('articulo', $articulo);
-        
+        $img = base64_encode(stream_get_contents($articulo->getImg()));
+        $folder = './resources/images/articulos/id_' . $id;
+       
+        $this->getModel()->set('img', $img);
+        $this->getModel()->set('images', Util::getImagesUrls($folder));
         $categorias = $this->getModel()->getAll('Categoria');
         $catArt=[];
         foreach($articulo->getCategorias() as $valor){
             $catArt[]  = $valor->getCategoria()->getUnset(array('articulos','nombre','categoria'))['id'];
         }
+        
+        
+        $destinatarios = $this->getModel()->getAll('Destinatario');
+        $desArt=[];
+        foreach($articulo->getDestinatarios() as $valor){
+            $desArt[]  = $valor->getDestinatario()->getUnset(array('articulos','nombre','categoria'))['id'];
+        }
         // echo Util::varDump($catArt);
         // exit();
         $this->getModel()->set('categories', $categorias);
         $this->getModel()->set('catArt', $catArt);
+        $this->getModel()->set('destinatarios', $destinatarios);
+        $this->getModel()->set('desArt', $desArt);
         $this->getModel()->set('edit', true);
     }
     

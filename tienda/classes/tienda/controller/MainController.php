@@ -30,6 +30,8 @@ class MainController extends Controller {
         $this->getModel()->set('img', $img);
         $this->getModel()->set('images', Util::getImagesUrls($folder));
         $this->getModel()->set('item', $product);
+        $this->getModel()->set('categorias', $this->getModel()->getElementsArray($product, 'getCategoria'));
+        $this->getModel()->set('destinatarios', $this->getModel()->getElementsArray($product, 'getDestinatario'));
     }
     
      function listarZapato() {

@@ -43,4 +43,25 @@ class ProductosModel extends Model {
         
         return ['zapatos' => $zapatos, 'paginas' => $pagination->values()];
     }
+    
+    function getElementsArray($items, $method) {
+        $result = [];
+        $all = $method . 's';
+        $elements = $items->$all();
+        
+        foreach ($elements as $item) {
+            $result[] = $item->$method()->getUnset(['articulos']);
+        }
+        return $result;
+    }
+    
+    // function getDestinatariosArray($categories) {
+    //     $categoariasR = [];
+    //     $categoriasArticulo = $product->getCategorias();
+        
+    //     foreach ($categoriasArticulo as $categoria) {
+    //         $categoariasR[] = $categoria->getCategoria()->getUnset(['articulos']);
+    //     }
+    //     return $categoariasR;
+    // }
 }

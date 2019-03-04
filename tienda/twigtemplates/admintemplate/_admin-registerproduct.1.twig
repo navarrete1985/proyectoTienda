@@ -182,7 +182,7 @@
 											{% for destinatario in destinatarios %}
 												{% if loop.index is not even %}
 													<label class='fancy-checkbox'>
-														<input type='checkbox' name="dest[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{destinatario.id}}'>
+														<input type='checkbox' name="dest[]" {{ (destinatario.id in desArt) ? 'checked' : '' }} value='{{destinatario.id}}'>
 														<span>{{destinatario.nombre}}</span>
 													</label>	
 	        									{% endif %}
@@ -192,7 +192,7 @@
 											{% for destinatario in destinatarios %}
 												{% if loop.index is even %}
 													<label class='fancy-checkbox'>
-														<input type='checkbox' name="dest[]" {{ (destinatario.id in selected) ? 'selected' : '' }} value='{{destinatario.id}}'>
+														<input type='checkbox' name="dest[]" {{ (destinatario.id in desArt) ? 'checked' : '' }} value='{{destinatario.id}}'>
 														<span>{{destinatario.nombre}}</span>
 													</label>
 	    										{% endif %}
@@ -248,6 +248,7 @@
 									<p>
 										<a href='#' class='link-add-item btn-thubnail-img'>Añadir magen destacada del producto</a><br>
 										<span class="date">Imagen de previsualización del producto (sólamente puede haber una imagen destacada)</span>
+										{#<img width="825" height="825" src="data:image/jpg;base64, {{img}}" class="attachment-large size-large wp-post-image" alt="" sizes="(max-width: 825px) 100vw, 825px" />#}
 									</p>
 								</div>
 							</div>
@@ -268,7 +269,13 @@
 										<span class="date">Añade la galería de imagenes a mostrar del producto</span>
 									</p>
 									<div class='gallery' id='show-gallery'>
-										
+										{% for image in images %}
+		                                    <li>
+		                                        <a href="../project/the-deep-surface/index.html">
+		                                        	<img width="150" height="150" src="{{image}}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />
+		                                    	</a>
+		                                    </li>
+                                		{% endfor %}
 									</div>
 								</div>
 							</div>
@@ -284,13 +291,13 @@
 								<div class='panel-body'>
 									<div class="form-group">
 										<label for="signup-detalle" class="control-label title">Detalle</label>
-										<textarea data-empty='true' type="" class="form-control" id="signup-detalle" placeholder="Descripcion" name='detalle' rows='8'></textarea>
+										<textarea data-empty='true' type="" class="form-control" id="signup-detalle" placeholder="Descripcion" name='detalle' rows='8'>{{articulo.detalle}}</textarea>
 										<span class="date">Añade la descripción del producto que se verá al mostrar este</span>
 									</div>
 									
 									<div class="form-group">
 										<label for="signup-otrascaracteristicas" class="control-label title">Otras carecteristicas</label>
-										<textarea data-empty='true' type="text" class="form-control" id="signup-otrascaracteristicas" placeholder="Introduzca otras caracteristicas" name='otrascaracteristicas' rows='8'></textarea>
+										<textarea data-empty='true' type="text" class="form-control" id="signup-otrascaracteristicas" placeholder="Introduzca otras caracteristicas" name='otrascaracteristicas' rows='8'> {{articulo.otrascaracteristicas}} </textarea>
 										<span class="date">Añade las características especiales del producto</span>
 									</div>
 								</div>

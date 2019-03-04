@@ -46,7 +46,7 @@
 <?php
                                 $args = array (
                                 	'remember' => true,
-                                	'redirect' => 'https://proyecto-tienda-navarrete.c9users.io/index.php',
+                                	'redirect' => 'https://proyecto-tienda-navarrete.c9users.io',
                                 	'form_id' => 'loginform',
                                 	'id_username' => 'user_login',
                                 	'id_password' => 'user_pass',

@@ -16,7 +16,7 @@
 		<div class="container">
 			<div class="inner-header">
 				<a class="inner-brand" href="#">
-					<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli_B.png';?>" style="max-height: 35px;" />
+					<img class="dark" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli_B.png';?>" style="max-height: 35px;" />
 					<!--<img class="brand-light" src="<?php //echo bloginfo('template_directory') . '/img/uploads/2017/05/additional-logo.png'; ?>" style="max-height: 60px;" />					-->
 				</a>
 			</div>
@@ -37,7 +37,10 @@
 							<h1 class="h4 font-alt">Tu rol es de: <?php echo $rolsp; ?></h1>
 							<h1 class="h4 font-alt">Tu rol es de: <?php echo $rol2; ?></h1>
 							<p><?php echo $capacidad; ?></p>
-							<a class="btn btn-md btn-round btn-fill btn-brand" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
+							<div class="bloqueflex-around">
+								<a class="btn btn-md btn-round btn-fill btn-brand" href="https://proyecto-tienda-navarrete.c9users.io/wp-admin/profile.php" target="_blanck">Editar usuario</a>
+								<a class="btn btn-md btn-round btn-fill btn-brand" href="<?php echo wp_logout_url( home_url() ); ?>">Cerrar Sesión</a>
+							</div>
 						</div>
 					</div>
 				</div>

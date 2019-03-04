@@ -25,16 +25,16 @@
                                 <p>{{item.otrascaracteristicas}}</p>
                             {% endif %}
                         </div>
-                        <div class="post-footer">
-                            <div class="post-tags">
-                                <h4>Destinatarios</h4>
-                                <a href="../tag/business/index.html" rel="tag">Business</a> 
-                                <a href="../tag/lifestyle/index.html" rel="tag">Lifestyle</a>
-                                <a href="../tag/music/index.html" rel="tag">Music</a>
-                                <a href="../tag/news/index.html" rel="tag">News</a>
-                                <a href="../tag/travel/index.html" rel="tag">Travel</a> 
-                            </div>
-                        </div>
+                        {#<div class="post-footer">#}
+                        {#    <div class="post-tags">#}
+                        {#        <h4>Destinatarios</h4>#}
+                        {#        <a href="../tag/business/index.html" rel="tag">Business</a> #}
+                        {#        <a href="../tag/lifestyle/index.html" rel="tag">Lifestyle</a>#}
+                        {#        <a href="../tag/music/index.html" rel="tag">Music</a>#}
+                        {#        <a href="../tag/news/index.html" rel="tag">News</a>#}
+                        {#        <a href="../tag/travel/index.html" rel="tag">Travel</a> #}
+                        {#    </div>#}
+                        {#</div>#}
                     </article>
                     <!-- Post end-->
                 </div>
@@ -45,30 +45,30 @@
                         <aside id="categories-3" class="widget widget_categories">
                             <div class="widget-title font-alt">Categorias</div>
                             <ul>
-                                <li class="cat-item cat-item-3"><a title="We know what we’re good at, and we stick to it">Branding</a>
+                            {% for cat in categorias%}
+                                <li class="cat-item cat-item-3"><a title="We know what we’re good at, and we stick to it">{{cat.nombre}}</a>
                                 </li>
+                            {% endfor %}
                             </ul>
                         </aside>
                         {#---------DESTINATARIOS---------#}
                         <aside id="tag_cloud-2" class="widget widget_tag_cloud">
                             <div class="widget-title font-alt">Destinatarios</div>
-                            <div class="tagcloud"><a href='../tag/business/index.html' class='tag-link-7 tag-link-position-1' title='4 topics' style='font-size: 7px;'>Business</a>
-                                <a href='../tag/corporate/index.html' class='tag-link-8 tag-link-position-2' title='4 topics' style='font-size: 7px;'>Corporate</a>
-                                <a href='../tag/lifestyle/index.html' class='tag-link-9 tag-link-position-3' title='12 topics' style='font-size: 7px;'>Lifestyle</a>
-                                <a href='../tag/music/index.html' class='tag-link-10 tag-link-position-4' title='12 topics' style='font-size: 7px;'>Music</a>
-                                <a href='../tag/news/index.html' class='tag-link-11 tag-link-position-5' title='12 topics' style='font-size: 7px;'>News</a>
-                                <a href='../tag/responsive/index.html' class='tag-link-12 tag-link-position-6' title='4 topics' style='font-size: 7px;'>Responsive</a>
-                                <a href='../tag/travel/index.html' class='tag-link-13 tag-link-position-7' title='12 topics' style='font-size: 7px;'>Travel</a></div>
+                            <div class="tagcloud">
+                                {% for dest in destinatarios%}
+                                    <a href='../tag/travel/index.html' class='tag-link-13 tag-link-position-7' title='12 topics' style='font-size: 7px;'>{{dest.nombre}}</a>
+                                {% endfor %}
+                            </div>
                         </aside>
                         <aside id="recent-projects-2" class="widget widget_recent_works">
                             <div class="widget-title font-alt">Galería</div>
                             <ul>
                                 {% for image in images %}
                                     <li>
-                                    <a href="../project/the-deep-surface/index.html">
-                                    	<img width="150" height="150" src="{{image}}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />
-                                	</a>
-                                </li>
+                                        <a href="{{image}}">
+                                        	<img width="150" height="150" src="{{image}}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />
+                                    	</a>
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </aside>

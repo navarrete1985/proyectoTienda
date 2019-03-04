@@ -118,32 +118,6 @@
         
     }
     
-    
-    // var procesarPaginas = function (paginas) {
-    //     var stringFirst = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.primero+'><</a></li>';
-    //     var stringPrev  = '<li><a href = "#" class = "btnPagina2" data-pagina='+paginas.anterior+'>anterior</a></li>';
-    //     var stringRange = '';
-    //     $.each(paginas.rango, function(key, value) {
-    //         if(paginas.pagina == value) {
-    //             stringRange += '<li><a href = "#" class = "btnPagina2">' + value + '</a></li> ';
-    //         } else {
-    //             stringRange += '<li><a href = "#" class = "btnPagina2" data-pagina="' + value + '">' + value + '</a></li>';
-    //         }
-    //     });
-    //     var stringNext = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.siguiente+'>siguiente</a></li>';
-    //     var stringLast = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.ultimo+'>></a></li>';
-    //     var finalString = stringFirst + stringPrev + stringRange + stringNext + stringLast;
-    //     $('#pintarPaginas').empty();
-    //     $('#pintarPaginas').append(finalString);
-    //     $('.btnPagina2').on('click', function(e) {
-    //         e.preventDefault();
-    //         pagina = e.target.getAttribute('data-pagina');
-    //         getListado(); 
-    //     });
-    
-    // } 
-    
-    
     var procesarPaginas = function (paginas) {
         let pagination = '';
         

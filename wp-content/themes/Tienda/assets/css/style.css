@@ -4,8 +4,14 @@
 }
 
 .texto {
-    font-size: 1.125em;
+    font-size: 1.25em;
     font-family: 'Open Sans';    
+}
+
+.perfil {
+    font-size: 1.25em;
+    font-family: 'Open Sans';  
+    color: #8A2908 !important;
 }
 
 .leerMas{
@@ -62,6 +68,7 @@
         border-color: #DFE3E2; 
         color: #333333;
     }
+    
     
 /*-------------------------- Bloques con Flex --------------------------------*/
     .bloqueflex {
