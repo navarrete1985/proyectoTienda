@@ -2,6 +2,8 @@
 
 namespace tienda\tools;
 
+use tienda\app\App;
+
 class Util {
 
     static function encriptar($cadena, $coste = 10) {
@@ -82,5 +84,16 @@ class Util {
         }
         return $text;
     }
-
+    
+    static function getImagesUrls($folder) {
+        $images = [];
+        $gestor_dir = opendir($folder);
+        
+        while (false !== ($fichero = readdir($gestor_dir))) {
+            if ($fichero !== '.' && $fichero !== '..') {
+                $images[] = App::BASE . $folder . '/' . $fichero;    
+            }
+        }
+        return $images;
+    }
 }

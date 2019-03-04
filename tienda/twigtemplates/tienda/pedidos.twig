@@ -1,4 +1,18 @@
 {% extends 'base.twig' %}
+{% block logo %}
+	<img class="brand-dark" src="{{twigFolder}}/src/images/minelli.png" style="max-height: 35px;" />
+	<img class="brand-light" src="{{twigFolder}}/src/images/minelli_B.png" style="max-height: 35px;" />
+{% endblock %}
+{% block nav %}
+	<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+		<a href="#"><span>Tienda</span></a>
+	</li>
+	{% if user.activo == 1 %}
+	<li id="menu-item-316" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+		<a href="/tienda/pedidos"><span class="is_active">Mis Pedidos</span></a>
+	</li>
+	{% endif %}
+{% endblock %}
 {% block content %}
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">

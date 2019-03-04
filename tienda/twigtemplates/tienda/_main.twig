@@ -1,0 +1,115 @@
+{% extends 'base.twig' %}
+{% block content %}
+<div class="wrapper">
+	<section class="module-header default-height parallax bg-light bg-light-60 bg-film" data-background="{{twigFolder}}/src/images/module-13.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="h3 font-alt">Blog Grid</h1>
+					<h1 class="h4 font-alt">We have standards</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog-->
+	<section class="module">
+		<div class="container">
+			<div id="ordenIndex">
+		        <div class='col-md-3'>
+		            <a href="#" class="onClickLista" data-pagina='1' data-lista='todos'>Todo</a>
+		            <!--<a href="index/listarLinks?pagina={{lista.paginas.primero}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Primero</a>-->
+		        </div>
+		        <div class='col-md-3'>
+		            <a href="#" class="onClickLista" data-pagina='1' data-lista='zapatos'>Zapatos</a>
+		            <!--<a href="index/listarLinks?pagina={{lista.paginas.anterior}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Anterior</a>-->
+		        </div>
+		        <div class='col-md-3'>
+		            <a href="#" class="onClickLista" data-pagina='1' data-lista='complementos'>Complementos</a>
+		            <!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->
+		        </div>
+		        <div class='col-md-3'>
+		         {#   <input type="text" name="filtro" class="form-control" id="filtro"  placeholder="Filtrar"  />#}
+	        		{#<button id="filtroBt">Filtrar</button>#}
+	        		<aside id="search-2" class="widget widget_search">
+                        <form role="search" method="get" class="search-form" action="#">
+                            <input type="text" name="filtro" id="filtro" class="search-field form-control" placeholder="Filtrar..." value="" name="s" />
+                            <button id="filtroBt" class="search-button" >
+                                <span class="fa fa-search"></span>
+                            </button>
+                        </form>
+                    </aside>
+		        </div>
+   		 	</div>
+			<div class="row blog-grid multi-columns-row contenedorArticulos">
+				<!-- Posts-->
+				 {% for item in data.zapatos%}
+					<div class="col-sm-4 col-md-4 col-lg-4 post-item">
+						<article  class="post-27 post type-post status-publish format-standard has-post-thumbnail hentry category-branding category-design category-printing tag-business tag-lifestyle tag-music tag-news tag-travel">
+							<div class="post-preview">
+								<a href="/tienda/index/item?id={{item.id}}">
+									{#{{item.img}}#}
+									<img width="340px" src="data:image/jpg;base64, {{item.img}}">
+								</a>
+								
+
+							<div class="post-header">
+								<h2 class="post-title font-alt">
+									<a href="/tienda/index/item?id={{item.id}}">{{item.modelo}}</a>
+								</h2>
+								<ul class="post-meta font-alt">
+									<li>
+										<span>{{item.marca}}</span>
+										
+									</li>
+									<li>
+										<span>{{item.referencia}}</span>
+									</li>
+								</ul>
+							</div>
+							<div class="post-content">
+								<p>{{item.detalle}}</p>
+								<p>{{item.precio}}€</p>
+							</div>
+							<div class="post-more">
+								<a class="font-alt" href="/tienda/index/item?id={{item.id}}">Read More &rarr;</a>
+							</div>
+						</article>
+					</div>
+				{% endfor %}
+			</div>
+			<!-- Pagination-->
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="pagination font-alt" id="pintarPaginas">
+					{% if data.paginas.pagina != 1 %}
+	                    {% if data.paginas.pagina > 2%}
+	                      <li>
+							 <a href = "#" class = "btnPagina " data-pagina='{{data.paginas.primero}}'><<</a>
+						  </li>
+	                    {% endif %}
+	                    <li>
+							<a href = "#" class = "btnPagina" data-pagina='{{data.paginas.anterior}}'><</a>
+						</li>
+	                {% endif %}
+	                {% for item in data.paginas.rango %}
+	                	<li>
+                        	<a href = "#" class = "btnPagina {{data.paginas.pagina == item ? 'actual-index' : ''}} " data-pagina='{{item}}'>{{item}}</a>
+                    	</li>
+                    {% endfor %}
+	                {% if data.paginas.pagina != data.paginas.ultimo %}
+		                <li>
+							<a href = "#" class = "btnPagina " data-pagina='{{data.paginas.siguiente}}'>></a>
+						</li>
+		                {% if data.paginas.pagina != data.paginas.ultimo - 1%}
+		                  <li>
+							 <a href = "#" class = "btnPagina " data-pagina='{{data.paginas.ultimo}}'>>></a>
+			       		  </li>
+		                {% endif %}
+	                {% endif %}
+	                </ul>
+				</div>
+			</div>
+			<!-- Pagination end-->
+		</div>
+	</section>
+{% endblock %}

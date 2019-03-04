@@ -73,13 +73,8 @@
                 });
                 break;
         }
-    
-                
-                
         
     }
-
-
 
     var pintarArticulos = function (objeto) {
         var listaitems = '';
@@ -87,7 +82,7 @@
             listaitems += `<div class="col-sm-4 col-md-4 col-lg-4 post-item">
 						<article  class="post-27 post type-post status-publish format-standard has-post-thumbnail hentry category-branding category-design category-printing tag-business tag-lifestyle tag-music tag-news tag-travel">
 							<div class="post-preview">
-								<a href="../mini-california-sushi-cones/index.html">
+								<a href="/tienda/index/item?id=${item.id}">
 									
 									<img width="340px" src="data:image/jpg;base64, ${item.img}">
 								</a>
@@ -95,7 +90,7 @@
 
 							<div class="post-header">
 								<h2 class="post-title font-alt">
-									<a href="../mini-california-sushi-cones/index.html">${item.modelo}</a>
+									<a href="/tienda/index/item?id=${item.id}">${item.modelo}</a>
 								</h2>
 								<ul class="post-meta font-alt">
 									<li>
@@ -112,7 +107,7 @@
 								<p>${item.precio}€</p>
 							</div>
 							<div class="post-more">
-								<a class="font-alt" href="../mini-california-sushi-cones/index.html">Read More &rarr;</a>
+								<a class="font-alt" href="/tienda/index/item?id=${item.id}">Read More &rarr;</a>
 							</div>
 						</article>
 					</div>`;
@@ -124,22 +119,70 @@
     }
     
     
+    // var procesarPaginas = function (paginas) {
+    //     var stringFirst = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.primero+'><</a></li>';
+    //     var stringPrev  = '<li><a href = "#" class = "btnPagina2" data-pagina='+paginas.anterior+'>anterior</a></li>';
+    //     var stringRange = '';
+    //     $.each(paginas.rango, function(key, value) {
+    //         if(paginas.pagina == value) {
+    //             stringRange += '<li><a href = "#" class = "btnPagina2">' + value + '</a></li> ';
+    //         } else {
+    //             stringRange += '<li><a href = "#" class = "btnPagina2" data-pagina="' + value + '">' + value + '</a></li>';
+    //         }
+    //     });
+    //     var stringNext = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.siguiente+'>siguiente</a></li>';
+    //     var stringLast = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.ultimo+'>></a></li>';
+    //     var finalString = stringFirst + stringPrev + stringRange + stringNext + stringLast;
+    //     $('#pintarPaginas').empty();
+    //     $('#pintarPaginas').append(finalString);
+    //     $('.btnPagina2').on('click', function(e) {
+    //         e.preventDefault();
+    //         pagina = e.target.getAttribute('data-pagina');
+    //         getListado(); 
+    //     });
+    
+    // } 
+    
+    
     var procesarPaginas = function (paginas) {
-        var stringFirst = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.primero+'><</a></li>';
-        var stringPrev  = '<li><a href = "#" class = "btnPagina2" data-pagina='+paginas.anterior+'>anterior</a></li>';
-        var stringRange = '';
-        $.each(paginas.rango, function(key, value) {
-            if(paginas.pagina == value) {
-                stringRange += '<li><a href = "#" class = "btnPagina2">' + value + '</a></li> ';
-            } else {
-                stringRange += '<li><a href = "#" class = "btnPagina2" data-pagina="' + value + '">' + value + '</a></li>';
+        let pagination = '';
+        
+        if (paginas.pagina != 1) {
+            if (paginas.pagina > 2) {
+                pagination += `<li>
+    							 <a href = "#" class = "btnPagina btnPagina2 " data-pagina='${paginas.primero}'><<</a>
+    						  </li>`;
+            }
+            pagination += `<li>
+    				   		  <a href = "#" class = "btnPagina btnPagina2" data-pagina='${paginas.anterior}'><</a>
+    					   </li>`;
+        }
+        
+        $.each(paginas.rango, (key, value) => {
+            if (paginas.pagina == value) {
+                pagination += `<li>
+                             	   <a href = "#" class="btnPagina btnPagina2 actual-index">${value}</a>
+                        	   </li>`
+            }else {
+                pagination += `<li>
+                             	   <a href = "#" class = "btnPagina btnPagina2 " data-pagina='${value}'>${value}</a>
+                        	   </li>`
             }
         });
-        var stringNext = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.siguiente+'>siguiente</a></li>';
-        var stringLast = '<li><a href = "#" class = "btnPagina2 " data-pagina='+paginas.ultimo+'>></a></li>';
-        var finalString = stringFirst + stringPrev + stringRange + stringNext + stringLast;
+        
+        if (paginas.pagina != paginas.ultimo) {
+            pagination += `<li>
+						 	   <a href = "#" class = "btnPagina btnPagina2" data-pagina='${paginas.siguiente}'>></a>
+						   </li>`;
+			if (paginas.pagina != paginas.ultimo - 1) {
+			    pagination += `<li>
+						 	   <a href = "#" class = "btnPagina btnPagina2" data-pagina='${paginas.ultimo}'>>></a>
+						   </li>`;
+			}
+        }
+        
         $('#pintarPaginas').empty();
-        $('#pintarPaginas').append(finalString);
+        $('#pintarPaginas').append(pagination);
         $('.btnPagina2').on('click', function(e) {
             e.preventDefault();
             pagina = e.target.getAttribute('data-pagina');
@@ -147,7 +190,6 @@
         });
     
     } 
-    
     
     
     

@@ -80,10 +80,12 @@ class LoginController extends Controller {
     }
     
     function dologout() {
-        //haces logout y te envia a index
         $this->getSesion()->logout();
-        header('Location: ' . App::BASE . 'login');
-        exit();
+        $redirect = Reader::read('redirect');
+        if ($redirect === 'main') {
+            $this->sendRedirect();
+        }
+        $this->sendRedirect('login');
     }
     
     function checkIsLogued() {

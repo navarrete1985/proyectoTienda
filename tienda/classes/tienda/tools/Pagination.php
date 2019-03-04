@@ -64,7 +64,7 @@ class Pagination {
         return $this->rpp;
     }
     
-    function values($left = 5, $right = 5) {
+    function values($left = 1, $right = 1) {
         return array(
             'primero'   => $this->first(),
             'anterior'  => $this->previous(),

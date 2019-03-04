@@ -11,32 +11,34 @@ use tienda\tools\Util;
 class MainController extends Controller {
     
     function main() {
-        // $this->checkIsLogged();
-        $this->getModel()->set('twigFile', 'blog3-col.twig');
-        // $usuario = $this->getSesion()->getLogin()->get();
+        $this->getModel()->set('twigFile', '_main.twig');
         $pagina = 1;
         $orden = 'marca';
         $r = $this->getModel()->getDoctrineZapatos($pagina,$orden);
-        // echo Util::varDump($r);
-        // exit();
         $this->getModel()->set('data',$r);
-        
     }
     
+    function item() {
+        $product_id = Reader::read('id');
+        $product = $this->getModel()->get('Articulo', ['id' => $product_id]);
+        if ($product === null) {
+            $this->sendRedirect('index');
+        }
+        $img = base64_encode(stream_get_contents($product->getImg()));
+        $folder = './resources/images/articulos/id_' . $product_id;
+        $this->getModel()->set('twigFile', 'product.twig');
+        $this->getModel()->set('img', $img);
+        $this->getModel()->set('images', Util::getImagesUrls($folder));
+        $this->getModel()->set('item', $product);
+    }
     
      function listarZapato() {
         $pagina = Reader::read('pagina');
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;
         }
-        // $orden = Reader::read('orden');
         
-        // if (!property_exists(App::OBJECT['articulo'],  $orden)) {
-        //     $orden = 'marca';
-        // }
-                                                //$pagina, $orden
         $r = $this->getModel()->getDoctrineZapatos($pagina,$orden);
-       
         $this->getModel()->add($r);
     }
 }

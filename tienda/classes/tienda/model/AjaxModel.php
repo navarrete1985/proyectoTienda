@@ -171,7 +171,7 @@ class AjaxModel extends Model {
     //     return $this->update($usuario);
     // }
     
-    function getDoctrineArticulos($tipo,$pagina = 1, $orden = 'marca', $filtro, $limit = 6) {
+    function getDoctrineArticulos($tipo,$pagina = 1, $orden = 'marca', $filtro, $limit = 1) {
 
         if($filtro !== null){
             $dql = 'select c from tienda\data\Articulo c where c.marca like :filtro
@@ -212,7 +212,7 @@ class AjaxModel extends Model {
             
             $zapato->setDetalle($text);
             
-            $zapatos[] = $zapato->getUnset(array('colores','id', 'categorias', 'destinatarios', 'stocks','peso','coleccion', 'detalles','material','estampando','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+            $zapatos[] = $zapato->getUnset(array('colores', 'categorias', 'destinatarios', 'stocks','peso','coleccion', 'detalles','material','estampando','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
             
            
         }

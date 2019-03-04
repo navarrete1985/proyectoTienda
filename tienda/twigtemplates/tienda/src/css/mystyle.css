@@ -1,0 +1,11 @@
+.is_active {
+    border-bottom: 0.7px solid #A4A4A4;
+}
+
+.actual-index {
+    border: 1px solid black !important;
+}
+
+.btnPagina {
+    margin: 0px 4px !important;
+}
