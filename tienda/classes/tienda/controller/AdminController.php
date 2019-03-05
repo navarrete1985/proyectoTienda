@@ -34,13 +34,14 @@ class AdminController extends Controller {
     
     function addzapatos(){
         $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
-        $this->getModel()->set('zapato', true);
+        $this->getModel()->set('zapatoTipo', 0);
         $this->getModel()->set('destinatarios', $this->getModel()->getAll('Destinatario'));
         $this->getModel()->set('categories', $this->getModel()->getAll('Categoria'));
         $this->getModel()->set('colors', $this->getModel()->getAll('Color'));
     }
     
     function addcomplementos(){
+        $this->getModel()->set('zapatoTipo', 1);
         $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
         $this->getModel()->set('destinatarios', $this->getModel()->getAll('Destinatario'));
         $this->getModel()->set('categories', $this->getModel()->getAll('Categoria'));
@@ -81,6 +82,8 @@ class AdminController extends Controller {
         $id = Reader::read('id');
         $this->getModel()->set('twigFile', '_admin-registerproduct.1.twig');
         $articulo = $this->getModel()->get('Articulo',['id' => $id]);
+
+        $this->getModel()->set('zapatoTipo', $articulo->getTipo());
          
         $this->getModel()->set('articulo', $articulo);
         $img = base64_encode(stream_get_contents($articulo->getImg()));

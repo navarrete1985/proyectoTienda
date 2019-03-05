@@ -1,0 +1,27 @@
+En los CPT se han añadido 2 campos para encarjarlos en el front-page.php del tema.
+
+Como en el front-page hay un filtro de los artículos por: 
+    - hombre: (categoria_14);
+    - mujer: (category_15);
+    - niño: (category_17);
+    - complementos (categoria_16);
+    
+y este filtro lo utiliza poniendo en en el <div> contenedor del post, la clase "category-count category_16"
+
+Los dos campos añadidos al CPT son:
+
+- name=categoria -> Este campo está oculto, porque se pondrá el valor por código, y es donde se almacena la categoria para el filtrado.
+- name=tipo -> Aquí hay dos valores "zapatos" y "complementos", 
+
+A la hora de hacer el update del campo "categoria", hago 2 switch; 
+- El primero tomo el valor del campo (radio) destinatario; y en función de su valor, pongo la categoria.
+- El segundo tomo el valor del campo (radio) tipo; y sólo tengo en cuenta si es "complementos", en cuyo caso guardo la categoria.
+  No tengo en cuenta el el valor "zapatos", porque en el filtrado, no está, y se supone que para este valor, son las categorias de
+  "niño", "hombre" y "mujer".
+  
+Una vez hecho el loop para los CPT, en la plantilla de "content-articulos.php", recupero el valor del campo "categoria" y pongo como
+clase en el contenedor del post, tal y como hace el tema.
+
+El siguiente paso es crear un script para que haga el filtrado, ya que el del tema no funciona porque no se han podido mantener algunas clases.
+
+Creo el fichero "filtro-categorias.js", en el que muestro y oculto las categorias según selección

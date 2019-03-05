@@ -74,7 +74,7 @@ class Articulo {
     /**
      * @Column(type="smallint", nullable=false, precision=2) 
      */
-    private $stock;
+    private $stock = 0;
     
     /*
                 -OTRA POSIBILIDAD PARA NO CONTEMPLAR EL STOCK COMO ENTIDAD-

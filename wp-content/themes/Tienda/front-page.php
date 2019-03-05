@@ -179,19 +179,19 @@
                     <div class="col-sm-12">
                         <ul class="filters font-alt" id="filters">
                             <li>
-                                <a class="current" href="#" data-filter="*">Novedades<sup><small>.10</small></sup></a>
+                                <a class="current filter" href="#" data-filter="*">Novedades<sup><small>.10</small></sup></a>
                             </li>
                             <li>
-                                <a href="#" data-filter=".category_14">Hombre<sup><small>.5</small></sup></a>
+                                <a class="filter" href="#" data-filter=".category_14">Hombre<sup><small>.5</small></sup></a>
                             </li>
                             <li>
-                                <a href="#" data-filter=".category_15">Mujer<sup><small>.6</small></sup></a>
+                                <a class="filter" href="#" data-filter=".category_15">Mujer<sup><small>.6</small></sup></a>
                             </li>
                             <li>
-                                <a href="#" data-filter=".category_16">Complementos<sup><small>.4</small></sup></a>
+                                <a class="filter" href="#" data-filter=".category_16">Complementos<sup><small>.4</small></sup></a>
                             </li>
                             <li>
-                                <a href="#" data-filter=".category_17">Niños<sup><small>.3</small></sup></a>
+                                <a class="filter" href="#" data-filter=".category_17">Niños<sup><small>.3</small></sup></a>
                             </li>
                         </ul>
                     </div>
@@ -204,7 +204,7 @@
     					<div class="row blog-masonry">                    
 <?php
                             $args = array(
-                                    'posts_per_page' => 2,
+                                    'posts_per_page' => 20,
                                     'post_type' => 'minelli_articulos',
                                 );
                                 

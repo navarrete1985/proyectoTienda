@@ -1,4 +1,5 @@
 (function() {
+    
     var lightboxDescription = GLightbox({
         selector: 'gallery'
     });
@@ -282,5 +283,12 @@
         
     }
     
+    
+})();
+
+// CARRITO
+(function() {
+    
+    let cart = new Cart(".shopping-cart");
     
 })();

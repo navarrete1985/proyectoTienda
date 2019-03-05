@@ -120,7 +120,7 @@
  
     /*==============   Meta Destinatario, Meta Talla   ===============================================*/        
         $value_destinatario = get_post_meta($post -> ID, 'destinatario', true);
-        $value_talla = get_post_meta($post -> ID, 'talla', true);
+        $value_tipo = get_post_meta($post -> ID, 'tipo', true);        
 ?> 
         <div id="row-destinatario">
             <div id="destinatario_box">        
@@ -131,6 +131,14 @@
             		<input type="radio" name="destinatario" value="Niño" <?php if ($value_destinatario == 'Niño') {echo 'checked';};?>>Niño<br>
                 </div>
     		</div>
+    		
+            <div id="tipo_box">        
+                <span class="titulo">Tipo Artículo</span>
+                <div>
+            		<input type="radio" name="tipo" value="Zapatos" <?php if ($value_tipo == 'Zapatos') {echo 'checked';};?>>Zapatos<br>
+            		<input type="radio" name="tipo" value="Complementos" <?php if ($value_tipo == 'Complementos') {echo 'checked';};?>>Complementos<br>
+                </div>
+    		</div>    		
     	</div>	
 <?php
 
@@ -144,6 +152,15 @@
             </div>            
         </div>
 <?php
+
+    /*==============   Metas Ocultos   ===============================================================*/        
+        $value_categoria = get_post_meta($post -> ID, 'categoria', true);   
+?>
+        <div id="row-ocultos">
+            <input type="hidden" name="categoria" value="<?php echo $value_categoria; ?>">
+        </div>
+<?php
+
     }
 
 /***********************  Guardar los datos de los campos   ******************************/
@@ -165,15 +182,34 @@
                 return;
             };
             
-            $value_operacion = sanitize_text_field( $_POST['operacion'] );
             $value_marca = sanitize_text_field( $_POST['marca'] ); 
             $value_modelo = sanitize_text_field( $_POST['modelo'] );
             $value_destinatario = sanitize_text_field( $_POST['destinatario'] );  
+            $value_tipo = sanitize_text_field( $_POST['tipo'] );  
 
-            update_post_meta( $post_id, 'operacion', $value_operacion);
             update_post_meta( $post_id, 'marca',$value_marca);
             update_post_meta( $post_id, 'modelo', $value_modelo);
             update_post_meta( $post_id, 'destinatario', $value_destinatario);
+            update_post_meta( $post_id, 'tipo', $value_tipo);            
+            
+            switch ($value_destinatario) {
+                case 'Mujer':
+                    $value_categoria = 'category_15';
+                    break;
+                case 'Hombre':
+                    $value_categoria = 'category_14';
+                    break;                    
+                case 'Niño':   
+                    $value_categoria = 'category_17';
+                    break;                    
+            }
+            switch ($value_tipo) {
+                case 'Complementos':
+                    $value_categoria = 'category_16';
+                    break;                    
+            }
+            
+            update_post_meta( $post_id, 'categoria', $value_categoria);            
         };
         add_action('save_post', 'save_metabox');
         

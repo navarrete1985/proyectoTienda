@@ -26,6 +26,8 @@ trait Crud {
     
     function create($item) {
         $result = 1;
+        // echo Util::varDump($item);
+        // exit();
         try {
             $r = $this->gestor->persist($item);
             $this->gestor->flush();   
@@ -67,6 +69,12 @@ trait Crud {
         $class = explode('\\', $class);
         $class = end($class);
         $before = $this->get($class, ['id' => $item->getID()]);
+
+        if (get_class($item) === 'tienda\data\Articulo' && $item->getImg() === 'undefined'  ) {
+ 
+            $item->setImg($before->getImg());
+        }
+        
         $values = $item->getUnset(App::RELATIONSHIP[$class]);
         foreach ($values as $key=>$value) {
             if ($value !== null && $value !== '') {

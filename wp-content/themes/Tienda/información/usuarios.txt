@@ -1,0 +1,2 @@
+He creado el usuario "visitante", al que le doy el rol de "suscriber", para hacer pruebas.
+La password es también "visitante"

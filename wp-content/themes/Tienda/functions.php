@@ -101,7 +101,10 @@
         wp_enqueue_script('submit'); 
         
         wp_register_script('formlogin', get_template_directory_uri() . '/assets/js/formlogin.js', array('jquery'), null, false);
-        wp_enqueue_script('formlogin');          
+        wp_enqueue_script('formlogin'); 
+        
+        wp_register_script('filtro', get_template_directory_uri() . '/assets/js/filto-categorias.js', array('jquery'), null, false);
+        wp_enqueue_script('filtro');        
     }
     add_action('wp_enqueue_scripts','myScripts'); 
     

@@ -124,6 +124,8 @@ class AjaxController extends Controller {
     function updatedata(){
         $class = Reader::read('class');
         $id = Reader::read('id');
+        $dest = Reader::read('dest');
+        $cat = Reader::read('cat');
         // $id = Util::varDump($_POST);
         // $id = Util::varDump($_GET);
         
@@ -134,6 +136,7 @@ class AjaxController extends Controller {
             $id = trim($id);
             
             $obj = Reader::readObject(App::OBJECT[$class]);
+           
             switch (strtolower($class)) {
                 case 'usuario':
                     if($obj->getClave()!==null && trim($obj->getClave() !== '')){
@@ -143,11 +146,18 @@ class AjaxController extends Controller {
                     $obj->setRol($obj->getRol() === 'on' ? 1 : 0);
                     break;
                 case 'articulo':
-                    if (isset($_FILES['img']) && $_FILES['img']['name'] !== '') {
-                        $blob = Util::getBlobImage(file_get_contents($_FILES['img']['tmp_name']));
-                        $obj->setImg($blob);
-                    }
-                    $obj->setTipo(Reader::read('tipo') === '1' ? 1 : 0);
+                   
+                        if (isset($_FILES['img']) && $_FILES['img']['name'] !== '') {
+                            $blob = Util::getBlobImage(file_get_contents($_FILES['img']['tmp_name']));
+                            $obj->setImg($blob);
+                        }
+                        $obj->setTipo(Reader::read('tipo') === '1' ? 1 : 0); 
+  
+                    // if (isset($_FILES['img']) && $_FILES['img']['name'] !== '') {
+                    //     $blob = Util::getBlobImage(file_get_contents($_FILES['img']['tmp_name']));
+                    //     $obj->setImg($blob);
+                    // }
+                    // $obj->setTipo(Reader::read('tipo') === '1' ? 1 : 0);
                     break;
             }
             
@@ -158,8 +168,7 @@ class AjaxController extends Controller {
                 
                 
                 if ($class == 'articulo' && $result === 1) {
-                    echo Util::varDump($obj);
-                    exit();
+                    
                     $this->getModel()->addDestinatarios($obj, $dest, 'tienda\data\Destinatario');
                     $this->getModel()->addCategories($obj, $cat, 'tienda\data\Categoria');
                     $upload = new Multiupload($class == 'color' ? 'img' : 'files');
@@ -182,7 +191,8 @@ class AjaxController extends Controller {
         $obj = Reader::readObject(App::OBJECT[$class]);
         $dest = Reader::read('dest');
         $cat = Reader::read('cat');
-        
+        // echo $obj->getTipo();
+        // exit();
         switch ($class) {
             case 'usuario':
                 $obj->setClave(Util::encriptar($obj->getClave()));
@@ -202,12 +212,15 @@ class AjaxController extends Controller {
         $result = 0;
         if ($obj !== null) {
             $result = $this->getModel()->create($obj);
+            // echo $result;
+            // exit();
             $result =  $result === 1 && $obj->getId() > 0 ? 1 : 0;
             $uploadResult = 0;
             
             if ($class == 'usuario' && $result === 1) {
                 $mail = Mail::sendActivation($obj);
             } else if ($class == 'articulo' && $result === 1) {
+               
                 $this->getModel()->addDestinatarios($obj, $dest, 'tienda\data\Destinatario');
                 $this->getModel()->addCategories($obj, $cat, 'tienda\data\Categoria');
                 $upload = new Multiupload($class == 'color' ? 'img' : 'files');

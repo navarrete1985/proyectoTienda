@@ -37,6 +37,24 @@
                                 <span class="fa fa-search"></span>
                             </button>
                         </form>
+                        <div>
+                        	<h1>Categorias</h1>
+                         {% for item in allcategories%}
+	                         
+					            <a href="#" class="onClickLista" data-pagina='1' data-lista='{{item.nombre}}'>{{item.nombre}}</a>
+					            <!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->
+					        
+                        {% endfor %}
+                        </div>
+                        <div>
+                        	<h1>Destinatarios</h1>
+                         {% for item in alldestinatarios%}
+	                         
+					            <a href="#" class="onClickLista" data-pagina='1' data-lista='{{item.nombre}}'>{{item.nombre}}</a>
+					            <!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->
+					        
+                        {% endfor %}
+                        </div>
                     </aside>
 		        </div>
    		 	</div>

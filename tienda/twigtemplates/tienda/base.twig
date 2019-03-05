@@ -95,7 +95,7 @@
 		<!-- Menu end-->
 		<!-- Header (menu header)-->
 		<header class="header">
-			<div class="container">
+			<div class="container container-nav">
 				<div class="inner-header">
 					<a class="inner-brand" href="../index.html">
 						{% block logo %}
@@ -104,13 +104,13 @@
 						{% endblock %}
 					</a>
 				</div>
-				<div class="header-nav-toogle">
-					<a class="show-menu-btn" href="#">
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
-				</div>
+				{#<div class="header-nav-toogle">#}
+				{#	<a class="show-menu-btn" href="#">#}
+				{#		<span></span>#}
+				{#		<span></span>#}
+				{#		<span></span>#}
+				{#	</a>#}
+				{#</div>#}
 				<div class="inner-navigation">
 					<ul id="menu-additional-menu" class="">
 						<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
@@ -152,18 +152,61 @@
 							<a  href="/tienda/login/dologout?redirect=main" class="fas fa-sign-out-alt fa-2x my-menu-ico"></a>
 						</li>
 						{% endif %}
+						{#<li id="menu-item-313" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-313">#}
+						{#	<a  href="/search" class="fas fa-search fa-2x my-menu-ico"></a>#}
+						{#</li>#}
 						<li id="menu-item-313" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
-							<a  href="/search" class="fas fa-search fa-2x my-menu-ico"></a>
+							<a href="#" id="cart">
+								<i class="fa fa-shopping-cart"></i> Cart 
+								<span class="badge">10</span>
+							</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</header>
 		<!-- Header end-->
+		{#----------Start cart--------------#}
+		<div class="container-cart hidden">
+		  <div class="shopping-cart visible">
+		    <div class="shopping-cart-header">
+		      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">10</span>
+		      <div class="shopping-cart-total">
+		        <span class="lighter-text">Total:</span>
+		        <span class="main-color-text" id='cart-total'>$2,229.97</span>
+		      </div>
+		    </div> <!--end shopping-cart-header -->
+		
+		    <ul class="shopping-cart-items">
+		      <li class="clearfix" data-id='id'>
+		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
+		        <span class="item-name">Sony DSC-RX100M III</span>
+		        <span class="item-price">$849.99</span>
+		        <span class="item-quantity">Quantity: </span> <span class='item-quantity-value'>01</span>
+		      </li>
+		
+		      <li class="clearfix">
+		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+		        <span class="item-name">KS Automatic Mechanic...</span>
+		        <span class="item-price">$1,249.99</span>
+		        <span class="item-quantity">Quantity: </span><span class='item-quantity-value'>01</span>
+		      </li>
+		
+		      <li class="clearfix">
+		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
+		        <span class="item-name">Kindle, 6" Glare-Free To...</span>
+		        <span class="item-price">$129.99</span>
+		        <span class="item-quantity">Quantity: </span><span class='item-quantity-value'>01</span>
+		      </li>
+		    </ul>
+		
+		    <a href="#" class="btn custom-btn w-100">Checkout</a>
+		  </div> <!--end shopping-cart -->
+		</div> <!--end container -->
+		{#----------End cart----------------#}
 		{#------------BLOQUE DE CONTENIDO PARA LA PÁGINA-------------------#}
 		{% block content %}
 		{% endblock %}
-		
 		<footer class="footer">
 			<div class="container">
 				<div class="row">
@@ -212,9 +255,11 @@
 		<script type='text/javascript' src='{{twigFolder}}/src/js/backgroundf718.js?ver=4.7.12'></script>
 		<script type='text/javascript' src='{{twigFolder}}/src/js/background.initf718.js?ver=4.7.12'></script>
 		<script type='text/javascript' src='{{twigFolder}}/src/js/wp-embed.minf718.js?ver=4.7.12'></script>
-		<script src="{{twigFolder}}/src/js/glightbox.min.js" defer></script>
-		<script src="{{twigFolder}}/src/js/script2.js" defer></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="twigtemplates/admintemplate/assets/scripts/tools.js"></script>
+		<script type='text/javascript' src='{{twigFolder}}/src/js/cart.js' defer></script>
+		<script src="{{twigFolder}}/src/js/glightbox.min.js" defer></script>
+		<script src="{{twigFolder}}/src/js/script2.js" defer></script>
 	</body>
 </html>
+{#https://cartjs.org/pages/guide#}
