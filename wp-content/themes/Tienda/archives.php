@@ -90,7 +90,7 @@
 		                            'orderby' => 'postcount',
 		                            'order' => 'ASC',
 		                            'optioncount' => true, 
-		                            'hide_empty' => false,
+		                            'hide_empty' => true,
 		                            'echo' => 0
 		                        );
 		                    $autores = $before1 . 'Autores' . $before2 . wp_list_authors($args);

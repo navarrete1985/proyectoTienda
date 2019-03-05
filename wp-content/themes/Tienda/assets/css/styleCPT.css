@@ -1,7 +1,44 @@
-#articulos_meta {
-    background-color: grey;
+/******************************* BACK-END *************************************/
+.titulo {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #c39d6d;
 }
 
-.ui-sortable-handle {
-    background-color: grey;
+#articulos_meta .hndle {
+    background-color: #E6E6E6;
+    text-align: center;
 }
+    #articulos_meta .hndle > span {
+        font-size: 1.5em;
+    }
+
+#row-marca,
+#row-destinatario,
+#row-coleccion {
+    display: flex;
+    align-items: center;
+    padding: 3vh 30%;
+    border-bottom: 0.4px solid  #BDBDBD;
+}
+    #row-marca > div {
+        margin: 2vh 0;
+        margin-right: 2vw;
+    }
+        #row-marca > div > label {
+
+        }
+    
+
+    #row-destinatario > div {
+        display: flex;
+    }
+        #row-destinatario > div > span {
+            margin-right: 1vw;
+        }
+
+/******************************* CONTENT-ARTICULOS ****************************/
+.portfolio-caption:hover {
+    opacity: 1;
+    
+} 

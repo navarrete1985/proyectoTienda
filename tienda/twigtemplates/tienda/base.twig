@@ -28,6 +28,7 @@
 		<link rel='stylesheet' id='fw-shortcode-section-background-video-css'  href='{{twigFolder}}/src/css/backgroundf718.css?ver=4.7.12' type='text/css' media='all' />
 		<link rel='stylesheet' id='fw-shortcode-section-css'  href='{{twigFolder}}/src/css/stylesf718.css?ver=4.7.12' type='text/css' media='all' />
 		<link rel='stylesheet' id='additional-styles-css'  href='{{twigFolder}}/src/css/mystyle.css' type='text/css'/>
+		<link rel='stylesheet' id='additional-styles-css'  href='{{twigFolder}}/src/css/glightbox.min.css' type='text/css'/>
 		<script type='text/javascript' src='{{twigFolder}}/src/js/jqueryb8ff.js?ver=1.12.4'></script>
 		<script type='text/javascript' src='{{twigFolder}}/src/js/jquery-migrate.min330a.js?ver=1.4.1'></script>
 		<link rel="icon" href="{{twigFolder}}/src/images/favicon.ico" sizes="32x32" />
@@ -112,47 +113,47 @@
 				</div>
 				<div class="inner-navigation">
 					<ul id="menu-additional-menu" class="">
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+						<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
 							<a href="/"><span class="">Inicio</span></a>
 						</li>
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+						<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
 							<a href="/blog"><span class="">Blog</span></a>
 						</li>
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+						<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
 							<a href="/about"><span class="">La empresa</span></a>
 						</li>
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+						<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
 							<a href="/contact"><span class="">Contacto</span></a>
 						</li>
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+						<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
 							<a href="/archives"><span class="">Archivos</span></a>
 						</li>
 						{% block nav %}
-							<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+							<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
 								<a href="#"><span class="is_active">Tienda</span></a>
 							</li>
 							{% if user.activo == 1 %}
-							<li id="menu-item-316" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+							<li id="menu-item-316" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
 								<a href="/tienda/pedidos">Mis Pedidos</a>
 							</li>
 							{% endif %}
 						{% endblock %}
 						{% if user.rol == 1 %}
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+						<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
 							<a href="/tienda/admin"><span class="">Administración</span></a>
 						</li>
 						{% endif %}
 						{% if user.activo != 1 %}
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
-							<a  href="/tienda/login" class="far fa-user fa-2x"></a>
+						<li id="menu-item-313" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+							<a  href="/tienda/login" class="far fa-user fa-2x my-menu-ico"></a>
 						</li>
 						{% else %}
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
-							<a  href="/tienda/login/dologout?redirect=main" class="fas fa-sign-out-alt fa-2x"></a>
+						<li id="menu-item-313" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+							<a  href="/tienda/login/dologout?redirect=main" class="fas fa-sign-out-alt fa-2x my-menu-ico"></a>
 						</li>
 						{% endif %}
-						<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
-							<a  href="/search" class="fas fa-search fa-2x"></a>
+						<li id="menu-item-313" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+							<a  href="/search" class="fas fa-search fa-2x my-menu-ico"></a>
 						</li>
 					</ul>
 				</div>
@@ -191,13 +192,12 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<p class="copyright font-alt">2017 <a target="_blank" href="../index.html">Vortex</a>. All Rights Reserved. Design with love by <a target="_blank" href="http://2the.me/">2Theme</a>.</p>
+						<p class="copyright font-alt">2019 <a target="_blank" href="../index.html">Zapatería Minelli</a>. Todos los derechos reservados</a>.</p>
 					</div>
 				</div>
 			</div>
 		</footer>		
 		</div>{#-------Div del cierre del wrapper-----------------#}
-
 		<script type='text/javascript' src='{{twigFolder}}/src/js/jquery.form.mind03d.js?ver=3.51.0-2014.06.20'></script>
 		<script type='text/javascript' src='{{twigFolder}}/src/js/scripts4906.js?ver=4.7'></script>
 		<script type='text/javascript' src='{{twigFolder}}/src/js/cf7-scriptsf718.js?ver=4.7.12'></script>
@@ -212,6 +212,7 @@
 		<script type='text/javascript' src='{{twigFolder}}/src/js/backgroundf718.js?ver=4.7.12'></script>
 		<script type='text/javascript' src='{{twigFolder}}/src/js/background.initf718.js?ver=4.7.12'></script>
 		<script type='text/javascript' src='{{twigFolder}}/src/js/wp-embed.minf718.js?ver=4.7.12'></script>
+		<script src="{{twigFolder}}/src/js/glightbox.min.js" defer></script>
 		<script src="{{twigFolder}}/src/js/script2.js" defer></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="twigtemplates/admintemplate/assets/scripts/tools.js"></script>

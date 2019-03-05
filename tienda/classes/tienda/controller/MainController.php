@@ -32,6 +32,7 @@ class MainController extends Controller {
         $this->getModel()->set('item', $product);
         $this->getModel()->set('categorias', $this->getModel()->getElementsArray($product, 'getCategoria'));
         $this->getModel()->set('destinatarios', $this->getModel()->getElementsArray($product, 'getDestinatario'));
+        $this->getModel()->set('colores', $this->getModel()->getElementsArray($product, 'getColore'));
     }
     
      function listarZapato() {

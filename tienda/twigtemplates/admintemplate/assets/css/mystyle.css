@@ -2,6 +2,14 @@
     fill: white;
 }
 
+.navbar-default .brand {
+    padding: 22px 39px !important;
+}
+
+.logo {
+    width: 95px;    
+}
+
 .auth-box {
     height: auto;
     margin-top: 64px;

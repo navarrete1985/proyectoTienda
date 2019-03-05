@@ -1,5 +1,7 @@
 (function() {
-    
+    var lightboxDescription = GLightbox({
+        selector: 'gallery'
+    });
     let genericAjax = new GenericAjax();
     
     var orden = 'a.marca';

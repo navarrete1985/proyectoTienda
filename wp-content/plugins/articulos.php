@@ -67,7 +67,8 @@
    function add_cat_panels() {
         register_taxonomy_for_object_type('category','minelli_articulos');
         register_taxonomy_for_object_type('post_tag','minelli_articulos');
-            
+        wp_enqueue_style('atributos_style', get_template_directory_uri() .'/assets/css/styleCPT.css', __FILE__);
+/*        wp_enqueue_script('bootstrap.minf718', get_template_directory_uri() . '/assets/wp-content/themes/vortex/assets/bootstrap/js/bootstrap.minf718.js', __FILE__,array('jquery'),null,false);*/
     };
     add_action('init','add_cat_panels');
  
@@ -95,11 +96,10 @@
       /*==============   Meta Marca  y Meta Modelo  ==================================================================*/        
         $value_marca = get_post_meta($post -> ID, 'marca', true);
         $value_modelo = get_post_meta($post -> ID, 'modelo', true);
-        
-        ?> 
-        <div class="row">
-            <div id="marca_box">
-                <label for="marca">Marca </label>
+?> 
+        <div id="row-marca">
+            <div id="marca_box" class="col-sm-6">
+                <label for="marca" class="titulo">Marca </label>
                 <select id="marca" name="marca">
                     <option value="0"<?php selected($value_marca,'0'); ?>>Selecciona una marca</option>
                     <option value="Art"<?php selected($value_marca,'Art');?>>Art</option>
@@ -111,49 +111,40 @@
             		<option value="Pedro Miralles"<?php selected($value_marca,'Pedro Miralles');?>>Pedro Miralles</option>
                 </select>
             </div>
-            <div id="modelo_box">
-                <label for="modelo">Modelo</label>
+            <div id="modelo_box" class="col-sm-6">
+                <label for="modelo" class="titulo">Modelo</label>
                 <input type="text" name="modelo" value="<?php echo $value_modelo; ?>">
             </div>
         </div>
-        <?php
+<?php
  
     /*==============   Meta Destinatario, Meta Talla   ===============================================*/        
         $value_destinatario = get_post_meta($post -> ID, 'destinatario', true);
         $value_talla = get_post_meta($post -> ID, 'talla', true);
-        ?> 
-        <div class="row">
+?> 
+        <div id="row-destinatario">
             <div id="destinatario_box">        
-                <label for="destinatario">Destinatario</label><br>    
-        		<input type="radio" name="destinatario" value="Mujer" <?php if ($value_destinatario == 'Mujer') {echo 'checked';};?>>Mujer<br>
-        		<input type="radio" name="destinatario" value="Hombre" <?php if ($value_destinatario == 'Hombre') {echo 'checked';};?>>Hombre<br>
-        		<input type="radio" name="destinatario" value="Niño" <?php if ($value_destinatario == 'Niño') {echo 'checked';};?>>Niño<br>
+                <span class="titulo">Destinatario</span>
+                <div>
+            		<input type="radio" name="destinatario" value="Mujer" <?php if ($value_destinatario == 'Mujer') {echo 'checked';};?>>Mujer<br>
+            		<input type="radio" name="destinatario" value="Hombre" <?php if ($value_destinatario == 'Hombre') {echo 'checked';};?>>Hombre<br>
+            		<input type="radio" name="destinatario" value="Niño" <?php if ($value_destinatario == 'Niño') {echo 'checked';};?>>Niño<br>
+                </div>
     		</div>
-    		
-            <div id="talla">
-                <label for="talla">Talla</label>
-                <input type="text" name="talla" value="<?php echo $value_talla; ?>">
-            </div>    		
-        </div>
-        <?php
+    	</div>	
+<?php
 
-    /*==============   Meta Precio, Meta Color   ===============================================*/        
-        $value_pvp = get_post_meta($post -> ID, 'pvp', true);
-        $value_color = get_post_meta($post -> ID, 'color', true);
-        ?> 
-        <div class="row">
-            <div id="pvp">
-                <label for="pvp">P.V.P.</label>
-                <input type="text" name="pvp" value="<?php echo $value_pvp; ?>">
-            </div> 
-    		
-            <div id="color">
-                <label for="talla">Color </label>
-                <input type="text" name="color" value="<?php echo $value_color; ?>">
-            </div>    		
+    /*==============   Meta Colección  ===============================================================*/        
+        $value_coleccion = get_post_meta($post -> ID, 'coleccion', true);  
+?>
+        <div id="row-coleccion">
+            <div id="coleccion_box" class="col-sm-6">
+                <label for="coleccion" class="titulo">Colección</label>
+                <input type="text" name="coleccion" value="<?php echo $value_coleccion; ?>">
+            </div>            
         </div>
-        <?php
-    } 
+<?php
+    }
 
 /***********************  Guardar los datos de los campos   ******************************/
         function save_metabox($post_id) {
@@ -178,19 +169,12 @@
             $value_marca = sanitize_text_field( $_POST['marca'] ); 
             $value_modelo = sanitize_text_field( $_POST['modelo'] );
             $value_destinatario = sanitize_text_field( $_POST['destinatario'] );  
-            $value_talla = sanitize_text_field( $_POST['talla'] );            
-            $value_pvp = sanitize_text_field( $_POST['pvp'] );
-            $value_color = sanitize_text_field( $_POST['color'] );   
-            
+
             update_post_meta( $post_id, 'operacion', $value_operacion);
             update_post_meta( $post_id, 'marca',$value_marca);
             update_post_meta( $post_id, 'modelo', $value_modelo);
             update_post_meta( $post_id, 'destinatario', $value_destinatario);
-            update_post_meta( $post_id, 'talla', $value_talla );
-            update_post_meta( $post_id, 'pvp', $value_pvp );
-            update_post_meta( $post_id, 'color', $value_color);           
-        
         };
         add_action('save_post', 'save_metabox');
-
-?>      
+        
+?>   

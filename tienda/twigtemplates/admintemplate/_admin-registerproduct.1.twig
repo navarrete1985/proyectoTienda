@@ -1,8 +1,8 @@
 {% extends '_base.twig' %}
 {% block adminregister %}
 		{% if edit %}
-			<input type='hidden' id='editar-updateArticulo'>
-			<input type="hidden" class="form-control" id="idArticulo"  value="{{articulo.id}}"   >
+			<input type='hidden' id='editar-update'  data-editype="articulo">
+			
 		{% endif %}
 		<!-- MAIN -->
 		<div class="main">
@@ -22,9 +22,10 @@
 									</div>
 								</div>
 								<div class='panel-body'>
+									<input type="hidden" class="form-control" name='id' id="id-edit"  value="{{articulo.id}}"   >
 									<div class="form-group">
 										<label for="signup-referencia" class="control-label title">Referencia</label>
-										<input type="text" class="form-control" value="{{articulo.referencia}}" id="signup-referencia" ajax-callBack placeholder="Introduzca referencia" name='referencia'>
+										<input type="text" class="form-control" id="referencia" value="{{articulo.referencia}}" id="signup-referencia" ajax-callBack placeholder="Introduzca referencia" name='referencia'>
 									</div>
 									<div class="form-group">
 										<label for="signup-marca" class="control-label title">Marca</label>
@@ -270,11 +271,11 @@
 									</p>
 									<div class='gallery' id='show-gallery'>
 										{% for image in images %}
-		                                    <li>
-		                                        <a href="../project/the-deep-surface/index.html">
-		                                        	<img width="150" height="150" src="{{image}}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />
-		                                    	</a>
-		                                    </li>
+
+		        
+		                                        	<div style="background-image: url('{{image}}');" class="image container-flex-column justify-content-center align-items-center image-preview"><a href="#" class="danger delete-image-gallery borrar_img_directory" data-element="{{file[loop.index]}}"><i class="fas fa-trash-alt"></i></a></div>
+		                                        	{#<img width="150" height="150" src="{{image}}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />#}
+		                                    
                                 		{% endfor %}
 									</div>
 								</div>

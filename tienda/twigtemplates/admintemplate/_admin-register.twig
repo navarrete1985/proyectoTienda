@@ -1,7 +1,7 @@
 {% extends '_base.twig' %}
 {% block adminregister %}
 		{% if edit %}
-			<input type='hidden' id='editar-update'>
+			<input type='hidden' id='editar-update' data-editype="usuario">
 			<input type="hidden" class="form-control" id="id"  value="{{user.id}}"   >
 		{% endif %}
 		<!-- MAIN -->

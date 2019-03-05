@@ -7,7 +7,9 @@
         <div class="container">
             <div class="inner-header">
                 <a class="inner-brand" href="../index.html">
-			<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" /><img class="brand-light" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" /></a>
+					<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli.png';?>" style="max-height: 35px;" />
+					<img class="brand-light" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli_B.png';?>" style="max-height: 35px;" />
+			    </a>
         </div>
 <?php
         get_template_part('templates/nav','front');
@@ -29,9 +31,14 @@
                         <h1 class="h3 font-alt"><?php the_title(); ?></h1>
                         <ul class="post-meta font-alt">
                             <li><span><?php echo get_the_date('d M y'); ?></span></li>
-                            <li><a href="../category/design/index.html" rel="category tag">Design</a> , <a href="../category/sport/index.html" rel="category tag">Sport</a></li>
-                            <li><a href="#comments">3 Comments</a></li>
+                            <li><a href="#"><?php the_author_posts_link(); ?></a></li>
+                            <li><?php comments_popup_link('No hay comentarios', 'Un comentario', '% comentarios', 'comments-link', 'Los comentarios están cerrados');?></li>
+                            <li><?php echo num_visits($post -> ID); ?></li>
                         </ul>
+                        <div>
+                            <p class="post-meta font-alt">Categorias:</p>
+                            <?php the_category(' &bull; '); ?>                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,13 +51,6 @@
                     <div class="col-sm-8">
 <!-- Post-->
                         <article id="post-15" class="post-15 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-sport tag-corporate tag-lifestyle tag-music tag-news tag-travel">
-                            <div class="row">
-                                <div class="col-sm-12 bloqueflex-between">
-                                    <h4 class="comments-title font-alt"><?php echo num_visits($post -> ID); ?></h4>   
-                                    <h4 class="comments-title font-alt"><?php comments_popup_link('No hay comentarios', 'Un comentario', '% comentarios', 'comments-link', 'Los comentarios están cerrados') ;?></h4>
-
-                                </div>    
-                            </div>
                             <div class="post-content">
                                 <?php the_content(); ?>
                             </div>
@@ -59,7 +59,6 @@
                                 
 <!-- Comments and comment form-->
                         <div id="comments" class="comments-area">
-                        <!--    <h4 class="comments-title font-alt"><?php /* comments_popup_link('No hay comentarios', 'Un comentario', '% comentarios', 'comments-link', 'Los comentarios están cerrados')*/ ;?></h4> -->
                             <?php comments_template(); ?>
                             <div id="mensaje">
                                 <p id="mensaje-rgpd">Debes aceptar la política de privacidad para publicar el comentario</p>

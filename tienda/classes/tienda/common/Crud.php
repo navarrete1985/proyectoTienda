@@ -84,4 +84,21 @@ trait Crud {
         return $item;
     }
     
+    function deleteTool($clase, array $data = ['id' => '']) {
+        $item = $this->gestor->getReference($this->prefix . $clase, $data);
+        $items = $item->getArticulos();
+        foreach ($items as $element) {
+            $this->gestor->remove($element);
+        }
+        if ($clase === 'Color') {
+            $items = $item->getDetalles();
+            foreach ($items as $element) {
+                $this->gestor->remove($element);
+            }   
+        }
+        $this->gestor->remove($item);
+        $this->gestor->flush();
+        return $item;
+    }
+    
 }

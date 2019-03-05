@@ -188,11 +188,28 @@
     //Objeto para sacar los feedbacks
     let message = new Message();
     let files = null;
+    let typedit = null;
     
     if ($('#add-img-gallery').length > 0) {
         files = new Files('#img-gallery', '#show-gallery', '#add-img-gallery');
     }
     
+    $('.borrar_img_directory').on('click' , event => {
+        event.preventDefault();
+        padre =  $(event.currentTarget).parent();
+        imgBorrar = event.currentTarget.getAttribute('data-element');
+        idimg = document.getElementById('id-edit').value;
+        
+        genericAjax.request(null, 'ajax/borrarImgDirectory', { 'imgBorrar':imgBorrar, 'idimg' : idimg}, 'get', function(json) {
+                    if(json.resultado == true){
+                        alert("borrado con exito")
+                        padre.remove();
+                    }else{
+                        alert("no se ha borrado bro")
+                    }
+                    
+                });
+    })
     //Destapar clave
     $('#form-container .password-container a').on('click', event => {
         event.preventDefault();
@@ -215,7 +232,12 @@
     })
     
     var editar = document.getElementById("editar-update");
+    
     if (editar !== null) {
+         typedit = editar.getAttribute('data-editype');   
+    }
+    
+    if (typedit !== null && typedit == 'usuario' && editar !== null) {
         $('#signup-password').attr('data-empty', true);
     }
     
@@ -229,9 +251,11 @@
         })
         
         //valores de alias y correo en caso de que editemos
-        if (editar !== null) {
+        if (typedit == 'usuario' && editar !== null) {
             var alias = document.getElementById("signup-alias").value;
             var correo = document.getElementById("signup-email").value;   
+        }else{
+            var referencia = document.getElementById("referencia").value;
         }
         
         $('.submit').on('click', event => {
@@ -286,12 +310,16 @@
                 value: node.value.trim(),
             }
             
-            if (editar !== undefined && editar !== null) {
+            
+            
+            if (editar !== undefined && editar !== null && typedit == 'usuario' ) {
                 if (node.type === 'email') {
                     data.valoranterior = correo;
                 }else {
                     data.valoranterior = alias;
                 }    
+            }else if( editar !== undefined && editar !== null && typedit == 'articulo'){
+                data.valoranterior = referencia;
             }
             
             if (data.value.length > 0) {

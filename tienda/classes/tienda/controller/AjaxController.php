@@ -85,11 +85,19 @@ class AjaxController extends Controller {
         $this->getModel()->delete('Usuario',['id' => $id]);
     }
     
+    function borrarImgDirectory(){
+        $id = Reader::read('idimg');
+        $img = Reader::read('imgBorrar');
+        $folder = './resources/images/articulos/id_' . $id .'/' . $img;
+        $resultado = unlink($folder);
+        $this->getModel()->set('resultado',$resultado);
+    }
+    
     function deletetools() {
         $item = null;
         $class = ucfirst(strtolower(Reader::read('class')));
         $id = Reader::read('id');
-        $item = $this->getModel()->delete($class, ['id' => $id]);
+        $item = $this->getModel()->deleteTool($class, ['id' => $id]);
         $this->getModel()->set('result', ($item === null || $item->getId() === null || $item->getId() === 0) ? '1' : '0');
     }
     
@@ -116,6 +124,10 @@ class AjaxController extends Controller {
     function updatedata(){
         $class = Reader::read('class');
         $id = Reader::read('id');
+        // $id = Util::varDump($_POST);
+        // $id = Util::varDump($_GET);
+        
+
         $result = 0;
         if ($class !== null && $id !== null) {
             $class = trim($class);
@@ -130,15 +142,38 @@ class AjaxController extends Controller {
                     $obj->setActivo($obj->getActivo() === 'on' ? 1 : 0);
                     $obj->setRol($obj->getRol() === 'on' ? 1 : 0);
                     break;
+                case 'articulo':
+                    if (isset($_FILES['img']) && $_FILES['img']['name'] !== '') {
+                        $blob = Util::getBlobImage(file_get_contents($_FILES['img']['tmp_name']));
+                        $obj->setImg($blob);
+                    }
+                    $obj->setTipo(Reader::read('tipo') === '1' ? 1 : 0);
+                    break;
             }
             
             if ($obj !== null) {
                 $this->getModel()->update($obj);
                 $result = $obj->getId() > 0 ? 1 : 0;
+                $uploadResult = 0;
+                
+                
+                if ($class == 'articulo' && $result === 1) {
+                    echo Util::varDump($obj);
+                    exit();
+                    $this->getModel()->addDestinatarios($obj, $dest, 'tienda\data\Destinatario');
+                    $this->getModel()->addCategories($obj, $cat, 'tienda\data\Categoria');
+                    $upload = new Multiupload($class == 'color' ? 'img' : 'files');
+                    $status = $upload->setPolicy(Multiupload::POLICITY_OVERWRITE)
+                            ->appendTarget($class == 'color' ? 'colores' : 'articulos/' . 'id_' . $obj->getId() . '/');
+                    if($status) {
+                        $uploadResult = $upload->upload();
+                    }
+                }
+                
             }   
         }
-        
-        $this->getModel()->set('result', $result);
+        $this->getModel()->add(['result' => $result, 'files_uploaded' => $uploadResult, 'id' => $obj !== null && $result === 1 ? $obj->getId() : '-1']);
+        // $this->getModel()->set('result', $result);
     }
     
     function adddata() {

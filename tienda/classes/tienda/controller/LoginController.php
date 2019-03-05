@@ -72,8 +72,7 @@ class LoginController extends Controller {
             if($usuario !== null && $user->getActivo() && $resultado) {
                 $user->setclave('');
                 $this->getSesion()->login($user);
-                $ruta = $user->getRol() == 1 ? 'admin' : 'index';
-                $this->sendRedirect($ruta . '/main?op=login&resultado=1');
+                $this->sendRedirect('index/main?op=login&resultado=1');
             }
         }
         $this->sendRedirect('login/main?op=login&resultado=0');
@@ -85,7 +84,7 @@ class LoginController extends Controller {
         if ($redirect === 'main') {
             $this->sendRedirect();
         }
-        $this->sendRedirect('login');
+        $this->sendRedirect('tienda/main');
     }
     
     function checkIsLogued() {

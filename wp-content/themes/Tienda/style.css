@@ -35,7 +35,7 @@
 @import url("assets/wp-content/uploads/2017/05/favicon.png");
 
 
-/* ----------------------   ESPECÍFICOS DE about.html ----------------------------------------------------------- */
+/* ----------------------   ESPECÍFICOS DE about.html  y contact.html---------------------------------------------- */
 
 @import url('assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/css/backgroundf718.css?ver=4.7.12');
 @import url('assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/css/stylesf718.css?ver=4.7.12');
@@ -53,7 +53,7 @@
 
 /* ----------------------   ESPECÍFICOS DE contact.html ----------------------------------------------------------- */
 
-@import url('assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/css/backgroundf718.css?ver=4.7.12');
+/*@import url('assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/css/backgroundf718.css?ver=4.7.12');
 @import url('assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/section/static/css/stylesf718.css?ver=4.7.12');
 @import url('assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/divider/static/css/stylesf718.css?ver=4.7.12');
 @import url('assets/wp-content/plugins/unyson/framework/static/libs/font-awesome/css/font-awesome.minbb98.css?ver=2.6.16');
@@ -62,7 +62,7 @@
 @import url('assets/wp-content/plugins/unyson/framework/static/libs/lnr/css/lnrbb98.css?ver=2.6.16');
 @import url('assets/wp-content/plugins/unyson/framework/static/libs/typcn/css/typcnbb98.css?ver=2.6.16');
 @import url('assets/wp-content/plugins/unyson/framework/static/libs/unycon/unyconbb98.css?ver=2.6.16');
-@import url('assets/wp-content/themes/vortex/assets/css/linea-iconsbb98.css?ver=2.6.16');
+@import url('assets/wp-content/themes/vortex/assets/css/linea-iconsbb98.css?ver=2.6.16');*/
 
 
 /* ----------------------   PLANTILLAS DE ESTILO PROPIAS  ------------------------------------------------- */
@@ -76,7 +76,6 @@
 @import url('assets/css/comments.css');
 @import url('assets/css/styleLogin.css');
 @import url('assets/css/stylePrivate.css');
-@import url('assets/css/styleCPT.css');
 
 /* ----------------------   MODIFICACION DE ESTILOS  -------------------------------------------------------- */
 

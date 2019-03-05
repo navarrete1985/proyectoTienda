@@ -8,6 +8,7 @@
                 <div class="col-sm-8">
                     <!-- Post-->
                     <article id="post-25" class="post-25 post type-post status-publish format-standard has-post-thumbnail hentry category-branding category-design category-printing tag-business tag-lifestyle tag-music tag-news tag-travel">
+                        
                         <div class="post-preview"><img width="825" height="825" src="data:image/jpg;base64, {{img}}" class="attachment-large size-large wp-post-image" alt="" sizes="(max-width: 825px) 100vw, 825px" /></div>
                         <div class="post-header">
                             <h1 class="post-title font-alt">{{item.modelo}}</h1>
@@ -46,7 +47,8 @@
                             <div class="widget-title font-alt">Categorias</div>
                             <ul>
                             {% for cat in categorias%}
-                                <li class="cat-item cat-item-3"><a title="We know what we’re good at, and we stick to it">{{cat.nombre}}</a>
+                                <li class="cat-item cat-item-3">
+                                    <a title="We know what we’re good at, and we stick to it">{{cat.nombre}}</a>
                                 </li>
                             {% endfor %}
                             </ul>
@@ -65,11 +67,36 @@
                             <ul>
                                 {% for image in images %}
                                     <li>
-                                        <a href="{{image}}">
+                                        <a href="{{image}}" class="gallery">
                                         	<img width="150" height="150" src="{{image}}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />
                                     	</a>
                                     </li>
                                 {% endfor %}
+                            </ul>
+                        </aside>
+                        <aside id="buy" class="widget widget_categories">
+                            <div class="widget-title font-alt">Comprar</div>
+                            <ul>
+                                <li>
+                                    <div>
+                                        <h4>Precio: <span class="price"> {{item.precio}}€</span></h4>    
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="">
+                                        <a href="#" class="btn custom-btn">Añadir a carrito</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    {% if colores %}
+                                        <div class="colours">
+                                            <h4>Colores: </h4>
+                                            {% for col in colores %}
+                                                <div class="item-colors"  title="{{col.nombre}}" style="background-color:{{col.imgsrc}}"></div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </li>
                             </ul>
                         </aside>
                     </div>

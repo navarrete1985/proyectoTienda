@@ -9,3 +9,55 @@
 .btnPagina {
     margin: 0px 4px !important;
 }
+
+.texto {
+    font-size: 1.25em;
+    font-family: 'Open Sans';
+}
+
+.btn.custom-btn {
+    background: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    border-radius: 2px!important;
+    padding: 7px 14px;
+    color: #111;
+}
+
+.btn.custom-btn:hover {
+    background: #e8e8e8;
+    border-color: #e8e8e8;
+    color: #333;
+}
+
+.price {
+    color: #777;
+    font-size: 14px;
+}
+
+.item-colors {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1310px) {
+    .texto, .my-menu-ico{
+        font-size: 1em;
+    }
+    
+    .texto > a {
+        padding-right: 0 !important;
+        padding-top: 30px !important;
+    }
+}
+
+@media screen and (max-width: 993px)  {
+    
+    #menu-additional-menu {
+        display: none !important;
+    }
+    
+}

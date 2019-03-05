@@ -85,7 +85,14 @@ class AdminController extends Controller {
         $this->getModel()->set('articulo', $articulo);
         $img = base64_encode(stream_get_contents($articulo->getImg()));
         $folder = './resources/images/articulos/id_' . $id;
-       
+         $imagenes = Util::getImagesUrls($folder);
+         $nombreimg = [];
+        foreach($imagenes as $image){
+            $partes = explode("/", $image);
+            $nombreimg [] = end($partes);
+        }
+
+        $this->getModel()->set('file', $nombreimg);
         $this->getModel()->set('img', $img);
         $this->getModel()->set('images', Util::getImagesUrls($folder));
         $categorias = $this->getModel()->getAll('Categoria');

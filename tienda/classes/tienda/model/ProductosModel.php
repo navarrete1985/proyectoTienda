@@ -48,20 +48,11 @@ class ProductosModel extends Model {
         $result = [];
         $all = $method . 's';
         $elements = $items->$all();
-        
+        $method = $method === 'getColore' ? 'getColor' : $method;
         foreach ($elements as $item) {
-            $result[] = $item->$method()->getUnset(['articulos']);
-        }
+            $result[] = $item->$method()->getUnset(['articulos', 'detalles']);
+        }    
         return $result;
     }
     
-    // function getDestinatariosArray($categories) {
-    //     $categoariasR = [];
-    //     $categoriasArticulo = $product->getCategorias();
-        
-    //     foreach ($categoriasArticulo as $categoria) {
-    //         $categoariasR[] = $categoria->getCategoria()->getUnset(['articulos']);
-    //     }
-    //     return $categoariasR;
-    // }
 }

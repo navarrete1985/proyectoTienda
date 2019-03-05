@@ -71,6 +71,11 @@ class Articulo {
      */
     private $img;
     
+    /**
+     * @Column(type="smallint", nullable=false, precision=2) 
+     */
+    private $stock;
+    
     /*
                 -OTRA POSIBILIDAD PARA NO CONTEMPLAR EL STOCK COMO ENTIDAD-
     num-desde
@@ -145,7 +150,7 @@ class Articulo {
     /*--------------------------------------RELACIONES CON OTRAS TABLAS--------------------------------------*/
     
     /** 
-     * @OneToMany(targetEntity="Color", mappedBy="articulo") 
+     * @OneToMany(targetEntity="ColorArticulo", mappedBy="articulo") 
     */
     private $colores;
     
@@ -179,6 +184,30 @@ class Articulo {
         $this->destinatarios = new \Doctrine\Common\Collections\ArrayCollection();
         $this->stocks = new \Doctrine\Common\Collections\ArrayCollection();
         $this->detalles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Set stock
+     *
+     * @param integer $stock
+     *
+     * @return Detalle
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * Get stock
+     *
+     * @return integer
+     */
+    public function getStock()
+    {
+        return $this->stock;
     }
 
     public function getImg() {
@@ -712,7 +741,7 @@ class Articulo {
      *
      * @return Articulo
      */
-    public function addColore(Color $colore)
+    public function addColore(ColorArticulo $colore)
     {
         $this->colores[] = $colore;
 
@@ -724,7 +753,7 @@ class Articulo {
      *
      * @param \Color $colore
      */
-    public function removeColore(Color $colore)
+    public function removeColore(ColorArticulo $colore)
     {
         $this->colores->removeElement($colore);
     }
