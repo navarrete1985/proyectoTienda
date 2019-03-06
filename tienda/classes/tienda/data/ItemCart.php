@@ -32,6 +32,10 @@ class ItemCart {
     function getPrecio() {
         return $this->precio;
     }
+    
+    function getImg() {
+        return $this->img;
+    }
 
     function setId($id) {
         $this->id = $id;
@@ -50,6 +54,11 @@ class ItemCart {
 
     function setPrecio($precio) {
         $this->precio = $precio;
+        return $this;
+    }
+    
+    function setImg($img) {
+        $this->img = $img;
         return $this;
     }
 }

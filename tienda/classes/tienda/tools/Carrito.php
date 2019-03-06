@@ -5,7 +5,7 @@ namespace tienda\tools;
 use tienda\data\ItemCart;
 
 class Carrito implements \Iterator {
-
+    
     private $contador = 0;
     private $items = [];
 
@@ -55,6 +55,10 @@ class Carrito implements \Iterator {
     
     function getItem($id) {
         return $this->items[$id];
+    }
+    
+    function getItems() {
+        return $this->items;
     }
     
     function current() {

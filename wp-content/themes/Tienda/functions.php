@@ -356,7 +356,7 @@
             return $numvisits . ' - ' . $sufix;
         }
 
-/************************ FUNCIONES PARA EL IDIOMA*****************************/
+/************************ FUNCIONES PARA EL IDIOMA ****************************/
     function set_my_locale($lang) {
         $lang = getLanguage();
         if ( 'en' == $lang ) {
@@ -378,3 +378,7 @@
         return $idioma;
     }
     
+    add_action('after_setup_theme','my_theme_setup');
+    function my_theme_setup() {
+        load_default_textdomain();
+    }
