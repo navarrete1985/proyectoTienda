@@ -20,7 +20,7 @@ class AjaxModel extends Model {
     use \tienda\common\CrudColor;
     use \tienda\common\CrudPedido;
 
-    function getDoctrineUsuarios($pagina = 1, $orden = 'nombre', $limit = 3) {
+    function getDoctrineUsuarios($pagina = 1, $orden = 'nombre', $limit = 6) {
          $dql = 'select c from tienda\data\Usuario c where c.nombre < :nombre 
         order by c.'. $orden .', c.nombre, c.correo, c.apellidos, c.alias,c.direccion,c.activo,c.rol';
         $query = $this->gestor->createQuery($dql)->setParameter('nombre', 'zz');
@@ -38,7 +38,7 @@ class AjaxModel extends Model {
         
     }
     
-    function getDoctrineZapatos($tipo,$pagina = 1, $orden = 'marca', $limit = 4) {
+    function getDoctrineZapatos($tipo,$pagina = 1, $orden = 'marca', $limit = 6) {
          $dql = 'select c from tienda\data\Articulo c where c.marca < :marca and c.tipo = :tipo
         order by c.'. $orden .', c.marca, c.modelo, c.precio, c.peso,c.referencia,c.coleccion';
         $query = $this->gestor->createQuery($dql)->setParameter('marca', 'zz')->setParameter('tipo', $tipo);
@@ -233,7 +233,7 @@ class AjaxModel extends Model {
     
     
     
-    function getDoctrineArticulos($tipo,$pagina = 1, $orden = 'marca', $filtro, $limit = 1) {
+    function getDoctrineArticulos($tipo,$pagina = 1, $orden = 'marca', $filtro, $limit = 6) {
 
         if($filtro !== null){
             $dql = 'select c from tienda\data\Articulo c where c.marca like :filtro

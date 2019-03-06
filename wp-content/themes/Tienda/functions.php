@@ -378,7 +378,7 @@
         return $idioma;
     }
     
-    add_action('after_setup_theme','my_theme_setup');
     function my_theme_setup() {
         load_default_textdomain();
     }
+    add_action('after_setup_theme','my_theme_setup');

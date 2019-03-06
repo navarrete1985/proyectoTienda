@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="module-title">
-                            <h2 class="font-alt">Servicios</h2>
+                            <h2 class="font-alt"><?php _e("Servicios"); ?></h2>
                         </div>
                     </div>
                 </div>
@@ -58,10 +58,10 @@
                                 <span class="icon icon-basic-clockwise"></span>
                             </div>
                             <div class="icon-box-title">
-                                <h5 class="font-alt">Envío en 24H</h5>
+                                <h5 class="font-alt"><?php _e("Envío en 24H"); ?></h5>
                             </div>
                             <div class="icon-box-content">
-                                <p class="justificado">Disponemos de servicio de envío en 24, de modo que podrá disfurar de su compra lo antes posible.</p>
+                                <p class="justificado"><?php _e("Disponemos de servicio de envío en 24, de modo que podrá disfurar de su compra lo antes posible."); ?></p>
                             </div>
                         </div>
                     </div>
@@ -73,10 +73,10 @@
                                 <span class="icon icon-basic-star"></span>
                             </div>
                             <div class="icon-box-title">
-                                <h5 class="font-alt">Devolución Gratuíta</h5>
+                                <h5 class="font-alt"><?php _e("Devolución Gratuíta"); ?></h5>
                             </div>
                             <div class="icon-box-content">
-                                <p class="justificado">Si no queda satisfecho podrá realizar la devolución de su artículo de forma totalmente gratuíta.</p>
+                                <p class="justificado"><?php _e("Si no queda satisfecho podrá realizar la devolución de su artículo de forma totalmente gratuíta."); ?></p>
 
                             </div>
                         </div>
@@ -89,10 +89,10 @@
                                 <span class="icon icon-basic-lock"></span>
                             </div>
                             <div class="icon-box-title">
-                                <h5 class="font-alt">Pago seguro</h5>
+                                <h5 class="font-alt"><?php _e("Pago seguro"); ?></h5>
                             </div>
                             <div class="icon-box-content">
-                                <p class="justificado">La realización de los pagos se realiza de forma que sea totalmente segura para todos nuestros clientes.</p>
+                                <p class="justificado"><?php _e("La realización de los pagos se realiza de forma que sea totalmente segura para todos nuestros clientes."); ?></p>
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                             <div class="counter-number">
                                 <div class="counter-timer" data-from="0" data-to="250">0</div>
                             </div>
-                            <div class="counter-title">Happy Clients</div>
+                            <div class="counter-title"><?php _e("Clientes felices"); ?></div>
                         </div>
                     </div>
 
@@ -143,7 +143,7 @@
                             <div class="counter-number">
                                 <div class="counter-timer" data-from="0" data-to="132">0</div>
                             </div>
-                            <div class="counter-title">Theme Users</div>
+                            <div class="counter-title"><?php _e("Usuarios del sitio"); ?></div>
                         </div>
                     </div>
 
@@ -152,7 +152,7 @@
                             <div class="counter-number">
                                 <div class="counter-timer" data-from="0" data-to="34">0</div>
                             </div>
-                            <div class="counter-title">Awards Won</div>
+                            <div class="counter-title"><?php _e("Premios ganados"); ?></div>
                         </div>
                     </div>
 
@@ -161,7 +161,7 @@
                             <div class="counter-number">
                                 <div class="counter-timer" data-from="0" data-to="340">0</div>
                             </div>
-                            <div class="counter-title">Total Downloads</div>
+                            <div class="counter-title"><?php _e("Descargas totales"); ?></div>
                         </div>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="module-title">
-                            <h2 class="font-alt">Nuestras marcas más populares</h2>
+                            <h2 class="font-alt"><?php _e("Zapatería"); ?>Nuestras marcas más populares</h2>
                         </div>
                     </div>
                 </div>
@@ -281,7 +281,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="module-title">
-                            <h2 class="font-alt">No te pierdas las últimas novedades</h2>
+                            <h2 class="font-alt"><?php _e("Zapatería"); ?>No te pierdas las últimas novedades</h2>
                         </div>
                     </div>
                 </div>
@@ -357,7 +357,7 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p>Estoy encantado. He realizado varios pedidos y sólo tuve que devolver uno, pero fue facilísimo y muy rápido. ¡¡¡Un equipo estupendo!!!</p>
+                                            <p><?php _e("Zapatería"); ?>Estoy encantado. He realizado varios pedidos y sólo tuve que devolver uno, pero fue facilísimo y muy rápido. ¡¡¡Un equipo estupendo!!!</p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">
@@ -371,7 +371,7 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p>Comprar está muy bien, es rápido en el envío y si no aciertas o no te gustan se devuelve rápida y cómodamente. La recomiendo.</p>
+                                            <p><?php _e("Zapatería"); ?>Comprar está muy bien, es rápido en el envío y si no aciertas o no te gustan se devuelve rápida y cómodamente. La recomiendo.</p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">
@@ -385,7 +385,7 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p>Me gusta por la variedad y la calidad de sus productos y eso hace que las personas se sientan más cómodas con lo que lucen.</p>
+                                            <p><?php _e("Zapatería"); ?>Me gusta por la variedad y la calidad de sus productos y eso hace que las personas se sientan más cómodas con lo que lucen.</p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">

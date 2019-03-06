@@ -10,7 +10,7 @@ class Cart {
            this.fade();
         });
         this.fade();
-        $('.container-cart').removeClass('hidden');
+        window.setTimeout(() => $('.container-cart').removeClass('hidden'), 200);
     }
     
     addItem(object) {
