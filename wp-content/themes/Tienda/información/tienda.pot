@@ -31,8 +31,17 @@ msgstr "Free return"
 msgid "Si no queda satisfecho podrá realizar la devolución de su artículo de forma totalmente gratuíta."
 msgstr "If you are not satisfied, you can return your article completely free of charge."
 
+msgid "Pago seguro"
+msgstr "Secure payment"
+
 msgid "La realización de los pagos se realiza de forma que sea totalmente segura para todos nuestros clientes."
-msgstr "If you are not satisfied, you can return your article completely free of charge."
+msgstr "The payment is made in a way that is totally safe for all our customers."
+
+msgid "15 Días de devolución"
+msgstr "15 Days of return"
+
+msgid "El cliente dispondrá de 15 días laborales para el cambio o devolución de cualquier artículo."
+msgstr "The client will have 15 working days to change or return any item."
 
 msgid "Clientes felices"
 msgstr "Happy Clients"
@@ -45,6 +54,21 @@ msgstr "Awards Won"
 
 msgid "Descargas totales"
 msgstr "Total Downloads"
+
+msgid "Novedades"
+msgstr "News"
+
+msgid "Hombre"
+msgstr "Man"
+
+msgid "Mujer"
+msgstr "Woman"
+
+msgid "Complementos"
+msgstr "Accessories"
+
+msgid "Niños"
+msgstr "Children"
 
 msgid "Nuestras marcas más populares"
 msgstr "Our most popular brands"
@@ -75,6 +99,84 @@ msgstr "Shop"
 
 msgid "Archivos"
 msgstr "Archives"
+
+msgid "Ver"
+msgstr "View"
+
+msgid "Leer más"
+msgstr "Read more"
+
+msgid "Fecha"
+msgstr "Date"
+
+msgid "Titulo"
+msgstr "Title"
+
+msgid "autor"
+msgstr "Author"
+
+msgid "Categoria"
+msgstr "Category"
+
+msgid "comentarios"
+msgstr "comments"
+
+msgid "Página no encontrada"
+msgstr "Page not found"
+
+msgid "Parece que no se encontró nada en esta ubicación. ¿Quieres intentar una búsqueda?"
+msgstr "It seems that nothing was found in this location. Do you want to try a search?"
+
+msgid "VOLVER"
+msgstr "BACK"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
 
 msgid ""
 msgstr ""

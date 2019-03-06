@@ -83,7 +83,10 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="">
+                                    <div class="add-to-cart">
+                                        <a href="#" class="btn custom-btn" id="btn-cart-minus" data-id='{{item.id}}'>-</a>
+                                        <input type='numeber' min="0" max="{{item.stock}}" value="0" class="input-quantity" id="quantity"/>
+                                        <a href="#" class="btn custom-btn" id="btn-cart-plus" data-id='{{item.id}}'>+</a>
                                         <a href="#" class="btn custom-btn btn-add-cart" data-id='{{item.id}}'>Añadir a carrito</a>
                                     </div>
                                 </li>

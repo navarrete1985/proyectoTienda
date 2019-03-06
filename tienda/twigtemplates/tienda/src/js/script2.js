@@ -33,6 +33,9 @@
     
     
     
+    
+    
+    
     $('.onClickLista2').on('click', function(event){
         event.preventDefault();
         data = $(event.currentTarget).attr('data-lista');
@@ -303,16 +306,6 @@
             </div>
         </div>
         `;
-        // <div class="containerDetalles">
-        //         <div><span class="spanDetalles"><i class="fas fa-file-alt comunDetalle"></i>Resumen :</span></div>
-        //         <div class="comundivDetalle">Subtotal : ${precioSin.toFixed(2)}</div>
-        //         <div class="comundivDetalle">Envío : 7.6</div>
-        //         <div class="comundivDetalle">Impuestos : ${Iva.toFixed(2)}</div>
-        //         <br>
-        //         <div class="comundivDetalle">Total : ${total}</div>
-        //     </div>
-        
-        
         
         console.log(listaitems)
 
@@ -329,6 +322,7 @@
     
     let cart = new Cart(".shopping-cart");
     $('.btn-add-cart').on('click', function(e) {
+        $('#quantity').val("0");
         e.preventDefault();
         let artId = $(this).attr('data-id');
         let artQuantity = $('#quantity').length > 0 ? $('#quantity').val() : 1;
@@ -339,6 +333,23 @@
             }
         })
     })
+    $('#btn-cart-minus').on('click', event => {
+        event.preventDefault();
+        $('#quantity').val((i, oldval) =>{
+            let min = $('#quantity').attr('min');
+            return --oldval <= min ? min : oldval;
+        });
+    });
+    
+    $('#btn-cart-plus').on('click', event => {
+        event.preventDefault();
+        $('#quantity').val((i, oldval) =>{
+            let max = $('#quantity').attr('max');
+            return ++oldval >= max ? max : oldval;
+        });
+    });
+    
+    $('#quantity').keydown(event => event.preventDefault());
     cart._refreshTotal();
     cart._refreshBadge();
     

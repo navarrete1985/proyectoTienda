@@ -1,0 +1,90 @@
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+
+msgid "¿TIENES DUDAS?"
+msgstr "DO YOU HAVE DOUBTS?"
+
+msgid "CONTACTA CON NOSOTROS"
+msgstr "CONTACT US"
+
+msgid "FORMULARIO DE CONTACTO"
+msgstr ""
+
+msgid "Desde aquí resolveremos todas las dudas que tengas sobre nuestro servicio de venta online."
+msgstr ""
+
+msgid "ESCRÍBENOS"
+msgstr ""
+
+msgid "Correo"
+msgstr ""
+
+msgid "Teléfono"
+msgstr ""
+
+msgid "NUESTRA UBICACIÓN"
+msgstr ""
+
+msgid "Zapatería Minelli "
+msgstr ""
+
+msgid "Avenida de la constitución Nº 25, CP 18014 
+Granada"
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""

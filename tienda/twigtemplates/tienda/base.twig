@@ -181,14 +181,14 @@
 		      {% for item in cart %}
 		      	<li class="clearfix" data-id="{{item.id}}">
 					<img width="70" src="data:image/jpg;base64, {{item.img}}" alt="item1" />
-					<span class="item-name">{{item.modelo}}</span>
+					<a href="tienda/item?id={{item.id}}"><span class="item-name">{{item.modelo}}</span></a>
 					<span class="item-price">{{item.precio}}</span>€
 					<span class="item-quantity">Quantity: </span><span class='item-quantity-value'>{{item.cantidad}}</span>
 				</li>
 		      {% endfor %}
 		    </ul>
 		
-		    <a href="#" class="btn custom-btn w-100">Checkout</a>
+		    <a href="main/checkOut"  class="btn custom-btn w-100">Checkout</a>
 		  </div> <!--end shopping-cart -->
 		</div> <!--end container -->
 		{#----------End cart----------------#}

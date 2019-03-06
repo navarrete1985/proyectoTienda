@@ -206,10 +206,41 @@
     width: 100%;
 }
 
+#btn-cart-minus, #btn-cart-plus, .btn-add-cart {
+  margin-top: -4px;
+}
+
+#quantity {
+  width: 40px;
+  text-align: center;
+  margin-right: 5px;
+  margin-top: 8px;
+}
+
+.add-to-cart {
+  margin-bottom: 8px;  
+}
+
 @media screen and (max-width: 993px)  {
     
     #menu-additional-menu {
         display: none !important;
+    }
+    
+}
+
+@media screen and (max-width: 991px)  {
+    
+    .btn-add-cart {
+        margin-top: 8px;
+    }
+    
+}
+
+@media screen and (max-width: 767px)  {
+    
+    .btn-add-cart {
+        margin-top: -4px;
     }
     
 }

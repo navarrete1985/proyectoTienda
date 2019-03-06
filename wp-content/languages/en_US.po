@@ -18,6 +18,75 @@ msgstr "Search"
 msgid "Zapatería Minelli"
 msgstr "Minelli shoe store"
 
+msgid "Servicios"
+msgstr "Services"
+
+msgid "Envío en 24H"
+msgstr "Shipping in 24H"
+
+msgid "Disponemos de servicio de envío en 24, de modo que podrá disfurar de su compra lo antes posible."
+msgstr "We have a delivery service in 24, so you can customize your purchase as soon as possible."
+
+msgid "Devolución Gratuíta"
+msgstr "Free return"
+
+msgid "Si no queda satisfecho podrá realizar la devolución de su artículo de forma totalmente gratuíta."
+msgstr "If you are not satisfied, you can return your article completely free of charge."
+
+msgid "Pago seguro"
+msgstr "Secure payment"
+
+msgid "La realización de los pagos se realiza de forma que sea totalmente segura para todos nuestros clientes."
+msgstr "The payment is made in a way that is totally safe for all our customers."
+
+msgid "15 Días de devolución"
+msgstr "15 Days of return"
+
+msgid "El cliente dispondrá de 15 días laborales para el cambio o devolución de cualquier artículo."
+msgstr "The client will have 15 working days to change or return any item."
+
+msgid "Clientes felices"
+msgstr "Happy Clients"
+
+msgid "Usuarios del sitio"
+msgstr "Theme Users"
+
+msgid "Premios ganados"
+msgstr "Awards Won"
+
+msgid "Descargas totales"
+msgstr "Total Downloads"
+
+msgid "Novedades"
+msgstr "News"
+
+msgid "Hombre"
+msgstr "Man"
+
+msgid "Mujer"
+msgstr "Woman"
+
+msgid "Complementos"
+msgstr "Accessories"
+
+msgid "Niños"
+msgstr "Children"
+
+msgid "Nuestras marcas más populares"
+msgstr "Our most popular brands"
+
+msgid "No te pierdas las últimas novedades"
+msgstr "Don't miss the latest news"
+
+msgid "Estoy encantado. He realizado varios pedidos y sólo tuve que devolver uno, pero fue facilísimo y muy rápido. ¡¡¡Un equipo estupendo!!!"
+msgstr "I'm delighted. I have placed several orders and I only had to return one, but it was very easy and very fast. A great team !!!"
+
+msgid "Comprar está muy bien, es rápido en el envío y si no aciertas o no te gustan se devuelve rápida y cómodamente. La recomiendo."
+msgstr "Buy is very good, it is fast in shipping and if you do not get it right or you do not like it, it is returned quickly and comfortably. I recommend it."
+
+msgid "Me gusta por la variedad y la calidad de sus productos y eso hace que las personas se sientan más cómodas con lo que lucen."
+msgstr "I like it because of the variety and quality of its products and that makes people feel more comfortable with what they look like."
+
 msgid "Inicio"
 msgstr "Home"
 
@@ -32,3 +101,24 @@ msgstr "Shop"
 
 msgid "Archivos"
 msgstr "Archives"
+
+msgid "Ver"
+msgstr "View"
+
+msgid "Leer más"
+msgstr "Read more"
+
+msgid "Fecha"
+msgstr "Date"
+
+msgid "Titulo"
+msgstr "Title"
+
+msgid "autor"
+msgstr "Author"
+
+msgid "Categoria"
+msgstr "Category"
+
+msgid "comentarios"
+msgstr "comments"

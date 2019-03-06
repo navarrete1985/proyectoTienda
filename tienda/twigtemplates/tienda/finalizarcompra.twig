@@ -1,0 +1,89 @@
+{% extends 'base.twig' %}
+{% block logo %}
+	<img class="brand-dark" src="{{twigFolder}}/src/images/minelli.png" style="max-height: 35px;" />
+	<img class="brand-light" src="{{twigFolder}}/src/images/minelli_B.png" style="max-height: 35px;" />
+{% endblock %}
+{% block nav %}
+	<li id="menu-item-313" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+		<a href="#"><span>Tienda</span></a>
+	</li>
+	{% if user.activo == 1 %}
+	<li id="menu-item-316" class="texto menu-item menu-item-type-post_type menu-item-object-page menu-item-313">
+		<a href="/tienda/pedidos"><span class="is_active">Mis Pedidos</span></a>
+	</li>
+	{% endif %}
+{% endblock %}
+{% block content %}
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Detalles pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+	<section class="module-header default-height parallax bg-dark bg-dark-30 bg-film" data-background="{{twigFolder}}/src/images/module-13.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="h3 font-alt">Tu compra</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="fw-page-builder-content">
+		<section class="module">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="module-title">
+							<h2 class="font-alt">Carrito</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<table class="table">
+                                <thead>
+                                	
+                                    <tr>
+                                    	<th scope="col" class="font-alt">Articulo</th>
+                                        <th scope="col" class="font-alt">Precio</th>
+                                        <th scope="col" class="font-alt">Cantidad</th>
+                                        <th scope="col" class="font-alt">Total</th>
+                                    </tr>
+                                   
+                                </thead>
+                                <tbody>
+                                	 {% for item in data.articulo%}
+						                <tr>
+						                  <td scope="row">{{item.id}}</td>
+						                  <td>{{item.numtarjeta}}</td>
+						                  <td>{{item.fechaexp.date}}</td>
+						                 <td><button class="detalles" data-idpedido='{{item.id}}' data-toggle="modal" data-target="#exampleModalLong">Detalles</button></td>
+						                </tr>
+						             {% endfor %}
+                                </tbody>
+                            </table>
+					
+					
+				</div>
+
+			</div>
+		</section>
+
+		
+	</div>
+{% endblock %}

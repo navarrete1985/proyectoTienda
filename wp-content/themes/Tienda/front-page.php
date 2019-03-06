@@ -36,8 +36,8 @@
                 </div>
             </div>
         </section>
-        <!--Servcios-->
 
+<!--Servcios-->
         <section class="module">
             <div class="container">
                 <div class="row">
@@ -104,10 +104,10 @@
                                 <span class="icon icon-basic-calendar"></span>
                             </div>
                             <div class="icon-box-title">
-                                <h5 class="font-alt">15 Días de devolución</h5>
+                                <h5 class="font-alt"><?php _e("15 Días de devolución"); ?></h5>
                             </div>
                             <div class="icon-box-content">
-                                <p class="justificado">El cliente dispondrá de 15 días laborales para el cambio o devolución de cualquier artículo</p>
+                                <p class="justificado"><?php _e("El cliente dispondrá de 15 días laborales para el cambio o devolución de cualquier artículo."); ?></p>
                             </div>
                         </div>
                     </div>
@@ -122,10 +122,9 @@
 
             </div>
         </section>
+<!--Fin de servicios-->
 
-        <!--Fin de servicios-->
-
-        <!--Vídeo poromocional-->
+<!--Vídeo poromocional-->
         <section class="module parallax bg-dark bg-dark-30" data-jarallax-video="https://www.youtube.com/watch?v=qFH9ai02JyU" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/module-5.jpg';?>">
             <div class="container">
                 <div class="row">
@@ -169,9 +168,9 @@
             </div>
             <!--Fin Container-->
         </section>
-        <!--Fin del vídeo promocional-->
+<!--Fin del vídeo promocional-->
 
-        <!-- Portfolio-->
+<!-- Portfolio-->
         <section class="module portfolio-section">
             <div class="container">
                 <!-- Portfolio filter-->
@@ -179,26 +178,26 @@
                     <div class="col-sm-12">
                         <ul class="filters font-alt" id="filters">
                             <li>
-                                <a class="current filter" href="#" data-filter="*">Novedades<sup><small>.10</small></sup></a>
+                                <a class="current filter" href="#" data-filter="*"><?php _e("Novedades"); ?><sup><small>.10</small></sup></a>
                             </li>
                             <li>
-                                <a class="filter" href="#" data-filter=".category_14">Hombre<sup><small>.5</small></sup></a>
+                                <a class="filter" href="#" data-filter=".category_14"><?php _e("Hombre"); ?><sup><small>.5</small></sup></a>
                             </li>
                             <li>
-                                <a class="filter" href="#" data-filter=".category_15">Mujer<sup><small>.6</small></sup></a>
+                                <a class="filter" href="#" data-filter=".category_15"><?php _e("Mujer"); ?><sup><small>.6</small></sup></a>
                             </li>
                             <li>
-                                <a class="filter" href="#" data-filter=".category_16">Complementos<sup><small>.4</small></sup></a>
+                                <a class="filter" href="#" data-filter=".category_16"><?php _e("Complementos"); ?><sup><small>.4</small></sup></a>
                             </li>
                             <li>
-                                <a class="filter" href="#" data-filter=".category_17">Niños<sup><small>.3</small></sup></a>
+                                <a class="filter" href="#" data-filter=".category_17"><?php _e("Niños"); ?><sup><small>.3</small></sup></a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <!-- Portfolio filter end-->
 
-<!-- CPT -->
+    <!-- CPT -->
                 <div class="row">
     				<div class="col-sm-12">
     					<div class="row blog-masonry">                    
@@ -220,23 +219,23 @@
                         </div>
                     </div>
                 </div>
-<!-- CPT end-->
+    <!-- CPT end-->
             </div>
         </section>
-        <!-- Portfolio end-->
+<!-- Portfolio end-->
 
-        <!-- Nuestras marcas-->
-
+<!-- Nuestras marcas-->
         <section class="module module-divider-top">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="module-title">
-                            <h2 class="font-alt"><?php _e("Zapatería"); ?>Nuestras marcas más populares</h2>
+                            <h2 class="font-alt"><?php _e("Nuestras marcas más populares"); ?></h2>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </div>  
+                </div>  <!--Fin de row-->
+            </div>  <!--Fn de container-->
+            
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -266,22 +265,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--Fin de row-->
-            </div>
-            <!--Fn de container-->
+                </div>   <!--Fin de row-->
+            </div>  <!--Fn de container-->
         </section>
+<!-- Fin Nuestras marcas-->
 
-        <!-- Fin Nuestras marcas-->
-
-        <!-- Sección para los últimos post -->
-
+<!-- Sección para los últimos post -->
         <section class="module">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="module-title">
-                            <h2 class="font-alt"><?php _e("Zapatería"); ?>No te pierdas las últimas novedades</h2>
+                            <h2 class="font-alt"><?php _e("No te pierdas las últimas novedades"); ?></h2>
                         </div>
                     </div>
                 </div>
@@ -291,17 +286,17 @@
                 <div class="row">
                     <!-- Empieza el loop -->
 <?php 
-		        $args = array(
-		        	'posts_per_page' => 3 //Mostrará 3 post por página
-		        ); 
-		        $custom_query = new WP_Query($args);
-		        if ( $custom_query->have_posts() ): while ($custom_query->have_posts()): $custom_query->the_post(); 
-
-		        // ¿Tenemos imagen destacada
-		        if(has_post_thumbnail() ) {
-                    $postImg = get_the_post_thumbnail_url();
-                } 
-                $postImg;
+    		        $args = array(
+    		        	'posts_per_page' => 3 //Mostrará 3 post por página
+    		        ); 
+    		        $custom_query = new WP_Query($args);
+    		        if ( $custom_query->have_posts() ): while ($custom_query->have_posts()): $custom_query->the_post(); 
+    
+    		        // ¿Tenemos imagen destacada
+    		        if(has_post_thumbnail() ) {
+                        $postImg = get_the_post_thumbnail_url();
+                    } 
+                    $postImg;
 ?>
 
                         <div class="col-sm-4 col-md-4 col-lg-4 post-item">
@@ -336,14 +331,12 @@
         		endwhile; endif;
         		wp_reset_query();
    			?>
-                            <!--Termina el loop-->
-                </div>
-                <!--Fin row-->
-            </div>
-            <!--Fin container-->
-
-            <!--Comentaios u opiniones de los clientes-->
+<!--Termina el loop-->
+                </div>  <!--Fin row-->
+            </div> <!--Fin container-->
         </section>
+
+<!--Comentaios u opiniones de los clientes-->        
         <div class="wrapper">
             <section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/module-3.jpg';?>">
                 <div class="container">
@@ -357,7 +350,7 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p><?php _e("Zapatería"); ?>Estoy encantado. He realizado varios pedidos y sólo tuve que devolver uno, pero fue facilísimo y muy rápido. ¡¡¡Un equipo estupendo!!!</p>
+                                            <p><?php _e("Estoy encantado. He realizado varios pedidos y sólo tuve que devolver uno, pero fue facilísimo y muy rápido. ¡¡¡Un equipo estupendo!!!"); ?></p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">
@@ -371,7 +364,7 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p><?php _e("Zapatería"); ?>Comprar está muy bien, es rápido en el envío y si no aciertas o no te gustan se devuelve rápida y cómodamente. La recomiendo.</p>
+                                            <p><?php _e("Comprar está muy bien, es rápido en el envío y si no aciertas o no te gustan se devuelve rápida y cómodamente. La recomiendo."); ?></p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">
@@ -385,7 +378,7 @@
                                     </div>
                                     <div class="tms-content">
                                         <blockquote>
-                                            <p><?php _e("Zapatería"); ?>Me gusta por la variedad y la calidad de sus productos y eso hace que las personas se sientan más cómodas con lo que lucen.</p>
+                                            <p><?php _e("Me gusta por la variedad y la calidad de sus productos y eso hace que las personas se sientan más cómodas con lo que lucen."); ?></p>
                                         </blockquote>
                                     </div>
                                     <div class="tms-author">
@@ -400,7 +393,7 @@
                 </div>
             </section>
         </div>
-        <!--Fin comentarios u opiniones de los clientes-->
+<!--Fin comentarios u opiniones de los clientes-->
 
         <!--Fotos de instagran (realmente va con el footer)-->
         <!--Fin fotos de instagram-->

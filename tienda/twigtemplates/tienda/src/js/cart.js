@@ -22,7 +22,7 @@ class Cart {
             row = `
                 <li class="clearfix" data-id='${object.id}'>
                     <img width="70" src="data:image/jpg;base64, ${object.img}" alt="item1" />
-                    <span class="item-name">${object.modelo}</span>
+                    <a href="${object.id}"><span class="item-name">${object.modelo}</span></a>
                     <span class="item-price">${object.precio}</span>€
                     <span class="item-quantity">Quantity: </span>
                     <span class="item-quantity-value">${object.cantidad}</span>

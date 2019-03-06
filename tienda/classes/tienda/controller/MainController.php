@@ -30,6 +30,15 @@ class MainController extends Controller {
         $this->getModel()->set('alldestinatarios', $alldestinatarios);
     }
     
+    function checkOut(){
+        $cart = $this->getSesion()->get('cart');
+        echo Util::varDump($cart);
+        exit();
+        $this->getModel()->set('twigFile', 'finalizarcompra.twig');
+        
+       
+    }
+    
     function item() {
         $product_id = Reader::read('id');
         $product = $this->getModel()->get('Articulo', ['id' => $product_id]);

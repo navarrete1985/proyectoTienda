@@ -22,7 +22,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
-							<h1 class="h3 font-alt">Página no encontrada</h1>
+							<h1 class="h3 font-alt"><?php _e('Página no encontrada'); ?></h1>
 						</div>
 					</div>
 				</div>
@@ -33,9 +33,9 @@
 					<div class="row">
 						<div class="col-sm-8 col-sm-offset-2">
 							<div class="module-title">
-								<h2 class="font-alt">Página no encontrada</h2>
+								<h2 class="font-alt"><?php _e('Página no encontrada'); ?></h2>
 								<p class="font-serif">
-									Parece que no se encontró nada en esta ubicación. ¿Quieres intentar una búsqueda?
+									<?php _e('Parece que no se encontró nada en esta ubicación. ¿Quieres intentar una búsqueda?'); ?>
 								</p>
 							</div>
 						</div>
@@ -56,7 +56,7 @@
 					<div class="row">
 						<div class="col-sm-8 col-sm-offset-2 bloqueflex">
 							<div class="module-title">
-								<a href="javascript:history.back()" class="btn-general"><-- VOLVER</a>
+								<a href="javascript:history.back()" class="btn-general"><-- <?php _e('VOLVER'); ?></a>
 							</div>
 						</div>
 					</div>					

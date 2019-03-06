@@ -10,7 +10,7 @@
                 <div class="portfolio-caption font-alt bloqueflex-col">
                     <h6 class="portfolio-title"><?php echo $marca; ?></h6>
                     <span class="portfolio-subtitle"><?php echo $modelo; ?></span>
-                    <a class="btn btn-sm btn-corner btn-fill btn-dark" href="<?php the_permalink(); ?>">Ver</a>
+                    <a class="btn btn-sm btn-corner btn-fill btn-dark" href="<?php the_permalink(); ?>"><?php _e("Ver"); ?></a>
                 </div>                
             </div>
         <!--    <div class="portfolio-overlay"></div> -->

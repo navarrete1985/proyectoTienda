@@ -178,9 +178,14 @@ class AjaxModel extends Model {
         // exit();
         if($clase === 'Destinatario'){
             
-            $dql = 'select a,d from tienda\data\Articulo a join a.destinatarios d  where d.destinatario = :id
-            order by a.marca, a.modelo, a.precio, a.peso,a.referencia,a.coleccion';
-            $query = $this->gestor->createQuery($dql)->setParameter('id', $id);
+            // $dql = 'select a from tienda\data\DestinatarioArticulo da join da.destinatario d join da.articulo a where d.id = :id
+            // order by a.marca, a.modelo, a.precio, a.peso,a.referencia,a.coleccion';
+            // $query = $this->gestor->createQuery($dql)->setParameter('id', $id);
+        
+            
+            
+            // $dql = 'select a,d from tienda\data\Destinatario d join d.articulos a where d.id = :id';
+            // $query = $this->gestor->createQuery($dql)->setParameter('id', $id);
         
             // $dql = 'select a from tienda\data\Articulo a join a.destinatarios d join d.destinatario dd where dd.id = :id
             // order by a.marca, a.modelo, a.precio, a.peso,a.referencia,a.coleccion';

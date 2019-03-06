@@ -17,7 +17,6 @@ class AjaxController extends Controller {
     
     function __construct(Model $model) {
         parent::__construct($model);
-        
     } 
     
     function main() {
@@ -40,7 +39,6 @@ class AjaxController extends Controller {
     }
     
     function listarCatAndDes(){
-        $this->checkIsAdmin();
         $pagina = Reader::read('pagina');
         $orden = Reader::read('orden');
         $clase = Reader::read('data');

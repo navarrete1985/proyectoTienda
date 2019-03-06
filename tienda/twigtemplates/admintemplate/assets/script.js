@@ -17,7 +17,15 @@
     });
     
     
-     
+    
+    
+     $('#check-compra').on('click', function(e) {
+            e.preventDefault();
+            filtro = document.getElementById('filtro').value;
+            pagina = 1;
+            getListado(); 
+        });
+    
     
      $('#filtroBt').on('click', function(e) {
             e.preventDefault();

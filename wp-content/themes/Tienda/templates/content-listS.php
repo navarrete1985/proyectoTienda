@@ -1,10 +1,10 @@
     <div class="posts_table">
         <table>
             <tr class="head">
-                <th>Fecha</th>
-                <th>Titulo</th>
-                <th>autor</th>
-                <th>Categoria</th>
+                <th><?php _e("Fecha"); ?></th>
+                <th><?php _e("Titulo"); ?></th>
+                <th><?php _e("autor"); ?></th>
+                <th><?php _e("Categoria"); ?></th>
             </tr>    
 
 <?php       while (have_posts()):

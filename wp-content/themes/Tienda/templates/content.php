@@ -23,7 +23,7 @@
             <?php the_excerpt(); ?>
         </div>
         <div class="post-more">
-            <a class="font-alt" href="<?php the_permalink();?>">Leer más &rarr;</a>
+            <a class="font-alt" href="<?php the_permalink();?>"><?php _e("Leer más"); ?>&rarr;</a>
         </div>
     </article>
 </div>

@@ -16,7 +16,7 @@
 		<ul class="post-meta font-alt">
 	    	<li class="bloqueflex-between">
 	        	<span class="texto"><?php echo get_the_date('d M Y'); ?></span>
-	            <p class="texto"><?php echo $post -> comment_count; ?> comentarios</p>
+	            <p class="texto"><?php echo $post -> comment_count; ?>&nbsp;&nbsp;<?php _e("comentarios"); ?></p>
 	        </li>
 	    </ul>
     </div>
@@ -26,6 +26,6 @@
 	</div>
 	
 	<div class="post-more bloqueflex btnMore">
-		<a class="font-alt" href="<?php the_permalink(); ?>">Leer más &rarr;</a>
+		<a class="font-alt" href="<?php the_permalink(); ?>"><?php _e("Leer más"); ?>&rarr;</a>
 	</div>
 </article>
