@@ -13,32 +13,22 @@ class Cart {
         $('.container-cart').removeClass('hidden');
     }
     
-    // addItemCallback(callback) {
-    //     this._addItemCallback = callback;
-    // }
-    
-    // addErrorItemCallback(callback) {
-    //     this._error = callback;
-    // }
-    
-    // addSuccessItemCallback(callback) {
-    //     this._success = callback;
-    // }
-    
-    addItem(id, img, name, price, quantity) {
+    addItem(object) {
         let row = '';
         
-        if ($(`clearfix[data-id=${id}`).length > 0) {
-            $(`clearfix[data-id=${id} span.item-quantity-value`).text(quantity);
+        if ($(`.clearfix[data-id='${object.id}]'`).length > 0) {
+            $(`.clearfix[data-id='${object.id}]'] span.item-quantity-value`).text(object.cantidad);
         }else {
             row = `
-                <li class="clearfix" data-id='${id}'>
-                    <img src="${img}" alt="item1" />
-                    <span class="item-name">${name}</span>
-                    <span class="item-price">${price}</span>
-                    <span class="item-quantity">Quantity: </span class="item-quantity-value"></span>${quantity}</span>
+                <li class="clearfix" data-id='${object.id}'>
+                    <img width="70" src="${object.img}" alt="item1" />
+                    <span class="item-name">${object.modelo}</span>
+                    <span class="item-price">${object.precio}</span>€
+                    <span class="item-quantity">Quantity: </span>
+                    <span class="item-quantity-value">${object.cantidad}</span>
                 </li>
-            `;   
+            `;
+            $('.shopping-cart-items').append(row);
         }
         this._refreshTotal();
         this._refreshBadge();
@@ -46,9 +36,9 @@ class Cart {
     
     removeItem(id, quantity) {
         if (quantity == 0) {
-            $(`clearfix[data-id=${id}`).remove();
+            $(`.clearfix[data-id=${id}]`).remove();
         }else {
-            $(`clearfix[data-id=${id} span.item-quantity-value`).text(quantity);
+            $(`.clearfix[data-id=${id}] span.item-quantity-value`).text(quantity);
         }
         this._refreshTotal();
         this._refreshBadge();
@@ -56,18 +46,21 @@ class Cart {
     
     _refreshTotal() {
         let total = 0;
-        $('span.item-quantity-value').each((index, element) => {
-            total += parseInt(element.text());
+        $('.clearfix').each((index, element) => {
+            let unidades = parseInt($(element).children('.item-quantity-value')[0].textContent);
+            let precioUnitario = $(element).children('.item-price').text();
+            // let op = parseFloat(unidades * precioUnitario).toFixed(2);
+            total += parseFloat(unidades * precioUnitario);
         });
-        $('#cart-total').text(total + '€');
+        $('#cart-total').text(total.toFixed(2) + '€');
     }
     
     _refreshBadge() {
         let total = 0;
         $('span.item-quantity-value').each((index, element) => {
-            total += parseInt(element.text());
+            total += parseInt($(element).text());
         });
-        $('#cart-total').text(total + '€');
+        $('.badge').text(total + '');
     }
     
     fade() {

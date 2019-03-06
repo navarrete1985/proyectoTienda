@@ -51,9 +51,9 @@
 @import url('assets/wp-content/plugins/unyson/framework/extensions/shortcodes/shortcodes/team-member/static/css/stylesf718.css?ver=4.7.12');
 
 /* ----------------------   ESPECÍFICOS DE single-product.html -------------------------------------------- */
-@import url('assets/wp-content/themes/vortex/assets/css/tema2/styleTema2.css');
-@import url('assets/wp-content/themes/vortex/assets/css/tema2/animate.css');
-@import url('assets/wp-content/themes/vortex/assets/css/tema2/linear-icons.css');
+/*@import url('assets/css/tema2/styleTema2.css');
+@import url('assets/assets/css/tema2/animate.css');
+@import url('assets/css/tema2/linear-icons.css');*/
 
 /* ----------------------   PLANTILLAS DE ESTILO PROPIAS  ------------------------------------------------- */
 @import url('assets/css/style.css');

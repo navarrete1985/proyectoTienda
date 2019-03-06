@@ -31,7 +31,7 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <p class="copyright font-alt">© Copyright 2019 <a target="_blank" href="index.html">Zapaterías Minelli S.L</a>. Todos los derechos reservados. </p>
+                <p class="copyright font-alt">© Copyright 2019 <a target="_blank" href="index.html">Zapatería Minelli S.L</a>. Todos los derechos reservados. </p>
             </div>
         </div>
     </div>
@@ -50,6 +50,21 @@
     };
     /* ]]> */
 </script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+      $(document).on('click','#lang', function(){
+        if($(this).data('lang') == 'es'){
+          document.cookie = "language=en";
+        }else{
+          document.cookie = "language=es";
+        }
+        location.reload();
+      });
+    });
+</script>
+
+
 <?php wp_footer(); ?>
 </body>
 

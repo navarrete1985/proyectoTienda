@@ -30,6 +30,44 @@
     //     });
     // }
     
+    
+    
+    
+    $('.onClickLista2').on('click', function(event){
+        event.preventDefault();
+        data = $(event.currentTarget).attr('data-lista');
+        pagina = $(event.currentTarget).attr('data-pagina');
+        orden = $(event.currentTarget).attr('data-orden');
+        getListado2(data,pagina);
+    });
+    
+    
+     var getListado2 = function (data, pagina) {      
+        switch(data) {
+            case 'Categoria':
+                genericAjax.request(null, 'ajax/listarCatAndDes', {'data': data,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                    console.log(json.zapatos);
+                    pintar(json.zapatos);
+                    procesarPaginas(json.paginas);
+                });
+                break;
+            case 'Destinatario':
+                genericAjax.request(null, 'ajax/listarCatAndDes', {'data': data ,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                    console.log(json.zapatos);
+                    pintar(json.zapatos);
+                    procesarPaginas(json.paginas);
+                    
+                });
+                break;
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
     $('.btnPagina').on('click', function(e) {
             e.preventDefault();
             pagina = e.target.getAttribute('data-pagina');
@@ -290,5 +328,18 @@
 (function() {
     
     let cart = new Cart(".shopping-cart");
+    $('.btn-add-cart').on('click', function(e) {
+        e.preventDefault();
+        let artId = $(this).attr('data-id');
+        let artQuantity = $('#quantity').length > 0 ? $('#quantity').val() : 1;
+        cart.request('ajax/addtocart', {id: artId, quantity: artQuantity}, response => {
+            console.log(response);
+            if (response.result === 1) {
+                cart.addItem(response.object);
+            }
+        })
+    })
+    cart._refreshTotal();
+    cart._refreshBadge();
     
 })();

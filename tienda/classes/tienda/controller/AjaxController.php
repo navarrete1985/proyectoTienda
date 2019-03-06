@@ -6,10 +6,12 @@ use tienda\model\Model;
 use tienda\tools\Session;
 use tienda\tools\Reader;
 use tienda\data\Usuario;
+use tienda\data\ItemCart;
 use tienda\tools\Util;
 use tienda\app\App;
 use tienda\tools\Mail;
 use tienda\tools\Multiupload;
+use tienda\tools\Carrito;
 
 class AjaxController extends Controller {
     
@@ -33,6 +35,26 @@ class AjaxController extends Controller {
         }
                                                 //$pagina, $orden
         $r = $this->getModel()->getDoctrineUsuarios($pagina,$orden);
+        $this->getModel()->add($r);
+    }
+    
+    function listarCatAndDes(){
+        $pagina = Reader::read('pagina');
+        $orden = Reader::read('orden');
+        $clase = Reader::read('data');
+        
+        if($pagina === null || !is_numeric($pagina)) {
+            $pagina = 1;
+        }
+        
+        $orden = Reader::read('orden');
+        
+        if (!property_exists(App::OBJECT['articulo'],  $orden)) {
+            $orden = 'Casual';
+        }
+                                                //$pagina, $orden
+        $r = $this->getModel()->getDoctrineCatAndDes($clase, $pagina, $orden);
+        
         $this->getModel()->add($r);
     }
     
@@ -75,8 +97,6 @@ class AjaxController extends Controller {
         }
                                                 //$pagina, $orden
         $r = $this->getModel()->getDoctrineArticulos($tipo, $pagina, $orden,$filtro);
-        // echo Util::varDump($r);
-        // exit();
         $this->getModel()->add($r);
     }
     
@@ -126,9 +146,6 @@ class AjaxController extends Controller {
         $id = Reader::read('id');
         $dest = Reader::read('dest');
         $cat = Reader::read('cat');
-        // $id = Util::varDump($_POST);
-        // $id = Util::varDump($_GET);
-        
 
         $result = 0;
         if ($class !== null && $id !== null) {
@@ -152,12 +169,6 @@ class AjaxController extends Controller {
                             $obj->setImg($blob);
                         }
                         $obj->setTipo(Reader::read('tipo') === '1' ? 1 : 0); 
-  
-                    // if (isset($_FILES['img']) && $_FILES['img']['name'] !== '') {
-                    //     $blob = Util::getBlobImage(file_get_contents($_FILES['img']['tmp_name']));
-                    //     $obj->setImg($blob);
-                    // }
-                    // $obj->setTipo(Reader::read('tipo') === '1' ? 1 : 0);
                     break;
             }
             
@@ -182,7 +193,6 @@ class AjaxController extends Controller {
             }   
         }
         $this->getModel()->add(['result' => $result, 'files_uploaded' => $uploadResult, 'id' => $obj !== null && $result === 1 ? $obj->getId() : '-1']);
-        // $this->getModel()->set('result', $result);
     }
     
     function adddata() {
@@ -191,8 +201,6 @@ class AjaxController extends Controller {
         $obj = Reader::readObject(App::OBJECT[$class]);
         $dest = Reader::read('dest');
         $cat = Reader::read('cat');
-        // echo $obj->getTipo();
-        // exit();
         switch ($class) {
             case 'usuario':
                 $obj->setClave(Util::encriptar($obj->getClave()));
@@ -212,8 +220,6 @@ class AjaxController extends Controller {
         $result = 0;
         if ($obj !== null) {
             $result = $this->getModel()->create($obj);
-            // echo $result;
-            // exit();
             $result =  $result === 1 && $obj->getId() > 0 ? 1 : 0;
             $uploadResult = 0;
             
@@ -242,7 +248,28 @@ class AjaxController extends Controller {
         $this->getModel()->set('resultado', $r);
     }
     
-    
+    function addtocart() {
+        $itemId = Reader::read('id');
+        $quantity = Reader::read('quantity');
+        $quantity = intval($quantity);
+        $articulo = $this->getModel()->get('Articulo', ['id' => $itemId]);
+        $result = 0;
+        $itemResult = null;
+        
+        if ($itemId !== null && $itemId !== '' && $articulo !== null) {
+            $cart = $this->getSesion()->get('cart');
+            
+            if ($cart === null) {
+                $cart = new Carrito();
+            }
+            $itemCart = new ItemCart($articulo, $quantity);
+            $cart->addItem($itemCart, $articulo->getStock());
+            $result = 1;
+            $itemResult = $cart->getItem($itemId);
+        }
+        
+        $this->getModel()->add(['result' => $result, 'object' => $itemResult->get()]);
+    }
     
     
 }

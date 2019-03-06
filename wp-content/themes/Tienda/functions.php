@@ -355,3 +355,24 @@
             
             return $numvisits . ' - ' . $sufix;
         }
+
+/************************ FUNCIONES PARA EL IDIOMA*****************************/
+    function set_my_locale($lang) {
+        $lang = getLanguage();
+        if ( 'en' == $lang ) {
+            $lang = "en";
+        } else {
+            $lang = 'es';
+        }
+        return $lang;
+    }
+    add_filter('locale', 'set_my_locale');
+    
+    function getLanguage() {
+        $idioma = "en";
+        if(isset($_COOKIE['language'])){
+            $idioma = $_COOKIE['language'];
+        }
+        return $idioma;
+    }
+    

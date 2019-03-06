@@ -69,6 +69,11 @@
         color: #333333;
     }
     
+    #lang {
+        cursor: pointer;
+    }
+    
+    
     
 /*-------------------------- Bloques con Flex --------------------------------*/
     .bloqueflex {

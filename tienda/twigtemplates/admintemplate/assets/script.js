@@ -16,6 +16,9 @@
         getListado(data,pagina);
     });
     
+    
+     
+    
      $('#filtroBt').on('click', function(e) {
             e.preventDefault();
             filtro = document.getElementById('filtro').value;

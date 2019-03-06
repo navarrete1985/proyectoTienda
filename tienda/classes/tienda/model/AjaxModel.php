@@ -171,6 +171,68 @@ class AjaxModel extends Model {
     //     return $this->update($usuario);
     // }
     
+    
+    function getDoctrineCatAndDes($clase,$pagina = 1 , $id, $limit = 6){
+        $resultado = $this->get('CategoriaArticulo', ['id' => 7]);
+        // echo Util::varDump($resultado);
+        // exit();
+        if($clase === 'Destinatario'){
+            
+            $dql = 'select a,d from tienda\data\Articulo a join a.destinatarios d  where d.destinatario = :id
+            order by a.marca, a.modelo, a.precio, a.peso,a.referencia,a.coleccion';
+            $query = $this->gestor->createQuery($dql)->setParameter('id', $id);
+        
+            // $dql = 'select a from tienda\data\Articulo a join a.destinatarios d join d.destinatario dd where dd.id = :id
+            // order by a.marca, a.modelo, a.precio, a.peso,a.referencia,a.coleccion';
+            // $query = $this->gestor->createQuery($dql)->setParameter('id', $id);
+        
+            
+        }else if ($clase === 'Categoria'){
+            $dql = 'select c from tienda\data\Articulo c join c.categorias cc join cc.categoria ccc where ccc.id = :id
+            order by c.marca, c.modelo, c.precio, c.peso,c.referencia,c.coleccion';
+            $query = $this->gestor->createQuery($dql)->setParameter('id', $id);
+
+        }
+        // $resultado = $this->get('CategoriaArticulo', ['id' => 7]);
+        // echo Util::varDump($resultado);
+        // exit();
+        
+        
+        
+        $paginator = new Paginator($query);
+        $paginator->getQuery()
+            ->setFirstResult($limit * ($pagina - 1))
+            ->setMaxResults($limit);
+        $pagination = new Pagination($paginator->count(), $pagina, $limit);
+        // return $paginator;
+        $zapatos = array();
+        foreach($paginator as $zapato) {
+            // echo 'Esta es la marca->'.$zapato->getMarca();
+            if ($zapato->getImg() !== null) {
+                $img = base64_encode(stream_get_contents($zapato->getImg()));
+                // $etiqueta =  '<img width="340px" src="data:image/jpg;base64,'.$img.'"/>';
+                $etiqueta = $img;
+                $zapato->setImg($etiqueta);    
+            }
+            $text =  Util::excerpt($zapato->getDetalle(),130);
+        
+            
+            
+            $zapato->setDetalle($text);
+ 
+            $zapatos[] = $zapato->getUnset(array('colores', 'categorias', 'destinatarios', 'stocks','peso','coleccion', 'detalles','material','estampando','cierre','tipo','paisfabricacion','altura','temporada','formatacon','puntera','alto','ancho','profundo','numbolsillos','otrascaracteristicas'));
+            
+           
+        }
+        
+        echo Util::varDump($zapatos);
+        exit();
+        return ['articulos' => $zapatos, 'paginas' => $pagination->values()];
+        
+    }
+    
+    
+    
     function getDoctrineArticulos($tipo,$pagina = 1, $orden = 'marca', $filtro, $limit = 1) {
 
         if($filtro !== null){
