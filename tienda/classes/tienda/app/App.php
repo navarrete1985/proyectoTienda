@@ -18,7 +18,7 @@ class App {
           JWT_KEY = 'Proyecto_App_Usuarios',
           USER_SESSION_KEY = 'App_users',
           
-          SESSION_NAME = 'APP_MVC_SESSION',
+          SESSION_NAME = 'MINELLI_SESSION',
             
           BASE= 'https://proyecto-tienda-navarrete.c9users.io/tienda/',
           OBJECT = [

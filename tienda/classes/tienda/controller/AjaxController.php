@@ -17,13 +17,14 @@ class AjaxController extends Controller {
     
     function __construct(Model $model) {
         parent::__construct($model);
-        $this->checkIsAdmin();
+        
     } 
     
     function main() {
     }
     
     function listarUsuario() {
+        $this->checkIsAdmin();
         $pagina = Reader::read('pagina');
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;
@@ -39,6 +40,7 @@ class AjaxController extends Controller {
     }
     
     function listarCatAndDes(){
+        $this->checkIsAdmin();
         $pagina = Reader::read('pagina');
         $orden = Reader::read('orden');
         $clase = Reader::read('data');
@@ -59,6 +61,7 @@ class AjaxController extends Controller {
     }
     
     function listarZapato() {
+        $this->checkIsAdmin();
         $pagina = Reader::read('pagina');
         $tipo = Reader::read('tipo');
         
@@ -101,11 +104,13 @@ class AjaxController extends Controller {
     }
     
     function deleteuser() {
+        $this->checkIsAdmin();
         $id = Reader::read('id');
         $this->getModel()->delete('Usuario',['id' => $id]);
     }
     
     function borrarImgDirectory(){
+        $this->checkIsAdmin();
         $id = Reader::read('idimg');
         $img = Reader::read('imgBorrar');
         $folder = './resources/images/articulos/id_' . $id .'/' . $img;
@@ -114,6 +119,7 @@ class AjaxController extends Controller {
     }
     
     function deletetools() {
+        $this->checkIsAdmin();
         $item = null;
         $class = ucfirst(strtolower(Reader::read('class')));
         $id = Reader::read('id');
@@ -122,6 +128,7 @@ class AjaxController extends Controller {
     }
     
     function isavailable() {
+        $this->checkIsAdmin();
         $class = ucfirst(strtolower(Reader::read('class')));
         $key = Reader::read('key');
         $value = Reader::read('value');
@@ -130,6 +137,7 @@ class AjaxController extends Controller {
     }
     
     function isavailableedit(){
+        $this->checkIsAdmin();
         $class = ucfirst(strtolower(Reader::read('class')));
         $key = Reader::read('key');
         $newvalue = Reader::read('value');
@@ -142,6 +150,7 @@ class AjaxController extends Controller {
     }
     
     function updatedata(){
+        $this->checkIsAdmin();
         $class = Reader::read('class');
         $id = Reader::read('id');
         $dest = Reader::read('dest');
@@ -196,6 +205,7 @@ class AjaxController extends Controller {
     }
     
     function adddata() {
+        $this->checkIsAdmin();
         $class = Reader::read('class');
         $class = strtolower($class);
         $obj = Reader::readObject(App::OBJECT[$class]);
@@ -262,10 +272,12 @@ class AjaxController extends Controller {
             if ($cart === null) {
                 $cart = new Carrito();
             }
+            
             $itemCart = new ItemCart($articulo, $quantity);
             $cart->addItem($itemCart, $articulo->getStock());
             $result = 1;
             $itemResult = $cart->getItem($itemId);
+            $this->getSesion()->set('cart', $cart);
         }
         
         $this->getModel()->add(['result' => $result, 'object' => $itemResult->get()]);

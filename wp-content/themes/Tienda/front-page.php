@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <h1 class="h3 font-alt"><?php echo $current_slug; ?></h1>
-                        <h1 class="h4 font-alt"><?php _e("Zapatería Minelli", "Tienda"); ?></h1>
+                        <h1 class="h4 font-alt"><?php _e("Zapatería Minelli"); ?></h1>
                     </div>
                 </div>
             </div>

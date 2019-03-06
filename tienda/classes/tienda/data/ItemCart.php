@@ -14,7 +14,7 @@ class ItemCart {
     function __construct(Articulo $articulo, $cantidad = 1) {
         $this->set($articulo->get());
         $this->cantidad = $cantidad;
-        $this->img = "data:image/jpg;base64, " . base64_encode(stream_get_contents($articulo->getImg()));
+        $this->img = base64_encode(stream_get_contents($articulo->getImg()));
     }
     
     function getId() {

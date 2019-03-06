@@ -10,6 +10,15 @@ use tienda\tools\Util;
 
 class MainController extends Controller {
     
+    function __construct(Model $model) {
+        parent::__construct($model);
+        $cart = $this->getSesion()->get('cart');
+        $this->getModel()->set('cart', $cart);
+        // $this->getModel()->set('img', $this->getSesion()->get('cart')->getImg());
+        // echo Util::varDump($this->getSesion()->get('cart'));
+        // exit();
+    }
+    
     function main() {
         $this->getModel()->set('twigFile', '_main.twig');
         $pagina = 1;

@@ -112,14 +112,14 @@
 .shopping-cart-items::-webkit-scrollbar
 {
 	width: 6px;
-	background-color: #F5F5F5;
+	background-color: #C4BEBB;
 }
 
 .shopping-cart-items::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #D62929;
+	background-color: #C4BEBB;
 }
 
 .shopping-cart .shopping-cart-header {

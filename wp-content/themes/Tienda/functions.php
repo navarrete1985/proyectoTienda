@@ -360,16 +360,18 @@
     function set_my_locale($lang) {
         $lang = getLanguage();
         if ( 'en' == $lang ) {
-            $lang = "en";
+           return 'en_US';
+        } elseif ('es' == $lang) {
+            return 'en_ES';
         } else {
-            $lang = 'es';
+            return $lang;
         }
-        return $lang;
     }
+
     add_filter('locale', 'set_my_locale');
     
     function getLanguage() {
-        $idioma = "en";
+        $idioma = "es";
         if(isset($_COOKIE['language'])){
             $idioma = $_COOKIE['language'];
         }

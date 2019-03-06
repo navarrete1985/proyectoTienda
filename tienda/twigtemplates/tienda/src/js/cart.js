@@ -16,12 +16,12 @@ class Cart {
     addItem(object) {
         let row = '';
         
-        if ($(`.clearfix[data-id='${object.id}]'`).length > 0) {
-            $(`.clearfix[data-id='${object.id}]'] span.item-quantity-value`).text(object.cantidad);
+        if ($(`.clearfix[data-id=${object.id}]`).length > 0) {
+            $(`.clearfix[data-id=${object.id}] span.item-quantity-value`).text(object.cantidad);
         }else {
             row = `
                 <li class="clearfix" data-id='${object.id}'>
-                    <img width="70" src="${object.img}" alt="item1" />
+                    <img width="70" src="data:image/jpg;base64, ${object.img}" alt="item1" />
                     <span class="item-name">${object.modelo}</span>
                     <span class="item-price">${object.precio}</span>€
                     <span class="item-quantity">Quantity: </span>
@@ -66,6 +66,7 @@ class Cart {
     fade() {
         $(this._container).fadeToggle("fast");
         $(this._container).toggleClass('visible');
+        $(this._container).removeClass('ajax-visible');
     }
     
     request(url, data, callBackDone, callBackFail = null, callBackAlways = null) {
@@ -82,6 +83,8 @@ class Cart {
             callBackDone(json);
             if (!$(this._container).hasClass('visible')) {
                 this.fade();
+                $(this._container).addClass('ajax-visible');
+                window.setTimeout( () => $(this._container).hasClass('ajax-visible') ? this.fade() : '' , 2000);
             }
             console.log('Carrito ok');
         })
