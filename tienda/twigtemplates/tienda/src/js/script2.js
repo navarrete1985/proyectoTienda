@@ -322,10 +322,10 @@
     
     let cart = new Cart(".shopping-cart");
     $('.btn-add-cart').on('click', function(e) {
-        $('#quantity').val("0");
         e.preventDefault();
         let artId = $(this).attr('data-id');
         let artQuantity = $('#quantity').length > 0 ? $('#quantity').val() : 1;
+        $('#quantity').val("0");
         cart.request('ajax/addtocart', {id: artId, quantity: artQuantity}, response => {
             console.log(response);
             if (response.result === 1) {

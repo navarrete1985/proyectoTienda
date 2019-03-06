@@ -10,35 +10,34 @@
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: en\n"
 
-msgid "¿TIENES DUDAS?"
-msgstr "DO YOU HAVE DOUBTS?"
-
-msgid "CONTACTA CON NOSOTROS"
-msgstr "CONTACT US"
-
-msgid "FORMULARIO DE CONTACTO"
+msgid ""
 msgstr ""
 
-msgid "Desde aquí resolveremos todas las dudas que tengas sobre nuestro servicio de venta online."
+msgid ""
 msgstr ""
 
-msgid "ESCRÍBENOS"
+msgid ""
 msgstr ""
 
-msgid "Correo"
+msgid ""
 msgstr ""
 
-msgid "Teléfono"
+msgid ""
 msgstr ""
 
-msgid "NUESTRA UBICACIÓN"
+msgid ""
 msgstr ""
 
-msgid "Zapatería Minelli "
+msgid ""
 msgstr ""
 
-msgid "Avenida de la constitución Nº 25, CP 18014 
-Granada"
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid ""
 msgstr ""
 
 msgid ""

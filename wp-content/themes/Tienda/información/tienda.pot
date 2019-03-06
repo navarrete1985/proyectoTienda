@@ -109,10 +109,10 @@ msgstr "Read more"
 msgid "Fecha"
 msgstr "Date"
 
-msgid "Titulo"
+msgid "Título"
 msgstr "Title"
 
-msgid "autor"
+msgid "Autor"
 msgstr "Author"
 
 msgid "Categoria"
@@ -130,31 +130,31 @@ msgstr "It seems that nothing was found in this location. Do you want to try a s
 msgid "VOLVER"
 msgstr "BACK"
 
-msgid ""
+msgid "ENTRADAS"
+msgstr "POSTS"
+
+msgid "ENCONTRADOS"
+msgstr "FOUND"
+
+msgid "ENCONTRADO"
+msgstr "FOUND"
+
+msgid "No hay resultados"
+msgstr "No results"
+
+msgid "Entradas para la categoría:"
+msgstr "Posts for the category: "
+
+msgid "Entradas para las etiquetas:"
+msgstr "Posts for tags: "
+
+msgid "Entradas para el autor:"
+msgstr "Posts for the author: "
+
+msgid "Últimos posts"
 msgstr ""
 
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
+msgid "Categorías"
 msgstr ""
 
 msgid ""

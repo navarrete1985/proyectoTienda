@@ -30,8 +30,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h1 class="h3 font-alt">Quienes somos</h1>
-					<h1 class="h4 font-alt">Nuestros valores</h1>
+					<h1 class="h3 font-alt"><?php _e(" Quienes somos"); ?></h1>
+					<h1 class="h4 font-alt"><?php _e(" Nuestros valores"); ?></h1>
 				</div>
 			</div>
 		</div>
@@ -49,12 +49,14 @@
 				<div class="col-sm-4">
 					<div class="icon-box icon-box-left">
 						<div class="icon-box-title">
-							<h5 class="font-alt">La empresa</h5>
+							<h5 class="font-alt"><?php _e("La empresa"); ?></h5>
 						</div>
 						<div class="icon-box-content">
-							<p class="text-justify">Fundada en 1975, Minelli es un referente a nivel nacional, trabajando temporada tras temporada para traer a sus clientes las últimas tendencias en moda de calzado.
-							   Por ello, queremos poner a tu servicio toda nuestra experiencia atesorada durante estos años en la industria de las zapaterías online y asesorarte en todo lo que necesites, 
-							   a la hora de elegir el calzado perfecto.
+							<p class="text-justify">
+								<?php _e("Fundada en 1975, Minelli es un referente a nivel nacional, trabajando temporada tras temporada para traer a sus clientes las últimas tendencias en moda de calzado.
+										   Por ello, queremos poner a tu servicio toda nuestra experiencia atesorada durante estos años en la industria de las zapaterías online y asesorarte en todo lo que necesites, 
+										   a la hora de elegir el calzado perfecto."); 
+							   ?>
 							 </p>
 							<p class="font-alt">
 								<!--<a target="_blank" href="#">Who We Are →</a>-->
@@ -66,12 +68,15 @@
 				<div class="col-sm-4">
 					<div class="icon-box icon-box-left">
 						<div class="icon-box-title">
-							<h5 class="font-alt">Servicios</h5>
+							<h5 class="font-alt"><?php _e("Servicios"); ?></h5>
 						</div>
 						<div class="icon-box-content">
-							<p class="text-justify">En Zapaterías Minelli disponemos de un servicio de atención personalizada en tienda, además el cliente dispone de 15 días laborales para cambios y devoluciones, efectuándose estos de forma gratuita incluso para las compras online.
-								Todos los envíos tienen la opción de recibirlos en 24H, sin contar los días festivos.
-								La realización de los pagos se realiza de forma segura, manteniendo siempre la privacidad de los datos del cliente.
+							<p class="text-justify">
+									<?php _e("En Zapaterías Minelli disponemos de un servicio de atención personalizada en tienda, además el cliente dispone de 15 días laborales para cambios y devoluciones, efectuándose estos de forma gratuita incluso para las compras online.
+											Todos los envíos tienen la opción de recibirlos en 24H, sin contar los días festivos.
+											La realización de los pagos se realiza de forma segura, manteniendo siempre la privacidad de los datos del cliente."); 
+							   		?>
+								
 							</p>
 							<p class="font-alt">
 								<!--<a target="_blank" href="#">Our Services →</a>-->
@@ -85,10 +90,12 @@
 				<div class="col-sm-4">
 				<div class="icon-box icon-box-left">
 					<div class="icon-box-title">
-						<h5 class="font-alt">Trabaja con nosotros</h5>
+						<h5 class="font-alt"><?php _e("Trabaja con nosotros"); ?></h5>
 					</div>
 					<div class="icon-box-content">
-						<p class="text-justify">En Minelli renovamos las colecciones con la misma rapidez que las tendencias, cada día crecemos para acercarnos más a nuestros clientes y por ello constantemente surgen nuevas oportunidades profesionales. ¡Anímate a trabajar con nosotros!</p>
+						<p class="text-justify">
+							<?php _e("En Minelli renovamos las colecciones con la misma rapidez que las tendencias, cada día crecemos para acercarnos más a nuestros clientes y por ello constantemente surgen nuevas oportunidades profesionales. ¡Anímate a trabajar con nosotros!"); ?>
+						</p>
 						<p class="font-alt">
 							<!--<a target="_blank" href="#">Who We Are →</a>-->
 						</p>

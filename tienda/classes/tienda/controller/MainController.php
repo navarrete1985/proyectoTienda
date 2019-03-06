@@ -32,9 +32,11 @@ class MainController extends Controller {
     
     function checkOut(){
         $cart = $this->getSesion()->get('cart');
-        echo Util::varDump($cart);
-        exit();
+        $total = $cart->getTotal();
+        
         $this->getModel()->set('twigFile', 'finalizarcompra.twig');
+        $this->getModel()->set('carrito', $cart);
+        $this->getModel()->set('total', $total);
         
        
     }

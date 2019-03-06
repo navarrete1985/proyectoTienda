@@ -34,8 +34,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1 class="h3 font-alt">¿Tienes dudas?</h1>
-                        <h1 class="h4 font-alt">Contacta con nosotros</h1></div>
+                        <h1 class="h3 font-alt"><?php _e("¿Tienes dudas?"); ?></h1>
+                        <h1 class="h4 font-alt"><?php _e("Contacta con nosotros"); ?></h1></div>
                 </div>
             </div>
         </section>
@@ -45,8 +45,8 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="module-title">
-                                <h2 class="font-alt">Formulario de contacto</h2>
-                                <p class="font-serif">Desde aquí resolveremos todas las dudas que tengas sobre nuestro servicio de venta online.</p>
+                                <h2 class="font-alt"><?php _e("Formulario de contacto"); ?></h2>
+                                <p class="font-serif"><?php _e("Desde aquí resolveremos todas las dudas que tengas sobre nuestro servicio de venta online."); ?></p>
                             </div>
                         </div>
                     </div>
@@ -81,22 +81,22 @@
                             <div class="icon-box icon-box-left icon-exist">
                                 <div class="icon-box-icon" style="height: 28px;"><span class="icon icon-basic-paperplane"></span></div>
                                 <div class="icon-box-title">
-                                    <h5 class="font-alt">Escríbenos</h5></div>
+                                    <h5 class="font-alt"><?php _e("Escríbenos"); ?></h5></div>
                                 <div class="icon-box-content">
-                                    <p>Correo: info@zapateriaminelli.com
-                                        <br /> Teléfono: 958 89 38 50</p>
+                                    <p><?php _e("Correo: info@zapateriaminelli.com"); ?>
+                                        <br /> <?php _e("Teléfono: 958 89 38 50"); ?></p>
                                 </div>
                             </div>
                             <div class="fw-divider-space" style="margin-top: 80px;"></div>
                             <div class="icon-box icon-box-left icon-exist">
                                 <div class="icon-box-icon" style="height: 28px;"><span class="icon icon-basic-map"></span></div>
                                 <div class="icon-box-title">
-                                    <h5 class="font-alt">Nuestra ubicación</h5></div>
+                                    <h5 class="font-alt"><?php _e("Nuestra ubicación"); ?></h5></div>
                                 <div class="icon-box-content">
-                                    <p>Zapatería Minelli
-                                        <br/>Avenida de la constitución Nº 25, CP 18014
+                                    <p><?php _e("Zapatería Minelli"); ?>
+                                        <br/><?php _e("Avenida de la constitución Nº 25, CP 18014"); ?>
                                             <br>Granada</p>
-                                    <p class="font-alt"><a target="_self" href="#map">Encuentranos en el mapa →</a></p>
+                                    <p class="font-alt"><a target="_self" href="#map"><?php _e("Encuentranos en el mapa →"); ?></a></p>
                                 </div>
                             </div>
                         </div>

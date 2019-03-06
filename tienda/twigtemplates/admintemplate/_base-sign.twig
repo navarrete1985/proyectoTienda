@@ -19,8 +19,8 @@
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="{{twigFolder}}/assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="{{twigFolder}}/assets/img/favicon.png">
+	{#<link rel="apple-touch-icon" sizes="76x76" href="{{twigFolder}}/assets/img/apple-icon.png">#}
+	<link rel="icon" type="image/png" sizes="96x96" href="{{twigFolder}}/assets/img/icons/favicon.ico">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="{{twigFolder}}/assets/img/logo-dark.png" alt="Klorofil Logo"></div>
+								<div class="logo logo-login text-center"><img src="{{twigFolder}}/assets/img/minelli.png" width=140 alt="Klorofil Logo"></div>
 								<p class="lead">{{ login ? 'Entra en tu cuenta' : 'Crear una cuenta nueva'}}</p>
 							</div>
 							{% block form %}

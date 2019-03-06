@@ -10,8 +10,92 @@
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: en\n"
 
-msgid ""
-msgstr ""
+msgid "ARCHIVOS"
+msgstr "FILES"
+
+msgid "TODO JUNTO PARA TÍ"
+msgstr "ALL TOGETHER FOR YOU"
+
+msgid "Últimos posts"
+msgstr "Latest posts"
+
+msgid "Categorías"
+msgstr "Categories"
+
+msgid "Autores"
+msgstr "The Authors"
+
+msgid "Post de "
+msgstr "Post by"
+
+msgid "Post de los 6 ult. meses"
+msgstr "Post of the last 6 months"
+
+msgid "Post más populares"
+msgstr "Most Popular Post"
+
+msgid "¿TIENES DUDAS?"
+msgstr "DO YOU HAVE DOUBTS?"
+
+msgid "CONTACTA CON NOSOTROS"
+msgstr "CONTACT US"
+
+msgid "FORMULARIO DE CONTACTO"
+msgstr "CONTACT FORM"
+
+msgid "Desde aquí resolveremos todas las dudas que tengas sobre nuestro servicio de venta online."
+msgstr "From here we will resolve all questions you have about our online sales service."
+
+msgid "ESCRÍBENOS"
+msgstr "WRITE TO US"
+
+msgid "Correo: info@zapateriaminelli.com"
+msgstr "Mail: info@zapateriaminelli.com"
+
+msgid "Teléfono"
+msgstr "Telephone"
+
+msgid "NUESTRA UBICACIÓN"
+msgstr "OUR LOCATION"
+
+msgid "Zapatería Minelli"
+msgstr "Minelli Shoe shop"
+
+msgid "Avenida de la constitución Nº 25, CP 18014"
+msgstr "Avenue of the Constitution Nº 25, CP 18014 Granada"
+
+msgid "ENCUENTRANOS EN EL MAPA"
+msgstr "FIND US ON THE MAP"
+
+msgid "TODOS LOS DERECHOS RESERVADOS."
+msgstr "ALL RIGHTS RESERVED."
+
+msgid "Zapatería Minelli S.L."
+msgstr "Minelli S.L Shoe Store"
+
+msgid "QUIENES SOMOS"
+msgstr "WHO WE ARE"
+
+msgid "NUESTROS VALORES"
+msgstr "OUR VALUES"
+
+msgid "LA EMPRESA"
+msgstr "THE COMPANY"
+
+msgid "SERVICIOS"
+msgstr "SERVICES"
+
+msgid "TRABAJA CON NOSOTROS"
+msgstr "WORK WITH US"
+
+msgid "Fundada en 1975, Minelli es un referente a nivel nacional, trabajando temporada tras temporada para traer a sus clientes las últimas tendencias en moda de calzado. Por ello, queremos poner a tu servicio toda nuestra experiencia atesorada durante estos años en la industria de las zapaterías online y asesorarte en todo lo que necesites, a la hora de elegir el calzado perfecto."
+msgstr "Founded in 1975, Minelli is a national benchmark, working season after season to bring its customers the latest trends in footwear fashion. Therefore, we want to put at your service all our experience accumulated during these years in the online shoe industry and advise you on everything you need, when choosing the perfect footwear."
+
+msgid "En Zapaterías Minelli disponemos de un servicio de atención personalizada en tienda, además el cliente dispone de 15 días laborales para cambios y devoluciones, efectuándose estos de forma gratuita incluso para las compras online. Todos los envíos tienen la opción de recibirlos en 24H, sin contar los días festivos. La realización de los pagos se realiza de forma segura, manteniendo siempre la privacidad de los datos del cliente."
+msgstr "In Zapaterías Minelli we have a personalized attention service in store, in addition the client has 15 working days for changes and returns, being carried out these of free form even for the purchases online. All the shipments have the option to receive them in 24H, without counting the holidays. Payments are made securely, always maintaining the privacy of customer data."
+
+msgid "En Minelli renovamos las colecciones con la misma rapidez que las tendencias, cada día crecemos para acercarnos más a nuestros clientes y por ello constantemente surgen nuevas oportunidades profesionales. ¡Anímate a trabajar con nosotros!"
+msgstr "In Minelli we renew the collections with the same speed that the trends, every day we grow to get closer to our clients and for that reason constantly new professional opportunities arise. Come to work with us!"
 
 msgid ""
 msgstr ""
@@ -37,53 +121,3 @@ msgstr ""
 msgid ""
 msgstr ""
 
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""
-
-msgid ""
-msgstr ""

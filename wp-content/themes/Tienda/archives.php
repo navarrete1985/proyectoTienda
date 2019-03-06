@@ -39,8 +39,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h1 class="h3 font-alt">Archivos</h1>
-						<h1 class="h4 font-alt">Todo junto para tí</h1>
+						<h1 class="h3 font-alt"><?php _e("Archivos"); ?></h1>
+						<h1 class="h4 font-alt"><?php _e("Todo junto para tí"); ?></h1>
 					</div>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 		                        'limit' => 6,
 		                        'echo' => false
 		                        );
-		                    echo $before1 . 'Últimos posts' . $before2 . wp_get_archives($args) . $after;    
+		                    echo $before1 . esc_attr(__("Últimos posts")) . $before2 . wp_get_archives($args) . $after;    
 ?>
 		                </div>
             		</div>  
@@ -74,7 +74,7 @@
 		                            'show_count' => true,
 		                            'echo' => 0
 		                        );
-		                    $categorias = $before1 . 'Categorías' . $before2 . wp_list_categories($args);  
+		                    $categorias = $before1 .  esc_attr(__("Categorías")) . $before2 . wp_list_categories($args);  
 		                    $categorias = preg_replace($pattern, $replacement, $categorias);
 		                    echo $categorias . $after;
 ?>
@@ -93,7 +93,7 @@
 		                            'hide_empty' => true,
 		                            'echo' => 0
 		                        );
-		                    $autores = $before1 . 'Autores' . $before2 . wp_list_authors($args);
+		                    $autores = $before1 . esc_attr(__("Autores")) . $before2 . wp_list_authors($args);
 		                    $autores = preg_replace($pattern, $replacement, $autores);
 		                    echo $autores . $after; 
 		
@@ -138,7 +138,7 @@
 	                <div class="col-sm-6 post-item">
 	                    <div class="post-block">
 <?php
-		                    echo $before1 . 'Post de: ' . $autor -> display_name . $before2;
+		                    echo $before1 . esc_attr(__("Post de: ")) . $autor -> display_name . $before2;
 		                    $args = array(
 		                            'author' => $autor -> ID,
 		                            'orderby' => 'date',
@@ -167,7 +167,7 @@
 			                        'show_post_count' => 1,
 			                        'echo' => 0
 			                    );    
-			                $mensuales = $before1 . 'Post de los 6 ult. meses' . $before2  . wp_get_archives($args);
+			                $mensuales = $before1 . esc_attr(__("Post de los 6 ult. meses ")) . $before2  . wp_get_archives($args);
 			                $mensuales = preg_replace($pattern1, $replacement1, $mensuales);                         //localizmos el caracter &nbsp para poner las clases
 			                $mensuales = preg_replace($pattern2, $replacement2, $mensuales);                         // quitamos los paréntesis    
 			                echo $mensuales . $after;
@@ -193,7 +193,7 @@
 		                            
 		                        );
 		                    $postCount = new WP_Query($args);
-		                    echo $before1 . 'Post más populares' . $before2;
+		                    echo $before1 . __("Post más populares") . $before2;
 		                    while ($postCount -> have_posts()):
 		                        $postCount -> the_post();
 		                        $numComments = get_comments_number($post -> ID);

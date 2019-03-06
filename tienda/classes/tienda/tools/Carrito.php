@@ -9,9 +9,6 @@ class Carrito implements \Iterator {
     private $contador = 0;
     private $items = [];
 
-    function __construct() {
-    }
-
     function addItem(ItemCart $item, $max) {
         if((isset($this->items[$item->getId()]))) {
             $itemPrevio = $this->items[$item->getId()];

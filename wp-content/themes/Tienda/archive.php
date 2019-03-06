@@ -7,10 +7,11 @@
     <header class="header">
         <div class="container">
             <div class="inner-header">
-                <a class="inner-brand" href="../index.html">
-				<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;"/>
-				<img class="brand-light" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" />
-			</a>
+                <a class="inner-brand" href="index.html">
+						<!--<img class="brand-dark" src="<?php// echo bloginfo('template_directory') . '/img/uploads/2017/05/main-logo.png';?>" style="max-height: 60px;" />-->
+						<img class="brand-dark" src="<?php echo bloginfo('template_directory') . '/assets/img/minelli.png';?>" style="max-height: 35px;" />
+						<img class="brand-light" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/additional-logo.png';?>" style="max-height: 60px;" />
+				</a>
             </div>
             <?php
 		get_template_part('templates/nav','front');
@@ -27,25 +28,25 @@
 						                        $results = $total_results." POST";
 						            };
 						    }else{
-						            $results = "ENTRADAS";
+						            $results = _e("ENTRADAS");
 						    }
 
 						 if ( have_posts() ) {  
 
 						          if ( is_category() ) {
 						              // visualizamos la descripción de la categoría
-						              $title_archives = 'Category Archives para:  '. '<span class="searchwords2">' . single_cat_title( '', false ) . ' </span>' ;
+						              $title_archives = __('Entradas para la categoría:') . '&nbsp;&nbsp;<span class="searchwords2">' . single_cat_title( '', false ) . ' </span>' ;
 
 						          } elseif ( is_tag() ) {
 						              // visualizamos la descripción del tag
-						              $title_archives = 'Tag Archives para:  ' .'<span class="searchwords2">' . single_tag_title( '', false ) . '</span>' ;
-
+						              $title_archives = __('Entradas para la etiquetas:') .'&nbsp;&nbsp;<span class="searchwords2">' . single_tag_title( '', false ) . '</span>' ;
+                                                        
 						          } elseif ( is_author() ) {
 						              /* accedemos al primer posts, de esta forma podemos acceder
 						               * al autor con el que estamos tratando, si es el caso
 						              */
 						              the_post();
-						              $title_archives = 'Author Archives para: ' . '<span class="vcard"><a class="url fn n searchwords" href="' 
+						              $title_archives = __('Entradas para el autor:') . '<span class="vcard"><a class="url fn n searchwords" href="' 
 						              . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) 
 						              . '" rel="me">' . get_the_author() . '</a> </span>';
 						              /* Como hemos llamado a the_post() antes, necesitamos
@@ -82,14 +83,14 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="header2">
-                                <h2 class="post-title font-alt h2_archive"><?php echo $results;?>&nbsp;<?= $results > 1 ? 'ENCONTRADOS' : 'ENCONTRADO' ?></h2>
+                                <h2 class="post-title font-alt h2_archive"><?php echo $results;?>&nbsp;<?= $results > 1 ? _e('ENCONTRADOS') : _e('ENCONTRADO'); ?></h2>
                             </div>
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="font-alt">Fecha</th>
-                                        <th scope="col" class="font-alt">Autor</th>
-                                        <th scope="col" class="font-alt">Título</th>
+                                        <th scope="col" class="font-alt"><?php _e('Fecha'); ?></th>
+                                        <th scope="col" class="font-alt"><?php _e('Autor'); ?></th>
+                                        <th scope="col" class="font-alt"><?php _e('Título'); ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -113,7 +114,7 @@
         ?>
                                 <?php    
         } else {
-                echo 'No hay resultados';
+                echo _e('No hay resultados');
             };
             //    wp_reset_postdata(); 
         ?>
