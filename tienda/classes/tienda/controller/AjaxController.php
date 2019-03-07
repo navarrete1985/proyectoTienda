@@ -269,7 +269,7 @@ class AjaxController extends Controller {
             $cart->addItem($itemCart, $articulo->getStock());
             $result = 1;
             $itemResult = $cart->getItem($itemId);
-            set('cart', $cart);
+            $this->getSesion()->set('cart', $cart);
         }
         
         $this->getModel()->add(['result' => $result, 'object' => $itemResult->get()]);
