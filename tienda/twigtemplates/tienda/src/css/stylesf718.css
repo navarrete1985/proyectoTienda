@@ -44,6 +44,17 @@
 	/*align-items:center;*/
 	/*flex-direction:column;*/
 }
+.w-20mi{
+	width:20% !important;
+}
+.cominput{
+	margin-right:30px;
+	padding-left:15px;
+}
+.contenedorFinalCompraMar{
+	display:flex;
+	justify-content:center;
+}
 .sameTable2{
 	width: 70%;
     display: flex;
@@ -54,6 +65,9 @@
 }
 .pprecio{
 	margin-right: 194px;
+}
+.contenedorFinalCompraMar{
+	margin-bottom:50px;
 }
 .tableDetalle{
 	margin:0 auto;

@@ -37,24 +37,24 @@
                                 <span class="fa fa-search"></span>
                             </button>
                         </form>
-                        <div>
-                        	<h1>Categorias</h1>
-                         {% for item in allcategories%}
+                 {#       <div>#}
+                 {#       	<h1>Categorias</h1>#}
+                 {#        {% for item in allcategories%}#}
 	                         
-					            <a href="#" class="onClickLista2" data-pagina='1' data-lista='Categoria' data-orden='{{item.id}}'>{{item.nombre}}</a>
-					            <!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->
+					            {#<a href="#" class="onClickLista2" data-pagina='1' data-lista='Categoria' data-orden='{{item.id}}'>{{item.nombre}}</a>#}
+					            {#<!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->#}
 					        
-                        {% endfor %}
-                        </div>
-                        <div>
-                        	<h1>Destinatarios</h1>
-                         {% for item in alldestinatarios%}
+                 {#       {% endfor %}#}
+                 {#       </div>#}
+                 {#       <div>#}
+                 {#       	<h1>Destinatarios</h1>#}
+                 {#        {% for item in alldestinatarios%}#}
 	                         
-					            <a href="#" class="onClickLista2" data-pagina='1' data-lista='Destinatario' data-orden='{{item.id}}'>{{item.nombre}}</a>
-					            <!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->
+					            {#<a href="#" class="onClickLista2" data-pagina='1' data-lista='Destinatario' data-orden='{{item.id}}'>{{item.nombre}}</a>#}
+					            {#<!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->#}
 					        
-                        {% endfor %}
-                        </div>
+                 {#       {% endfor %}#}
+                 {#       </div>#}
                     </aside>
 		        </div>
    		 	</div>
@@ -89,7 +89,7 @@
 								<p>{{item.precio}}€</p>
 							</div>
 							<div class="post-more">
-								<a class="font-alt" href="/tienda/index/item?id={{item.id}}">Read More &rarr;</a>
+								<a class="font-alt" href="/tienda/index/item?id={{item.id}}">Leer más &rarr;</a>
 							</div>
 						</article>
 					</div>

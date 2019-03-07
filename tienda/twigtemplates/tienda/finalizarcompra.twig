@@ -60,33 +60,55 @@
                                 	
                                     <tr>
                                     	<th scope="col" class="font-alt">Articulo</th>
-                                        <th scope="col" class="font-alt">Precio</th>
+                                        
                                         <th scope="col" class="font-alt">Cantidad</th>
-                                        <th scope="col" class="font-alt">Total</th>
+                                        
+                                        <th scope="col" class="font-alt">Precio</th>
+                                        
                                         
                                     </tr>
                                    
                                 </thead>
+                                
+                                        
+                                        
+                                        
+                                        
+                                    
                                 <tbody>
                                 	 {% for item in carrito.items%}
 						                <tr>
-						                  <td scope="row">{{item.modelo}}€</td>
+						                  <td scope="row">{{item.modelo}}</td>
+						                  {#<td><div class="add-to-cart"><a href="#" class="btn custom-btn" id="btn-cart-minus" data-id='{{item.id}}'>-</a></td>#}
+						                  <td>{{item.cantidad}}</td>
+						                  {#<td><input type='number' min="0" max="{{item.stock}}" value="{{item.cantidad}}" class="input-quantity" id="quantity"  /></td>#}
+						                  {#<td><a href="#" class="btn custom-btn" id="btn-cart-plus" data-id='{{item.id}}'>+</a></div></td>#}
+						                  
 						                  <td>{{item.precio}}€</td>
-						                  <td>{{item.cantidad}}€</td>
-						                  <td>{{item.precio}}€</td>
+						                  
+							                  
+							                  
+							                  
+							                  {#<td><a href="#" class="btn custom-btn btn-add-cart" data-id='{{item.id}}'>Añadir a carrito</a></td>#}
+							              
 						                 {#<td><button class="detalles" data-idpedido='{{item.id}}' data-toggle="modal" data-target="#exampleModalLong">Detalles</button></td>#}
 						                </tr>
 						             {% endfor %}
 						             <tr>
 						             	<td>Total</td>
 						             	<td></td>
-						             	<td></td>
 						             	<td>{{total}}€</td>
 						             	</tr>
                                 </tbody>
                                 
                             </table>
-                            <td><button class="finalizarCompra">Finalizar Compra</button></td>
+                            <div class="contenedorFinalCompraMar"><a href="main/VaciarCarrito"  class="btn custom-btn w-20mi">Vacias carrito</a></div>
+                            <div class="contenedorFinalCompraMar">
+	                            <input type='text' class="cominput" id="numtarjeta" placeholder="Numero de tarjeta" />
+	                            <input type='text' class="cominput" id="fechavalidez" placeholder="Fecha validez" />
+	                            <input type='text' class="cominput" id="cvv" placeholder="CVV" />
+	                            <button id="finalizarCompraPedido" class="finalizarCompra">Finalizar Compra</button>
+	                         </div>
 					
 					
 				</div>

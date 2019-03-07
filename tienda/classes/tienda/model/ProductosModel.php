@@ -16,8 +16,6 @@ use tienda\tools\Bootstrap;
 class ProductosModel extends Model {
     
     use \tienda\common\Crud;
-    use \tienda\common\CrudArticulo;
-    
    
     function getDoctrineZapatos($pagina = 1, $orden = 'marca', $limit = 6) {
          $dql = 'select c from tienda\data\Articulo c where c.marca < :marca 

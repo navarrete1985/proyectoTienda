@@ -33,13 +33,12 @@
 				<div class="row bloqueflex">
 					<div class="banner-border bloqueflex">
 						<div class="banner-info bloqueflex-col">
-							<h1 class="h3 font-alt">Bienvenido <?php echo $name; ?></h1>
-							<h1 class="h4 font-alt">Tu rol es de: <?php echo $rolsp; ?></h1>
-							<h1 class="h4 font-alt">Tu rol es de: <?php echo $rol2; ?></h1>
+							<h1 class="h3 font-alt"><?php _e('Bienvenido'); ?>&nbsp;<?php echo $name; ?></h1>
+							<h1 class="h4 font-alt"><?php _e('Tu rol es de:'); ?><?php echo $rolsp; ?></h1>
 							<p><?php echo $capacidad; ?></p>
 							<div class="bloqueflex-around">
-								<a class="btn btn-md btn-round btn-fill btn-brand" href="https://proyecto-tienda-navarrete.c9users.io/wp-admin/profile.php" target="_blanck">Editar usuario</a>
-								<a class="btn btn-md btn-round btn-fill btn-brand" href="<?php echo wp_logout_url( home_url() ); ?>">Cerrar Sesión</a>
+								<a class="btn btn-md btn-round btn-fill btn-brand" href="https://proyecto-tienda-navarrete.c9users.io/wp-admin/profile.php" target="_blanck"><?php _e('Editar usuario'); ?></a>
+								<a class="btn btn-md btn-round btn-fill btn-brand" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e('Cerrar Sesión'); ?></a>
 							</div>
 						</div>
 					</div>

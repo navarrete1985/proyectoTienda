@@ -138,7 +138,7 @@
 	                <div class="col-sm-6 post-item">
 	                    <div class="post-block">
 <?php
-		                    echo $before1 . esc_attr(__("Post de: ")) . $autor -> display_name . $before2;
+		                    echo $before1 . __("Post de:") . '&nbsp;&nbsp;' . $autor -> display_name . $before2;
 		                    $args = array(
 		                            'author' => $autor -> ID,
 		                            'orderby' => 'date',
@@ -167,7 +167,7 @@
 			                        'show_post_count' => 1,
 			                        'echo' => 0
 			                    );    
-			                $mensuales = $before1 . esc_attr(__("Post de los 6 ult. meses ")) . $before2  . wp_get_archives($args);
+			                $mensuales = $before1 . esc_attr(__("Post de los 6 ult. meses")) . $before2  . wp_get_archives($args);
 			                $mensuales = preg_replace($pattern1, $replacement1, $mensuales);                         //localizmos el caracter &nbsp para poner las clases
 			                $mensuales = preg_replace($pattern2, $replacement2, $mensuales);                         // quitamos los paréntesis    
 			                echo $mensuales . $after;
@@ -193,7 +193,7 @@
 		                            
 		                        );
 		                    $postCount = new WP_Query($args);
-		                    echo $before1 . __("Post más populares") . $before2;
+		                    echo $before1 . esc_attr(__("Post más populares")) . $before2;
 		                    while ($postCount -> have_posts()):
 		                        $postCount -> the_post();
 		                        $numComments = get_comments_number($post -> ID);

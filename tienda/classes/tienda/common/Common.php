@@ -39,7 +39,6 @@ trait Common {
         return $array;
     }
 
-    /* alias de set, implementado de otro modo */
     function merge(array $array) {
         foreach($array as $atributo => $valor) {
             if(property_exists($this, $atributo)) {

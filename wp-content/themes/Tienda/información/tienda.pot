@@ -151,59 +151,224 @@ msgstr "Posts for tags: "
 msgid "Entradas para el autor:"
 msgstr "Posts for the author: "
 
-msgid "Últimos posts"
-msgstr ""
-
 msgid "Categorías"
-msgstr ""
+msgstr "Categories"
 
-msgid ""
-msgstr ""
+msgid "Habilidades"
+msgstr "Skills"
 
-msgid ""
-msgstr ""
+msgid "Moda"
+msgstr "fashion"
 
-msgid ""
-msgstr ""
+msgid "Innovacion"
+msgstr "Innovation"
 
-msgid ""
-msgstr ""
+msgid "ULTIMOS POST"
+msgstr "LAST POST"
 
-msgid ""
-msgstr ""
+msgid "ARCHIVOS"
+msgstr "FILES"
 
-msgid ""
-msgstr ""
+msgid "TODO JUNTO PARA TÍ"
+msgstr "ALL TOGETHER FOR YOU"
 
-msgid ""
-msgstr ""
+msgid "Últimos posts"
+msgstr "Latest posts"
 
-msgid ""
-msgstr ""
+msgid "Autores"
+msgstr "The Authors"
 
-msgid ""
-msgstr ""
+msgid "Post de"
+msgstr "Post by"
 
-msgid ""
-msgstr ""
+msgid "Post de los 6 ult. meses"
+msgstr "Post of the last 6 months"
 
-msgid ""
-msgstr ""
+msgid "Post más populares"
+msgstr "Most Popular Post"
 
-msgid ""
-msgstr ""
+msgid "¿Tienes dudas?"
+msgstr "Do you have doubts??"
 
-msgid ""
-msgstr ""
+msgid "Contacta con nosotros"
+msgstr "Contact us"
 
-msgid ""
-msgstr ""
+msgid "Formulario de contacto"
+msgstr "Contact form"
 
-msgid ""
-msgstr ""
+msgid "Desde aquí resolveremos todas las dudas que tengas sobre nuestro servicio de venta online."
+msgstr "From here we will resolve all questions you have about our online sales service."
 
-msgid ""
-msgstr ""
+msgid "Escríbenos"
+msgstr "Write to us"
 
-msgid ""
-msgstr ""
+msgid "Correo: info@zapateriaminelli.com"
+msgstr "Mail: info@zapateriaminelli.com"
+
+msgid "Teléfono"
+msgstr "Telephone"
+
+msgid ""Nuestra ubicación"
+msgstr "Our location"
+
+msgid "Avenida de la constitución Nº 25, CP 18014"
+msgstr "Avenue of the Constitution Nº 25, CP 18014 Granada"
+
+msgid "ENCUENTRANOS EN EL MAPA"
+msgstr "FIND US ON THE MAP"
+
+msgid "TODOS LOS DERECHOS RESERVADOS."
+msgstr "ALL RIGHTS RESERVED."
+
+msgid "Zapatería Minelli S.L."
+msgstr "Minelli S.L Shoe Store"
+
+msgid "QUIENES SOMOS"
+msgstr "WHO WE ARE"
+
+msgid "NUESTROS VALORES"
+msgstr "OUR VALUES"
+
+msgid "LA EMPRESA"
+msgstr "THE COMPANY"
+
+msgid "SERVICIOS"
+msgstr "SERVICES"
+
+msgid "TRABAJA CON NOSOTROS"
+msgstr "WORK WITH US"
+
+msgid "Fundada en 1975, Minelli es un referente a nivel nacional, trabajando temporada tras temporada para traer a sus clientes las últimas tendencias en moda de calzado. Por ello, queremos poner a tu servicio toda nuestra experiencia atesorada durante estos años en la industria de las zapaterías online y asesorarte en todo lo que necesites, a la hora de elegir el calzado perfecto."
+msgstr "Founded in 1975, Minelli is a national benchmark, working season after season to bring its customers the latest trends in footwear fashion. Therefore, we want to put at your service all our experience accumulated during these years in the online shoe industry and advise you on everything you need, when choosing the perfect footwear."
+
+msgid "En Zapaterías Minelli disponemos de un servicio de atención personalizada en tienda, además el cliente dispone de 15 días laborales para cambios y devoluciones, efectuándose estos de forma gratuita incluso para las compras online. Todos los envíos tienen la opción de recibirlos en 24H, sin contar los días festivos. La realización de los pagos se realiza de forma segura, manteniendo siempre la privacidad de los datos del cliente."
+msgstr "In Zapaterías Minelli we have a personalized attention service in store, in addition the client has 15 working days for changes and returns, being carried out these of free form even for the purchases online. All the shipments have the option to receive them in 24H, without counting the holidays. Payments are made securely, always maintaining the privacy of customer data."
+
+msgid "En Minelli renovamos las colecciones con la misma rapidez que las tendencias, cada día crecemos para acercarnos más a nuestros clientes y por ello constantemente surgen nuevas oportunidades profesionales. ¡Anímate a trabajar con nosotros!"
+msgstr "In Minelli we renew the collections with the same speed that the trends, every day we grow to get closer to our clients and for that reason constantly new professional opportunities arise. Come to work with us!"
+
+msgid "No hay Widgets instalados"
+msgstr "No Widgets installed"
+
+msgid "Post destacado"
+msgstr "Featured Post"
+
+msgid "INFORMACIÓN PERSONAL"
+msgstr "PERSONAL INFORMATION"
+
+msgid "MI HISTORIA"
+msgstr "MY STORY"
+
+msgid "CONTACTO"
+msgstr "CONTACT"
+
+msgid "Nombre completo:"
+msgstr "Full name:"
+
+msgid "Rol autor:"
+msgstr "Author role:"
+
+msgid "Pais:"
+msgstr "Country:"
+
+msgid "Fecha nacimiento:"
+msgstr "Birth date:"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Autor:"
+msgstr "Author:"
+
+msgid "Bienvenido"
+msgstr "Welcome"
+
+msgid "Tu rol es de:"
+msgstr "Your role is:"
+
+msgid "Cerrar Sesión"
+msgstr "Sign off"
+
+msgid "POLITICA DE PRIVACIDAD"
+msgstr "PRIVACY POLICY"
+
+msgid "POST ENCONTRADOS:"
+msgstr "POST FOUND:"
+
+msgid "NUEVA BÚSQUEDA"
+msgstr "NEW SEARCH"
+
+msgid "CATEGORIAS"
+msgstr "CATEGORIES"
+
+msgid "Descripción"
+msgstr "Description"
+
+msgid "Información"
+msgstr "Information"
+
+msgid "Marca"
+msgstr "Brand"
+
+msgid "Modelo"
+msgstr "Model"
+
+msgid "Destinatario"
+msgstr "Addressee"
+
+msgid "Tipo"
+msgstr "Type"
+
+msgid "Colección"
+msgstr "Collection"
+
+msgid "Debes aceptar la política de privacidad para publicar el comentario"
+msgstr "You must accept the privacy policy to post the comment"
+
+msgid "He leido y acepto la"
+msgstr "I have read and accept the"
+
+msgid "politica de privacidad"
+msgstr "Privacy Policy"
+
+msgid "Últimos productos"
+msgstr "Latest products"
+
+msgid "Descubre nuestro lado más social"
+msgstr "Discover our more social side"
+
+msgid "Etiquetas"
+msgstr "Tags"
+
+msgid "Editar usuario"
+msgstr "Edit user"
+
+msgid "Administrador"
+msgstr "Administrator"
+
+msgid "Tienes acceso a todas las funciones de administración dentro del sitio."
+msgstr "You have access to all administration functions within the site."
+
+msgid "Editor"
+msgstr "Editor"
+
+msgid "Puedes publicar y administrar publicaciones, incluidas las de otros usuarios."
+msgstr "You can publish and manage publications, including those of other users."
+
+msgid "Puedes publicar y administrar tus propios post."
+msgstr "You can publish and manage your own post"
+
+msgid "Colaborador"
+msgstr "Contributor"
+
+msgid "Puedes escribir y administrar tus propios post, pero no puedes publicarlos."
+msgstr "You can write and manage your own post, but I can not publish them."
+
+msgid "Suscriptor"
+msgstr "Subscriber"
+
+msgid "Solo tienes acceso para administrar tu perfil."
+msgstr "You only have access to manage your profile."
+
+msgid "VISITAS"
+msgstr "VISITS"

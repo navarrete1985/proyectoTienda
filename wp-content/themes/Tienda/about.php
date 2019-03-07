@@ -109,54 +109,7 @@
 				<!--</div>-->
 			</div> <!--Fin de container-->
 		</section>
-
-<!--<section class="module parallax bg-light bg-light-60" data-background="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/module-3.jpg';?>">-->
-<!--	<div class="container">-->
-<!--		<div class="row">-->
-<!--			<div class="col-sm-3">-->
-<!--		</div>-->
-<!--		<div class="col-sm-6">-->
-<!--			<div class="tms-slides owl-carousel">-->
-<!--				<div class="tms-item">-->
-<!--					<div class="tms-icons">-->
-<!--						<span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>-->
-<!--					</div>-->
-<!--					<div class="tms-content">-->
-<!--						<blockquote><p>If you want to know what a man&#039;s like, take a good look at how he treats his inferiors, not his equals.</p></blockquote>-->
-<!--					</div>-->
-<!--					<div class="tms-author">-->
-<!--						<span class="font-alt">J.K. Rowling</span>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="tms-item">-->
-<!--					<div class="tms-icons">-->
-<!--						<span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>-->
-<!--					</div>-->
-<!--					<div class="tms-content">-->
-<!--						<blockquote><p>To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.</p></blockquote>-->
-<!--					</div>-->
-<!--					<div class="tms-author">-->
-<!--						<span class="font-alt">Ralph Waldo Emerson</span>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="tms-item">-->
-<!--					<div class="tms-icons">-->
-<!--						<span style="font-size: 32px;" class="icon icon-basic-message-multiple"></span>-->
-<!--					</div>-->
-<!--					<div class="tms-content">-->
-<!--						<blockquote><p>Imperfection is beauty, madness is genius and it&#039;s better to be absolutely ridiculous than absolutely boring.</p></blockquote>-->
-<!--					</div>-->
-<!--					<div class="tms-author">-->
-<!--						<span class="font-alt">Marilyn Monroe</span>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--		<div class="col-sm-3">-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-<!--</section>-->
+		
   <!--Comentaios u opiniones de los clientes-->
         </section>
         <div class="wrapper">
@@ -216,7 +169,6 @@
             </section>
         </div>
         <!--Fin comentarios u opiniones de los clientes-->
-
 </div>
 
 <?php

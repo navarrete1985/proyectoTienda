@@ -15,10 +15,6 @@ use tienda\tools\Carrito;
 
 class AjaxController extends Controller {
     
-    function __construct(Model $model) {
-        parent::__construct($model);
-    } 
-    
     function main() {
     }
     
@@ -54,7 +50,6 @@ class AjaxController extends Controller {
         }
                                                 //$pagina, $orden
         $r = $this->getModel()->getDoctrineCatAndDes($clase, $pagina, $orden);
-        
         $this->getModel()->add($r);
     }
     
@@ -73,7 +68,6 @@ class AjaxController extends Controller {
         }
                                                 //$pagina, $orden
         $r = $this->getModel()->getDoctrineZapatos($tipo, $pagina, $orden);
-        
         $this->getModel()->add($r);
     }
     
@@ -184,9 +178,7 @@ class AjaxController extends Controller {
                 $result = $obj->getId() > 0 ? 1 : 0;
                 $uploadResult = 0;
                 
-                
                 if ($class == 'articulo' && $result === 1) {
-                    
                     $this->getModel()->addDestinatarios($obj, $dest, 'tienda\data\Destinatario');
                     $this->getModel()->addCategories($obj, $cat, 'tienda\data\Categoria');
                     $upload = new Multiupload($class == 'color' ? 'img' : 'files');
@@ -251,8 +243,10 @@ class AjaxController extends Controller {
     
     function detallespedido(){
         $id = Reader::read('id');
-        $r = $this->getModel()->getDetalles($id);
-       
+        $usuario = $this->getSesion()->getLogin();
+        $iduser = $usuario->getId();
+        
+        $r = $this->getModel()->getDetalles($id,$iduser);
         $this->getModel()->set('resultado', $r);
     }
     
@@ -275,11 +269,25 @@ class AjaxController extends Controller {
             $cart->addItem($itemCart, $articulo->getStock());
             $result = 1;
             $itemResult = $cart->getItem($itemId);
-            $this->getSesion()->set('cart', $cart);
+            set('cart', $cart);
         }
         
         $this->getModel()->add(['result' => $result, 'object' => $itemResult->get()]);
     }
     
-    
+    function terminarCompra() {
+        $carrito = $this->getSesion()->get('cart');
+        $usuario = $this->getSesion()->getLogin();
+        $numero = Reader::read('numtarjeta');
+        $fechavalidez = Reader::read('$fechavalidez');
+        $cvv = Reader::read('$cvv');
+        
+        $data = ['numtarjeta' => $numero, 'fechavalidez' => $fechavalidez, 'cvv' => $cvv];
+        $result = null;
+        if ($carrito !== null) {
+            $result = $this->getModel()->addPedido($carrito,$usuario, $data);   
+        }
+        
+        $this->getModel()->add(['result' => $result === null ? 0 : 1]);
+    }
 }

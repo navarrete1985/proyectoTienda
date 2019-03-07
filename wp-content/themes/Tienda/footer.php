@@ -31,7 +31,7 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <p class="copyright font-alt">© Copyright 2019 <a target="_blank" href="index.html"><?php _e("Zapatería Minelli S.L" ); ?></a>. <?php _e("Todos los derechos reservados." ); ?></p>
+                <p class="copyright font-alt">© Copyright 2019 <a target="_blank" href="index.html"><?php _e("Zapatería Minelli S.L" ); ?></a><?php _e("TODOS LOS DERECHOS RESERVADOS." ); ?></p>
             </div>
         </div>
     </div>

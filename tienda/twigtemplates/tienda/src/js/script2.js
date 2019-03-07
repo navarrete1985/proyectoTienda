@@ -32,9 +32,21 @@
     
     
     
+   
     
-    
-    
+     $('#finalizarCompraPedido').on('click', function(event){
+        event.preventDefault();
+        var tarjeta = document.getElementById('numtarjeta').value;
+        var fechavalidez = document.getElementById('fechavalidez').value;
+        var cvv = document.getElementById('cvv').value;
+        
+        genericAjax.request(null, 'ajax/terminarCompra', {'tarjeta': tarjeta,'fechavalidez': fechavalidez,'cvv': cvv,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
+                    console.log(json);
+            
+            
+        });
+        
+    });
     
     $('.onClickLista2').on('click', function(event){
         event.preventDefault();

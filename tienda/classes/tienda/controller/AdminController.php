@@ -104,14 +104,11 @@ class AdminController extends Controller {
             $catArt[]  = $valor->getCategoria()->getUnset(array('articulos','nombre','categoria'))['id'];
         }
         
-        
         $destinatarios = $this->getModel()->getAll('Destinatario');
         $desArt=[];
         foreach($articulo->getDestinatarios() as $valor){
             $desArt[]  = $valor->getDestinatario()->getUnset(array('articulos','nombre','categoria'))['id'];
         }
-        // echo Util::varDump($catArt);
-        // exit();
         $this->getModel()->set('categories', $categorias);
         $this->getModel()->set('catArt', $catArt);
         $this->getModel()->set('destinatarios', $destinatarios);

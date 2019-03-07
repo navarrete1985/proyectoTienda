@@ -92,5 +92,4 @@ class LoginController extends Controller {
             $this->sendRedirect();
         }
     }
-    
 }

@@ -23,7 +23,6 @@ class MainController extends Controller {
         $r = $this->getModel()->getDoctrineZapatos($pagina,$orden);
         $this->getModel()->set('data',$r);
         
-        
         $allcategories =  $this->getModel()->getAll('Categoria');
         $this->getModel()->set('allcategories', $allcategories);
         $alldestinatarios =  $this->getModel()->getAll('Destinatario');
@@ -31,14 +30,22 @@ class MainController extends Controller {
     }
     
     function checkOut(){
+        $this->checkIsLogged();
         $cart = $this->getSesion()->get('cart');
-        $total = $cart->getTotal();
+        $total = 0;
+        if ($cart !== null) {
+            $total = $cart->getTotal();    
+        }
         
         $this->getModel()->set('twigFile', 'finalizarcompra.twig');
         $this->getModel()->set('carrito', $cart);
         $this->getModel()->set('total', $total);
-        
-       
+    }
+    
+    function VaciarCarrito(){
+        $cart = $this->getSesion()->set('cart', null);
+        header('Location: https://proyecto-tienda-navarrete.c9users.io/tienda/#');
+        exit();
     }
     
     function item() {

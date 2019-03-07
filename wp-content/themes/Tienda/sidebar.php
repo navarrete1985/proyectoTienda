@@ -1,15 +1,6 @@
 <div class="sidebar">
 	<aside id="search-2" class="widget widget_search">
-	<!--	<form role="search" method="get" class="search-form" action="http://vortex-wp.2the.me/">
-			<input type="search"
-				   class="search-field form-control"
-				   placeholder="Search..."
-				   value=""
-				   name="s" />
-			<button class="search-button" type="submit">
-				<span class="fa fa-search"></span>
-			</button>
-		</form>-->
+
 		<?php get_search_form(); ?> 
 	</aside>
 	
@@ -19,14 +10,14 @@
 		<!--<div class="twitter-feed" data-twitter="345170787868762112" data-number="2">-->
 			<?php
 	             if (!function_exists('crea_area_widgets') || !dynamic_sidebar('Sidebar Widget')) : ?>
-	                 	<div class="warning title text-center">No hay Widgets instalados</div>
+	                 	<div class="warning title text-center"><?php _e("No hay Widgets instalados"); ?></div>
 	        <?php endif; ?>
 		</div>
 	</aside>
 	
 	<!-- Hay que implementar el post destacado, ese es el loop general, tan solo para hacernos una idea y que no se nos olvide -->
 	<aside id="recent-posts-custom-2" class="widget widget_recent_entries_custom">
-		<div class="widget-title font-alt">Post destacado</div>
+		<div class="widget-title font-alt"><?php _e("Post destacado"); ?></div>
 		<ul>
 			<?php 
 			    $args = array(
@@ -67,23 +58,23 @@
 	</aside>
 	
 	<aside id="categories-3" class="widget widget_categories">
-		<div class="widget-title font-alt">Categorías</div>
+		<div class="widget-title font-alt"><?php _e("Categorías"); ?></div>
 		<ul>
-			<?php
-				                //wp_list_categories(); // Mostrar el listado de categorías, Para quitar el titulo de 'Categorías' por defecto le pasamos los siguientes argumentos:
-				                $args = array(
-				                        //Eliminar el título
-				                        'title_li' => '',
-				                        //Mostrar el número de post por categoría
-				                        'show_count' => true,
-				                        //Que no se muestren sin un echo
-				                        'echo' => false
-				                        );
-				                $catgs = wp_list_categories($args);
-				                // Quitar <li class="cat-item cat-item-6"> para que muestre Diseñadores: entraxas publicadas X
-				                $catgs = preg_replace('/<li class="cat-item cat-item-6"><\/a> \(([0-9]+)\)/', '<span class="catnum"> - Entradas publicadas: \\1</span></a></li>', $catgs);
-				                echo $catgs;
-				            ?>
+				<?php
+	                //wp_list_categories(); // Mostrar el listado de categorías, Para quitar el titulo de 'Categorías' por defecto le pasamos los siguientes argumentos:
+	                $args = array(
+	                        //Eliminar el título
+	                        'title_li' => '',
+	                        //Mostrar el número de post por categoría
+	                        'show_count' => true,
+	                        //Que no se muestren sin un echo
+	                        'echo' => false
+	                        );
+	                $catgs = wp_list_categories($args);
+	                // Quitar <li class="cat-item cat-item-6"> para que muestre Diseñadores: entraxas publicadas X
+	                $catgs = preg_replace('/<li class="cat-item cat-item-6"><\/a> \(([0-9]+)\)/', '<span class="catnum"> - Entradas publicadas: \\1</span></a></li>', $catgs);
+	                echo $catgs;
+				?>
 			<li class="cat-item cat-item-6">
 				<!--<a href="../category/sport/index.html" title="We know what we’re good at, and we stick to it">Sport</a>-->
 			</li>
@@ -91,7 +82,7 @@
 	</aside>
 	
 	<aside id="categories-3" class="widget widget_categories">
-		<div class="widget-title font-alt">Autores</div>
+		<div class="widget-title font-alt"><?php _e("Autores"); ?></div>
 		<ul>
 			<?php
 				 //wp_list_authors(); //Función que muestra la lista de autores, se le puede pasar el siguiente array de argumentos:
@@ -110,7 +101,7 @@
 	</aside>
 	
 	<aside id="recent-posts-custom-2" class="widget widget_recent_entries_custom">
-		<div class="widget-title font-alt">Últimos posts</div>
+		<div class="widget-title font-alt"><?php _e("Últimos posts"); ?></div>
 		<ul>
 			<?php 
 			    $args = array(
@@ -146,20 +137,35 @@
 	</aside>
 
 	<aside id="recent-projects-2" class="widget widget_recent_works">
-		<div class="widget-title font-alt">Últimos productos</div>
-		<ul>
-			<li><a href="../project/the-deep-surface/index.html"><img width="150" height="150" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-1-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /></a></li>
-			<li><a href="../project/fresh-fruits-company/index.html"><img width="150" height="150" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-2-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-			<li><a href="../project/micheal-debuis/index.html"><img width="150" height="150" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-3-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-			<li><a href="../project/greedy-emperor/index.html"><img width="150" height="150" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-4-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-			<li><a href="../project/bluetooth-speaker/index.html"><img width="150" height="150" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-5-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-			<li><a href="../project/drawing-inspiration/index.html"><img width="150" height="150" src="<?php echo bloginfo('template_directory') . '/img/uploads/2017/05/img-6-150x150.jpg';?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 150px) 100vw, 150px" /></a></li>
-		</ul>
+		<div class="widget-title font-alt"><?php _e("Últimos productos"); ?></div>
+		
+		<?php
+            
+            $args = [
+                'post_type'     => ['minelli_articulos'],
+                'posts_per_page'=> 6,
+                'orderby'       => 'date'
+            ];
+        	
+        	echo '<ul>';
+        	
+            $custom_posts = new Wp_Query($args);
+            if ($custom_posts->have_posts()){
+                while($custom_posts->have_posts()){
+                    $custom_posts->the_post();
+            	?>
+                	<li><a href="../project/the-deep-surface/index.html"><img width="150" height="150" src=<?= the_post_thumbnail_url() ?> class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /></a></li>
+            	<?php
+                }
+            }
+            wp_reset_query();
+            echo '</ul>';
+        ?>
+       
 	</aside>
-	
 	<aside id="twitter-feed-2" class="widget twitter-feed-widget">
 		<!-- Sección para las redes sociales de la tienda (Borrar si no las ponemos)  -->
-		<div class="widget-title font-alt">Descubre nuestro lado más social</div>
+		<div class="widget-title font-alt"><?php _e("Descubre nuestro lado más social"); ?></div>
 		<div class="twitter-feed rrss-margin" data-twitter="345170787868762112" data-number="2">
 			<a href="https://twitter.com/?lang=es"><i class="fab fa-twitter fa-3x"></i></a>
 			<a href="https://es-es.facebook.com/"><i class="fab fa-facebook-f fa-3x rrss"></i></a>
@@ -169,7 +175,7 @@
 	</aside>
 	
 	<aside id="tag_cloud-2" class="widget widget_tag_cloud">
-		<div class="widget-title font-alt">Etiquetas</div>
+		<div class="widget-title font-alt"><?php _e("Etiquetas"); ?></div>
 		<div class="tagcloud">
 			<?php 
 				the_tags( ' ', ' ', ' ');

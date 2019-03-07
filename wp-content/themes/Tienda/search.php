@@ -7,21 +7,19 @@
 	
     $busqueda = $wp_the_query -> post_count;
     $palabra = $_GET['s'];
-    
-    echo "<script> console.log ('Elemento pasado:". $palabra. "'); </script>"; 
-    
+
     if ($palabra == '') {
     	$label = '';
     }else {
 	    switch ($busqueda) {
 	        case 0:
-	            $label = 'No hay ningún post relacionado para <strong>'. $palabra . '</strong>';
+	            $label = __('No hay ningún post relacionado para') .'<strong>'. $palabra . '</strong>';
 	            break;
 	        case 1:
-	            $label = 'Se ha encontrado un post relacionado para <strong>' . $palabra . '</strong>';
+	            $label = __('Se ha encontrado un post relacionado para') . '<strong>' . $palabra . '</strong>';
 	            break;
 	        default:
-	            $label = 'Se han encontrado ' . $busqueda . ' posts relacionados para <strong>' . $palabra . '</strong>';
+	            $label = __('Se han encontrado ') . $busqueda . __(' posts relacionados para') .'<strong>' . $palabra . '</strong>';
 	            break;
 	    }
     }
@@ -64,7 +62,7 @@
 <!-- Posts-->
 						<article>
 						    <div class="titulo bloqueflex">
-						        <h2 class="post-title"> POST ENCONTRADOS:</h2>
+						        <h2 class="post-title"><?php _e('POST ENCONTRADOS:'); ?></h2>
 						    </div> 
 <?php       
 						    if (have_posts()):  
@@ -84,7 +82,7 @@
 					<div class="col-md-12">  
 						<article class=" bloqueflex">
 							<div class="post-header  formS bloqueflex-col">
-								<h2 class="post-title">NUEVA BÚSQUEDA</h2>
+								<h2 class="post-title"><?php _e('NUEVA BÚSQUEDA'); ?></h2>
 								<?php get_search_form(); ?>
 							</div>
 						</article>
@@ -100,7 +98,7 @@
 					<div class="col-md-12">  
 						<article class="">
 							<div class="titulo bloqueflex">
-								<h2 class="post-title">CATEGORIAS</h2>
+								<h2 class="post-title"><?php _e('CATEGORIAS'); ?></h2>
 							</div>
 							<div class="bloqueflex-around">
 				                <?php wp_list_categories('title_li'); ?>

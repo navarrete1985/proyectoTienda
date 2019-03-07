@@ -26,8 +26,7 @@ trait Crud {
     
     function create($item) {
         $result = 1;
-        // echo Util::varDump($item);
-        // exit();
+        
         try {
             $r = $this->gestor->persist($item);
             $this->gestor->flush();   
@@ -108,5 +107,4 @@ trait Crud {
         $this->gestor->flush();
         return $item;
     }
-    
 }

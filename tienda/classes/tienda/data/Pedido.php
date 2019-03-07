@@ -54,6 +54,7 @@ class Pedido {
      */
     public function __construct()
     {
+        $this->fechaexp = new \DateTime();
         $this->detalles = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

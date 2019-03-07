@@ -10,6 +10,7 @@ class ItemCart {
     use \tienda\common\Common;
     
     private $id, $modelo, $cantidad, $precio, $img;
+    private $talla = 32;
     
     function __construct(Articulo $articulo, $cantidad = 1) {
         $this->set($articulo->get());

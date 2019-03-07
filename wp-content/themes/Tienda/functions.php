@@ -168,9 +168,9 @@
         $checkbox = '
             <br>
             <input type="checkbox" id="rgpd" name="rgpd" value="check"/>
-            <label id = "labelcheck" for="rgpd">&nbsp&nbsp He leido y acepto la<a class="texto rgpd" href="'
+            <label id = "labelcheck" for="rgpd">&nbsp&nbsp' . __('He leido y acepto la') . '<a class="texto rgpd" href="'
             . get_page_link(get_page_by_title('politica')->ID) 
-            .'" target="_blank">&nbsp&nbsp politica de privacidad</a>&nbsp&nbsp de Vortex.</label>';
+            .'" target="_blank">&nbsp&nbsp' . __('politica de privacidad') . '</a>&nbsp&nbsp de Zapatería Minelli</label>';
             
             echo $checkbox;
     } 
@@ -314,24 +314,24 @@
         $roles = array();
         switch ($rol) {
         	case 'administrator':
-        	    $rolsp = 'Administrador';
-        	    $capacidad = 'Tienes acceso a todas las funciones de administración dentro del sitio.';
+        	    $rolsp = __('Administrador');
+        	    $capacidad = __('Tienes acceso a todas las funciones de administración dentro del sitio.');
         	    break;
         	case 'editor':
-        	    $rolsp = 'Editor';
-        	    $capacidad = 'Puedes publicar y administrar publicaciones, incluidas las de otros usuarios.';
+        	    $rolsp = __('Editor');
+        	    $capacidad = __('Puedes publicar y administrar publicaciones, incluidas las de otros usuarios.');
         	    break;        	    
         	case 'author':
-        	    $rolsp = 'Autor'; 
-        	    $capacidad = 'Puedes publicar y administrar tus propios post.';
+        	    $rolsp = __('Autor'); 
+        	    $capacidad = __('Puedes publicar y administrar tus propios post.');
         	    break;        	    
         	case 'contributor':
-        	    $rolsp = 'Colaborador';  
-        	    $capacidad = 'Puedes escribir y administrar tus propias post, pero no puedes publicarlos.';
+        	    $rolsp = __('Colaborador');  
+        	    $capacidad = __('Puedes escribir y administrar tus propios post, pero no puedes publicarlos.');
         	    break;        	    
         	case 'subscriber':
-        	    $rolsp = 'Suscriptor'; 
-        	    $capacidad = 'Solo tienes acceso para administrar tu perfil.';
+        	    $rolsp = __('Suscriptor'); 
+        	    $capacidad = __('Solo tienes acceso para administrar tu perfil.');
         	    break;        	    
         }
         $roles = array(
@@ -349,7 +349,7 @@
             
             if (!add_post_meta($post_id,'numvisits',$numvisits,true)) {
                 $numvisits = get_post_meta($post_id,'numvisits',true) + 1;
-                $sufix = 'VISITAS';
+                $sufix = __('VISITAS');
                 update_post_meta($post_id,'numvisits',$numvisits);
             }
             
