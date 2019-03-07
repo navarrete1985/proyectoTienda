@@ -278,14 +278,15 @@ class AjaxController extends Controller {
     function terminarCompra() {
         $carrito = $this->getSesion()->get('cart');
         $usuario = $this->getSesion()->getLogin();
-        $numero = Reader::read('numtarjeta');
-        $fechavalidez = Reader::read('$fechavalidez');
-        $cvv = Reader::read('$cvv');
+        $numero = Reader::read('tarjeta');
+        $fechavalidez = Reader::read('fechavalidez');
+        $cvv = Reader::read('cvv');
         
         $data = ['numtarjeta' => $numero, 'fechavalidez' => $fechavalidez, 'cvv' => $cvv];
         $result = null;
         if ($carrito !== null) {
             $result = $this->getModel()->addPedido($carrito,$usuario, $data);   
+            $this->getSesion()->set('cart', null);
         }
         
         $this->getModel()->add(['result' => $result === null ? 0 : 1]);

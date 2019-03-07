@@ -41,9 +41,9 @@
         var cvv = document.getElementById('cvv').value;
         
         genericAjax.request(null, 'ajax/terminarCompra', {'tarjeta': tarjeta,'fechavalidez': fechavalidez,'cvv': cvv,'pagina': pagina ,'orden' : orden}, 'get', function(json) {
-                    console.log(json);
-            
-            
+            if (json.result == 1) {
+                window.location.replace('https://proyecto-tienda-navarrete.c9users.io/tienda/pedidos');
+            }
         });
         
     });
