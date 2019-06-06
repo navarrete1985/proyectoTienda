@@ -23,14 +23,14 @@
 			<a  href="<?php echo get_page_link(get_page_by_title('archives')->ID); ?>"><span class="texto <?php if($current_slug == "archives") {echo "is_active";};?>"><?php _e("Archivos"); ?></span></a>
 		</li>
 		
-		<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314 ">
-			<a  href="<?php echo get_page_link(get_page_by_title('customLogin')->ID); ?>" class="far fa-user fa-2x"></a>
-		</li>
+	<!--	<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314 ">
+			<a  href="<?php /*echo get_page_link(get_page_by_title('customLogin')->ID);*/ ?>" class="far fa-user fa-2x"></a>
+		</li> -->
 		<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314 ">
 			<a href="<?php echo get_template_directory_uri ()?>/tienda/search" class="fas fa-search fa-2x"></a>
 		</li>			
 <?php
-        if (is_user_logged_in) {
+        if (is_user_logged_in()) {
             $user = wp_get_current_user();
             $name = $user -> user_firstname;                    
 ?> 	

@@ -8,7 +8,6 @@
 	<meta name='robots' content='noindex,follow' />
 	<link rel='dns-prefetch' href='http://maps.googleapis.com/' />
 	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-	
 	<link rel="icon" href="<?php echo bloginfo('template_directory') . '/assets/img/favicon.ico';?>" sizes="32x32" />
 	<link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3Aregular%7CDosis%3Aregular%7CLibre+Baskerville%3Aitalic&amp;subset=vietnamese%2Cgreek%2Clatin-ext%2Cgreek-ext%2Ccyrillic-ext%2Ccyrillic%2Clatin&amp;ver=4.7.12' type='text/css' media='all' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
